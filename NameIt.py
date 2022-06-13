@@ -512,7 +512,7 @@ class NameIt(QObject, Extension):
                     # Logger.log('d', 'isSliceable : ' + str(N_Name))
                     node_stack=node.callDecoration("getStack")           
                     if node_stack:        
-                        if node_stack.getProperty("cutting_mesh", "value"):
+                        if node_stack.getProperty("id_mesh", "value"):
                             # N_Name=node.getName()
                             # Logger.log('d', 'cutting_mesh : ' + str(N_Name)) 
                             self._removeSupportMesh(node)
