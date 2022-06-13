@@ -10,13 +10,13 @@ $fn=30;
 // font = "Roboto:style=Bold";
 // font = "Leelawadee:style=Bold";
 // font = "Arial Rounded MT Bold:style=Bold";
-font = "Arial Rounded MT Bold";
+font = "Gill Sans MT:style=Bold";
 
 
 letter_height = 1;
 letter_size =1;
 
-render() translate([0,0,0]) letter("1");
+render() translate([0,0,0]) letter("~");
 
 
 module letter(Txt) {

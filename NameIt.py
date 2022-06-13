@@ -29,7 +29,7 @@ from typing import Optional, List
 from UM.Math.Vector import Vector
 
 from UM.Extension import Extension
-from UM.PluginRegistry import PluginRegistry
+# from UM.PluginRegistry import PluginRegistry
 from UM.Application import Application
 from cura.CuraApplication import CuraApplication
 
@@ -47,7 +47,6 @@ from UM.Scene.Iterator.DepthFirstIterator import DepthFirstIterator
 from UM.Operations.AddSceneNodeOperation import AddSceneNodeOperation
 from UM.Operations.GroupedOperation import GroupedOperation
 from UM.Operations.RemoveSceneNodeOperation import RemoveSceneNodeOperation
-from UM.Operations.SetTransformOperation import SetTransformOperation
 
 from cura.CuraVersion import CuraVersion  # type: ignore
 from UM.Version import Version
@@ -537,42 +536,45 @@ class NameIt(QObject, Extension):
         meshes = []
         offsetX=0
         
-        Logger.log("d", "name= %s", name)
-        
+        Logger.log("d", "Node name= %s", name)
+
         Ident = name.upper()
 
-        
         Ind = 0
         for cch in Ident:
-            #Logger.log("d", "Char= %s",cch)        
-            Filename = cch + ".stl"
+            # Space Char
+            if ord(cch)==32:
+                # 1 = one space size will be set at the end
+                offsetX += 1
+            else:
+                #Logger.log("d", "Char= %s",cch)        
+                Filename = cch + ".stl"
 
-            model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
-            if not exists(model_definition_path) :
-                Filename = "{}.stl".format(ord(cch))
                 model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
-                # Logger.log("d", "Code = %s - > %s",ord(cch),Filename)
-                # Logger.log("d", "Filename Code = %s",Filename)
-            
-            # ? if the characters is not reconized
-            if not exists(model_definition_path) :  
-                Filename = "63.stl"
-                model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
-                Logger.log("d", "Unknow Code= %s -> %s",cch,ord(cch))
+                if not exists(model_definition_path) :
+                    Filename = "{}.stl".format(ord(cch))
+                    model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
+                    # Logger.log("d", "Code = %s - > %s",ord(cch),Filename)
+                    # Logger.log("d", "Filename Code = %s",Filename)
                 
-            # Logger.log("d", "Filename= %s",Filename)
-            # Logger.log("d", "model_definition_path= %s",model_definition_path)
-            mesh = trimesh.load(model_definition_path)
+                # ? if the character is not reconized
+                if not exists(model_definition_path) :  
+                    Filename = "63.stl"
+                    model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
+                    Logger.log("d", "Unknow Code= %s -> %s",cch,ord(cch))
+                    
+                # Logger.log("d", "Filename= %s",Filename)
+                # Logger.log("d", "model_definition_path= %s",model_definition_path)
+                mesh = trimesh.load(model_definition_path) 
+                # Logger.log("d", "offsetX = {}",format(offsetX))            
+                mesh.apply_transform(trimesh.transformations.translation_matrix([offsetX, 0, 0]))
+                # Logger.log("d", "Mesh bounds = %s",str(mesh.bounds[1, 0]))            
+                offsetX = mesh.bounds[1, 0]+self._kerning
             
-            # Logger.log("d", "offsetX = {}",format(offsetX))            
-            mesh.apply_transform(trimesh.transformations.translation_matrix([offsetX, 0, 0]))
-            # Logger.log("d", "Mesh bounds = %s",str(mesh.bounds[1, 0]))            
-            offsetX = mesh.bounds[1, 0]+self._kerning
-            
-            meshes.append(mesh)
+                meshes.append(mesh)
                 
-            Ind += 1
-            # Logger.log("d", "Ident= %s",str(Ind))
+                Ind += 1
+                # Logger.log("d", "Ident= %s",str(Ind))
         
         if Ind == 1 :
             combined = mesh           
