@@ -15,7 +15,7 @@ Window
 {
     id: base
 
-    title: "Calibration Shapes"
+    title: "Name It Parameters"
 
     color: "#fafafa" //Background color of cura: #fafafa
 
@@ -53,8 +53,6 @@ Window
 	property string heightInput: manager.heightInput
 	property string distanceInput: manager.distanceInput
 	property string kerningInput: manager.kerningInput
-
-
 
     // Button for closing the dialogbox
     Button

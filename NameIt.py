@@ -545,16 +545,17 @@ class NameIt(QObject, Extension):
         
         Ind = 0
         for cch in Ident:
-            Logger.log("d", "Char= %s",cch)        
+            #Logger.log("d", "Char= %s",cch)        
             Filename = cch + ".stl"
 
             model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
             if not exists(model_definition_path) :
                 Filename = "{}.stl".format(ord(cch))
                 model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
-                Logger.log("d", "Code = %s - > %s",ord(cch),Filename)
+                # Logger.log("d", "Code = %s - > %s",ord(cch),Filename)
                 # Logger.log("d", "Filename Code = %s",Filename)
             
+            # ? if the characters is not reconized
             if not exists(model_definition_path) :  
                 Filename = "63.stl"
                 model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)

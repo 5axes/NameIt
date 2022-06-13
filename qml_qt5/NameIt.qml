@@ -138,7 +138,7 @@ Window
         font.pointSize: 12
         color: "#131151"
 
-        anchors.bottom: text_size.bottom
+        anchors.bottom: size_input.bottom
         anchors.bottomMargin: 0
         anchors.left: size_input.right
         anchors.leftMargin: 5
@@ -198,7 +198,7 @@ Window
         font.pointSize: 12
         color: "#131151"
 
-        anchors.bottom: text_height.bottom
+        anchors.bottom: height_input.bottom
         anchors.bottomMargin: 0
         anchors.left: height_input.right
         anchors.leftMargin: 5
@@ -258,7 +258,7 @@ Window
         font.pointSize: 12
         color: "#131151"
 
-        anchors.bottom: text_distance.bottom
+        anchors.bottom: distance_input.bottom
         anchors.bottomMargin: 0
         anchors.left: distance_input.right
         anchors.leftMargin: 5
@@ -280,7 +280,7 @@ Window
         anchors.leftMargin: 10
     }
 
-    //User input of distance
+    //User input of kerning
     TextField
     {
         id: kerning_input
@@ -318,7 +318,7 @@ Window
         font.pointSize: 12
         color: "#131151"
 
-        anchors.bottom: text_kerning.bottom
+        anchors.bottom: kerning_input.bottom
         anchors.bottomMargin: 0
         anchors.left: kerning_input.right
         anchors.leftMargin: 5
