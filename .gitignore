@@ -9,3 +9,4 @@ __pycache__/
 *.pot
 
 # Models
+models/mark.stl
