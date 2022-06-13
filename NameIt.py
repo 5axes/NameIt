@@ -20,13 +20,9 @@ except ImportError:
 # Imports from the python standard library to build the plugin functionality
 import os
 from os.path import exists
-import sys
-import re
 import math
 import numpy
 import trimesh
-import shutil
-from shutil import copyfile
 
 from typing import Optional, List
 
@@ -52,7 +48,6 @@ from UM.Operations.AddSceneNodeOperation import AddSceneNodeOperation
 from UM.Operations.GroupedOperation import GroupedOperation
 from UM.Operations.RemoveSceneNodeOperation import RemoveSceneNodeOperation
 from UM.Operations.SetTransformOperation import SetTransformOperation
-from UM.Mesh.MeshBuilder import MeshBuilder
 
 from cura.CuraVersion import CuraVersion  # type: ignore
 from UM.Version import Version
@@ -82,13 +77,6 @@ class NameIt(QObject, Extension):
         Extension.__init__(self)
        
 
-        # Stock Data  
-        self._all_picked_node = []
-        
-        
-        #Inzialize varables
-        self.userText = ""
-        self._continueDialog = None
         
         # set the preferences to store the default value
         self._application = CuraApplication.getInstance()
@@ -144,11 +132,14 @@ class NameIt(QObject, Extension):
         self.addMenuItem("   ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Help"), self.gotoHelp)
   
-        #Inzialize varables
+        #Initialize variables
         self.userText = ""
         self._continueDialog = None
         
-    # Define the default value pour the standard element
+        # Stock Data  
+        self._all_picked_node = [] 
+ 
+    # Define the default value for the text element
     def defaultSize(self) -> None:
  
         if self._continueDialog is None:
