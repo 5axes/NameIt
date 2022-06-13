@@ -334,22 +334,14 @@ class NameIt(QObject, Extension):
         Message(catalog.i18nc("@info:status", "Please select one or more models first"))
 
         return []
- 
-    def _sliceableNodes(self):
-        # Add all sliceable scene nodes to check
-        scene = Application.getInstance().getController().getScene()
-        for node in DepthFirstIterator(scene.getRoot()):
-            if node.callDecoration("isSliceable"):
-                yield node
-                
+     
+    # Add Part Name  as text  
     def addPartName(self) -> None:
  
-        Id = 0
         nodes_list = self._getAllSelectedNodes()
         if not nodes_list:
             nodes_list = DepthFirstIterator(self._application.getController().getScene().getRoot())
         
-        Id = 0
         for node in nodes_list:
             if node.callDecoration("isSliceable"):           
                 Logger.log('d', "isSliceable : {}".format(node.getName()))
@@ -361,31 +353,13 @@ class NameIt(QObject, Extension):
                     type_anti_overhang_mesh = node_stack.getProperty("anti_overhang_mesh", "value") 
                     
                     if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh :
-                    # and Selection.isSelected(node)
+                        # and Selection.isSelected(node)
                         Logger.log('d', "Mesh : {}".format(node.getName()))
-                        
-                        name = node.getName()
-                        Id += 1
-                        
-                        node_bounds = node.getBoundingBox()
-                        Logger.log("d", "width= %s", str(node_bounds.width))
-                        Logger.log("d", "depth= %s", str(node_bounds.depth))
-                        Logger.log("d", "Center X= %s", str(node_bounds.center.x))
-                        Logger.log("d", "Center Y= %s", str(node_bounds.center.z))
 
-                        PosX = node_bounds.center.x
-                        PosY = node_bounds.center.z+0.5*node_bounds.depth
-                        
-                        new_position = Vector(PosX, 0, PosY)
- 
-                        Logger.log("d", "PosX = %s", str(PosX))
-                        Logger.log("d", "PosY = %s", str(PosY)) 
-
-                        self._createNameMesh(node, new_position, name)
+                        self._createNameMesh(node, node.getName())
                   
-        
+    # Add Number  as text     
     def addNumber(self) -> None:
-        meshes = []
         
         nodes_list = self._getAllSelectedNodes()
         if not nodes_list:
@@ -402,8 +376,6 @@ class NameIt(QObject, Extension):
                     type_anti_overhang_mesh = node_stack.getProperty("anti_overhang_mesh", "value") 
                     
                     if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh :            
-                        meshes = [0]
-                        
                         name = node.getName()
                         Id += 1
                         Logger.log("d", "name= %s", name)
@@ -411,59 +383,8 @@ class NameIt(QObject, Extension):
                         # filename = node.getMeshData().getFileName() 
                         # Logger.log("d", "filename= %s", name)
 
-                        node_bounds = node.getBoundingBox()
-                        Logger.log("d", "width= %s", str(node_bounds.width))
-                        Logger.log("d", "depth= %s", str(node_bounds.depth))
-                        Logger.log("d", "Center X= %s", str(node_bounds.center.x))
-                        Logger.log("d", "Center Y= %s", str(node_bounds.center.z))
                         
-                        Ident = str(Id)
-
-                        PosX = node_bounds.center.x
-                        PosY = node_bounds.center.z+0.5*node_bounds.depth
-
-                        Logger.log("d", "Pos X= %s", str(PosX))
-                        Logger.log("d", "Pos Y= %s", str(PosY))
-                        
-                        Ind = 0
-                        for chiffre in Ident:          
-                            Filename = chiffre + ".stl"
-                            Logger.log("d", "Filename= %s",Filename) 
-                            model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
-                            Logger.log("d", "model_definition_path= %s",model_definition_path)
-                            mesh = trimesh.load(model_definition_path)
-                                       
-                            if Ind == 0 :
-                                meshes[0] = mesh
-                            else :
-                                mesh.apply_transform(trimesh.transformations.translation_matrix([(0.6*Ind), 0, 0]))
-                                meshes.append(mesh)
-                            Ind += 1
-                        
-                        if Ind == 1 :
-                            combined = mesh           
-                        else :
-                            Logger.log("d", "model_definition_path= %s",str(meshes))
-                            combined = trimesh.util.concatenate(meshes)  
-
-                        Logger.log("d", "combined= %s",str(combined.bounds))
-                        median = -(0.5*(combined.bounds[1, 0]-combined.bounds[0, 0])+combined.bounds[0, 0])
-                        Logger.log("d", "combined= %s",str(combined.bounds[0, 0]))
-                        Logger.log("d", "combined= %s",str(combined.bounds[1, 0]))
-                        Logger.log("d", "combined= %s",str(median))
-                        combined.apply_transform(trimesh.transformations.translation_matrix([median, 0, 0]))            
-                        
-                        origin = [0, 0, 0]
-                        DirX = [1, 0, 0]
-                        DirY = [0, 1, 0]
-                        DirZ = [0, 0, 1]
-                        combined.apply_transform(trimesh.transformations.scale_matrix(self._size, origin, DirX))
-                        combined.apply_transform(trimesh.transformations.scale_matrix(self._size, origin, DirY))
-                        combined.apply_transform(trimesh.transformations.scale_matrix(self._height, origin, DirZ))
-                        
-                        combined.apply_transform(trimesh.transformations.translation_matrix([PosX, -(PosY+self._distance+self._size), 0]))
-                        
-                        self._addShape(Ident,self._toMeshData(combined))
+                        self._createNameMesh(node, Ident)
                     
     #----------------------------------------
     # Initial Source code from  fieldOfView
@@ -497,57 +418,28 @@ class NameIt(QObject, Extension):
 
         mesh_data = MeshData(vertices=vertices, indices=indices, normals=normals)
 
-        return mesh_data        
-        
-    # Initial Source code from  fieldOfView
-    # https://github.com/fieldOfView/Cura-SimpleShapes/blob/bac9133a2ddfbf1ca6a3c27aca1cfdd26e847221/SimpleShapes.py#L70
-    def _addShape(self, mesh_name, mesh_data: MeshData, ext_pos = 0 ) -> None:
-        application = CuraApplication.getInstance()
-        global_stack = application.getGlobalContainerStack()
-        if not global_stack:
-            return
+        return mesh_data              
 
-        node = CuraSceneNode()
-
-        node.setMeshData(mesh_data)
-        node.setSelectable(True)
-        if len(mesh_name)==0:
-            node.setName("TestPart" + str(id(mesh_data)))
-        else:
-            node.setName(str(mesh_name))
-
-        scene = self._controller.getScene()
-        op = AddSceneNodeOperation(node, scene.getRoot())
-        op.push()
-
-        extruder_stack = application.getExtruderManager().getActiveExtruderStacks() 
-        
-        extruder_nr=len(extruder_stack)
-        Logger.log("d", "extruder_nr= %d", extruder_nr)
-        # default_extruder_position  : <class 'str'>
-        if ext_pos>0 and ext_pos<=extruder_nr :
-            default_extruder_position = int(ext_pos-1)
-        else :
-            default_extruder_position = int(application.getMachineManager().defaultExtruderPosition)
-        Logger.log("d", "default_extruder_position= %s", type(default_extruder_position))
-        default_extruder_id = extruder_stack[default_extruder_position].getId()
-        Logger.log("d", "default_extruder_id= %s", default_extruder_id)
-        node.callDecoration("setActiveExtruder", default_extruder_id)
-        
-        active_build_plate = application.getMultiBuildPlateModel().activeBuildPlate
-        node.addDecorator(BuildPlateDecorator(active_build_plate))
-
-        node.addDecorator(SliceableObjectDecorator())
-
-        self._all_picked_node.append(node)
-        application.getController().getScene().sceneChanged.emit(node)
-        
-
-    def _createNameMesh(self, parent: CuraSceneNode, position: Vector , name):
+    def _createNameMesh(self, parent: CuraSceneNode, name):
         node = CuraSceneNode()
 
         Logger.log("d", "_createNameMesh= %s", "Id-"+name)
+
+
+        node_bounds = parent.getBoundingBox()
+        Logger.log("d", "width= %s", str(node_bounds.width))
+        Logger.log("d", "depth= %s", str(node_bounds.depth))
+        Logger.log("d", "Center X= %s", str(node_bounds.center.x))
+        Logger.log("d", "Center Y= %s", str(node_bounds.center.z))
+
+        PosX = node_bounds.center.x
+        PosY = node_bounds.center.z+0.5*node_bounds.depth
+
+        Logger.log("d", "Pos X= %s", str(PosX))
+        Logger.log("d", "Pos Y= %s", str(PosY))
         
+        position = Vector(PosX, 0, PosY)
+                        
         node.setSelectable(True)
         node.setName("Id-"+name)   
         
