@@ -9,7 +9,7 @@ The function **Define default size** gives you the possibility to change the def
 
 ![define default size](./images/size.jpg)
 
-This plugin is using the [Trimesh](https://github.com/mikedh/trimesh) library to load STL files.
+This plugin is using the [Trimesh](https://github.com/mikedh/trimesh) library to load STL files and mesh manipulations.
 
 
 ## Add Number
