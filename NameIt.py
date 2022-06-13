@@ -96,7 +96,7 @@ class NameIt(QObject, Extension):
         self._preferences.addPreference("NameIt/size", 6)
         self._preferences.addPreference("NameIt/height", 0.2)
         self._preferences.addPreference("NameIt/distance", 2)
-        self._preferences.addPreference("NameIt/kerning", 0.5)
+        self._preferences.addPreference("NameIt/kerning", 0.1)
         
         # convert as float to avoid further issue
         self._size = float(self._preferences.getValue("NameIt/size"))
@@ -140,7 +140,7 @@ class NameIt(QObject, Extension):
         self.addMenuItem(" ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Remove Identificator"), self.removeAllIdMesh)
         self.addMenuItem("  ", lambda: None)
-        self.addMenuItem(catalog.i18nc("@item:inmenu", "Define default size"), self.defaultSize)
+        self.addMenuItem(catalog.i18nc("@item:inmenu", "Define Text Size"), self.defaultSize)
         self.addMenuItem("   ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Help"), self.gotoHelp)
   
