@@ -15,11 +15,20 @@ The function **Define default size** gives you the possibility to change the def
 This plugin is using the [Trimesh](https://github.com/mikedh/trimesh) library to load STL files.
 
 
-## Add Mark
+## Add Number
 
-Function to add a mark in front of each part to identify every part. Before to use this function you must select every model on the build plate. The selecting order will also give the number used to identify the Model.
+Function to add a number in front of each part to identify every part. This function can be used by selecting the elements or a global identification withour selection. 
+
+Note ! The selecting order will also give the number used to identify the Model.
 
 ![Add Mark](./images/AddMark.jpg)
+
+
+## Add Name
+
+Function to add the name of the element in front of each part to identify every part. This function can be used by selecting the elements or a global identification withour selection. 
+
+![Add Name](./images/AddName.jpg)
 
 ## Help
 
