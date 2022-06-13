@@ -378,11 +378,11 @@ class NameIt(QObject, Extension):
                     if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh :            
                         name = node.getName()
                         Id += 1
-                        Logger.log("d", "name= %s", name)
+                        # Logger.log("d", "name= %s", name)
                         
                         # filename = node.getMeshData().getFileName() 
-                        # Logger.log("d", "filename= %s", name)
-
+                        # Logger.log("d", "Ident = %s", Ident)
+                        Ident=str(Id)
                         
                         self._createNameMesh(node, Ident)
                     
@@ -462,7 +462,6 @@ class NameIt(QObject, Extension):
         #new_instance.setProperty("value", True)
         #new_instance.resetState()  # Ensure that the state is not seen as a user state.
         #settings.addInstance(new_instance)
-
 
         op = GroupedOperation()
         # First add node to the scene at the correct position/scale, before parenting, so the support mesh does not get scaled with the parent
