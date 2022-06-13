@@ -8,7 +8,7 @@ The default size for all the simple shapes is 20 mm, but can be modified via the
 
 ### Define default size
 
-The function **Define default size** gives you the possibility to change the default size for the standard primitives (cube/cylinder/tube).
+The function **Define default size** gives you the possibility to change the default size for the text.
 
 ![define default size](./images/size.jpg)
 
