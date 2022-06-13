@@ -38,7 +38,6 @@ from UM.Application import Application
 from cura.CuraApplication import CuraApplication
 
 from UM.Mesh.MeshData import MeshData, calculateNormalsFromIndexedVertices
-from UM.Resources import Resources
 from UM.Settings.SettingInstance import SettingInstance
 from cura.Scene.CuraSceneNode import CuraSceneNode
 from UM.Scene.SceneNode import SceneNode
@@ -76,6 +75,7 @@ class NameIt(QObject, Extension):
     userSizeChanged = pyqtSignal()
     userHeightChanged = pyqtSignal()
     userDistanceChanged = pyqtSignal()
+    userKerningChanged = pyqtSignal()
     
     def __init__(self, parent = None) -> None:
         QObject.__init__(self, parent)
@@ -93,19 +93,17 @@ class NameIt(QObject, Extension):
         # set the preferences to store the default value
         self._application = CuraApplication.getInstance()
         self._preferences = self._application.getPreferences()
-        self._preferences.addPreference("NameIt/size", 10)
+        self._preferences.addPreference("NameIt/size", 6)
         self._preferences.addPreference("NameIt/height", 0.2)
-        self._preferences.addPreference("NameIt/distance", 3)
+        self._preferences.addPreference("NameIt/distance", 2)
+        self._preferences.addPreference("NameIt/kerning", 0.5)
         
         # convert as float to avoid further issue
         self._size = float(self._preferences.getValue("NameIt/size"))
         self._height = float(self._preferences.getValue("NameIt/height"))
         self._distance = float(self._preferences.getValue("NameIt/distance"))
+        self._kerning = float(self._preferences.getValue("NameIt/kerning"))
         
-        # Suggested solution from fieldOfView . in this discussion solved in Cura 4.9
-        # https://github.com/5axes/Calibration-Shapes/issues/1
-        # Cura are able to find the scripts from inside the plugin folder if the scripts are into a folder named resources
-        Resources.addSearchPath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "resources"))
  
         self.Major=1
         self.Minor=0
@@ -162,6 +160,10 @@ class NameIt(QObject, Extension):
     @pyqtProperty(str, notify= userHeightChanged)
     def heightInput(self):
         return str(self._height)
+
+    @pyqtProperty(str, notify= userKerningChanged)
+    def kerningInput(self):
+        return str(self._kerning)
         
     @pyqtProperty(str, notify= userDistanceChanged)
     def distanceInput(self):
@@ -288,6 +290,39 @@ class NameIt(QObject, Extension):
 
         self.writeToLog("Set NameIt/distance printFromDistance to : " + text)
         self._preferences.setValue("NameIt/distance", self._distance)
+        
+        #clear the message Field
+        self.userMessage("", "ok")
+
+
+    def getKerning(self) -> float:
+    
+        return self._kerning
+        
+    # is called when a key gets released in the kerning inputField (twice for some reason)
+    @pyqtSlot(str)
+    def kerningEntered(self, text):
+        # Is the textfield empty ? Don't show a message then
+        if text =="":
+            #self.writeToLog("kerning-Textfield: Empty")
+            self.userMessage("", "ok")
+            return
+
+        #Convert commas to points
+        text = text.replace(",",".")
+
+        #self.writeToLog("distance-Textfield: read value "+text)
+
+        #Is the entered Text a number?
+        try:
+            float(text)
+        except ValueError:
+            self.userMessage("Entered kerning invalid: " + text,"wrong")
+            return
+        self._kerning = float(text)
+
+        self.writeToLog("Set NameIt/kerning printFromDistance to : " + text)
+        self._preferences.setValue("NameIt/kerning", self._distance)
         
         #clear the message Field
         self.userMessage("", "ok")
@@ -510,6 +545,7 @@ class NameIt(QObject, Extension):
     # Text Creation
     def _createText(self, node: CuraSceneNode, name):
         meshes = []
+        offsetX=0
         
         Logger.log("d", "name= %s", name)
         
@@ -525,19 +561,23 @@ class NameIt(QObject, Extension):
             if not exists(model_definition_path) :
                 Filename = "{}.stl".format(ord(cch))
                 model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
-                Logger.log("d", "Code = %s",ord(cch))
-                Logger.log("d", "Filename Code = %s",Filename)
+                Logger.log("d", "Code = %s - > %s",ord(cch),Filename)
+                # Logger.log("d", "Filename Code = %s",Filename)
             
             if not exists(model_definition_path) :  
                 Filename = "63.stl"
                 model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
-                Logger.log("d", "Unknow Code= %s | %s",ord(cch),cch)
+                Logger.log("d", "Unknow Code= %s -> %s",cch,ord(cch))
                 
-            Logger.log("d", "Filename= %s",Filename)
+            # Logger.log("d", "Filename= %s",Filename)
             # Logger.log("d", "model_definition_path= %s",model_definition_path)
             mesh = trimesh.load(model_definition_path)
-                       
-            mesh.apply_transform(trimesh.transformations.translation_matrix([(1.1*Ind), 0, 0]))
+            
+            Logger.log("d", "offsetX = {}",format(offsetX))            
+            mesh.apply_transform(trimesh.transformations.translation_matrix([offsetX, 0, 0]))
+            offsetX += mesh.bounds[1, 0]  
+            offsetX += self._kerning
+            
             meshes.append(mesh)
                 
             Ind += 1

@@ -27,9 +27,9 @@ Window
 
     // Setting the dimensions of the dialog window
     width: 250
-    height: 120
+    height: 170
     minimumWidth: 250
-    minimumHeight: 50
+    minimumHeight: 170
 
     // Position of the window
     x: Screen.width*0.5 - width - 50
@@ -39,7 +39,7 @@ Window
     Rectangle {
         id: bg_rect
         width: 250
-        height: 120
+        height: 170
         color: "#fff"
         border.color: "#D22"
         border.width: 3
@@ -52,6 +52,7 @@ Window
 	property string sizeInput: manager.sizeInput
 	property string heightInput: manager.heightInput
 	property string distanceInput: manager.distanceInput
+	property string kerningInput: manager.kerningInput
 	
     // Button for closing the dialogbox
     Button
@@ -260,6 +261,66 @@ Window
         anchors.bottom: text_distance.bottom
         anchors.bottomMargin: 0
         anchors.left: distance_input.right
+        anchors.leftMargin: 5
+    }
+
+    //Text "kerning: "
+    Text
+    {
+        id: text_kerning
+		width:90
+        text: "kerning :"
+        font.family: "Arial"
+        font.pointSize: 12
+        color: "#131151"
+
+        anchors.top: distance_input.bottom
+        anchors.topMargin: 10
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+    }
+
+    //User input of distance
+    TextField
+    {
+        id: kerning_input
+        width: 80
+        text: kerningInput
+		// "ie. 20.0"
+
+        anchors.top: text_kerning.top
+        anchors.topMargin: -2
+        anchors.left: text_kerning.right
+        anchors.leftMargin: 10
+
+		font.family: "Arial"
+        font.pointSize: 12
+
+        // Validate entered value
+        Keys.onReturnPressed:
+        {
+			event.accepted = true
+        }
+
+        // Return the new entered value
+        Keys.onReleased:
+        {
+            manager.distanceEntered(kerning_input.text)
+        }
+    }
+
+    // Text: "mm"
+    Text
+    {
+        id: text_unit_4
+        text: "mm"
+        font.family: "Arial"
+        font.pointSize: 12
+        color: "#131151"
+
+        anchors.bottom: text_kerning.bottom
+        anchors.bottomMargin: 0
+        anchors.left: kerning_input.right
         anchors.leftMargin: 5
     }
 	
