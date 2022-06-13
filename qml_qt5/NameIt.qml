@@ -95,7 +95,7 @@ Window
         color: "#131151"
 
         anchors.top: close_button.top
-        anchors.topMargin: 10
+        anchors.topMargin: 20
         anchors.left: parent.left
         anchors.leftMargin: 10
     }
@@ -207,7 +207,7 @@ Window
     //Text "Distance: "
     Text
     {
-        id: text_height
+        id: text_distance
 		width:90
         text: "Distance:"
         font.family: "Arial"
@@ -264,12 +264,12 @@ Window
         anchors.leftMargin: 5
     }
 
-    //Text "kerning: "
+    //Text "Kerning: "
     Text
     {
         id: text_kerning
 		width:90
-        text: "kerning :"
+        text: "Kerning:"
         font.family: "Arial"
         font.pointSize: 12
         color: "#131151"
@@ -305,7 +305,7 @@ Window
         // Return the new entered value
         Keys.onReleased:
         {
-            manager.distanceEntered(kerning_input.text)
+            manager.kerningEntered(kerning_input.text)
         }
     }
 

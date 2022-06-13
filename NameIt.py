@@ -66,11 +66,11 @@ class NameIt(QObject, Extension):
     api = CuraApplication.getInstance().getCuraAPI()
     
     # The QT signal, which signals an update for user information text
-    userInfoTextChanged = pyqtSignal()
     userSizeChanged = pyqtSignal()
     userHeightChanged = pyqtSignal()
     userDistanceChanged = pyqtSignal()
     userKerningChanged = pyqtSignal()
+    userInfoTextChanged = pyqtSignal()
     
     def __init__(self, parent = None) -> None:
         QObject.__init__(self, parent)
@@ -134,7 +134,6 @@ class NameIt(QObject, Extension):
         self.addMenuItem("   ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Help"), self.gotoHelp)
   
-        
         # Stock Data  
         self._all_picked_node = [] 
  
@@ -143,6 +142,7 @@ class NameIt(QObject, Extension):
  
         if self._continueDialog is None:
             self._continueDialog = self._createDialogue()
+        
         self._continueDialog.show()
         #self.userSizeChanged.emit()
 
