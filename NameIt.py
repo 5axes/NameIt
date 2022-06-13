@@ -573,10 +573,10 @@ class NameIt(QObject, Extension):
             # Logger.log("d", "model_definition_path= %s",model_definition_path)
             mesh = trimesh.load(model_definition_path)
             
-            Logger.log("d", "offsetX = {}",format(offsetX))            
+            # Logger.log("d", "offsetX = {}",format(offsetX))            
             mesh.apply_transform(trimesh.transformations.translation_matrix([offsetX, 0, 0]))
-            offsetX += mesh.bounds[1, 0]  
-            offsetX += self._kerning
+            # Logger.log("d", "Mesh bounds = %s",str(mesh.bounds[1, 0]))            
+            offsetX = mesh.bounds[1, 0]+self._kerning
             
             meshes.append(mesh)
                 
@@ -589,11 +589,9 @@ class NameIt(QObject, Extension):
             Logger.log("d", "model_definition_path= %s",str(meshes))
             combined = trimesh.util.concatenate(meshes)  
 
-        Logger.log("d", "combined= %s",str(combined.bounds))
+        # Logger.log("d", "Combined bounds = %s",str(combined.bounds))
         median = -(0.5*(combined.bounds[1, 0]-combined.bounds[0, 0])+combined.bounds[0, 0])
-        Logger.log("d", "combined= %s",str(combined.bounds[0, 0]))
-        Logger.log("d", "combined= %s",str(combined.bounds[1, 0]))
-        Logger.log("d", "combined= %s",str(median))
+        #Logger.log("d", "combined= %s",str(median))
         combined.apply_transform(trimesh.transformations.translation_matrix([median, 0, 0]))            
         
         origin = [0, 0, 0]
