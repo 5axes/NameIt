@@ -93,7 +93,7 @@ class NameIt(QObject, Extension):
         # set the preferences to store the default value
         self._application = CuraApplication.getInstance()
         self._preferences = self._application.getPreferences()
-        self._preferences.addPreference("NameIt/size", 6)
+        self._preferences.addPreference("NameIt/size", 4)
         self._preferences.addPreference("NameIt/height", 0.2)
         self._preferences.addPreference("NameIt/distance", 2)
         self._preferences.addPreference("NameIt/kerning", 0.1)

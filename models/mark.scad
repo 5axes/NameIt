@@ -9,7 +9,8 @@ $fn=30;
 // font = "Gill Sans MT:style=Bold";
 // font = "Roboto:style=Bold";
 // font = "Leelawadee:style=Bold";
-font = "Gill Sans MT:style=Bold";
+// font = "Arial Rounded MT Bold:style=Bold";
+font = "Arial Rounded MT Bold";
 
 
 letter_height = 1;
