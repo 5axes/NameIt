@@ -136,7 +136,7 @@ class NameIt(QObject, Extension):
         self._message = None
         
         self.setMenuName(catalog.i18nc("@item:inmenu", "Name It !"))
-        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number"), self.addMark)
+        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number"), self.addNumber)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Name"), self.addPartName)
         self.addMenuItem(" ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Remove All"), self.removeAllIdMesh)
@@ -366,11 +366,7 @@ class NameIt(QObject, Extension):
                         
                         name = node.getName()
                         Id += 1
-                        Logger.log("d", "name= %s", name)
                         
-                        # filename = node.getMeshData().getFileName() 
-                        # Logger.log("d", "filename= %s", name)
-
                         node_bounds = node.getBoundingBox()
                         Logger.log("d", "width= %s", str(node_bounds.width))
                         Logger.log("d", "depth= %s", str(node_bounds.depth))
@@ -381,14 +377,14 @@ class NameIt(QObject, Extension):
                         PosY = node_bounds.center.z+0.5*node_bounds.depth
                         
                         new_position = Vector(PosX, 0, PosY)
-                        
-                        self._createNameMesh(node, new_position, name)
-                        
+ 
                         Logger.log("d", "PosX = %s", str(PosX))
-                        Logger.log("d", "PosY = %s", str(PosY))                       
-                        
+                        Logger.log("d", "PosY = %s", str(PosY)) 
+
+                        self._createNameMesh(node, new_position, name)
+                  
         
-    def addMark(self) -> None:
+    def addNumber(self) -> None:
         meshes = []
         
         nodes_list = self._getAllSelectedNodes()
@@ -443,7 +439,6 @@ class NameIt(QObject, Extension):
                                 mesh.apply_transform(trimesh.transformations.translation_matrix([(0.6*Ind), 0, 0]))
                                 meshes.append(mesh)
                             Ind += 1
-                            Logger.log("d", "Ident= %s",str(Ind))
                         
                         if Ind == 1 :
                             combined = mesh           
@@ -551,7 +546,6 @@ class NameIt(QObject, Extension):
     def _createNameMesh(self, parent: CuraSceneNode, position: Vector , name):
         node = CuraSceneNode()
 
-        
         Logger.log("d", "_createNameMesh= %s", "Id-"+name)
         
         node.setSelectable(True)
