@@ -3,11 +3,13 @@
 This plugin adds an indentificator in front of each part present on the builtplate.
 
 
-### Define default size
+### Define Text Size
 
-The function **Define default size** gives you the possibility to change the default size for the text.
+The function **Define Text Size** gives you the possibility to change the text definition size.
 
 ![define default size](./images/size.jpg)
+
+![text parameters](./images/parameters.png)
 
 This plugin is using the [Trimesh](https://github.com/mikedh/trimesh) library to load STL files and mesh manipulations.
 
