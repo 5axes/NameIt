@@ -1,6 +1,6 @@
 # Add Print Identificator
 
-This plugin adds an indentificator in front of the part 
+This plugin adds an indentificator in front of each part present on the builtplate.
 
 
 ### Define default size
