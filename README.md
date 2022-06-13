@@ -1,9 +1,6 @@
-# Calibration Shapes
+# Add Print Identificator
 
 This plugin adds an indentificator in front of the part 
-
-The default size for all the simple shapes is 20 mm, but can be modified via the [**Define default size**](#Define-default-size) menu.
-
 
 
 ### Define default size
@@ -26,11 +23,11 @@ Note ! The selecting order will also give the number used to identify the Model.
 
 ## Add Name
 
-Function to add the name of the element in front of each part to identify every part. This function can be used by selecting the elements or a global identification withour selection. 
+Function to add the name of the element in front of each part to identify every part. This function can be used by selecting the elements or a global identification without selection. 
 
 ![Add Name](./images/AddName.jpg)
 
 ## Help
 
 
-This function will redirect you on the [Wiki](https://github.com/5axes/AddName/wiki) of this repositery.
+This function will redirect you on the [Wiki](https://github.com/5axes/NameIt/wiki) of this repositery.
