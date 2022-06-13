@@ -523,14 +523,15 @@ class NameIt(QObject, Extension):
 
             model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
             if not exists(model_definition_path) :
-                Filename = ord(str(cch)) + ".stl"
+                Filename = "{}.stl".format(ord(cch))
                 model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
-                Logger.log("d", "Code= %s",ord(cch))
+                Logger.log("d", "Code = %s",ord(cch))
+                Logger.log("d", "Filename Code = %s",Filename)
             
             if not exists(model_definition_path) :  
-                Filename = ".stl"
+                Filename = "63.stl"
                 model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
-                Logger.log("d", "Code= %s",ord(str(cch)))
+                Logger.log("d", "Unknow Code= %s | %s",ord(cch),cch)
                 
             Logger.log("d", "Filename= %s",Filename)
             # Logger.log("d", "model_definition_path= %s",model_definition_path)
