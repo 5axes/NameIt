@@ -19,6 +19,7 @@ except ImportError:
     
 # Imports from the python standard library to build the plugin functionality
 import os
+from os.path import exists
 import sys
 import re
 import math
@@ -139,7 +140,7 @@ class NameIt(QObject, Extension):
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number"), self.addNumber)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Name"), self.addPartName)
         self.addMenuItem(" ", lambda: None)
-        self.addMenuItem(catalog.i18nc("@item:inmenu", "Remove All"), self.removeAllIdMesh)
+        self.addMenuItem(catalog.i18nc("@item:inmenu", "Remove Identificator"), self.removeAllIdMesh)
         self.addMenuItem("  ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Define default size"), self.defaultSize)
         self.addMenuItem("   ", lambda: None)
@@ -516,10 +517,22 @@ class NameIt(QObject, Extension):
 
         
         Ind = 0
-        for chiffre in Ident:          
-            Filename = chiffre + ".stl"
-            Logger.log("d", "Filename= %s",Filename) 
+        for cch in Ident:
+            Logger.log("d", "Char= %s",cch)        
+            Filename = cch + ".stl"
+
             model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
+            if not exists(model_definition_path) :
+                Filename = ord(str(cch)) + ".stl"
+                model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
+                Logger.log("d", "Code= %s",ord(cch))
+            
+            if not exists(model_definition_path) :  
+                Filename = ".stl"
+                model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
+                Logger.log("d", "Code= %s",ord(str(cch)))
+                
+            Logger.log("d", "Filename= %s",Filename)
             # Logger.log("d", "model_definition_path= %s",model_definition_path)
             mesh = trimesh.load(model_definition_path)
                        
@@ -527,7 +540,7 @@ class NameIt(QObject, Extension):
             meshes.append(mesh)
                 
             Ind += 1
-            Logger.log("d", "Ident= %s",str(Ind))
+            # Logger.log("d", "Ident= %s",str(Ind))
         
         if Ind == 1 :
             combined = mesh           
