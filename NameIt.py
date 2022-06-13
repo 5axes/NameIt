@@ -76,7 +76,9 @@ class NameIt(QObject, Extension):
         QObject.__init__(self, parent)
         Extension.__init__(self)
        
-
+        #Initialize variables
+        self.userText = ""
+        self._continueDialog = None
         
         # set the preferences to store the default value
         self._application = CuraApplication.getInstance()
@@ -132,9 +134,6 @@ class NameIt(QObject, Extension):
         self.addMenuItem("   ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Help"), self.gotoHelp)
   
-        #Initialize variables
-        self.userText = ""
-        self._continueDialog = None
         
         # Stock Data  
         self._all_picked_node = [] 
@@ -199,7 +198,7 @@ class NameIt(QObject, Extension):
         try:
             float(text)
         except ValueError:
-            self.userMessage("Entered size invalid: " + text,"wrong")
+            self.userMessage("Entered size invalid : " + text,"wrong")
             return
         self._size = float(text)
 
@@ -237,7 +236,7 @@ class NameIt(QObject, Extension):
         try:
             float(text)
         except ValueError:
-            self.userMessage("Entered height invalid: " + text,"wrong")
+            self.userMessage("Entered height invalid : " + text,"wrong")
             return
         self._height = float(text)
 
@@ -275,7 +274,7 @@ class NameIt(QObject, Extension):
         try:
             float(text)
         except ValueError:
-            self.userMessage("Entered distance invalid: " + text,"wrong")
+            self.userMessage("Entered distance invalid : " + text,"wrong")
             return
         self._distance = float(text)
 
@@ -308,7 +307,7 @@ class NameIt(QObject, Extension):
         try:
             float(text)
         except ValueError:
-            self.userMessage("Entered kerning invalid: " + text,"wrong")
+            self.userMessage("Entered kerning invalid : " + text,"wrong")
             return
         self._kerning = float(text)
 

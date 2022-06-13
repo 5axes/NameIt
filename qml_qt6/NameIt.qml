@@ -85,6 +85,22 @@ Window
         }
     }
 
+    //Text userInfoText
+    Text
+    {
+        id: user_text
+		width:250
+        text: userInfoText
+        font.family: "Arial"
+        font.pointSize: 10
+        color: "black"
+
+        anchors.top: close_button.top
+        anchors.topMargin: 1
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+    }
+	
     // Label "Size: "
     Label
     {
@@ -96,7 +112,7 @@ Window
         color: "#131151"
 
         anchors.top: close_button.top
-        anchors.topMargin: 10
+        anchors.topMargin: 20
         anchors.left: parent.left
         anchors.leftMargin: 10
     }
