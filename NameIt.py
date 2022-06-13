@@ -448,19 +448,19 @@ class NameIt(QObject, Extension):
     def _createNameMesh(self, parent: CuraSceneNode, name):
         node = CuraSceneNode()
 
-        Logger.log("d", "_createNameMesh= %s", "Id-"+name)
+        # Logger.log("d", "_createNameMesh= %s", "Id-"+name)
 
         node_bounds = parent.getBoundingBox()
-        Logger.log("d", "width= %s", str(node_bounds.width))
-        Logger.log("d", "depth= %s", str(node_bounds.depth))
-        Logger.log("d", "Center X= %s", str(node_bounds.center.x))
-        Logger.log("d", "Center Y= %s", str(node_bounds.center.z))
+        # Logger.log("d", "width= %s", str(node_bounds.width))
+        # Logger.log("d", "depth= %s", str(node_bounds.depth))
+        # Logger.log("d", "Center X= %s", str(node_bounds.center.x))
+        # Logger.log("d", "Center Y= %s", str(node_bounds.center.z))
 
         PosX = node_bounds.center.x
         PosY = node_bounds.center.z+0.5*node_bounds.depth + self._distance + self._size 
 
-        Logger.log("d", "Pos X= %s", str(PosX))
-        Logger.log("d", "Pos Y= %s", str(PosY))
+        # Logger.log("d", "Pos X= %s", str(PosX))
+        # Logger.log("d", "Pos Y= %s", str(PosY))
         
         position = Vector(PosX, 0, PosY)
                         
@@ -497,7 +497,7 @@ class NameIt(QObject, Extension):
         CuraApplication.getInstance().getController().getScene().sceneChanged.emit(node)
         self._all_picked_node.append(node)
         
-        Logger.log('d', '_createNameMesh')
+        # Logger.log('d', '_createNameMesh')
 
     def removeAllIdMesh(self):
         if self._all_picked_node:
@@ -579,7 +579,7 @@ class NameIt(QObject, Extension):
         if Ind == 1 :
             combined = mesh           
         else :
-            Logger.log("d", "model_definition_path= %s",str(meshes))
+            # Logger.log("d", "model_definition_path= %s",str(meshes))
             combined = trimesh.util.concatenate(meshes)  
 
         # Logger.log("d", "Combined bounds = %s",str(combined.bounds))
