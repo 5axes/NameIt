@@ -369,7 +369,7 @@ class NameIt(QObject, Extension):
         
         for node in nodes_list:
             if node.callDecoration("isSliceable"):           
-                Logger.log('d', "isSliceable : {}".format(node.getName()))
+                # Logger.log('d', "isSliceable : {}".format(node.getName()))
                 node_stack=node.callDecoration("getStack")           
                 if node_stack: 
                     type_infill_mesh = node_stack.getProperty("infill_mesh", "value")
@@ -379,11 +379,10 @@ class NameIt(QObject, Extension):
                     
                     if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh :
                         # and Selection.isSelected(node)
-                        Logger.log('d', "Mesh : {}".format(node.getName()))
-
+                        # Logger.log('d', "Mesh : {}".format(node.getName()))
                         self._createNameMesh(node, node.getName())
                   
-    # Add Number  as text     
+    # Add Number as text     
     def addNumber(self) -> None:
         
         nodes_list = self._getAllSelectedNodes()
@@ -445,6 +444,9 @@ class NameIt(QObject, Extension):
 
         return mesh_data              
 
+    #----------------------------------------
+    # Create Name Mesh
+    #----------------------------------------
     def _createNameMesh(self, parent: CuraSceneNode, name):
         node = CuraSceneNode()
 
@@ -499,6 +501,9 @@ class NameIt(QObject, Extension):
         
         # Logger.log('d', '_createNameMesh')
 
+    #----------------------------------------
+    # Remove All Id Mesh
+    #----------------------------------------
     def removeAllIdMesh(self):
         if self._all_picked_node:
             for node in self._all_picked_node:
