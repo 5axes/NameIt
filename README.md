@@ -14,9 +14,9 @@ This plugin is using the [Trimesh](https://github.com/mikedh/trimesh) library to
 
 ## Add Number
 
-Function to add a number in front of each part to identify every part. This function can be used by selecting the elements or a global identification withour selection. 
+Function to add a number in front of each part to identify every part. This function can be used by selecting the elements or a global identification without selection. 
 
-Note ! The selecting order will also give the number used to identify the Model.
+Note ! If you use to select the elements, the selecting order will also give the number used to identify each models.
 
 ![Add Mark](./images/AddMark.jpg)
 
@@ -26,6 +26,7 @@ Note ! The selecting order will also give the number used to identify the Model.
 Function to add the name of the element in front of each part to identify every part. This function can be used by selecting the elements or a global identification without selection. 
 
 ![Add Name](./images/AddName.jpg)
+
 
 ## Help
 
