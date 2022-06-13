@@ -2,9 +2,9 @@
 # Copyright (c) 2022 5@xes
 #
 # The NameIt plugin is released under the terms of the AGPLv3 or higher.
-# Modifications 5@xes 2020-2022
+# Modifications 5@xes 2022
 #-----------------------------------------------------------------------------------
-# V1.0.0    : First Proof
+# V1.0.0    : First Proof of Concept
 #
 #-----------------------------------------------------------------------------------
 
