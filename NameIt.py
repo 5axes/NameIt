@@ -95,7 +95,7 @@ class NameIt(QObject, Extension):
         self._preferences = self._application.getPreferences()
         self._preferences.addPreference("NameIt/size", 4)
         self._preferences.addPreference("NameIt/height", 0.2)
-        self._preferences.addPreference("NameIt/distance", 2)
+        self._preferences.addPreference("NameIt/distance", 1)
         self._preferences.addPreference("NameIt/kerning", 0.1)
         
         # convert as float to avoid further issue
@@ -322,7 +322,7 @@ class NameIt(QObject, Extension):
         self._kerning = float(text)
 
         self.writeToLog("Set NameIt/kerning printFromDistance to : " + text)
-        self._preferences.setValue("NameIt/kerning", self._distance)
+        self._preferences.setValue("NameIt/kerning", self._kerning)
         
         #clear the message Field
         self.userMessage("", "ok")
