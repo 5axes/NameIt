@@ -425,7 +425,6 @@ class NameIt(QObject, Extension):
 
         Logger.log("d", "_createNameMesh= %s", "Id-"+name)
 
-
         node_bounds = parent.getBoundingBox()
         Logger.log("d", "width= %s", str(node_bounds.width))
         Logger.log("d", "depth= %s", str(node_bounds.depth))
@@ -433,7 +432,7 @@ class NameIt(QObject, Extension):
         Logger.log("d", "Center Y= %s", str(node_bounds.center.z))
 
         PosX = node_bounds.center.x
-        PosY = node_bounds.center.z+0.5*node_bounds.depth
+        PosY = node_bounds.center.z+0.5*node_bounds.depth + self._distance + self._size 
 
         Logger.log("d", "Pos X= %s", str(PosX))
         Logger.log("d", "Pos Y= %s", str(PosY))
@@ -513,22 +512,8 @@ class NameIt(QObject, Extension):
         
         Logger.log("d", "name= %s", name)
         
-        # filename = node.getMeshData().getFileName() 
-        # Logger.log("d", "filename= %s", name)
-
-        node_bounds = node.getBoundingBox()
-        Logger.log("d", "width= %s", str(node_bounds.width))
-        Logger.log("d", "depth= %s", str(node_bounds.depth))
-        Logger.log("d", "Center X= %s", str(node_bounds.center.x))
-        Logger.log("d", "Center Y= %s", str(node_bounds.center.z))
-        
         Ident = name.upper()
 
-        PosX = node_bounds.center.x
-        PosY = node_bounds.center.z+0.5*node_bounds.depth
-
-        Logger.log("d", "Pos X= %s", str(PosX))
-        Logger.log("d", "Pos Y= %s", str(PosY))
         
         Ind = 0
         for chiffre in Ident:          
@@ -565,6 +550,5 @@ class NameIt(QObject, Extension):
         combined.apply_transform(trimesh.transformations.scale_matrix(self._size, origin, DirY))
         combined.apply_transform(trimesh.transformations.scale_matrix(self._height, origin, DirZ))
         
-        combined.apply_transform(trimesh.transformations.translation_matrix([PosX, -(PosY+self._distance), 0]))
         
         return combined
