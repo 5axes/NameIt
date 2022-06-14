@@ -1,12 +1,12 @@
-#-----------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------------------------------
 # Copyright (c) 2022 5@xes
 #
 # The NameIt plugin is released under the terms of the AGPLv3 or higher.
 # Modifications 5@xes 2022
-#-----------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------------------------------
 # V1.0.0    : First Proof of Concept
-#
-#-----------------------------------------------------------------------------------
+# V1.0.1    : Add special type identification_mesh (can be used for automatic supression or not new identification creation)
+#----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
 try:
@@ -435,7 +435,7 @@ class NameIt(QObject, Extension):
                     type_anti_overhang_mesh = node_stack.getProperty("anti_overhang_mesh", "value") 
                     type_identification_mesh = node_stack.getProperty("identification_mesh", "value")
                     
-                    if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh and not cutting_mesh and not identification_mesh :
+                    if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh and not type_cutting_mesh and not type_identification_mesh :
                         # and Selection.isSelected(node)
                         # Logger.log('d', "Mesh : {}".format(node.getName()))
                         self._createNameMesh(node, node.getName())
@@ -458,7 +458,7 @@ class NameIt(QObject, Extension):
                     type_anti_overhang_mesh = node_stack.getProperty("anti_overhang_mesh", "value") 
                     type_identification_mesh = node_stack.getProperty("identification_mesh", "value")
                     
-                    if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh and not cutting_mesh and not identification_mesh :            
+                    if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh and not type_cutting_mesh and not type_identification_mesh :            
                         name = node.getName()
                         Id += 1
                         # Logger.log("d", "name= %s", name)
