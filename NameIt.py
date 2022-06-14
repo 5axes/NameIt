@@ -48,6 +48,12 @@ from UM.Operations.AddSceneNodeOperation import AddSceneNodeOperation
 from UM.Operations.GroupedOperation import GroupedOperation
 from UM.Operations.RemoveSceneNodeOperation import RemoveSceneNodeOperation
 
+from UM.Settings.SettingDefinition import SettingDefinition
+from UM.Settings.DefinitionContainer import DefinitionContainer
+from UM.Settings.ContainerRegistry import ContainerRegistry
+
+from collections import OrderedDict
+
 from cura.CuraVersion import CuraVersion  # type: ignore
 from UM.Version import Version
 
@@ -63,7 +69,8 @@ class NameIt(QObject, Extension):
     #Create an api
     from cura.CuraApplication import CuraApplication
     api = CuraApplication.getInstance().getCuraAPI()
-    
+ 
+        
     # The QT signal, which signals an update for user information text
     userSizeChanged = pyqtSignal()
     userHeightChanged = pyqtSignal()
@@ -80,7 +87,10 @@ class NameIt(QObject, Extension):
         self._continueDialog = None
         
         # set the preferences to store the default value
-        self._application = CuraApplication.getInstance()
+        #self._application = CuraApplication.getInstance()
+        self._application = Application.getInstance()
+        self._i18n_catalog = None
+    
         self._preferences = self._application.getPreferences()
         self._preferences.addPreference("NameIt/size", 4)
         self._preferences.addPreference("NameIt/height", 0.2)
@@ -132,10 +142,57 @@ class NameIt(QObject, Extension):
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Define Text Size"), self.defaultSize)
         self.addMenuItem("   ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Help"), self.gotoHelp)
-  
+
+        self._settings_dict = OrderedDict()
+        self._settings_dict["identification_mesh"] = {
+            "label": "Identification mesh",
+            "description": "Mesh used as identification",
+            "type": "bool",
+            "default_value": False,
+            "settable_per_mesh": True,
+            "settable_per_extruder": False,
+            "settable_per_meshgroup": False,
+            "settable_globally": False
+        }
+        ContainerRegistry.getInstance().containerLoadComplete.connect(self._onContainerLoadComplete)
+        
         # Stock Data  
         self._all_picked_node = [] 
- 
+
+    def _onContainerLoadComplete(self, container_id):
+        if not ContainerRegistry.getInstance().isLoaded(container_id):
+            # skip containers that could not be loaded, or subsequent findContainers() will cause an infinite loop
+            return
+
+        try:
+            container = ContainerRegistry.getInstance().findContainers(id = container_id)[0]
+
+        except IndexError:
+            # the container no longer exists
+            return
+
+        if not isinstance(container, DefinitionContainer):
+            # skip containers that are not definitions
+            return
+        if container.getMetaDataEntry("type") == "extruder":
+            # skip extruder definitions
+            return
+
+        blackmagic_category = container.findDefinitions(key="blackmagic")
+        identification_mesh = container.findDefinitions(key=list(self._settings_dict.keys())[0])
+        
+        if blackmagic_category and not identification_mesh:            
+            blackmagic_category = blackmagic_category[0]
+            for setting_key, setting_dict in self._settings_dict.items():
+
+                definition = SettingDefinition(setting_key, container, blackmagic_category, self._i18n_catalog)
+                definition.deserialize(setting_dict)
+
+                # add the setting to the already existing platform adhesion setting definition
+                blackmagic_category._children.append(definition)
+                container._definition_cache[setting_key] = definition
+                container._updateRelations(definition)
+                
     # Define the default value for the text element
     def defaultSize(self) -> None:
  
@@ -482,12 +539,12 @@ class NameIt(QObject, Extension):
         stack = node.callDecoration("getStack") # created by SettingOverrideDecorator that is automatically added to CuraSceneNode
         settings = stack.getTop()
 
-        # cutting_mesh type
-        #definition = stack.getSettingDefinition("cutting_mesh")
-        #new_instance = SettingInstance(definition, settings)
-        #new_instance.setProperty("value", True)
-        #new_instance.resetState()  # Ensure that the state is not seen as a user state.
-        #settings.addInstance(new_instance)
+        # identification_mesh type
+        definition = stack.getSettingDefinition("identification_mesh")
+        new_instance = SettingInstance(definition, settings)
+        new_instance.setProperty("value", True)
+        new_instance.resetState()  # Ensure that the state is not seen as a user state.
+        settings.addInstance(new_instance)
 
         op = GroupedOperation()
         # First add node to the scene at the correct position/scale, before parenting, so the support mesh does not get scaled with the parent
@@ -517,7 +574,7 @@ class NameIt(QObject, Extension):
                     # Logger.log('d', 'isSliceable : ' + str(N_Name))
                     node_stack=node.callDecoration("getStack")           
                     if node_stack:        
-                        if node_stack.getProperty("id_mesh", "value"):
+                        if node_stack.getProperty("identification_mesh", "value"):
                             # N_Name=node.getName()
                             # Logger.log('d', 'cutting_mesh : ' + str(N_Name)) 
                             self._removeSupportMesh(node)
