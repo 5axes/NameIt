@@ -456,8 +456,9 @@ class NameIt(QObject, Extension):
                     type_cutting_mesh = node_stack.getProperty("cutting_mesh", "value")
                     type_support_mesh = node_stack.getProperty("support_mesh", "value")
                     type_anti_overhang_mesh = node_stack.getProperty("anti_overhang_mesh", "value") 
+                    type_identification_mesh = node_stack.getProperty("identification_mesh", "value")
                     
-                    if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh :            
+                    if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh and not cutting_mesh and not identification_mesh :            
                         name = node.getName()
                         Id += 1
                         # Logger.log("d", "name= %s", name)
