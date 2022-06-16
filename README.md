@@ -4,6 +4,10 @@ This plugin adds an identifier in front of each part present on the builtplate. 
 
 ![Menu](./images/menu.png)
 
+The identifier is linked to the model, if you move the part manually, the identifier will also be moved.
+
+![Move elements](./images/move_part.jpg)
+
 
 ## Add Number
 
