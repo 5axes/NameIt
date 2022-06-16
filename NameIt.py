@@ -18,6 +18,7 @@ except ImportError:
     VERSION_QT5 = True
     
 # Imports from the python standard library to build the plugin functionality
+import re
 import os
 from os.path import exists
 import math
@@ -135,6 +136,7 @@ class NameIt(QObject, Extension):
         
         self.setMenuName(catalog.i18nc("@item:inmenu", "Name It !"))
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number"), self.addNumber)
+        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number From Part"), self.addNumberFromPart)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Name"), self.addPartName)
         self.addMenuItem(" ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Remove Identificator"), self.removeAllIdMesh)
@@ -468,7 +470,38 @@ class NameIt(QObject, Extension):
                         Ident=str(Id)
                         
                         self._createNameMesh(node, Ident)
+ 
+    # Add Number as text from Part     
+    def addNumberFromPart(self) -> None:
+        
+        nodes_list = self._getAllSelectedNodes()
+        if not nodes_list:
+            nodes_list = DepthFirstIterator(self._application.getController().getScene().getRoot())
+        
+        Id = 0
+        for node in nodes_list:
+            if node.callDecoration("isSliceable"):
+                node_stack=node.callDecoration("getStack")           
+                if node_stack: 
+                    type_infill_mesh = node_stack.getProperty("infill_mesh", "value")
+                    type_cutting_mesh = node_stack.getProperty("cutting_mesh", "value")
+                    type_support_mesh = node_stack.getProperty("support_mesh", "value")
+                    type_anti_overhang_mesh = node_stack.getProperty("anti_overhang_mesh", "value") 
+                    type_identification_mesh = node_stack.getProperty("identification_mesh", "value")
                     
+                    if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh and not type_cutting_mesh and not type_identification_mesh :            
+                        name = node.getName()
+                        Id += 1
+                        Logger.log("d", "name= %s", name)
+                        SearchId = re.search(r"(\([^0-9]*\d+[^0-9]*\))", name)
+                        Logger.log("d", "SearchId= %s", SearchId)
+                        # filename = node.getMeshData().getFileName() 
+                        # Logger.log("d", "Ident = %s", Ident)                    
+                        if SearchId is not None:                          
+                            Ident=str(SearchId.group(0))    
+                            Logger.log("d", "SearchId= %s", Ident)
+                            self._createNameMesh(node, Ident)
+                        
     #----------------------------------------
     # Initial Source code from  fieldOfView
     #----------------------------------------  
