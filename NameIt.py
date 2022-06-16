@@ -139,7 +139,7 @@ class NameIt(QObject, Extension):
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number From Part"), self.addNumberFromPart)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Name"), self.addPartName)
         self.addMenuItem(" ", lambda: None)
-        self.addMenuItem(catalog.i18nc("@item:inmenu", "Remove Identificator"), self.removeAllIdMesh)
+        self.addMenuItem(catalog.i18nc("@item:inmenu", "Remove Identifier"), self.removeAllIdMesh)
         self.addMenuItem("  ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Define Text Size"), self.defaultSize)
         self.addMenuItem("   ", lambda: None)
@@ -160,6 +160,7 @@ class NameIt(QObject, Extension):
         
         # Stock Data  
         self._all_picked_node = [] 
+        self._idcount = 0
 
     def _onContainerLoadComplete(self, container_id):
         if not ContainerRegistry.getInstance().isLoaded(container_id):
@@ -449,7 +450,6 @@ class NameIt(QObject, Extension):
         if not nodes_list:
             nodes_list = DepthFirstIterator(self._application.getController().getScene().getRoot())
         
-        Id = 0
         for node in nodes_list:
             if node.callDecoration("isSliceable"):
                 node_stack=node.callDecoration("getStack")           
@@ -462,23 +462,22 @@ class NameIt(QObject, Extension):
                     
                     if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh and not type_cutting_mesh and not type_identification_mesh :            
                         name = node.getName()
-                        Id += 1
+                        self._idcount += 1
                         # Logger.log("d", "name= %s", name)
                         
                         # filename = node.getMeshData().getFileName() 
                         # Logger.log("d", "Ident = %s", Ident)
-                        Ident=str(Id)
+                        Ident=str(self._idcount)
                         
                         self._createNameMesh(node, Ident)
  
-    # Add Number as text from Part     
+    # Add Number as text from (number in Part  IE : Disque.stl(1) -> use 1 )   
     def addNumberFromPart(self) -> None:
         
         nodes_list = self._getAllSelectedNodes()
         if not nodes_list:
             nodes_list = DepthFirstIterator(self._application.getController().getScene().getRoot())
         
-        Id = 0
         for node in nodes_list:
             if node.callDecoration("isSliceable"):
                 node_stack=node.callDecoration("getStack")           
@@ -491,16 +490,17 @@ class NameIt(QObject, Extension):
                     
                     if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh and not type_cutting_mesh and not type_identification_mesh :            
                         name = node.getName()
-                        Id += 1
-                        Logger.log("d", "name= %s", name)
-                        SearchId = re.search(r"(\([^0-9]*\d+[^0-9]*\))", name)
-                        Logger.log("d", "SearchId= %s", SearchId)
-                        # filename = node.getMeshData().getFileName() 
-                        # Logger.log("d", "Ident = %s", Ident)                    
-                        if SearchId is not None:                          
-                            Ident=str(SearchId.group(0))    
-                            Logger.log("d", "SearchId= %s", Ident)
-                            self._createNameMesh(node, Ident)
+                        # Logger.log("d", "name= %s", name)
+                        SearchId = re.findall(r"(\([0-9]*\d+[0-9]*\))", name)
+                        # Logger.log("d", "SearchId= %s", SearchId)                         
+                        if SearchId is not None: 
+                            indice=len(SearchId) 
+                            Logger.log("d", "SearchId= %s", indice) 
+                            if indice > 0 :                       
+                                Ident=SearchId[len(SearchId)-1] 
+                                Id = re.search(r"(\d+)", Ident)
+                                self._idcount=int(Id.group())                                                   
+                                self._createNameMesh(node, str(self._idcount))
                         
     #----------------------------------------
     # Initial Source code from  fieldOfView
@@ -597,6 +597,7 @@ class NameIt(QObject, Extension):
     # Remove All Id Mesh
     #----------------------------------------
     def removeAllIdMesh(self):
+        self._idcount = 0
         if self._all_picked_node:
             for node in self._all_picked_node:
                 self._removeSupportMesh(node)
