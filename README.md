@@ -18,6 +18,12 @@ Note ! If you use to select the elements, the selecting order will also give the
 
 ![Add Mark](./images/AddMark.jpg)
 
+## Add Number From part
+
+Function to add a number in front of each part to identify every part. This function can be used by selecting the elements or a global identification without selection. If the name of the part in the Cura Projec contains an integer number between two parentheses. This number will be used to identify the part. Ie Ultimaker_wheel_pulley.stl**(2)** -> **2**.
+
+![Add Number From part](./images/from_part_name.png)
+
 
 ## Add Name
 
