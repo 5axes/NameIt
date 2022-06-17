@@ -135,9 +135,9 @@ class NameIt(QObject, Extension):
         self._message = None
         
         self.setMenuName(catalog.i18nc("@item:inmenu", "Name It !"))
-        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number"), self.addNumber)
-        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number From Part"), self.addNumberFromPart)
-        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Name"), self.addPartName)
+        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number"), self.addPartName("Number"))
+        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number From Part"), self.addPartName("NameNumber"))
+        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Name"), self.addPartName("Name"))
         self.addMenuItem(" ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Remove Identifier"), self.removeAllIdMesh)
         self.addMenuItem("  ", lambda: None)
@@ -421,7 +421,7 @@ class NameIt(QObject, Extension):
         return []
      
     # Add Part Name  as text  
-    def addPartName(self) -> None:
+    def addPartName(self, strg) -> None:
  
         nodes_list = self._getAllSelectedNodes()
         if not nodes_list:
@@ -439,69 +439,33 @@ class NameIt(QObject, Extension):
                     type_identification_mesh = node_stack.getProperty("identification_mesh", "value")
                     
                     if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh and not type_cutting_mesh and not type_identification_mesh :
-                        # and Selection.isSelected(node)
-                        # Logger.log('d', "Mesh : {}".format(node.getName()))
-                        self._createNameMesh(node, node.getName())
-                  
-    # Add Number as text     
-    def addNumber(self) -> None:
-        
-        nodes_list = self._getAllSelectedNodes()
-        if not nodes_list:
-            nodes_list = DepthFirstIterator(self._application.getController().getScene().getRoot())
-        
-        for node in nodes_list:
-            if node.callDecoration("isSliceable"):
-                node_stack=node.callDecoration("getStack")           
-                if node_stack: 
-                    type_infill_mesh = node_stack.getProperty("infill_mesh", "value")
-                    type_cutting_mesh = node_stack.getProperty("cutting_mesh", "value")
-                    type_support_mesh = node_stack.getProperty("support_mesh", "value")
-                    type_anti_overhang_mesh = node_stack.getProperty("anti_overhang_mesh", "value") 
-                    type_identification_mesh = node_stack.getProperty("identification_mesh", "value")
-                    
-                    if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh and not type_cutting_mesh and not type_identification_mesh :            
                         name = node.getName()
-                        self._idcount += 1
-                        # Logger.log("d", "name= %s", name)
-                        
-                        # filename = node.getMeshData().getFileName() 
-                        # Logger.log("d", "Ident = %s", Ident)
-                        Ident=str(self._idcount)
-                        
-                        self._createNameMesh(node, Ident)
- 
-    # Add Number as text from (number in Part  IE : Disque.stl(1) -> use 1 )   
-    def addNumberFromPart(self) -> None:
-        
-        nodes_list = self._getAllSelectedNodes()
-        if not nodes_list:
-            nodes_list = DepthFirstIterator(self._application.getController().getScene().getRoot())
-        
-        for node in nodes_list:
-            if node.callDecoration("isSliceable"):
-                node_stack=node.callDecoration("getStack")           
-                if node_stack: 
-                    type_infill_mesh = node_stack.getProperty("infill_mesh", "value")
-                    type_cutting_mesh = node_stack.getProperty("cutting_mesh", "value")
-                    type_support_mesh = node_stack.getProperty("support_mesh", "value")
-                    type_anti_overhang_mesh = node_stack.getProperty("anti_overhang_mesh", "value") 
-                    type_identification_mesh = node_stack.getProperty("identification_mesh", "value")
-                    
-                    if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh and not type_cutting_mesh and not type_identification_mesh :            
-                        name = node.getName()
-                        # Logger.log("d", "name= %s", name)
-                        SearchId = re.findall(r"(\([0-9]*\d+[0-9]*\))", name)
-                        # Logger.log("d", "SearchId= %s", SearchId)                         
-                        if SearchId is not None: 
-                            indice=len(SearchId) 
-                            Logger.log("d", "SearchId= %s", indice) 
-                            if indice > 0 :                       
-                                Ident=SearchId[len(SearchId)-1] 
-                                Id = re.search(r"(\d+)", Ident)
-                                self._idcount=int(Id.group())                                                   
-                                self._createNameMesh(node, str(self._idcount))
-                        
+                        Logger.log('d', "Mesh : {}".format(name)
+                        # Add Part Name  as text 
+                        if strg == "Name" :
+                            self._createNameMesh(node, node.getName())
+                        # Add Number as text  
+                        if strg == "Number" :
+                            self._idcount += 1
+                            # Logger.log("d", "name= %s", name)
+                            
+                            # filename = node.getMeshData().getFileName() 
+                            # Logger.log("d", "Ident = %s", Ident)
+                            Ident=str(self._idcount)
+                            self._createNameMesh(node, Ident)
+                        # Add Number as text from (number in Part  IE : Disque.stl(1) -> use 1 )
+                        if strg == "NameNumber" :
+                            SearchId = re.findall(r"(\([0-9]*\d+[0-9]*\))", name)
+                            # Logger.log("d", "SearchId= %s", SearchId)                         
+                            if SearchId is not None: 
+                                indice=len(SearchId) 
+                                Logger.log("d", "SearchId = %s", indice) 
+                                if indice > 0 :                       
+                                    Ident=SearchId[len(SearchId)-1] 
+                                    Id = re.search(r"(\d+)", Ident)
+                                    self._idcount=int(Id.group())                                                   
+                                    self._createNameMesh(node, str(self._idcount))
+                                    
     #----------------------------------------
     # Initial Source code from  fieldOfView
     #----------------------------------------  
