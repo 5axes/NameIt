@@ -135,9 +135,9 @@ class NameIt(QObject, Extension):
         self._message = None
         
         self.setMenuName(catalog.i18nc("@item:inmenu", "Name It !"))
-        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number"), self.addPartName("Number"))
-        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number From Part"), self.addPartName("NameNumber"))
-        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Name"), self.addPartName("Name"))
+        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number"), lambda: self.addPartName("Number"))
+        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number From Part"), lambda: self.addPartName("NameNumber"))
+        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Name"), lambda: self.addPartName("Name"))
         self.addMenuItem(" ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Remove Identifier"), self.removeAllIdMesh)
         self.addMenuItem("  ", lambda: None)
@@ -421,8 +421,9 @@ class NameIt(QObject, Extension):
         return []
      
     # Add Part Name  as text  
-    def addPartName(self, strg) -> None:
- 
+    def addPartName(self, option) -> None:
+        Logger.log('d', "Type : {}".format(option))
+        
         nodes_list = self._getAllSelectedNodes()
         if not nodes_list:
             nodes_list = DepthFirstIterator(self._application.getController().getScene().getRoot())
@@ -440,12 +441,12 @@ class NameIt(QObject, Extension):
                     
                     if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh and not type_cutting_mesh and not type_identification_mesh :
                         name = node.getName()
-                        Logger.log('d', "Mesh : {}".format(name)
+                        Logger.log('d', "Mesh : {}".format(name))
                         # Add Part Name  as text 
-                        if strg == "Name" :
-                            self._createNameMesh(node, node.getName())
+                        if option == "Name" :
+                            self._createNameMesh(node, name)
                         # Add Number as text  
-                        if strg == "Number" :
+                        if option == "Number" :
                             self._idcount += 1
                             # Logger.log("d", "name= %s", name)
                             
@@ -454,7 +455,7 @@ class NameIt(QObject, Extension):
                             Ident=str(self._idcount)
                             self._createNameMesh(node, Ident)
                         # Add Number as text from (number in Part  IE : Disque.stl(1) -> use 1 )
-                        if strg == "NameNumber" :
+                        if option == "NameNumber" :
                             SearchId = re.findall(r"(\([0-9]*\d+[0-9]*\))", name)
                             # Logger.log("d", "SearchId= %s", SearchId)                         
                             if SearchId is not None: 
