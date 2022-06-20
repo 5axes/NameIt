@@ -6,6 +6,7 @@
 #----------------------------------------------------------------------------------------------------------------------------------------
 # V1.0.0    : First Proof of Concept
 # V1.0.1    : Add special type identification_mesh (can be used for automatic supression or not new identification creation)
+# V1.1.0    : New function Add Number From Part ( search (X) in the part name )
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
