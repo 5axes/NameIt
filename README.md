@@ -8,7 +8,7 @@ The identifier is linked to the model, if you move the part manually, the identi
 
 ![Move elements](./images/move_part.jpg)
 
-This plugin is using the [Trimesh](https://github.com/mikedh/trimesh) library to load STL files and mesh manipulations.
+This plugin is using the [Trimesh](https://github.com/mikedh/trimesh) library to load STL files and for mesh manipulations.
 
 ## Add Number
 
