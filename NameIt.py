@@ -7,6 +7,7 @@
 # V1.0.0    : First Proof of Concept
 # V1.0.1    : Add special type identification_mesh (can be used for automatic supression or not new identification creation)
 # V1.1.0    : New function Add Number From Part ( search (X) in the part name )
+# V1.1.1    : Fix the last reference number to the biggest value in case of Add Number From Part
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -465,8 +466,11 @@ class NameIt(QObject, Extension):
                                 if indice > 0 :                       
                                     Ident=SearchId[len(SearchId)-1] 
                                     Id = re.search(r"(\d+)", Ident)
-                                    self._idcount=int(Id.group())                                                   
-                                    self._createNameMesh(node, str(self._idcount))
+                                    Id_temp = int(Id.group())
+                                    self._createNameMesh(node, str(Id_temp))
+                                    if Id_temp > self._idcount :
+                                        self._idcount = Id_temp                                                   
+                                    
                                     
     #----------------------------------------
     # Initial Source code from  fieldOfView
