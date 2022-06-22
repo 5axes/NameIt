@@ -10,6 +10,8 @@ The identifier is linked to the model, if you move the part manually, the identi
 
 This plugin is using the [Trimesh](https://github.com/mikedh/trimesh) library to load STL files and for mesh manipulations.
 
+The font used to create the texts is based on the [Gill Sans MT:style=Bold](https://docs.microsoft.com/en-us/typography/font-list/gill-sans-mt) font style.
+
 ## Add Number
 
 Function to add a number in front of each part to identify every part. This function can be used by selecting the elements or a global identification without selection. 
@@ -45,12 +47,13 @@ Note : the generated meshes are identified by a specific attribute "Identificati
 
 ### Define Text Parameters
 
-The function **Define Text Parameters** gives you the possibility to change the text definition size and some additional parameter like Prefix and Suffix you can add to the number identifiers.
+The function **Define Text Parameters** gives you the possibility to change the text definition size and some additional parameter like ***Prefix*** and ***Suffix*** you can add to the **number identifiers**.
 
 ![define default size](./images/text_parameters.jpg)
 
 ![text parameters](./images/parameters.png)
 
+You can also specify a specific ***Initial Layer Speed*** used to print these marks.
 
 ## Help
 
