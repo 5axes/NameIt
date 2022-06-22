@@ -455,7 +455,7 @@ Window
     {
         id: speed_input
         width: 80
-        text: kerningInput
+        text: speedInput
 		// "ie. 12"
 
         anchors.top: label_speed.top
