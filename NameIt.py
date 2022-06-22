@@ -9,6 +9,7 @@
 # V1.1.0    : New function Add Number From Part ( search (X) in the part name )
 # V1.1.1    : Fix the last reference number to the biggest value in case of Add Number From Part
 # V1.2.0    : Add Prefix and Suffix for Number
+# V1.3.0    : Add option to fix a specific Initial Layer Speed
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
