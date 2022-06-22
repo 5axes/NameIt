@@ -55,6 +55,9 @@ The function **Define Text Parameters** gives you the possibility to change the 
 
 You can also specify a specific ***Initial Layer Speed*** used to print these marks.
 
+![Initial Layer Speed](./images/initial_layer_speed.jpg)
+
+
 ## Help
 
 This function will redirect you on the [Wiki](https://github.com/5axes/NameIt/wiki) of this repositery.
