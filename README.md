@@ -31,6 +31,8 @@ Function to add the name of the element in front of each part to identify every 
 
 ![Add Name](./images/AddName.jpg)
 
+### Capitalization of the text
+
 The name of the part is systematically converted into capital letters. This is a normal and desired feature. Capital letters are often easier to print (for example no dot on the i or j; I J)
 
 ## Remove Identifier
