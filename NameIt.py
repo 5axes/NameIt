@@ -82,6 +82,7 @@ class NameIt(QObject, Extension):
     userPrefixChanged = pyqtSignal()
     userSuffixChanged = pyqtSignal()
     userInfoTextChanged = pyqtSignal()
+    userSpeedChanged = pyqtSignal()
     
     def __init__(self, parent = None) -> None:
         QObject.__init__(self, parent)
@@ -105,6 +106,7 @@ class NameIt(QObject, Extension):
         self._preferences.addPreference("NameIt/kerning", 0.1)
         self._preferences.addPreference("NameIt/prefix", "")
         self._preferences.addPreference("NameIt/suffix", "")
+        self._preferences.addPreference("NameIt/speed_layer_0", 16)
         
         # convert as float to avoid further issue
         self._size = float(self._preferences.getValue("NameIt/size"))
@@ -113,12 +115,13 @@ class NameIt(QObject, Extension):
         self._kerning = float(self._preferences.getValue("NameIt/kerning"))
         self._prefix = self._preferences.getValue("NameIt/prefix")
         self._suffix = self._preferences.getValue("NameIt/suffix")     
+        self._speed = float(self._preferences.getValue("NameIt/speed_layer_0")) 
  
         self.Major=1
         self.Minor=0
 
         # Logger.log('d', "Info Version CuraVersion --> " + str(Version(CuraVersion)))
-        Logger.log('d', "Info CuraVersion --> " + str(CuraVersion))
+        Logger.log('d', "NameIt Info CuraVersion --> " + str(CuraVersion))
         
         # Test version for Cura Master
         # https://github.com/smartavionics/Cura
@@ -238,6 +241,10 @@ class NameIt(QObject, Extension):
     @pyqtProperty(str, notify= userSizeChanged)
     def sizeInput(self):
         return str(self._size)
+
+    @pyqtProperty(str, notify= userSpeedChanged)
+    def speedInput(self):
+        return str(self._speed)
         
     #The QT property, which is computed on demand from our userInfoText when the appropriate signal is emitted
     @pyqtProperty(str, notify= userInfoTextChanged)
@@ -328,6 +335,44 @@ class NameIt(QObject, Extension):
         #clear the message Field
         self.userMessage("", "ok")
 
+    def getSpeed(self) -> float:
+    
+        return self._speed
+        
+    # is called when a key gets released in the speed inputField
+    @pyqtSlot(str)
+    def speedEntered(self, text):
+        # Is the textfield empty ? Don't show a message then
+        if text =="":
+            #self.writeToLog("speed-Textfield: Empty")
+            self.userMessage("", "ok")
+            return
+
+        #Convert commas to points
+        text = text.replace(",",".")
+
+        #self.writeToLog("speed-Textfield: read value "+text)
+
+        #Is the entered Text a number?
+        try:
+            float(text)
+        except ValueError:
+            self.userMessage("Speed height invalid : " + text,"wrong")
+            return
+        self._speed = float(text)
+
+        #Check if positive
+        if self._speed < 0:
+            self.userMessage("Speed value must be positive !","wrong")
+            self._speed = 12
+            return
+
+        self.writeToLog("Set NameIt/speed_layer_0 to : " + text)
+        self._preferences.setValue("NameIt/speed_layer_0", self._speed)
+        
+        #clear the message Field
+        self.userMessage("", "ok")
+        
     def getDistance(self) -> float:
     
         return self._distance
@@ -599,6 +644,14 @@ class NameIt(QObject, Extension):
         new_instance.resetState()  # Ensure that the state is not seen as a user state.
         settings.addInstance(new_instance)
 
+        if self._speed > 0 :
+            # identification_mesh type
+            definition = stack.getSettingDefinition("speed_layer_0")
+            new_instance = SettingInstance(definition, settings)
+            new_instance.setProperty("value", self._speed)
+            new_instance.resetState()  # Ensure that the state is not seen as a user state.
+            settings.addInstance(new_instance)
+        
         op = GroupedOperation()
         # First add node to the scene at the correct position/scale, before parenting, so the support mesh does not get scaled with the parent
         op.addOperation(AddSceneNodeOperation(node, self._controller.getScene().getRoot()))
