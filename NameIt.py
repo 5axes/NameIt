@@ -8,6 +8,7 @@
 # V1.0.1    : Add special type identification_mesh (can be used for automatic supression or not new identification creation)
 # V1.1.0    : New function Add Number From Part ( search (X) in the part name )
 # V1.1.1    : Fix the last reference number to the biggest value in case of Add Number From Part
+# V1.2.0    : Add Prefix and Suffix for Number
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -43,7 +44,6 @@ from UM.Scene.SceneNode import SceneNode
 from UM.Scene.Selection import Selection
 from cura.Scene.SliceableObjectDecorator import SliceableObjectDecorator
 from cura.Scene.BuildPlateDecorator import BuildPlateDecorator
-from cura.Scene.CuraSceneNode import CuraSceneNode
 from cura.Operations.SetParentOperation import SetParentOperation
 from UM.Scene.Iterator.DepthFirstIterator import DepthFirstIterator
 
@@ -79,6 +79,8 @@ class NameIt(QObject, Extension):
     userHeightChanged = pyqtSignal()
     userDistanceChanged = pyqtSignal()
     userKerningChanged = pyqtSignal()
+    userPrefixChanged = pyqtSignal()
+    userSuffixChanged = pyqtSignal()
     userInfoTextChanged = pyqtSignal()
     
     def __init__(self, parent = None) -> None:
@@ -88,6 +90,8 @@ class NameIt(QObject, Extension):
         #Initialize variables
         self.userText = ""
         self._continueDialog = None
+        self._prefix = ""
+        self._suffix = ""
         
         # set the preferences to store the default value
         #self._application = CuraApplication.getInstance()
@@ -99,13 +103,16 @@ class NameIt(QObject, Extension):
         self._preferences.addPreference("NameIt/height", 0.2)
         self._preferences.addPreference("NameIt/distance", 1)
         self._preferences.addPreference("NameIt/kerning", 0.1)
+        self._preferences.addPreference("NameIt/prefix", "")
+        self._preferences.addPreference("NameIt/suffix", "")
         
         # convert as float to avoid further issue
         self._size = float(self._preferences.getValue("NameIt/size"))
         self._height = float(self._preferences.getValue("NameIt/height"))
         self._distance = float(self._preferences.getValue("NameIt/distance"))
         self._kerning = float(self._preferences.getValue("NameIt/kerning"))
-        
+        self._prefix = self._preferences.getValue("NameIt/prefix")
+        self._suffix = self._preferences.getValue("NameIt/suffix")     
  
         self.Major=1
         self.Minor=0
@@ -150,7 +157,7 @@ class NameIt(QObject, Extension):
         self._settings_dict = OrderedDict()
         self._settings_dict["identification_mesh"] = {
             "label": "Identification mesh",
-            "description": "Mesh used as identification",
+            "description": "Mesh used as identification (created by NameIt! Plugin)",
             "type": "bool",
             "default_value": False,
             "settable_per_mesh": True,
@@ -215,6 +222,14 @@ class NameIt(QObject, Extension):
     @pyqtProperty(str, notify= userKerningChanged)
     def kerningInput(self):
         return str(self._kerning)
+
+    @pyqtProperty(str, notify= userPrefixChanged)
+    def prefixInput(self):
+        return str(self._prefix)
+
+    @pyqtProperty(str, notify= userSuffixChanged)
+    def suffixInput(self):
+        return str(self._suffix)
         
     @pyqtProperty(str, notify= userDistanceChanged)
     def distanceInput(self):
@@ -269,7 +284,7 @@ class NameIt(QObject, Extension):
             self._size = 20
             return
 
-        self.writeToLog("Set NameIt/size printFromHeight to : " + text)
+        self.writeToLog("Set NameIt/size to : " + text)
         self._preferences.setValue("NameIt/size", self._size)
         
         #clear the message Field
@@ -307,7 +322,7 @@ class NameIt(QObject, Extension):
             self._height = 0.2
             return
 
-        self.writeToLog("Set NameIt/height printFromHeight to : " + text)
+        self.writeToLog("Set NameIt/height to : " + text)
         self._preferences.setValue("NameIt/height", self._height)
         
         #clear the message Field
@@ -339,7 +354,7 @@ class NameIt(QObject, Extension):
             return
         self._distance = float(text)
 
-        self.writeToLog("Set NameIt/distance printFromDistance to : " + text)
+        self.writeToLog("Set NameIt/distance to : " + text)
         self._preferences.setValue("NameIt/distance", self._distance)
         
         #clear the message Field
@@ -372,8 +387,40 @@ class NameIt(QObject, Extension):
             return
         self._kerning = float(text)
 
-        self.writeToLog("Set NameIt/kerning printFromDistance to : " + text)
+        self.writeToLog("Set NameIt/kerning to : " + text)
         self._preferences.setValue("NameIt/kerning", self._kerning)
+        
+        #clear the message Field
+        self.userMessage("", "ok")
+
+    def getPrefix(self) -> str:
+    
+        return self._prefix
+        
+    # is called when a key gets released in the prefix inputField (twice for some reason)
+    @pyqtSlot(str)
+    def prefixEntered(self, text):
+
+        self._prefix = str(text)
+
+        self.writeToLog("Set NameIt/Prefix to : " + text)
+        self._preferences.setValue("NameIt/prefix", self._prefix)
+        
+        #clear the message Field
+        self.userMessage("", "ok")
+
+    def getSuffix(self) -> str:
+    
+        return self._suffix
+        
+    # is called when a key gets released in the suffix inputField (twice for some reason)
+    @pyqtSlot(str)
+    def suffixEntered(self, text):
+            
+        self._suffix= str(text)
+
+        self.writeToLog("Set NameIt/Suffix to : " + text)
+        self._preferences.setValue("NameIt/suffix", self._suffix)
         
         #clear the message Field
         self.userMessage("", "ok")
@@ -454,7 +501,7 @@ class NameIt(QObject, Extension):
                             
                             # filename = node.getMeshData().getFileName() 
                             # Logger.log("d", "Ident = %s", Ident)
-                            Ident=str(self._idcount)
+                            Ident=self._prefix + str(self._idcount) + self._suffix
                             self._createNameMesh(node, Ident)
                         # Add Number as text from (number in Part  IE : Disque.stl(1) -> use 1 )
                         if option == "NameNumber" :
@@ -467,7 +514,8 @@ class NameIt(QObject, Extension):
                                     Ident=SearchId[len(SearchId)-1] 
                                     Id = re.search(r"(\d+)", Ident)
                                     Id_temp = int(Id.group())
-                                    self._createNameMesh(node, str(Id_temp))
+                                    Id_total = self._prefix + str(Id_temp) + self._suffix
+                                    self._createNameMesh(node, Id_total)
                                     if Id_temp > self._idcount :
                                         self._idcount = Id_temp                                                   
                                     

@@ -15,7 +15,7 @@ Window
 {
     id: base
 
-    title: "Name It Parameters"
+    title: "Name It ! Parameters"
 
     color: "#fafafa" //Background color of cura: #fafafa
 
@@ -27,9 +27,9 @@ Window
 
     // Setting the dimensions of the dialog window
     width: 250
-    height: 170
+    height: 230
     minimumWidth: 250
-    minimumHeight: 170
+    minimumHeight: 230
 
     // Position of the window
     x: Screen.width*0.5 - width - 50
@@ -39,7 +39,7 @@ Window
     Rectangle {
         id: bg_rect
         width: 250
-        height: 170
+        height: 230
         color: "#fff"
         border.color: "#D22"
         border.width: 3
@@ -53,6 +53,8 @@ Window
 	property string heightInput: manager.heightInput
 	property string distanceInput: manager.distanceInput
 	property string kerningInput: manager.kerningInput
+	property string prefixInput: manager.prefixInput
+	property string suffixInput: manager.suffixInput
 
     // Button for closing the dialogbox
     Button
@@ -85,7 +87,7 @@ Window
         }
     }
 
-    //Text userInfoText
+    // Text userInfoText for notification
     Text
     {
         id: user_text
@@ -117,7 +119,7 @@ Window
         anchors.leftMargin: 10
     }
 
-    //User input of height
+    // User input of Size
     UM.TextFieldWithUnit
     {
         id: size_input
@@ -164,7 +166,7 @@ Window
         anchors.leftMargin: 10
     }
 
-    //User input of height
+    // User input of height
     UM.TextFieldWithUnit
     {
         id: height_input
@@ -211,13 +213,12 @@ Window
         anchors.leftMargin: 10
     }
 
-    //User input of height
+    // User input of distance
     UM.TextFieldWithUnit
     {
         id: distance_input
         width: 90
         text: distanceInput
-		// "ie. 20.0"
 
         anchors.top: label_distance.top
         anchors.topMargin: -2
@@ -258,13 +259,12 @@ Window
         anchors.leftMargin: 10
     }
 
-    //User input of height
+    // User input of kerning
     UM.TextFieldWithUnit
     {
         id: kerning_input
         width: 90
         text: kerningInput
-		// "ie. 20.0"
 
         anchors.top: label_kerning.top
         anchors.topMargin: -2
@@ -288,4 +288,93 @@ Window
             manager.kerningEntered(kerning_input.text)
         }
     }
+
+    // Label "Prefix :"
+    Label
+    {
+        id: label_prefix
+		width: 90
+        text: "Prefix :"
+        font.family: "Arial"
+        font.pointSize: 12
+        color: "#131151"
+
+        anchors.top: kerning_input.bottom
+        anchors.topMargin: 10
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+    }
+	
+	// Text prefix_text
+    UM.TextFieldWithUnit
+    {
+        id: prefix_text
+		width: 90
+        text: prefixInput
+        font.family: "Arial"
+        font.pointSize: 12
+		unit: ""
+
+        anchors.top: label_prefix.top
+        anchors.topMargin: -2
+        anchors.left: label_prefix.right
+        anchors.leftMargin: 10
+
+        // Validate entered value
+        Keys.onReturnPressed:
+        {
+			event.accepted = true
+        }
+
+        // Return the new entered value
+        Keys.onReleased:
+        {
+            manager.prefixEntered(prefix_text.text)
+        }		
+    }
+
+    // Label "Suffix :"
+    Label
+    {
+        id: label_suffix
+		width: 90
+        text: "Suffix :"
+        font.family: "Arial"
+        font.pointSize: 12
+        color: "#131151"
+
+        anchors.top: label_prefix.bottom
+        anchors.topMargin: 10
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+    }
+	
+	// Text suffix_text
+    UM.TextFieldWithUnit
+    {
+        id: suffix_text
+		width: 90
+        text: suffixInput
+        font.family: "Arial"
+        font.pointSize: 12
+		unit: ""
+
+        anchors.top: label_suffix.top
+        anchors.topMargin: 4
+        anchors.left: label_suffix.right
+        anchors.leftMargin: 10
+
+        // Validate entered value
+        Keys.onReturnPressed:
+        {
+			event.accepted = true
+        }
+
+        // Return the new entered value
+        Keys.onReleased:
+        {
+            manager.suffixEntered(suffix_text.text)
+        }			
+    }	
+
 }

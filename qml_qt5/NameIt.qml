@@ -15,7 +15,7 @@ Window
 {
     id: base
 
-    title: "Name It Parameters"
+    title: "Name It ! Parameters"
 
     color: "#fafafa" //Background color of cura: #fafafa
 
@@ -27,9 +27,9 @@ Window
 
     // Setting the dimensions of the dialog window
     width: 250
-    height: 170
+    height: 230
     minimumWidth: 250
-    minimumHeight: 170
+    minimumHeight: 230
 
     // Position of the window
     x: Screen.width*0.5 - width - 50
@@ -39,7 +39,7 @@ Window
     Rectangle {
         id: bg_rect
         width: 250
-        height: 170
+        height: 230
         color: "#fff"
         border.color: "#D22"
         border.width: 3
@@ -53,6 +53,8 @@ Window
 	property string heightInput: manager.heightInput
 	property string distanceInput: manager.distanceInput
 	property string kerningInput: manager.kerningInput
+	property string prefixInput: manager.prefixInput
+	property string suffixInput: manager.suffixInput
 	
     // Button for closing the dialogbox
     Button
@@ -84,6 +86,27 @@ Window
         }
     }
 
+    //Textfield for User Messages
+    Text
+    {
+        id: user_text
+
+        width: 280
+        anchors.top: parent.top
+        anchors.topMargin: 2
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+
+        text: userInfoText
+
+        font.family: "Arial"
+        font.pointSize: 10
+        //The color gets overwritten by the html tags added to the text
+        color: "black"
+
+        wrapMode: Text.Wrap
+    }
+	
     //Text "Size: "
     Text
     {
@@ -286,7 +309,7 @@ Window
         id: kerning_input
         width: 80
         text: kerningInput
-		// "ie. 20.0"
+		// "ie. 2.0"
 
         anchors.top: text_kerning.top
         anchors.topMargin: -2
@@ -324,25 +347,90 @@ Window
         anchors.leftMargin: 5
     }
 	
-    //Textfield for User Messages
+    // Label "Suffix :"
     Text
     {
-        id: user_text
+        id: label_prefix
+		width: 90
+        text: "Prefix :"
+        font.family: "Arial"
+        font.pointSize: 12
+        color: "#131151"
 
-        width: 280
-        anchors.top: parent.top
-        anchors.topMargin: 2
+        anchors.top: kerning_input.bottom
+        anchors.topMargin: 20
         anchors.left: parent.left
         anchors.leftMargin: 10
-
-        text: userInfoText
-
+    }
+	
+	//Text prefix_text
+    TextField
+    {
+        id: prefix_text
+		width: 100
+        text: prefixInput
         font.family: "Arial"
-        font.pointSize: 10
-        //The color gets overwritten by the html tags added to the text
-        color: "black"
+        font.pointSize: 12
 
-        wrapMode: Text.Wrap
+        anchors.top: label_prefix.top
+        anchors.topMargin: -2
+        anchors.left: label_prefix.right
+        anchors.leftMargin: 10
+
+        // Validate entered value
+        Keys.onReturnPressed:
+        {
+			event.accepted = true
+        }
+
+        // Return the new entered value
+        Keys.onReleased:
+        {
+            manager.prefixEntered(prefix_text.text)
+        }		
+    }
+
+    // Label "Suffix :"
+    Text
+    {
+        id: label_suffix
+		width: 90
+        text: "Suffix :"
+        font.family: "Arial"
+        font.pointSize: 12
+        color: "#131151"
+
+        anchors.top: label_prefix.bottom
+        anchors.topMargin: 8
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+    }
+	
+	//Text userInfoText
+    TextField
+    {
+        id: suffix_text
+		width: 100
+        text: suffixInput
+        font.family: "Arial"
+        font.pointSize: 12
+
+        anchors.top: label_suffix.top
+        anchors.topMargin: 8
+        anchors.left: label_suffix.right
+        anchors.leftMargin: 10
+
+        // Validate entered value
+        Keys.onReturnPressed:
+        {
+			event.accepted = true
+        }
+
+        // Return the new entered value
+        Keys.onReleased:
+        {
+            manager.suffixEntered(suffix_text.text)
+        }			
     }
 
 }
