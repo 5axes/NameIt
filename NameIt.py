@@ -157,7 +157,7 @@ class NameIt(QObject, Extension):
         self._settings_dict = OrderedDict()
         self._settings_dict["identification_mesh"] = {
             "label": "Identification mesh",
-            "description": "Mesh used as identification (created by NameIt! Plugin)",
+            "description": "Mesh used as identification (Added for the plugin NameIt!)",
             "type": "bool",
             "default_value": False,
             "settable_per_mesh": True,
