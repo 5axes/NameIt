@@ -45,12 +45,13 @@ Note : the generated meshes are identified by a specific attribute "Identificati
 
 ### Define Text Parameters
 
-The function **Define Text Parameters** gives you the possibility to change the text definition size and some additional parameter like Prefix and Suffix you can add to the number identifiers.
+The function **Define Text Parameters** gives you the possibility to change the text definition size and some additional parameter like ***Prefix*** and ***Suffix*** you can add to the **number identifiers**.
 
 ![define default size](./images/text_parameters.jpg)
 
 ![text parameters](./images/parameters.png)
 
+You can also specify a specific ***Initial Layer Speed*** used to print these marks.
 
 ## Help
 
