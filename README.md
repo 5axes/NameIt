@@ -10,6 +10,8 @@ The identifier is linked to the model, if you move the part manually, the identi
 
 This plugin is using the [Trimesh](https://github.com/mikedh/trimesh) library to load STL files and for mesh manipulations.
 
+The font used to create the texts is based on the [Gill Sans MT:style=Bold](https://docs.microsoft.com/en-us/typography/font-list/gill-sans-mt) font style.
+
 ## Add Number
 
 Function to add a number in front of each part to identify every part. This function can be used by selecting the elements or a global identification without selection. 
