@@ -41,9 +41,9 @@ Note : the generated meshes are identified by a specific attribute "Identificati
 
 ![model_parameter](./images/model_parameter.png)
 
-### Define Text Size
+### Define Text Parameters
 
-The function **Define Text Size** gives you the possibility to change the text definition size.
+The function **Define Text Parameters** gives you the possibility to change the text definition size and some additional parameter like Prefix and Suffix you can add to the number identifiers.
 
 ![define default size](./images/size.jpg)
 
