@@ -515,8 +515,14 @@ class NameIt(QObject, Extension):
         Message(catalog.i18nc("@info:status", "Please select one or more models first"))
 
         return []
-     
-    # Add Part Name  as text  
+    
+    #===== Identifier Creation ==============================================================================
+    # Add Part Name  as text
+    #  Option :
+    #           -   "Number"        : Incremental Number + Prefix & Suffix
+    #           -   "NameNumber"    : Number present in the object number + Prefix & Suffix
+    #           -   "Name"          : Name of the Object
+    #========================================================================================================
     def addPartName(self, option) -> None:
         nbMod=0
         nbNum=0
@@ -686,7 +692,7 @@ class NameIt(QObject, Extension):
         self._idcount = 0
         if self._all_picked_node:
             for node in self._all_picked_node:
-                self._removeSupportMesh(node)
+                self._removeIdMesh(node)
             self._all_picked_node = []
             self.propertyChanged.emit()
         else:        
@@ -699,10 +705,10 @@ class NameIt(QObject, Extension):
                         if node_stack.getProperty("identification_mesh", "value"):
                             # N_Name=node.getName()
                             # Logger.log('d', 'cutting_mesh : ' + str(N_Name)) 
-                            self._removeSupportMesh(node)
+                            self._removeIdMesh(node)
 
 
-    def _removeSupportMesh(self, node: CuraSceneNode):
+    def _removeIdMesh(self, node: CuraSceneNode):
         parent = node.getParent()
         if parent == self._controller.getScene().getRoot():
             parent = None
@@ -714,8 +720,14 @@ class NameIt(QObject, Extension):
             Selection.add(parent)
 
         CuraApplication.getInstance().getController().getScene().sceneChanged.emit(node)
-        
-    # Text Creation
+
+    #-------------------------------------------------------------------------------------- 
+    # Text Creation 
+    #  Use the 'character'.stl file present in the models directory
+    #  If the 'character' cannot be use as a file name then use the unicode number (ord())
+    #  And if this character doesn't exists then replace it by ?
+    #--------------------------------------------------------------------------------------         
+    
     def _createText(self, node: CuraSceneNode, name):
         meshes = []
         offsetX=0
