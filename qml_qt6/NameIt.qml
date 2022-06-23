@@ -441,7 +441,7 @@ Window
 	
 	ComboBox {
 		id: fontComboType
-		width: 90
+		width: 120
 		height: UM.Theme.getSize("setting_control").height
 		objectName: "Font_Type"
 		visible:true

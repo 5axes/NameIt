@@ -27,9 +27,9 @@ Window
 
     // Setting the dimensions of the dialog window
     width: 300
-    height: 270
+    height: 300
     minimumWidth: 300
-    minimumHeight: 270
+    minimumHeight: 300
 
     // Position of the window
     x: Screen.width*0.5 - width - 50
@@ -39,7 +39,7 @@ Window
     Rectangle {
         id: bg_rect
         width: 300
-        height: 270
+        height: 300
         color: "#fff"
         border.color: "#D22"
         border.width: 3
@@ -512,7 +512,7 @@ Window
 	
 	ComboBox {
 		id: fontComboType
-		width: 100
+		width: 120
 		height: UM.Theme.getSize("setting_control").height
 		objectName: "Font_Type"
 		visible:true
