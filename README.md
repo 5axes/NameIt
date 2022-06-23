@@ -65,7 +65,7 @@ Manual Install Download & extract the repository as ZIP or clone it. Copy the fi
 
 on Windows: [Cura installation folder]/plugins/NameIt
 
-on Linux: ~/.local/share/cura/[YOUR CURA VERSION]/plugins/NameIt (e.g. ~/.local/share/cura/4.6/plugins/NameIt)
+on Linux: ~/.local/share/cura/[YOUR CURA VERSION]/plugins/NameIt (e.g. ~/.local/share/cura/5.0/plugins/NameIt)
 
 on Mac: ~/Library/Application Support/cura/[YOUR CURA VERSION]/plugins/NameIt
 
