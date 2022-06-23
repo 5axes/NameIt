@@ -27,9 +27,9 @@ Window
 
     // Setting the dimensions of the dialog window
     width: 300
-    height: 270
+    height: 300
     minimumWidth: 300
-    minimumHeight: 270
+    minimumHeight: 300
 
     // Position of the window
     x: Screen.width*0.5 - width - 50
@@ -39,7 +39,7 @@ Window
     Rectangle {
         id: bg_rect
         width: 300
-        height: 270
+        height: 300
         color: "#fff"
         border.color: "#D22"
         border.width: 3
@@ -56,6 +56,7 @@ Window
 	property string prefixInput: manager.prefixInput
 	property string suffixInput: manager.suffixInput
 	property string speedInput: manager.speedInput
+	property string fontInput: manager.fontInput
 
     // Button for closing the dialogbox
     Button
@@ -421,4 +422,45 @@ Window
             manager.speedEntered(speed_input.text)
         }			
     }	
+	
+    // Label "Font :"
+    Label
+    {
+        id: label_font
+		width: 150
+        text: "Font :"
+        font.family: "Arial"
+        font.pointSize: 12
+        color: "#131151"
+
+        anchors.top: speed_input.bottom
+        anchors.topMargin: 10
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+    }	
+	
+	ComboBox {
+		id: fontComboType
+		width: 90
+		height: UM.Theme.getSize("setting_control").height
+		objectName: "Font_Type"
+		visible:true
+        anchors.top: label_font.top
+        anchors.topMargin: -2
+        anchors.left: label_font.right
+		anchors.leftMargin: 10
+		
+		model: ListModel {
+		   id: cbItems
+		   ListElement { text: "Gill Sans MT"}
+		   ListElement { text: "Arial Rounded MT"}
+		}
+
+		Component.onCompleted: currentIndex = find(fontInput)
+		
+		onCurrentIndexChanged: 
+		{ 
+			manager.fontEntered(fontComboType.text)
+		}
+	}		
 }

@@ -12,6 +12,7 @@
 # V1.3.0    : Add option to fix a specific Initial Layer Speed
 # V1.3.1    : Add message if no identificator created
 # V1.3.2    : Clean the code 
+# V1.4.0    : Choose Font
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -86,6 +87,7 @@ class NameIt(QObject, Extension):
     userSuffixChanged = pyqtSignal()
     userInfoTextChanged = pyqtSignal()
     userSpeedChanged = pyqtSignal()
+    userFontChanged = pyqtSignal()
     
     def __init__(self, parent = None) -> None:
         QObject.__init__(self, parent)
@@ -96,6 +98,7 @@ class NameIt(QObject, Extension):
         self._continueDialog = None
         self._prefix = ""
         self._suffix = ""
+        self._font = 'Gill Sans MT'
         
         # set the preferences to store the default value
         #self._application = CuraApplication.getInstance()
@@ -110,6 +113,7 @@ class NameIt(QObject, Extension):
         self._preferences.addPreference("NameIt/prefix", "")
         self._preferences.addPreference("NameIt/suffix", "")
         self._preferences.addPreference("NameIt/speed_layer_0", 16)
+        self._preferences.addPreference("NameIt/font", "Gill Sans MT")
         
         # convert as float to avoid further issue
         self._size = float(self._preferences.getValue("NameIt/size"))
@@ -119,6 +123,7 @@ class NameIt(QObject, Extension):
         self._prefix = self._preferences.getValue("NameIt/prefix")
         self._suffix = self._preferences.getValue("NameIt/suffix")     
         self._speed = float(self._preferences.getValue("NameIt/speed_layer_0")) 
+        self._font = self._preferences.getValue("NameIt/font") 
  
         self.Major=1
         self.Minor=0
@@ -248,6 +253,11 @@ class NameIt(QObject, Extension):
     @pyqtProperty(str, notify= userSpeedChanged)
     def speedInput(self):
         return str(self._speed)
+
+    @pyqtProperty(str, notify= userFontChanged)
+    def fontInput(self):
+        return str(self._font)
+
         
     #The QT property, which is computed on demand from our userInfoText when the appropriate signal is emitted
     @pyqtProperty(str, notify= userInfoTextChanged)
@@ -469,6 +479,24 @@ class NameIt(QObject, Extension):
 
         self.writeToLog("Set NameIt/Suffix to : " + text)
         self._preferences.setValue("NameIt/suffix", self._suffix)
+        
+        #clear the message Field
+        self.userMessage("", "ok")
+
+    def getFont(self) -> str:
+    
+        return self._font
+        
+    # is called when a key gets released in the prefix inputField (twice for some reason)
+    @pyqtSlot(str)
+    def fontEntered(self, text):
+
+        self._font = str(text)
+
+        self.writeToLog("Set NameIt/Font : " + text)
+        self._preferences.setValue("NameIt/font", self._prefix)
+        
+        Logger.log("d", "fontEntered = %s", self._font) 
         
         #clear the message Field
         self.userMessage("", "ok")
@@ -746,18 +774,20 @@ class NameIt(QObject, Extension):
             else:
                 #Logger.log("d", "Char= %s",cch)        
                 Filename = cch + ".stl"
-
-                model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
+                Folder = os.path.join("models",self._font)
+                Logger.log("d", "Folder= %s",Folder) 
+                
+                model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), Folder, Filename)
                 if not exists(model_definition_path) :
                     Filename = "{}.stl".format(ord(cch))
-                    model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
+                    model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), Folder, Filename)
                     # Logger.log("d", "Code = %s - > %s",ord(cch),Filename)
-                    # Logger.log("d", "Filename Code = %s",Filename)
+                    Logger.log("d", "Filename Code = %s",Filename)
                 
                 # Use ? (Unicode 63) if the character is not defined. Must have a look to the log file to list the missing letter
                 if not exists(model_definition_path) :  
                     Filename = "63.stl"
-                    model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
+                    model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), Folder, Filename)
                     Logger.log("d", "Unknow Code= %s -> %s",cch,ord(cch))
                     
                 # Logger.log("d", "Filename= %s",Filename)
