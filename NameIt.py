@@ -525,7 +525,7 @@ class NameIt(QObject, Extension):
         self.userInfoTextChanged.emit()
      
     def gotoHelp(self) -> None:
-        QDesktopServices.openUrl(QUrl("https://github.com/5axes/NameIt/wiki/Add-Print-Identifier"))
+        QDesktopServices.openUrl(QUrl("https://github.com/5axes/NameIt/wiki"))
        
  
     # Source code from MeshTools Plugin 
