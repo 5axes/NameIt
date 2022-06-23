@@ -57,6 +57,17 @@ You can also specify a specific ***Initial Layer Speed*** used to print these ma
 
 ![Initial Layer Speed](./images/initial_layer_speed.jpg)
 
+## Installation
+
+First, make sure your Cura version is  4.4 or newer.
+
+Manual Install Download & extract the repository as ZIP or clone it. Copy the files/plugins/NameIt directory to:
+
+on Windows: [Cura installation folder]/plugins/NameIt
+
+on Linux: ~/.local/share/cura/[YOUR CURA VERSION]/plugins/NameIt (e.g. ~/.local/share/cura/4.6/plugins/NameIt)
+
+on Mac: ~/Library/Application Support/cura/[YOUR CURA VERSION]/plugins/NameIt
 
 ## Help
 
