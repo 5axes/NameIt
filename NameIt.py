@@ -10,6 +10,7 @@
 # V1.1.1    : Fix the last reference number to the biggest value in case of Add Number From Part
 # V1.2.0    : Add Prefix and Suffix for Number
 # V1.3.0    : Add option to fix a specific Initial Layer Speed
+# V1.3.1    : Add message if no identificator created
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -517,6 +518,8 @@ class NameIt(QObject, Extension):
      
     # Add Part Name  as text  
     def addPartName(self, option) -> None:
+        nbMod=0
+        nbNum=0
         Logger.log('d', "Type : {}".format(option))
         
         nodes_list = self._getAllSelectedNodes()
@@ -535,13 +538,16 @@ class NameIt(QObject, Extension):
                     type_identification_mesh = node_stack.getProperty("identification_mesh", "value")
                     
                     if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh and not type_cutting_mesh and not type_identification_mesh :
+                        nbMod+=1
                         name = node.getName()
                         Logger.log('d', "Mesh : {}".format(name))
                         # Add Part Name  as text 
                         if option == "Name" :
+                            nbNum+=1
                             self._createNameMesh(node, name)
                         # Add Number as text  
                         if option == "Number" :
+                            nbNum+=1
                             self._idcount += 1
                             # Logger.log("d", "name= %s", name)
                             
@@ -556,16 +562,24 @@ class NameIt(QObject, Extension):
                             if SearchId is not None: 
                                 indice=len(SearchId) 
                                 Logger.log("d", "SearchId = %s", indice) 
-                                if indice > 0 :                       
+                                if indice > 0 :
+                                    nbNum+=1                               
                                     Ident=SearchId[len(SearchId)-1] 
                                     Id = re.search(r"(\d+)", Ident)
                                     Id_temp = int(Id.group())
                                     Id_total = self._prefix + str(Id_temp) + self._suffix
                                     self._createNameMesh(node, Id_total)
                                     if Id_temp > self._idcount :
-                                        self._idcount = Id_temp                                                   
-                                    
-                                    
+                                        self._idcount = Id_temp   
+                                        
+        # Informations at the end of the creation Routine
+        if nbNum == 0 :                                
+            Message(text = "No Identifier created for %s elements" % (nbMod), title = catalog.i18nc("@info:title", "Warning ! Name It"), message_type = Message.MessageType.ERROR).show()
+        elif nbNum < nbMod :
+            Message(text = "Identifier creation : %d / %d" % (nbNum,nbMod), title = catalog.i18nc("@info:title", "Info ! Name It"), message_type = Message.MessageType.WARNING).show()    
+        elif nbNum == nbMod :
+            Message(text = "Identifier creation : %d / %d" % (nbNum,nbMod), title = catalog.i18nc("@info:title", "Info ! Name It"), message_type = Message.MessageType.POSITIVE).show()    
+  
     #----------------------------------------
     # Initial Source code from  fieldOfView
     #----------------------------------------  
