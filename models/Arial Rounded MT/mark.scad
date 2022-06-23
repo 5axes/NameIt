@@ -16,8 +16,8 @@ font = "Arial Rounded MT Bold:style=Bold";
 letter_height = 1;
 letter_size =1;
 
-render() translate([0.5,0,0]) mirror([1,0,0]) letter("/");
-
+// render() translate([0.5,0,0]) mirror([1,0,0]) letter("/");
+render() translate([0,0,0]) letter("π");
 
 module letter(Txt) {
   color("Red")
