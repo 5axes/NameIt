@@ -11,6 +11,8 @@ The identifier is linked to the model, if you move the part manually, the identi
 This plugin is using the [Trimesh](https://github.com/mikedh/trimesh) library to load STL files and for mesh manipulations.
 
 The font used to create the texts is based on the [Gill Sans MT:style=Bold](https://docs.microsoft.com/en-us/typography/font-list/gill-sans-mt) font style.
+And [Arial Rounded MT](https://docs.microsoft.com/en-us/typography/font-list/arial-rounded-mt)
+
 
 ## Add Number
 
