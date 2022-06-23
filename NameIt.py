@@ -98,7 +98,7 @@ class NameIt(QObject, Extension):
         self._continueDialog = None
         self._prefix = ""
         self._suffix = ""
-        self._font = 'Gill Sans MT'
+        self._font = "Gill Sans MT"
         
         # set the preferences to store the default value
         #self._application = CuraApplication.getInstance()
@@ -130,6 +130,7 @@ class NameIt(QObject, Extension):
 
         # Logger.log('d', "Info Version CuraVersion --> " + str(Version(CuraVersion)))
         Logger.log('d', "NameIt Info CuraVersion --> " + str(CuraVersion))
+        Logger.log('d', "NameIt FontStyle --> " + str(self._font))
         
         # Test version for Cura Master
         # https://github.com/smartavionics/Cura
@@ -494,7 +495,7 @@ class NameIt(QObject, Extension):
         self._font = str(text)
 
         self.writeToLog("Set NameIt/Font : " + text)
-        self._preferences.setValue("NameIt/font", self._prefix)
+        self._preferences.setValue("NameIt/font", self._font)
         
         Logger.log("d", "fontEntered = %s", self._font) 
         
@@ -775,14 +776,14 @@ class NameIt(QObject, Extension):
                 #Logger.log("d", "Char= %s",cch)        
                 Filename = cch + ".stl"
                 Folder = os.path.join("models",self._font)
-                Logger.log("d", "Folder= %s",Folder) 
+                # Logger.log("d", "Folder= %s",Folder) 
                 
                 model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), Folder, Filename)
                 if not exists(model_definition_path) :
                     Filename = "{}.stl".format(ord(cch))
                     model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), Folder, Filename)
                     # Logger.log("d", "Code = %s - > %s",ord(cch),Filename)
-                    Logger.log("d", "Filename Code = %s",Filename)
+                    # Logger.log("d", "Filename Code = %s",Filename)
                 
                 # Use ? (Unicode 63) if the character is not defined. Must have a look to the log file to list the missing letter
                 if not exists(model_definition_path) :  

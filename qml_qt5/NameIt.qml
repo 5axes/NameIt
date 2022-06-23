@@ -56,6 +56,7 @@ Window
 	property string prefixInput: manager.prefixInput
 	property string suffixInput: manager.suffixInput
 	property string speedInput: manager.speedInput
+	property string fontInput: manager.fontInput
 	
     // Button for closing the dialogbox
     Button
