@@ -740,7 +740,7 @@ class NameIt(QObject, Extension):
         Ind = 0
         for cch in Ident:
             # Space Char
-            if ord(cch)==32:
+            if ord(cch) == 32:
                 # 1 = one space size will be set at the end
                 offsetX += 1
             else:
@@ -754,7 +754,7 @@ class NameIt(QObject, Extension):
                     # Logger.log("d", "Code = %s - > %s",ord(cch),Filename)
                     # Logger.log("d", "Filename Code = %s",Filename)
                 
-                # ? if the character is not reconized
+                # Use ? (Unicode 63) if the character is not defined. Must have a look to the log file to list the missing letter
                 if not exists(model_definition_path) :  
                     Filename = "63.stl"
                     model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", Filename)
