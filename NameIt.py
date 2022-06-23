@@ -12,7 +12,7 @@
 # V1.3.0    : Add option to fix a specific Initial Layer Speed
 # V1.3.1    : Add message if no identificator created
 # V1.3.2    : Clean the code 
-# V1.4.0    : Choose Font
+# V1.4.0    : Choose Font "Gill Sans MT" / "Arial Rounded MT"
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
