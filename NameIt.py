@@ -391,7 +391,7 @@ class NameIt(QObject, Extension):
     
         return self._distance
         
-    # is called when a key gets released in the distance inputField (twice for some reason)
+    # is called when a key gets released in the distance inputField
     @pyqtSlot(str)
     def distanceEntered(self, text):
         # Is the textfield empty ? Don't show a message then
@@ -424,7 +424,7 @@ class NameIt(QObject, Extension):
     
         return self._kerning
         
-    # is called when a key gets released in the kerning inputField (twice for some reason)
+    # is called when a key gets released in the kerning inputField
     @pyqtSlot(str)
     def kerningEntered(self, text):
         # Is the textfield empty ? Don't show a message then
@@ -456,7 +456,7 @@ class NameIt(QObject, Extension):
     
         return self._prefix
         
-    # is called when a key gets released in the prefix inputField (twice for some reason)
+    # is called when a key gets released in the prefix inputField
     @pyqtSlot(str)
     def prefixEntered(self, text):
 
@@ -472,7 +472,7 @@ class NameIt(QObject, Extension):
     
         return self._suffix
         
-    # is called when a key gets released in the suffix inputField (twice for some reason)
+    # is called when a key gets released in the suffix inputField
     @pyqtSlot(str)
     def suffixEntered(self, text):
             
@@ -488,7 +488,7 @@ class NameIt(QObject, Extension):
     
         return self._font
         
-    # is called when a key gets released in the prefix inputField (twice for some reason)
+    # is called when a key gets released in the font inputField
     @pyqtSlot(str)
     def fontEntered(self, text):
 
@@ -497,9 +497,9 @@ class NameIt(QObject, Extension):
         self.writeToLog("Set NameIt/Font : " + text)
         self._preferences.setValue("NameIt/font", self._font)
         
-        Logger.log("d", "fontEntered = %s", self._font) 
+        # Logger.log("d", "fontEntered = %s", self._font) 
         
-        #clear the message Field
+        # clear the message Field
         self.userMessage("", "ok")
         
     #===== Text Output ===================================================================================================
@@ -751,13 +751,12 @@ class NameIt(QObject, Extension):
 
         CuraApplication.getInstance().getController().getScene().sceneChanged.emit(node)
 
-    #-------------------------------------------------------------------------------------- 
-    # Text Creation 
+    #--------------------------------------------------------------------------------------
+    # Text Creation
     #  Use the 'character'.stl file present in the models directory
     #  If the 'character' cannot be use as a file name then use the unicode number (ord())
     #  And if this character doesn't exists then replace it by ?
-    #--------------------------------------------------------------------------------------         
-    
+    #--------------------------------------------------------------------------------------
     def _createText(self, node: CuraSceneNode, name):
         meshes = []
         offsetX=0
