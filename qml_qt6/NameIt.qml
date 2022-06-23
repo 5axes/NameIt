@@ -460,7 +460,7 @@ Window
 		
 		onCurrentIndexChanged: 
 		{ 
-			manager.fontEntered(fontComboType.text)
+			manager.fontEntered(cbItems.get(currentIndex).text)
 		}
 	}		
 }
