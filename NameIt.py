@@ -11,6 +11,7 @@
 # V1.2.0    : Add Prefix and Suffix for Number
 # V1.3.0    : Add option to fix a specific Initial Layer Speed
 # V1.3.1    : Add message if no identificator created
+# V1.3.2    : Clean the code 
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
