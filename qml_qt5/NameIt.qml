@@ -493,4 +493,45 @@ Window
         anchors.left: speed_input.right
         anchors.leftMargin: 5
     }
+
+    //Text "Initial Layer Speed : "
+    Text
+    {
+        id: label_font
+		width: 150
+        text: "Font :"
+        font.family: "Arial"
+        font.pointSize: 12
+        color: "#131151"
+
+        anchors.top: speed_input.bottom
+        anchors.topMargin: 10
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+    }	
+	
+	ComboBox {
+		id: fontComboType
+		width: 100
+		height: UM.Theme.getSize("setting_control").height
+		objectName: "Font_Type"
+		visible:true
+        anchors.top: label_font.top
+        anchors.topMargin: -2
+        anchors.left: label_font.right
+		anchors.leftMargin: 10
+		
+		model: ListModel {
+		   id: cbItems
+		   ListElement { text: "Gill Sans MT"}
+		   ListElement { text: "Arial Rounded MT"}
+		}
+
+		Component.onCompleted: currentIndex = find(fontInput)
+		
+		onCurrentIndexChanged: 
+		{ 
+			manager.fontEntered(cbItems.get(currentIndex).text)
+		}
+	}
 }
