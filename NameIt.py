@@ -771,6 +771,9 @@ class NameIt(QObject, Extension):
             if ord(cch) == 32:
                 # 1 = one space size will be set at the end
                 offsetX += 1
+            # Tabulation Char
+            elif ord(cch) == 9:
+                offsetX += 2
             else:
                 #Logger.log("d", "Char= %s",cch)        
                 Filename = cch + ".stl"
