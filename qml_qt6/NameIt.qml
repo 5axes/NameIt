@@ -452,8 +452,9 @@ Window
 		
 		model: ListModel {
 		   id: cbItems
-		   ListElement { text: "Gill Sans MT"}
 		   ListElement { text: "Arial Rounded MT"}
+		   ListElement { text: "NameIt Rounded"}
+		   ListElement { text: "Gill Sans MT"}
 		}
 
 		Component.onCompleted: currentIndex = find(fontInput)

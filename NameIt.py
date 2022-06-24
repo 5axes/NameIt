@@ -16,7 +16,7 @@
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
-try:
+try:    
     from PyQt6.QtCore import QObject, pyqtProperty, pyqtSignal, pyqtSlot, QUrl
     from PyQt6.QtGui import QDesktopServices
 except ImportError:
@@ -98,7 +98,7 @@ class NameIt(QObject, Extension):
         self._continueDialog = None
         self._prefix = ""
         self._suffix = ""
-        self._font = "Gill Sans MT"
+        self._font = "NameIt Rounded"
         
         # set the preferences to store the default value
         #self._application = CuraApplication.getInstance()
