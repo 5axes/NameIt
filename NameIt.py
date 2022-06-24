@@ -106,14 +106,14 @@ class NameIt(QObject, Extension):
         self._i18n_catalog = None
     
         self._preferences = self._application.getPreferences()
-        self._preferences.addPreference("NameIt/size", 4)
+        self._preferences.addPreference("NameIt/size", 5)
         self._preferences.addPreference("NameIt/height", 0.2)
-        self._preferences.addPreference("NameIt/distance", 1)
+        self._preferences.addPreference("NameIt/distance", 1.6)
         self._preferences.addPreference("NameIt/kerning", 0.1)
         self._preferences.addPreference("NameIt/prefix", "")
         self._preferences.addPreference("NameIt/suffix", "")
-        self._preferences.addPreference("NameIt/speed_layer_0", 16)
-        self._preferences.addPreference("NameIt/font", "Gill Sans MT")
+        self._preferences.addPreference("NameIt/speed_layer_0", 0)
+        self._preferences.addPreference("NameIt/font", "NameIt Rounded")
         
         # convert as float to avoid further issue
         self._size = float(self._preferences.getValue("NameIt/size"))
