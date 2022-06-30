@@ -26,9 +26,9 @@ Window
     flags: Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.WindowCloseButtonHint
 
     // Setting the dimensions of the dialog window
-    width: 300
+    width: 320
     height: 330
-    minimumWidth: 300
+    minimumWidth: 320
     minimumHeight: 330
 
     // Position of the window
@@ -38,7 +38,7 @@ Window
     // Define a Window a border (Red for) and a background color
     Rectangle {
         id: bg_rect
-        width: 300
+        width: 320
         height: 330
         color: "#fff"
         border.color: "#D22"
@@ -514,7 +514,7 @@ Window
 	
 	ComboBox {
 		id: fontComboType
-		width: 120
+		width: 130
 		height: UM.Theme.getSize("setting_control").height
 		objectName: "Font_Type"
 		visible:true
@@ -541,15 +541,23 @@ Window
 	CheckBox
 	{
 		id: middleCheckBox
-		text: "<font color='#131151' size='14'>Use middle mode</font>"
+		// text: "<font color='#131151'>Use middle mode</font>"
 		anchors.top: label_font.bottom
 		anchors.topMargin: 10
         anchors.left: parent.left
         anchors.leftMargin: 10
-        //style: UM.Theme.styles.checkbox
+        // style: UM.Theme.styles.checkbox
 
 		checked: middleInput
 		onClicked: manager.middleEntered(checked)
 		
+		Text {
+			height: 12	
+			x: 20
+			y: -2
+			text: "Use middle mode"
+			font.pointSize: 12
+			color: "#131151"
+		}		
 	}
 }

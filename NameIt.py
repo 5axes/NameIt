@@ -863,6 +863,7 @@ class NameIt(QObject, Extension):
         combined.apply_transform(trimesh.transformations.scale_matrix(self._size, origin, DirY))
         combined.apply_transform(trimesh.transformations.scale_matrix(self._height, origin, DirZ))
         
+        # Mirror the text for option Middle
         if self._middle :
             combined.apply_transform(trimesh.transformations.reflection_matrix(origin, DirX))
             
