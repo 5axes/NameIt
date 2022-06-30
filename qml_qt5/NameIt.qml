@@ -541,15 +541,15 @@ Window
 	CheckBox
 	{
 		id: middleCheckBox
+		text: "<font color='#131151' size='14'>Use middle mode</font>"
 		anchors.top: label_font.bottom
 		anchors.topMargin: 10
         anchors.left: parent.left
         anchors.leftMargin: 10
-        font.family: "Arial"
-        font.pointSize: 12
-		
-		text: "Use middle mode"
+        //style: UM.Theme.styles.checkbox
+
 		checked: middleInput
 		onClicked: manager.middleEntered(checked)
+		
 	}
 }
