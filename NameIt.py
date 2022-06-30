@@ -13,6 +13,7 @@
 # V1.3.1    : Add message if no identificator created
 # V1.3.2    : Clean the code 
 # V1.4.0    : Choose Font "Gill Sans MT" / "Arial Rounded MT"
+# V1.5.0    : Modification and Test on the Plugin Font NameIt Rounded
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
