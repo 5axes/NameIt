@@ -297,7 +297,7 @@ Window
     {
         id: label_prefix
 		width: 150
-        text: "Prefix :"
+        text: "Number Prefix :"
         font.family: "Arial"
         font.pointSize: 12
         color: "#131151"
@@ -341,7 +341,7 @@ Window
     {
         id: label_suffix
 		width: 150
-        text: "Suffix :"
+        text: "Number Suffix :"
         font.family: "Arial"
         font.pointSize: 12
         color: "#131151"
