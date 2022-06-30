@@ -476,7 +476,7 @@ Window
         font.family: "Arial"
         font.pointSize: 12
 		
-		text: "Use middle mode"
+		text: "<font color='#131151'>Use middle mode</font>"
 		checked: middleInput
 		onClicked: manager.middleEntered(checked)
 	}
