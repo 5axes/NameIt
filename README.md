@@ -59,6 +59,20 @@ You can also specify a specific ***Initial Layer Speed*** used to print these ma
 
 ![Initial Layer Speed](./images/initial_layer_speed.jpg)
 
+## Use Middle Mode
+
+By using this option the text will be add not on the border of the part but mirrored in the center of the print. In this way only the line pattern of the first layer is modified, without adding to much print time.
+
+![Middle Mode](./images/MiddleMode.jpg)
+ 
+If you want to use this mode, you must fix the ***Mesh Fixes*** Union Overlaping Volumes to ***false**.
+
+It could be also possible according to the Cura release to modify the parameters ***Remove Mesh Intersection***  and ***Alternate Mesh Removal** to True.
+
+
+![Middle Mode Parameters](./images/MiddleModeParameters.jpg)
+
+
 ## Installation
 
 First, make sure your Cura version is  4.4 or newer.
@@ -70,6 +84,13 @@ on Windows: [Cura installation folder]/plugins/NameIt
 on Linux: ~/.local/share/cura/[YOUR CURA VERSION]/plugins/NameIt (e.g. ~/.local/share/cura/5.0/plugins/NameIt)
 
 on Mac: ~/Library/Application Support/cura/[YOUR CURA VERSION]/plugins/NameIt
+
+### Automatic installation
+This plugin is now avalaible in the Cura marketplace. So you can install it automaticaly from this place:
+
+![Automatic Install](./images/marketplace.jpg)
+
+[Name It on Ultimaker Market place](https://marketplace.ultimaker.com/app/cura/plugins/5axes/NameIt)
 
 ## Help
 
