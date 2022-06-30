@@ -13,7 +13,8 @@
 # V1.3.1    : Add message if no identificator created
 # V1.3.2    : Clean the code 
 # V1.4.0    : Choose Font "Gill Sans MT" / "Arial Rounded MT"
-# V1.5.0    : Modification and Test on the Plugin Font NameIt Rounded
+# V1.4.2    : Modification and Test on the Plugin Font NameIt Rounded
+# V1.5.0    : Mirror Mode
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -89,6 +90,7 @@ class NameIt(QObject, Extension):
     userInfoTextChanged = pyqtSignal()
     userSpeedChanged = pyqtSignal()
     userFontChanged = pyqtSignal()
+    userMiddleChanged = pyqtSignal()
     
     def __init__(self, parent = None) -> None:
         QObject.__init__(self, parent)
@@ -100,6 +102,7 @@ class NameIt(QObject, Extension):
         self._prefix = ""
         self._suffix = ""
         self._font = "NameIt Rounded"
+        self._middle = False
         
         # set the preferences to store the default value
         #self._application = CuraApplication.getInstance()
@@ -115,6 +118,7 @@ class NameIt(QObject, Extension):
         self._preferences.addPreference("NameIt/suffix", "")
         self._preferences.addPreference("NameIt/speed_layer_0", 0)
         self._preferences.addPreference("NameIt/font", "NameIt Rounded")
+        self._preferences.addPreference("NameIt/middle", str(False))
         
         # convert as float to avoid further issue
         self._size = float(self._preferences.getValue("NameIt/size"))
@@ -125,6 +129,7 @@ class NameIt(QObject, Extension):
         self._suffix = self._preferences.getValue("NameIt/suffix")     
         self._speed = float(self._preferences.getValue("NameIt/speed_layer_0")) 
         self._font = self._preferences.getValue("NameIt/font") 
+        self._middle = bool(self._preferences.getValue("NameIt/middle"))
  
         self.Major=1
         self.Minor=0
@@ -260,6 +265,9 @@ class NameIt(QObject, Extension):
     def fontInput(self):
         return str(self._font)
 
+    @pyqtProperty(bool, notify= userMiddleChanged)
+    def middleInput(self):
+        return self._middle
         
     #The QT property, which is computed on demand from our userInfoText when the appropriate signal is emitted
     @pyqtProperty(str, notify= userInfoTextChanged)
@@ -485,6 +493,24 @@ class NameIt(QObject, Extension):
         #clear the message Field
         self.userMessage("", "ok")
 
+    def getMiddle(self) -> bool:
+    
+        return self._middle
+        
+    # is called when a key gets released in the font inputField
+    @pyqtSlot(bool)
+    def middleEntered(self, ret):
+
+        self._middle = bool(ret)
+
+        self.writeToLog("Set NameIt/Middle : " + str(ret))
+        self._preferences.setValue("NameIt/middle", str(self._middle))
+        
+        Logger.log("d", "middleEntered = %s", str(self._middle)) 
+        
+        # clear the message Field
+        self.userMessage("", "ok")
+        
     def getFont(self) -> str:
     
         return self._font
@@ -664,9 +690,12 @@ class NameIt(QObject, Extension):
         # Logger.log("d", "depth= %s", str(node_bounds.depth))
         # Logger.log("d", "Center X= %s", str(node_bounds.center.x))
         # Logger.log("d", "Center Y= %s", str(node_bounds.center.z))
-
-        PosX = node_bounds.center.x
-        PosY = node_bounds.center.z+0.5*node_bounds.depth + self._distance + self._size 
+        if self._middle :
+            PosX = node_bounds.center.x
+            PosY = node_bounds.center.z + (self._size * 0.5)
+        else :
+            PosX = node_bounds.center.x
+            PosY = node_bounds.center.z+0.5*node_bounds.depth + self._distance + self._size 
 
         # Logger.log("d", "Pos X= %s", str(PosX))
         # Logger.log("d", "Pos Y= %s", str(PosY))
@@ -704,6 +733,14 @@ class NameIt(QObject, Extension):
             new_instance.resetState()  # Ensure that the state is not seen as a user state.
             settings.addInstance(new_instance)
         
+        if self._middle :
+            # identification_mesh type
+            definition = stack.getSettingDefinition("meshfix_union_all")
+            new_instance = SettingInstance(definition, settings)
+            new_instance.setProperty("value", False)
+            new_instance.resetState()  # Ensure that the state is not seen as a user state.
+            settings.addInstance(new_instance)
+            
         op = GroupedOperation()
         # First add node to the scene at the correct position/scale, before parenting, so the support mesh does not get scaled with the parent
         op.addOperation(AddSceneNodeOperation(node, self._controller.getScene().getRoot()))
@@ -826,5 +863,8 @@ class NameIt(QObject, Extension):
         combined.apply_transform(trimesh.transformations.scale_matrix(self._size, origin, DirY))
         combined.apply_transform(trimesh.transformations.scale_matrix(self._height, origin, DirZ))
         
+        if self._middle :
+            combined.apply_transform(trimesh.transformations.reflection_matrix(origin, DirX))
+            
         
         return combined

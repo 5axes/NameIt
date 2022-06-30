@@ -27,9 +27,9 @@ Window
 
     // Setting the dimensions of the dialog window
     width: 300
-    height: 300
+    height: 330
     minimumWidth: 300
-    minimumHeight: 300
+    minimumHeight: 330
 
     // Position of the window
     x: Screen.width*0.5 - width - 50
@@ -39,7 +39,7 @@ Window
     Rectangle {
         id: bg_rect
         width: 300
-        height: 300
+        height: 330
         color: "#fff"
         border.color: "#D22"
         border.width: 3
@@ -57,6 +57,7 @@ Window
 	property string suffixInput: manager.suffixInput
 	property string speedInput: manager.speedInput
 	property string fontInput: manager.fontInput
+	property bool middleInput: manager.middleInput
 	
     // Button for closing the dialogbox
     Button
@@ -535,5 +536,20 @@ Window
 		{ 
 			manager.fontEntered(cbItems.get(currentIndex).text)
 		}
+	}
+	
+	CheckBox
+	{
+		id: middleCheckBox
+		anchors.top: label_font.bottom
+		anchors.topMargin: 10
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+        font.family: "Arial"
+        font.pointSize: 12
+		
+		text: "Use middle mode"
+		checked: middleInput
+		onClicked: manager.middleEntered(checked)
 	}
 }
