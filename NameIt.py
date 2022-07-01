@@ -744,12 +744,34 @@ class NameIt(QObject, Extension):
             settings.addInstance(new_instance)
         
         if self._middle :
-            # identification_mesh type
+            # meshfix_union_all false
             definition = stack.getSettingDefinition("meshfix_union_all")
             new_instance = SettingInstance(definition, settings)
             new_instance.setProperty("value", False)
             new_instance.resetState()  # Ensure that the state is not seen as a user state.
             settings.addInstance(new_instance)
+ 
+            # infill_sparse_density 0
+            definition = stack.getSettingDefinition("infill_sparse_density")
+            new_instance = SettingInstance(definition, settings)
+            new_instance.setProperty("value", 0)
+            new_instance.resetState()  
+            settings.addInstance(new_instance)
+
+            # wall_line_count 0
+            definition = stack.getSettingDefinition("wall_line_count")
+            new_instance = SettingInstance(definition, settings)
+            new_instance.setProperty("value", 0)
+            new_instance.resetState()  
+            settings.addInstance(new_instance)
+
+            # top_bottom_thickness 0
+            definition = stack.getSettingDefinition("top_bottom_thickness")
+            new_instance = SettingInstance(definition, settings)
+            new_instance.setProperty("value", 0)
+            new_instance.resetState()  
+            settings.addInstance(new_instance)
+
             
         op = GroupedOperation()
         # First add node to the scene at the correct position/scale, before parenting, so the support mesh does not get scaled with the parent
