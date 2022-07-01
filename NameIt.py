@@ -15,6 +15,7 @@
 # V1.4.0    : Choose Font "Gill Sans MT" / "Arial Rounded MT"
 # V1.4.2    : Modification and Test on the Plugin Font NameIt Rounded
 # V1.5.0    : Mirror Mode
+# V1.5.1    : Mirror Mode Menu direct Switch mode
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -169,6 +170,7 @@ class NameIt(QObject, Extension):
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Remove Identifier"), self.removeAllIdMesh)
         self.addMenuItem("  ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Define Text Parameters"), self.defaultSize)
+        self.addMenuItem(catalog.i18nc("@item:inmenu", "Switch Middle Mode"), self.switchMode)
         self.addMenuItem("   ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Help"), self.gotoHelp)
 
@@ -231,6 +233,14 @@ class NameIt(QObject, Extension):
         
         self._continueDialog.show()
         #self.userSizeChanged.emit()
+        
+    def switchMode(self) -> None:
+        if self._middle == False:
+            self._middle = True
+        else:
+            self._middle = False
+        self.writeToLog("Set NameIt/Middle : " + str(self._middle))
+        self._preferences.setValue("NameIt/middle", str(self._middle))
 
     #====User Input=====================================================================================================
     @pyqtProperty(str, notify= userHeightChanged)
@@ -506,7 +516,7 @@ class NameIt(QObject, Extension):
         self.writeToLog("Set NameIt/Middle : " + str(ret))
         self._preferences.setValue("NameIt/middle", str(self._middle))
         
-        Logger.log("d", "middleEntered = %s", str(self._middle)) 
+        # Logger.log("d", "middleEntered = %s", str(self._middle)) 
         
         # clear the message Field
         self.userMessage("", "ok")
@@ -532,7 +542,7 @@ class NameIt(QObject, Extension):
     #===== Text Output ===================================================================================================
     #writes the message to the log, includes timestamp, length is fixed
     def writeToLog(self, str):
-        Logger.log("d", "Debug calibration shapes = %s", str)
+        Logger.log("d", "Debug NameIt = %s", str)
 
     #Sends an user message to the Info Textfield, color depends on status (prioritized feedback)
     # Red wrong for Errors and Warnings
