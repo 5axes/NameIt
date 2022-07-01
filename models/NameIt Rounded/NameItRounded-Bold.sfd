@@ -23,7 +23,7 @@ OS2Version: 3
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 0
 CreationTime: 1656082097
-ModificationTime: 1656633569
+ModificationTime: 1656633658
 PfmFamily: 81
 TTFWeight: 700
 TTFWidth: 5
@@ -770,7 +770,6 @@ LayerCount: 2
 Fore
 Refer: 113 115 N 1 0 0 1 0 0 3
 Refer: 235 711 N 1 0 0 1 80 0 2
-Validated: 9
 EndChar
 
 StartChar: scaron
@@ -781,7 +780,6 @@ LayerCount: 2
 Fore
 Refer: 113 115 N 1 0 0 1 0 0 3
 Refer: 235 711 N 1 0 0 1 80 0 2
-Validated: 9
 EndChar
 
 StartChar: Yacute
@@ -928,7 +926,6 @@ LayerCount: 2
 Fore
 Refer: 120 122 N 1 0 0 1 0 0 3
 Refer: 235 711 N 1 0 0 1 100 0 2
-Validated: 9
 EndChar
 
 StartChar: zcaron
@@ -939,7 +936,6 @@ LayerCount: 2
 Fore
 Refer: 120 122 N 1 0 0 1 0 0 3
 Refer: 235 711 N 1 0 0 1 100 0 2
-Validated: 9
 EndChar
 
 StartChar: DLE
@@ -2066,6 +2062,7 @@ SplineSet
  48 0 48 0 24 25 c 128,-1,0
  0 50 0 50 0 85 c 128,-1,1
 EndSplineSet
+Validated: 1
 EndChar
 
 StartChar: slash
@@ -2531,6 +2528,7 @@ LayerCount: 2
 Fore
 Refer: 44 46 N 1 0 0 1 0 362 2
 Refer: 44 46 N 1 0 0 1 2 10 2
+Validated: 1
 EndChar
 
 StartChar: semicolon
@@ -2541,6 +2539,7 @@ LayerCount: 2
 Fore
 Refer: 44 46 N 1 0 0 1 2 344 2
 Refer: 42 44 N 1 0 0 1 0 0 2
+Validated: 9
 EndChar
 
 StartChar: less
@@ -4199,7 +4198,6 @@ Flags: W
 LayerCount: 2
 Fore
 Refer: 232 732 S 1 0 0 1 70 0 2
-Validated: 1
 EndChar
 
 StartChar: Adieresis
@@ -4210,6 +4208,7 @@ LayerCount: 2
 Fore
 Refer: 63 65 N 1 0 0 1 0 0 2
 Refer: 168 168 N 1 0 0 1 80 0 2
+Validated: 1
 Kerns2: 205 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 204 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 119 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 114 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 87 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 85 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 10 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 9 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
@@ -4362,7 +4361,6 @@ LayerCount: 2
 Fore
 Refer: 76 78 N 1 0 0 1 0 0 2
 Refer: 232 732 N 1 0 0 1 70 0 2
-Validated: 1
 EndChar
 
 StartChar: Odieresis
@@ -4373,6 +4371,7 @@ LayerCount: 2
 Fore
 Refer: 77 79 N 1 0 0 1 0 0 3
 Refer: 168 168 N 1 0 0 1 57 0 2
+Validated: 1
 EndChar
 
 StartChar: Udieresis
@@ -4383,6 +4382,7 @@ LayerCount: 2
 Fore
 Refer: 83 85 N 1 0 0 1 0 0 2
 Refer: 168 168 N 1 0 0 1 60 0 2
+Validated: 1
 EndChar
 
 StartChar: aacute
@@ -4415,7 +4415,6 @@ LayerCount: 2
 Fore
 Refer: 95 97 N 1 0 0 1 0 0 2
 Refer: 231 710 N 1 0 0 1 90 0 2
-Validated: 1
 EndChar
 
 StartChar: adieresis
@@ -4426,6 +4425,7 @@ LayerCount: 2
 Fore
 Refer: 95 97 N 1 0 0 1 0 0 2
 Refer: 168 168 N 1 0 0 1 50 0 2
+Validated: 1
 EndChar
 
 StartChar: atilde
@@ -4436,7 +4436,6 @@ LayerCount: 2
 Fore
 Refer: 95 97 N 1 0 0 1 0 0 2
 Refer: 232 732 N 1 0 0 1 70 0 2
-Validated: 1
 EndChar
 
 StartChar: aring
@@ -4543,7 +4542,6 @@ LayerCount: 2
 Fore
 Refer: 99 101 N 1 0 0 1 0 0 3
 Refer: 231 710 N 1 0 0 1 40 0 2
-Validated: 1
 EndChar
 
 StartChar: edieresis
@@ -4554,6 +4552,7 @@ LayerCount: 2
 Fore
 Refer: 99 101 N 1 0 0 1 0 0 3
 Refer: 168 168 N 1 0 0 1 0 0 2
+Validated: 5
 EndChar
 
 StartChar: iacute
@@ -4586,7 +4585,6 @@ LayerCount: 2
 Fore
 Refer: 103 105 N 1 0 0 1 70 0 2
 Refer: 231 710 N 1 0 0 1 0 0 2
-Validated: 1
 EndChar
 
 StartChar: idieresis
@@ -4597,6 +4595,7 @@ LayerCount: 2
 Fore
 Refer: 103 105 N 1 0 0 1 100 0 2
 Refer: 168 168 N 1 0 0 1 0 0 2
+Validated: 1
 EndChar
 
 StartChar: ntilde
@@ -4607,7 +4606,6 @@ LayerCount: 2
 Fore
 Refer: 108 110 N 1 0 0 1 0 0 3
 Refer: 232 732 N 1 0 0 1 60 0 2
-Validated: 1
 EndChar
 
 StartChar: oacute
@@ -4640,7 +4638,6 @@ LayerCount: 2
 Fore
 Refer: 109 111 N 1 0 0 1 0 0 3
 Refer: 231 710 N 1 0 0 1 90 0 2
-Validated: 1
 EndChar
 
 StartChar: odieresis
@@ -4651,6 +4648,7 @@ LayerCount: 2
 Fore
 Refer: 109 111 N 1 0 0 1 0 0 3
 Refer: 168 168 N 1 0 0 1 50 0 2
+Validated: 1
 EndChar
 
 StartChar: otilde
@@ -4661,7 +4659,6 @@ LayerCount: 2
 Fore
 Refer: 109 111 N 1 0 0 1 0 0 3
 Refer: 232 732 N 1 0 0 1 60 0 2
-Validated: 1
 EndChar
 
 StartChar: uacute
@@ -4694,7 +4691,6 @@ LayerCount: 2
 Fore
 Refer: 115 117 N 1 0 0 1 0 0 3
 Refer: 231 710 N 1 0 0 1 90 0 2
-Validated: 1
 EndChar
 
 StartChar: udieresis
@@ -4705,6 +4701,7 @@ LayerCount: 2
 Fore
 Refer: 115 117 N 1 0 0 1 0 0 3
 Refer: 168 168 N 1 0 0 1 60 0 2
+Validated: 1
 EndChar
 
 StartChar: dagger
@@ -5255,6 +5252,7 @@ SplineSet
  40 708 40 708 20 730 c 128,-1,10
  0 752 0 752 0 783 c 128,-1,11
 EndSplineSet
+Validated: 524289
 EndChar
 
 StartChar: notequal
@@ -5766,6 +5764,7 @@ SplineSet
  398.45703125 784.787109375 398.45703125 784.787109375 417.9375 730.673828125 c 0,43,44
  429.99609375 697.178710938 429.99609375 697.178710938 429.99609375 661.25390625 c 2,20,-1
 EndSplineSet
+Validated: 524289
 EndChar
 
 StartChar: ae
@@ -6376,7 +6375,6 @@ LayerCount: 2
 Fore
 Refer: 63 65 N 1 0 0 1 0 0 2
 Refer: 232 732 N 1 0 0 1 90 0 2
-Validated: 1
 Kerns2: 205 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 204 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 119 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 114 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 87 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 85 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 10 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 9 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
@@ -6388,7 +6386,6 @@ LayerCount: 2
 Fore
 Refer: 77 79 N 1 0 0 1 0 0 3
 Refer: 232 732 N 1 0 0 1 70 0 2
-Validated: 1
 EndChar
 
 StartChar: OE
@@ -7136,6 +7133,7 @@ LayerCount: 2
 Fore
 Refer: 119 121 N 1 0 0 1 0 0 2
 Refer: 168 168 N 1 0 0 1 60 0 2
+Validated: 1
 EndChar
 
 StartChar: Ydieresis
@@ -7146,6 +7144,7 @@ LayerCount: 2
 Fore
 Refer: 87 89 N 1 0 0 1 0 0 3
 Refer: 168 168 N 1 0 0 1 50 0 2
+Validated: 1
 Kerns2: 217 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 215 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 193 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 192 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 170 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 126 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 125 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 63 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 50 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
@@ -7370,6 +7369,7 @@ SplineSet
  50 266 50 266 25 292 c 128,-1,0
  0 318 0 318 0 354 c 128,-1,1
 EndSplineSet
+Validated: 524321
 EndChar
 
 StartChar: quotesinglbase
@@ -7582,7 +7582,6 @@ LayerCount: 2
 Fore
 Refer: 63 65 N 1 0 0 1 0 0 2
 Refer: 231 710 N 1 0 0 1 110 0 2
-Validated: 1
 Kerns2: 205 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 204 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 119 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 114 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 87 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 85 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 10 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 9 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
@@ -7594,7 +7593,6 @@ LayerCount: 2
 Fore
 Refer: 67 69 N 1 0 0 1 0 0 3
 Refer: 231 710 N 1 0 0 1 40 0 2
-Validated: 1
 EndChar
 
 StartChar: Aacute
@@ -7617,6 +7615,7 @@ LayerCount: 2
 Fore
 Refer: 67 69 N 1 0 0 1 0 0 3
 Refer: 168 168 N 1 0 0 1 0 0 2
+Validated: 5
 EndChar
 
 StartChar: Egrave
@@ -7649,7 +7648,6 @@ LayerCount: 2
 Fore
 Refer: 71 73 N 1 0 0 1 70 0 2
 Refer: 231 710 N 1 0 0 1 0 0 2
-Validated: 1
 EndChar
 
 StartChar: Idieresis
@@ -7660,6 +7658,7 @@ LayerCount: 2
 Fore
 Refer: 71 73 N 1 0 0 1 100 0 2
 Refer: 168 168 N 1 0 0 1 0 0 2
+Validated: 1
 EndChar
 
 StartChar: Igrave
@@ -7692,7 +7691,6 @@ LayerCount: 2
 Fore
 Refer: 77 79 N 1 0 0 1 0 0 3
 Refer: 231 710 N 1 0 0 1 90 0 2
-Validated: 1
 EndChar
 
 StartChar: Ograve
@@ -7725,7 +7723,6 @@ LayerCount: 2
 Fore
 Refer: 83 85 N 1 0 0 1 0 0 2
 Refer: 231 710 N 1 0 0 1 80 0 2
-Validated: 1
 EndChar
 
 StartChar: Ugrave
@@ -7756,26 +7753,25 @@ Flags: W
 LayerCount: 2
 Fore
 SplineSet
-177 893 m 2,0,1
- 229.7 893 229.7 893 257 851 c 1,2,-1
- 270 834 l 1,3,-1
- 282 816 l 2,4,5
- 300.090452261 789.869346734 300.090452261 789.869346734 285 764 c 0,6,7
- 270.272727273 737 270.272727273 737 241 737 c 0,8,9
- 218.285714286 737 218.285714286 737 202 756 c 1,10,-1
- 171 796 l 1,11,12
- 160 808 160 808 145.5 808 c 128,-1,13
- 131 808 131 808 121 796 c 2,14,-1
- 89 756 l 1,15,16
- 72.1111111111 737 72.1111111111 737 53.5555555556 737 c 0,17,18
- 20.7272727273 737 20.7272727273 737 6 764 c 0,19,20
- -7 790 -7 790 9 816 c 1,21,-1
- 21 834 l 1,22,-1
- 34 851 l 1,23,24
- 61.3 893 61.3 893 114 893 c 2,25,-1
- 177 893 l 2,0,1
+177 893 m 6,0,1
+ 229.7 893 229.7 893 257 851 c 5,2,-1
+ 270 834 l 5,3,-1
+ 282 816 l 6,4,5
+ 300.090452261 789.869346734 300.090452261 789.869346734 285.181589767 763.434673367 c 132,-1,7
+ 270.272727273 737 270.272727273 737 244.27922078 737 c 132,-1,9
+ 218.285714286 737 218.285714286 737 202 756 c 5,10,-1
+ 171 796 l 5,11,12
+ 160 808 160 808 145.5 808 c 132,-1,13
+ 131 808 131 808 121 796 c 6,14,-1
+ 89 756 l 5,15,16
+ 72.1111111111 737 72.1111111111 737 53.5555555556 737 c 4,17,18
+ 20.7272727273 737 20.7272727273 737 6.86363636365 763.5 c 132,-1,20
+ -7 790 -7 790 9 816 c 5,21,-1
+ 21 834 l 5,22,-1
+ 34 851 l 5,23,24
+ 61.3 893 61.3 893 114 893 c 6,25,-1
+ 177 893 l 6,0,1
 EndSplineSet
-Validated: 33
 EndChar
 
 StartChar: tilde
@@ -7785,48 +7781,44 @@ Flags: W
 LayerCount: 2
 Fore
 SplineSet
-313 884 m 256,0,1
- 329 884 329 884 341 871 c 128,-1,2
- 353 858 353 858 351 840 c 2,3,-1
- 350 826 l 2,4,5
- 349 822 349 822 346.5 811 c 128,-1,6
- 344 800 344 800 338.5 790 c 0,7,8
- 304.176348548 727.593360996 304.176348548 727.593360996 242 733 c 0,9,10
- 229 733 229 733 219 735 c 2,11,-1
- 198 741 l 2,12,13
- 196.333333333 742.333333333 196.333333333 742.333333333 187.666666667 746.666666667 c 2,14,-1
- 154 764 l 1,15,-1
- 143 769 l 2,16,17
- 140 771 140 771 137 772 c 128,-1,18
- 134 773 134 773 131.5 774.5 c 0,19,20
- 103.375 791.375 103.375 791.375 87 775 c 0,21,22
- 81 770 81 770 80 755 c 128,-1,23
- 79 740 79 740 66.5 730.5 c 128,-1,24
- 54 721 54 721 37.5 722 c 128,-1,25
- 21 723 21 723 10 735.5 c 128,-1,26
- -1 748 -1 748 0 765 c 1,27,-1
- 2 779 l 1,28,29
- 2 795.5 2 795.5 12 814.75 c 0,30,31
- 43.2258420762 874.859745997 43.2258420762 874.859745997 109 872 c 0,32,33
- 122 872 122 872 130 870 c 128,-1,34
- 138 868 138 868 143 867 c 128,-1,35
- 148 866 148 866 151.5 864 c 128,-1,36
- 155 862 155 862 158 861.5 c 128,-1,37
- 161 861 161 861 164 859 c 256,38,39
- 167 857 167 857 169.5 856 c 0,40,41
- 173.666666667 854.333333333 173.666666667 854.333333333 183 849 c 2,42,-1
- 192 844 l 1,43,-1
- 208 836 l 2,44,45
- 216 832 216 832 219 830.5 c 128,-1,46
- 222 829 222 829 225 828 c 128,-1,47
- 228 827 228 827 232 825.5 c 0,48,49
- 238.666666667 823 238.666666667 823 248.333333333 823 c 128,-1,50
- 258 823 258 823 264 830 c 0,51,52
- 272 836 272 836 272 847.5 c 0,53,54
- 272 862 272 862 285 875 c 0,55,56
- 297 884 297 884 313 884 c 256,0,1
+313 884 m 260,0,1
+ 329 884 329 884 341 871 c 132,-1,2
+ 353 858 353 858 351 840 c 6,3,-1
+ 350 826 l 6,4,5
+ 349 822 349 822 346.5 811 c 132,-1,6
+ 344 800 344 800 338.5 790 c 4,7,8
+ 304.176348548 727.593360996 304.176348548 727.593360996 242 733 c 4,9,10
+ 229 733 229 733 219 735 c 6,11,-1
+ 198 741 l 6,12,13
+ 196.333333333 742.333333333 196.333333333 742.333333333 187.666666667 746.666666667 c 6,14,-1
+ 154 764 l 5,15,-1
+ 143 769 l 6,16,17
+ 140 771 140 771 137 772 c 132,-1,18
+ 134 773 134 773 131.5 774.5 c 4,19,20
+ 103.375 791.375 103.375 791.375 87 775 c 4,21,22
+ 81 770 81 770 80 755 c 132,-1,23
+ 79 740 79 740 66.5 730.5 c 132,-1,24
+ 54 721 54 721 37.5 722 c 132,-1,25
+ 21 723 21 723 10 735.5 c 132,-1,26
+ -1 748 -1 748 0 765 c 5,27,-1
+ 2 779 l 5,28,29
+ 2 795.5 2 795.5 12 814.75 c 4,30,31
+ 43.2258420762 874.859745997 43.2258420762 874.859745997 109 872 c 4,32,33
+ 122 872 122 872 130 870 c 132,-1,34
+ 138 868 138 868 143 867 c 132,-1,35
+ 148 866 148 866 151.5 864 c 132,-1,36
+ 155 862 155 862 158 861.5 c 132,-1,37
+ 161 861 161 861 164 859 c 260,38,39
+ 167 857 167 857 170.333333333 855.666666667 c 132,-1,40
+ 173.666666667 854.333333333 173.666666667 854.333333333 183 849 c 4,41,42
+ 220.5 829.5 220.5 829.5 224.25 828.25 c 132,-1,43
+ 228 827 228 827 233.333333333 825 c 132,-1,44
+ 238.666666667 823 238.666666667 823 248.333333333 823 c 132,-1,45
+ 258 823 258 823 264 830 c 4,46,47
+ 272 836 272 836 272 849 c 132,-1,48
+ 272 862 272 862 285 875 c 4,49,50
+ 297 884 297 884 313 884 c 260,0,1
 EndSplineSet
-Validated: 33
 EndChar
 
 StartChar: macron
@@ -7855,7 +7847,6 @@ Flags: W
 LayerCount: 2
 Fore
 Refer: 231 710 N 1 0 0 -0.999939 0 1631 2
-Validated: 25
 EndChar
 
 StartChar: uni00AD
