@@ -38,7 +38,6 @@ import trimesh
 from typing import Optional, List
 
 from UM.Math.Vector import Vector
-
 from UM.Extension import Extension
 # from UM.PluginRegistry import PluginRegistry
 from UM.Application import Application
@@ -174,6 +173,7 @@ class NameIt(QObject, Extension):
         self.addMenuItem("   ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Help"), self.gotoHelp)
 
+        # Define a new settings "identification_mesh""
         self._settings_dict = OrderedDict()
         self._settings_dict["identification_mesh"] = {
             "label": "Identification mesh",
