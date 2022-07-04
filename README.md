@@ -59,7 +59,9 @@ You can also specify a specific ***Initial Layer Speed*** used to print these ma
 
 ![Initial Layer Speed](./images/initial_layer_speed.jpg)
 
-## Use Middle Mode
+## Text location option
+
+### Center & Center (not filled)
 
 By using this option the text will be add not on the border of the part but mirrored in the center of the print. In this way only the line pattern of the first layer is modified, without adding to much print time.
 
