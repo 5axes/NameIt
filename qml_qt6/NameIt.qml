@@ -27,9 +27,9 @@ Window
 
     // Setting the dimensions of the dialog window
     width: 300
-    height: 330
+    height: 370
     minimumWidth: 300
-    minimumHeight: 330
+    minimumHeight: 370
 
     // Position of the window
     x: Screen.width*0.5 - width - 50
@@ -39,7 +39,7 @@ Window
     Rectangle {
         id: bg_rect
         width: 300
-        height: 330
+        height: 370
         color: "#fff"
         border.color: "#D22"
         border.width: 3
@@ -58,6 +58,7 @@ Window
 	property string speedInput: manager.speedInput
 	property string fontInput: manager.fontInput
 	property bool middleInput: manager.middleInput
+	property bool filledtextInput: manager.filledtextInput
 
     // Button for closing the dialogbox
     Button
@@ -480,4 +481,19 @@ Window
 		checked: middleInput
 		onClicked: manager.middleEntered(checked)
 	}
+	
+	CheckBox
+	{
+		id: filledtextCheckBox
+		anchors.top: middleCheckBox.bottom
+		anchors.topMargin: 10
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+        font.family: "Arial"
+        font.pointSize: 12
+		
+		text: "<font color='#131151'>Middle filled text</font>"
+		checked: filledtextInput
+		onClicked: manager.filledtextEntered(checked)
+	}	
 }

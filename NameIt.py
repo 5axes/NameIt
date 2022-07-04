@@ -16,6 +16,7 @@
 # V1.4.2    : Modification and Test on the Plugin Font NameIt Rounded
 # V1.5.0    : Mirror Mode
 # V1.5.1    : Mirror Mode Menu direct Switch mode
+# V1.6.0    : Add Function Rename Models
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -91,6 +92,7 @@ class NameIt(QObject, Extension):
     userSpeedChanged = pyqtSignal()
     userFontChanged = pyqtSignal()
     userMiddleChanged = pyqtSignal()
+    userfilledtextChanged = pyqtSignal()
     
     def __init__(self, parent = None) -> None:
         QObject.__init__(self, parent)
@@ -103,6 +105,7 @@ class NameIt(QObject, Extension):
         self._suffix = ""
         self._font = "NameIt Rounded"
         self._middle = False
+        self._filledtext = False
         
         # set the preferences to store the default value
         #self._application = CuraApplication.getInstance()
@@ -119,6 +122,7 @@ class NameIt(QObject, Extension):
         self._preferences.addPreference("NameIt/speed_layer_0", 0)
         self._preferences.addPreference("NameIt/font", "NameIt Rounded")
         self._preferences.addPreference("NameIt/middle", str(False))
+        self._preferences.addPreference("NameIt/filledtext", str(False))
         
         # convert as float to avoid further issue
         self._size = float(self._preferences.getValue("NameIt/size"))
@@ -130,6 +134,7 @@ class NameIt(QObject, Extension):
         self._speed = float(self._preferences.getValue("NameIt/speed_layer_0")) 
         self._font = self._preferences.getValue("NameIt/font") 
         self._middle = bool(self._preferences.getValue("NameIt/middle"))
+        self._filledtext = bool(self._preferences.getValue("NameIt/filledtext"))
  
         self.Major=1
         self.Minor=0
@@ -165,12 +170,14 @@ class NameIt(QObject, Extension):
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number"), lambda: self.addPartName("Number"))
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number From Part"), lambda: self.addPartName("NameNumber"))
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Name"), lambda: self.addPartName("Name"))
-        self.addMenuItem(" ", lambda: None)
+        self.addMenuItem("", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Remove Identifier"), self.removeAllIdMesh)
         self.addMenuItem("  ", lambda: None)
+        self.addMenuItem(catalog.i18nc("@item:inmenu", "Rename models"), self.renameMesh)       
+        self.addMenuItem("   ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Define Text Parameters"), self.defaultSize)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Switch Middle Mode"), self.switchMode)
-        self.addMenuItem("   ", lambda: None)
+        self.addMenuItem("    ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Help"), self.gotoHelp)
 
         # Define a new settings "identification_mesh""
@@ -187,10 +194,63 @@ class NameIt(QObject, Extension):
         }
         ContainerRegistry.getInstance().containerLoadComplete.connect(self._onContainerLoadComplete)
         
+        self._message = Message(title=catalog.i18nc("@info:title", "Name It!"))
+        
         # Stock Data  
         self._all_picked_node = [] 
         self._idcount = 0
 
+    # Source code Origine FieldOfView
+    def _getSelectedNodes(self, force_single = False) -> List[SceneNode]:
+        self._message.hide()
+        selection = Selection.getAllSelectedObjects()[:]
+        if force_single:
+            if len(selection) == 1:
+                return selection[:]
+
+            self._message.setText(catalog.i18nc("@info:status", "Please select a single model first"))
+        else:
+            if len(selection) >= 1:
+                return selection[:]
+
+            self._message.setText(catalog.i18nc("@info:status", "Please select one or more models first"))
+
+        self._message.show()
+        return []
+        
+    # Source code Origine FieldOfView
+    # Modified For Multi Selection    
+    def renameMesh(self) -> None:
+        self._node_queue = self._getSelectedNodes(force_single=False)
+        if not self._node_queue:
+            return
+
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), self._qml_folder, "RenameDialog.qml")
+        self._rename_dialog = self._application.createQmlComponent(path, {"manager": self})
+        if not self._rename_dialog:
+            return
+        self._rename_dialog.show()
+        # Use the first Name as reference to rename the Meshs
+        self._rename_dialog.setName(self._node_queue[0].getName())
+
+    @pyqtSlot(str)
+    def setSelectedMeshName(self, new_name:str) -> None:
+        iD = 0
+        for node in self._node_queue :
+            Logger.log('d', 'New_name : %s', new_name)
+            # node = self._node_queue[0]
+            if len(self._node_queue) > 0 :
+                _name = new_name
+                _name += "({})".format(str(iD))
+                iD += 1
+            else:
+                _name = new_name
+                
+            node.setName(_name)
+            Selection.remove(node)
+            Selection.add(node)
+
+        
     def _onContainerLoadComplete(self, container_id):
         if not ContainerRegistry.getInstance().isLoaded(container_id):
             # skip containers that could not be loaded, or subsequent findContainers() will cause an infinite loop
@@ -278,7 +338,11 @@ class NameIt(QObject, Extension):
     @pyqtProperty(bool, notify= userMiddleChanged)
     def middleInput(self):
         return self._middle
-        
+ 
+    @pyqtProperty(bool, notify= userfilledtextChanged)
+    def filledtextInput(self):
+        return self._filledtext
+ 
     #The QT property, which is computed on demand from our userInfoText when the appropriate signal is emitted
     @pyqtProperty(str, notify= userInfoTextChanged)
     def userInfoText(self):
@@ -520,6 +584,21 @@ class NameIt(QObject, Extension):
         
         # clear the message Field
         self.userMessage("", "ok")
+
+    # is called when a key gets released in the font inputField
+    @pyqtSlot(bool)
+    def filledtextEntered(self, ret):
+
+        self._filledtext = bool(ret)
+
+        self.writeToLog("Set NameIt/filledtext : " + str(ret))
+        self._preferences.setValue("NameIt/filledtext", str(self._filledtext))
+        
+        # Logger.log("d", "filledtext = %s", str(self._filledtext)) 
+        
+        # clear the message Field
+        self.userMessage("", "ok")
+
         
     def getFont(self) -> str:
     
@@ -750,27 +829,27 @@ class NameIt(QObject, Extension):
             new_instance.setProperty("value", False)
             new_instance.resetState()  # Ensure that the state is not seen as a user state.
             settings.addInstance(new_instance)
- 
-            # infill_sparse_density 0
-            definition = stack.getSettingDefinition("infill_sparse_density")
-            new_instance = SettingInstance(definition, settings)
-            new_instance.setProperty("value", 0)
-            new_instance.resetState()  
-            settings.addInstance(new_instance)
+            if not self._filledtext :
+                # infill_sparse_density 0
+                definition = stack.getSettingDefinition("infill_sparse_density")
+                new_instance = SettingInstance(definition, settings)
+                new_instance.setProperty("value", 0)
+                new_instance.resetState()  
+                settings.addInstance(new_instance)
 
-            # wall_line_count 0
-            definition = stack.getSettingDefinition("wall_line_count")
-            new_instance = SettingInstance(definition, settings)
-            new_instance.setProperty("value", 0)
-            new_instance.resetState()  
-            settings.addInstance(new_instance)
+                # wall_line_count 0
+                definition = stack.getSettingDefinition("wall_line_count")
+                new_instance = SettingInstance(definition, settings)
+                new_instance.setProperty("value", 0)
+                new_instance.resetState()  
+                settings.addInstance(new_instance)
 
-            # top_bottom_thickness 0
-            definition = stack.getSettingDefinition("top_bottom_thickness")
-            new_instance = SettingInstance(definition, settings)
-            new_instance.setProperty("value", 0)
-            new_instance.resetState()  
-            settings.addInstance(new_instance)
+                # top_bottom_thickness 0
+                definition = stack.getSettingDefinition("top_bottom_thickness")
+                new_instance = SettingInstance(definition, settings)
+                new_instance.setProperty("value", 0)
+                new_instance.resetState()  
+                settings.addInstance(new_instance)
 
             
         op = GroupedOperation()
