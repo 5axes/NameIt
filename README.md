@@ -47,7 +47,15 @@ Note : the generated meshes are identified by a specific attribute "Identificati
 
 ![model_parameter](./images/model_parameter.png)
 
-### Define Text Parameters
+## Rename models
+
+Fonction to rename several models in the same times.
+
+In case of several modifications  the first Item will start from (0)  -> can be usefull for the function **Add Number From Part** 
+
+![Rename several models](./images/rename_list.png)
+
+## Define Text Parameters
 
 The function **Define Text Parameters** gives you the possibility to change the text definition size and some additional parameter like ***Prefix*** and ***Suffix*** you can add to the **number identifiers**.
 
@@ -59,9 +67,9 @@ You can also specify a specific ***Initial Layer Speed*** used to print these ma
 
 ![Initial Layer Speed](./images/initial_layer_speed.jpg)
 
-## Text location option
+### Text location option
 
-### Center & Center (not filled)
+#### Center & Center (not filled)
 
 By using this option the text will be add not on the border of the part but mirrored in the center of the print. In this way only the line pattern of the first layer is modified, without adding to much print time.
 
