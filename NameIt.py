@@ -92,7 +92,7 @@ class NameIt(QObject, Extension):
     userSpeedChanged = pyqtSignal()
     userFontChanged = pyqtSignal()
     userMiddleChanged = pyqtSignal()
-    userfilledtextChanged = pyqtSignal()
+    userFilledTextChanged = pyqtSignal()
     
     def __init__(self, parent = None) -> None:
         QObject.__init__(self, parent)
@@ -339,7 +339,7 @@ class NameIt(QObject, Extension):
     def middleInput(self):
         return self._middle
  
-    @pyqtProperty(bool, notify= userfilledtextChanged)
+    @pyqtProperty(bool, notify= userFilledTextChanged)
     def filledtextInput(self):
         return self._filledtext
  
