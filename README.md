@@ -73,14 +73,21 @@ You can also specify a specific ***Initial Layer Speed*** used to print these ma
 
 By using this option the text will be add not on the border of the part but mirrored in the center of the print. In this way only the line pattern of the first layer is modified, without adding to much print time.
 
-![Middle Mode](./images/MiddleMode.jpg)
+![Center Mode](./images/CenterMode.jpg)
  
 If you want to use this mode, you must fix the ***Mesh Fixes*** Union Overlaping Volumes to ***false**.
 
 It could be also possible according to the Cura release to modify the parameters ***Remove Mesh Intersection***  and ***Alternate Mesh Removal** to True.
 
 
-![Middle Mode Parameters](./images/MiddleModeParameters.jpg)
+![Middle Mode Parameters](./images/CenterModeParameters.jpg)
+
+
+The Location type **Center (not filled)** generate a model without infil/Wall and Top/bottom layer. The result if these settings is normaly a text engraved in the bottom of the part.
+
+![center not filled](./images/center_not_filled.jpg)
+
+![center filled](./images/center_filled.jpg)
 
 
 ## Installation
