@@ -27,9 +27,9 @@ Window
 
     // Setting the dimensions of the dialog window
     width: 320
-    height: 370
+    height: 330
     minimumWidth: 320
-    minimumHeight: 370
+    minimumHeight: 330
 
     // Position of the window
     x: Screen.width*0.5 - width - 50
@@ -39,7 +39,7 @@ Window
     Rectangle {
         id: bg_rect
         width: 320
-        height: 370
+        height: 330
         color: "#fff"
         border.color: "#D22"
         border.width: 3
@@ -57,8 +57,8 @@ Window
 	property string suffixInput: manager.suffixInput
 	property string speedInput: manager.speedInput
 	property string fontInput: manager.fontInput
-	property bool middleInput: manager.middleInput
-	property bool filledtextInput: manager.filledtextInput
+	property string locationInput: manager.locationInput
+
 	
     // Button for closing the dialogbox
     Button
@@ -538,50 +538,46 @@ Window
 			manager.fontEntered(cbItems.get(currentIndex).text)
 		}
 	}
-	
-	CheckBox
-	{
-		id: middleCheckBox
-		// text: "<font color='#131151'>Use middle mode</font>"
-		anchors.top: label_font.bottom
-		anchors.topMargin: 10
+
+    //Text "Initial Layer Speed : "
+    Text
+    {
+        id: label_location
+		width: 150
+        text: "Location :"
+        font.family: "Arial"
+        font.pointSize: 12
+        color: "#131151"
+
+        anchors.top: label_font.bottom
+        anchors.topMargin: 10
         anchors.left: parent.left
         anchors.leftMargin: 10
-        // style: UM.Theme.styles.checkbox
-
-		checked: middleInput
-		onClicked: manager.middleEntered(checked)
-		
-		Text {
-			height: 12	
-			x: 20
-			y: -2
-			text: "Use middle mode"
-			font.pointSize: 12
-			color: "#131151"
-		}		
-	}
+    }	
 	
-	CheckBox
-	{
-		id: middleCheckBox
-		// text: "<font color='#131151'>Use middle mode</font>"
-		anchors.top: label_font.bottom
-		anchors.topMargin: 10
-        anchors.left: parent.left
-        anchors.leftMargin: 10
-        // style: UM.Theme.styles.checkbox
-
-		checked: middleInput
-		onClicked: manager.middleEntered(checked)
+	ComboBox {
+		id: locationComboType
+		width: 130
+		height: UM.Theme.getSize("setting_control").height
+		objectName: "Location_Type"
+		visible:true
+        anchors.top: label_location.top
+        anchors.topMargin: -2
+        anchors.left: label_location.right
+		anchors.leftMargin: 10
 		
-		Text {
-			height: 12	
-			x: 20
-			y: -2
-			text: "Use middle mode"
-			font.pointSize: 12
-			color: "#131151"
-		}		
+		model: ListModel {
+		   id: locItems
+		   ListElement { text: "Front"}
+		   ListElement { text: "Center"}
+		   ListElement { text: "Center (not filled)"}
+		}
+
+		Component.onCompleted: currentIndex = find(locationInput)
+		
+		onCurrentIndexChanged: 
+		{ 
+			manager.locationEntered(locItems.get(currentIndex).text)
+		}
 	}
 }

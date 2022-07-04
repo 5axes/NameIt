@@ -17,6 +17,7 @@
 # V1.5.0    : Mirror Mode
 # V1.5.1    : Mirror Mode Menu direct Switch mode
 # V1.6.0    : Add Function Rename Models
+# V1.6.1    : Option Middle as ComboBox
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -91,8 +92,7 @@ class NameIt(QObject, Extension):
     userInfoTextChanged = pyqtSignal()
     userSpeedChanged = pyqtSignal()
     userFontChanged = pyqtSignal()
-    userMiddleChanged = pyqtSignal()
-    userFilledTextChanged = pyqtSignal()
+    userLocationChanged = pyqtSignal()
     
     def __init__(self, parent = None) -> None:
         QObject.__init__(self, parent)
@@ -104,8 +104,7 @@ class NameIt(QObject, Extension):
         self._prefix = ""
         self._suffix = ""
         self._font = "NameIt Rounded"
-        self._middle = False
-        self._filledtext = False
+        self._location = "front"
         
         # set the preferences to store the default value
         #self._application = CuraApplication.getInstance()
@@ -121,8 +120,7 @@ class NameIt(QObject, Extension):
         self._preferences.addPreference("NameIt/suffix", "")
         self._preferences.addPreference("NameIt/speed_layer_0", 0)
         self._preferences.addPreference("NameIt/font", "NameIt Rounded")
-        self._preferences.addPreference("NameIt/middle", str(False))
-        self._preferences.addPreference("NameIt/filledtext", str(False))
+        self._preferences.addPreference("NameIt/location", "front")
         
         # convert as float to avoid further issue
         self._size = float(self._preferences.getValue("NameIt/size"))
@@ -133,8 +131,7 @@ class NameIt(QObject, Extension):
         self._suffix = self._preferences.getValue("NameIt/suffix")     
         self._speed = float(self._preferences.getValue("NameIt/speed_layer_0")) 
         self._font = self._preferences.getValue("NameIt/font") 
-        self._middle = bool(self._preferences.getValue("NameIt/middle"))
-        self._filledtext = bool(self._preferences.getValue("NameIt/filledtext"))
+        self._location = self._preferences.getValue("NameIt/location")
  
         self.Major=1
         self.Minor=0
@@ -172,12 +169,11 @@ class NameIt(QObject, Extension):
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Name"), lambda: self.addPartName("Name"))
         self.addMenuItem("", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Remove Identifier"), self.removeAllIdMesh)
-        self.addMenuItem("  ", lambda: None)
+        self.addMenuItem(" ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Rename models"), self.renameMesh)       
-        self.addMenuItem("   ", lambda: None)
+        self.addMenuItem("  ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Define Text Parameters"), self.defaultSize)
-        self.addMenuItem(catalog.i18nc("@item:inmenu", "Switch Middle Mode"), self.switchMode)
-        self.addMenuItem("    ", lambda: None)
+        self.addMenuItem("   ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Help"), self.gotoHelp)
 
         # Define a new settings "identification_mesh""
@@ -237,9 +233,9 @@ class NameIt(QObject, Extension):
     def setSelectedMeshName(self, new_name:str) -> None:
         iD = 0
         for node in self._node_queue :
-            Logger.log('d', 'New_name : %s', new_name)
+            # Logger.log('d', 'New_name : %s', new_name)
             # node = self._node_queue[0]
-            if len(self._node_queue) > 0 :
+            if len(self._node_queue) > 1 :
                 _name = new_name
                 _name += "({})".format(str(iD))
                 iD += 1
@@ -294,13 +290,6 @@ class NameIt(QObject, Extension):
         self._continueDialog.show()
         #self.userSizeChanged.emit()
         
-    def switchMode(self) -> None:
-        if self._middle == False:
-            self._middle = True
-        else:
-            self._middle = False
-        self.writeToLog("Set NameIt/Middle : " + str(self._middle))
-        self._preferences.setValue("NameIt/middle", str(self._middle))
 
     #====User Input=====================================================================================================
     @pyqtProperty(str, notify= userHeightChanged)
@@ -335,13 +324,9 @@ class NameIt(QObject, Extension):
     def fontInput(self):
         return str(self._font)
 
-    @pyqtProperty(bool, notify= userMiddleChanged)
-    def middleInput(self):
-        return self._middle
- 
-    @pyqtProperty(bool, notify= userFilledTextChanged)
-    def filledtextInput(self):
-        return self._filledtext
+    @pyqtProperty(str, notify= userLocationChanged)
+    def locationInput(self):
+        return str(self._location)
  
     #The QT property, which is computed on demand from our userInfoText when the appropriate signal is emitted
     @pyqtProperty(str, notify= userInfoTextChanged)
@@ -567,44 +552,12 @@ class NameIt(QObject, Extension):
         #clear the message Field
         self.userMessage("", "ok")
 
-    def getMiddle(self) -> bool:
-    
-        return self._middle
-        
-    # is called when a key gets released in the font inputField
-    @pyqtSlot(bool)
-    def middleEntered(self, ret):
-
-        self._middle = bool(ret)
-
-        self.writeToLog("Set NameIt/Middle : " + str(ret))
-        self._preferences.setValue("NameIt/middle", str(self._middle))
-        
-        # Logger.log("d", "middleEntered = %s", str(self._middle)) 
-        
-        # clear the message Field
-        self.userMessage("", "ok")
-
-    # is called when a key gets released in the font inputField
-    @pyqtSlot(bool)
-    def filledtextEntered(self, ret):
-
-        self._filledtext = bool(ret)
-
-        self.writeToLog("Set NameIt/filledtext : " + str(ret))
-        self._preferences.setValue("NameIt/filledtext", str(self._filledtext))
-        
-        # Logger.log("d", "filledtext = %s", str(self._filledtext)) 
-        
-        # clear the message Field
-        self.userMessage("", "ok")
-
-        
+       
     def getFont(self) -> str:
     
         return self._font
         
-    # is called when a key gets released in the font inputField
+    # is called when a CurrentIndexChanged in the font combobox
     @pyqtSlot(str)
     def fontEntered(self, text):
 
@@ -614,6 +567,24 @@ class NameIt(QObject, Extension):
         self._preferences.setValue("NameIt/font", self._font)
         
         # Logger.log("d", "fontEntered = %s", self._font) 
+        
+        # clear the message Field
+        self.userMessage("", "ok")
+
+    def getLocation(self) -> str:
+    
+        return self._location
+        
+    # is called when a CurrentIndexChanged in the location combobox
+    @pyqtSlot(str)
+    def locationEntered(self, text):
+
+        self._location = str(text)
+
+        self.writeToLog("Set NameIt/Location : " + text)
+        self._preferences.setValue("NameIt/location", self._location)
+        
+        # Logger.log("d", "locationEntered = %s", self._location) 
         
         # clear the message Field
         self.userMessage("", "ok")
@@ -779,12 +750,12 @@ class NameIt(QObject, Extension):
         # Logger.log("d", "depth= %s", str(node_bounds.depth))
         # Logger.log("d", "Center X= %s", str(node_bounds.center.x))
         # Logger.log("d", "Center Y= %s", str(node_bounds.center.z))
-        if self._middle :
+        if self._location == "front" :
             PosX = node_bounds.center.x
-            PosY = node_bounds.center.z + (self._size * 0.5)
+            PosY = node_bounds.center.z+0.5*node_bounds.depth + self._distance + self._size         
         else :
             PosX = node_bounds.center.x
-            PosY = node_bounds.center.z+0.5*node_bounds.depth + self._distance + self._size 
+            PosY = node_bounds.center.z + (self._size * 0.5)
 
         # Logger.log("d", "Pos X= %s", str(PosX))
         # Logger.log("d", "Pos Y= %s", str(PosY))
@@ -822,34 +793,35 @@ class NameIt(QObject, Extension):
             new_instance.resetState()  # Ensure that the state is not seen as a user state.
             settings.addInstance(new_instance)
         
-        if self._middle :
+        if self._location != "front" :
             # meshfix_union_all false
             definition = stack.getSettingDefinition("meshfix_union_all")
             new_instance = SettingInstance(definition, settings)
             new_instance.setProperty("value", False)
             new_instance.resetState()  # Ensure that the state is not seen as a user state.
             settings.addInstance(new_instance)
-            if not self._filledtext :
-                # infill_sparse_density 0
-                definition = stack.getSettingDefinition("infill_sparse_density")
-                new_instance = SettingInstance(definition, settings)
-                new_instance.setProperty("value", 0)
-                new_instance.resetState()  
-                settings.addInstance(new_instance)
+            
+        if self._location == "center (not filled)"  :
+            # infill_sparse_density 0
+            definition = stack.getSettingDefinition("infill_sparse_density")
+            new_instance = SettingInstance(definition, settings)
+            new_instance.setProperty("value", 0)
+            new_instance.resetState()  
+            settings.addInstance(new_instance)
 
-                # wall_line_count 0
-                definition = stack.getSettingDefinition("wall_line_count")
-                new_instance = SettingInstance(definition, settings)
-                new_instance.setProperty("value", 0)
-                new_instance.resetState()  
-                settings.addInstance(new_instance)
+            # wall_line_count 0
+            definition = stack.getSettingDefinition("wall_line_count")
+            new_instance = SettingInstance(definition, settings)
+            new_instance.setProperty("value", 0)
+            new_instance.resetState()  
+            settings.addInstance(new_instance)
 
-                # top_bottom_thickness 0
-                definition = stack.getSettingDefinition("top_bottom_thickness")
-                new_instance = SettingInstance(definition, settings)
-                new_instance.setProperty("value", 0)
-                new_instance.resetState()  
-                settings.addInstance(new_instance)
+            # top_bottom_thickness 0
+            definition = stack.getSettingDefinition("top_bottom_thickness")
+            new_instance = SettingInstance(definition, settings)
+            new_instance.setProperty("value", 0)
+            new_instance.resetState()  
+            settings.addInstance(new_instance)
 
             
         op = GroupedOperation()
@@ -975,7 +947,7 @@ class NameIt(QObject, Extension):
         combined.apply_transform(trimesh.transformations.scale_matrix(self._height, origin, DirZ))
         
         # Mirror the text for option Middle
-        if self._middle :
+        if self._location != "front" :
             combined.apply_transform(trimesh.transformations.reflection_matrix(origin, DirX))
             
         
