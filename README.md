@@ -89,25 +89,26 @@ The Location type **Center (not filled)** generate a model without infil/Wall an
 
 ![center filled](./images/center_filled.jpg)
 
-
 ## Installation
-
-First, make sure your Cura version is  4.4 or newer.
-
-Manual Install Download & extract the repository as ZIP or clone it. Copy the files/plugins/NameIt directory to:
-
-on Windows: [Cura installation folder]/plugins/NameIt
-
-on Linux: ~/.local/share/cura/[YOUR CURA VERSION]/plugins/NameIt (e.g. ~/.local/share/cura/5.0/plugins/NameIt)
-
-on Mac: ~/Library/Application Support/cura/[YOUR CURA VERSION]/plugins/NameIt
-
-### Automatic installation
+----
+#### Marketplace (recommended):
 This plugin is now avalaible in the Cura marketplace. So you can install it automaticaly from this place:
 
 ![Automatic Install](./images/marketplace.jpg)
 
 [Name It on Ultimaker Market place](https://marketplace.ultimaker.com/app/cura/plugins/5axes/NameIt)
+
+#### Manually:
+First, make sure your Cura version is  4.4 or newer.
+
+Download or clone the repository into `[Cura configuration folder]/plugins/NameIt`.
+
+The configuration folder can be found via **Help** -> **Show Configuration Folder** inside Cura.
+
+This menu opens the following folder:
+* Windows: `%APPDATA%\cura\<Cura version>\, (usually `C:\Users\<your username>\AppData\Roaming\cura\<Cura version>\`)
+* Mac OS: `$HOME/Library/Application Support/cura/<Cura version>/`
+* Linux: `$HOME/.local/share/cura/<Cura version>/`
 
 ## Help
 
