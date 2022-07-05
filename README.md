@@ -106,7 +106,7 @@ Download or clone the repository into `[Cura configuration folder]/plugins/NameI
 The configuration folder can be found via **Help** -> **Show Configuration Folder** inside Cura.
 
 This menu opens the following folder:
-* Windows: `%APPDATA%\cura\<Cura version>\, (usually `C:\Users\<your username>\AppData\Roaming\cura\<Cura version>\`)
+* Windows: `%APPDATA%\cura\<Cura version>\`, (usually `C:\Users\<your username>\AppData\Roaming\cura\<Cura version>\`)
 * Mac OS: `$HOME/Library/Application Support/cura/<Cura version>/`
 * Linux: `$HOME/.local/share/cura/<Cura version>/`
 
