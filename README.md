@@ -35,7 +35,7 @@ Function to add the name of the element in front of each part to identify every 
 
 ![Add Name](./images/AddName.jpg)
 
-## Rename Models
+### Rename Models
 
 You can use the integrated function **Rename Models** to change the name of the element present on the builtplate before to use the function **Add Name**.
 
@@ -57,13 +57,6 @@ Note : the generated meshes are identified by a specific attribute "Identificati
 
 ![model_parameter](./images/model_parameter.png)
 
-## Rename models
-
-Fonction to rename several models in the same times.
-
-In case of several modifications  the first Item will start from (0)  -> can be usefull for the function **Add Number From Part** 
-
-![Rename several models](./images/rename_list.png)
 
 ## Define Text Parameters
 
