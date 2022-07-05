@@ -35,6 +35,16 @@ Function to add the name of the element in front of each part to identify every 
 
 ![Add Name](./images/AddName.jpg)
 
+## Rename Models
+
+You can use the integrated function **Rename Models** to change the name of the element present on the builtplate before to use the function **Add Name**.
+
+You can rename several model in the same times
+
+In case of several modifications  the first Item will start from (0)  -> can be usefull for the function **Add Number From Part** Ie : [4#issuecomment](https://github.com/5axes/NameIt/issues/4#issuecomment-1159746200)
+
+![image](./images/rename_list.png)
+
 ### Capitalization of the text
 
 The name of the part is systematically converted into capital letters. This is a normal and desired feature. Capital letters are often easier to print (for example no dot on the i or j; I J)
