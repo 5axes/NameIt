@@ -35,7 +35,7 @@ Function to add the name of the element in front of each part to identify every 
 
 ![Add Name](./images/AddName.jpg)
 
-### Rename Models
+#### Rename Models
 
 You can use the integrated function **Rename Models** to change the name of the element present on the builtplate before to use the function **Add Name**.
 
