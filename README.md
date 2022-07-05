@@ -93,7 +93,7 @@ The Location type **Center (not filled)** generate a model without infil/Wall an
 ![center filled](./images/center_filled.jpg)
 
 ## Installation
-----
+
 #### Marketplace (recommended):
 This plugin is now avalaible in the Cura marketplace. So you can install it automaticaly from this place:
 
