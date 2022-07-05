@@ -18,6 +18,7 @@
 # V1.5.1    : Mirror Mode Menu direct Switch mode
 # V1.6.0    : Add Function Rename Models
 # V1.6.1    : Option Middle as ComboBox
+# V1.6.2    : Use "grouped" operation for adding text : https://github.com/5axes/NameIt/issues/14
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -649,6 +650,7 @@ class NameIt(QObject, Extension):
         if not nodes_list:
             nodes_list = DepthFirstIterator(self._application.getController().getScene().getRoot())
         
+        self._op = GroupedOperation()
         for node in nodes_list:
             if node.callDecoration("isSliceable"):           
                 # Logger.log('d', "isSliceable : {}".format(node.getName()))
@@ -694,7 +696,8 @@ class NameIt(QObject, Extension):
                                     self._createNameMesh(node, Id_total)
                                     if Id_temp > self._idcount :
                                         self._idcount = Id_temp   
-                                        
+        
+        self._op.push()        
         # Informations at the end of the creation Routine
         if nbNum == 0 :                                
             Message(text = "No Identifier created for %s elements" % (nbMod), title = catalog.i18nc("@info:title", "Warning ! Name It"), message_type = Message.MessageType.ERROR).show()
@@ -824,11 +827,11 @@ class NameIt(QObject, Extension):
             settings.addInstance(new_instance)
 
             
-        op = GroupedOperation()
+        #op = GroupedOperation()
         # First add node to the scene at the correct position/scale, before parenting, so the support mesh does not get scaled with the parent
-        op.addOperation(AddSceneNodeOperation(node, self._controller.getScene().getRoot()))
-        op.addOperation(SetParentOperation(node, parent))
-        op.push()
+        self._op.addOperation(AddSceneNodeOperation(node, self._controller.getScene().getRoot()))
+        self._op.addOperation(SetParentOperation(node, parent))
+        #op.push()
         node.setPosition(position, CuraSceneNode.TransformSpace.World)
  
         CuraApplication.getInstance().getController().getScene().sceneChanged.emit(node)
