@@ -78,12 +78,12 @@ By using this option the text will be add not on the border of the part but mirr
 
 ![Center Mode](./images/CenterMode.jpg)
  
-If you want to use this mode, you must fix the ***Mesh Fixes*** Union Overlaping Volumes to ***false**.
+If you want to use this mode, you must fix the ***Mesh Fixes*** Union Overlaping Volumes to ***false***.
 
-It could be also possible according to the Cura release to modify the parameters ***Remove Mesh Intersection***  and ***Alternate Mesh Removal** to True.
+It could be also possible according to the Cura release to modify the parameters ***Remove Mesh Intersection***  and ***Alternate Mesh Removal*** to True.
 
 
-![Middle Mode Parameters](./images/CenterModeParameters.jpg)
+![Center Mode Parameters](./images/CenterModeParameters.jpg)
 
 
 The Location type **Center (not filled)** generate a model without infil/Wall and Top/bottom layer. The result if these settings is normaly a text engraved in the bottom of the part.
