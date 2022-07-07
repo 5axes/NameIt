@@ -11,8 +11,7 @@ The identifier is linked to the model, if you move the part manually, the identi
 This plugin is using the [Trimesh](https://github.com/mikedh/trimesh) library to load STL files and for mesh manipulations.
 
 The font used to create the texts is based on the [Gill Sans MT:style=Bold](https://docs.microsoft.com/en-us/typography/font-list/gill-sans-mt) font style.
-And [Arial Rounded MT](https://docs.microsoft.com/en-us/typography/font-list/arial-rounded-mt)
-
+And [Arial Rounded MT](https://docs.microsoft.com/en-us/typography/font-list/arial-rounded-mt). A special font called [NameIt Rounded](https://github.com/5axes/NameIt/wiki/New-Font-:-NameIt-Rounded-Bold) have been created for this plugin. The objective of this TrueType font is to be more easily printable with a 3D FDM printing process.
 
 ## Add Number
 
@@ -78,12 +77,12 @@ By using this option the text will be add not on the border of the part but mirr
 
 ![Center Mode](./images/CenterMode.jpg)
  
-If you want to use this mode, you must fix the ***Mesh Fixes*** Union Overlaping Volumes to ***false**.
+If you want to use this mode, you must fix the ***Mesh Fixes*** Union Overlaping Volumes to ***false***.
 
-It could be also possible according to the Cura release to modify the parameters ***Remove Mesh Intersection***  and ***Alternate Mesh Removal** to True.
+It could be also possible according to the Cura release to modify the parameters ***Remove Mesh Intersection***  and ***Alternate Mesh Removal*** to True.
 
 
-![Middle Mode Parameters](./images/CenterModeParameters.jpg)
+![Center Mode Parameters](./images/CenterModeParameters.jpg)
 
 
 The Location type **Center (not filled)** generate a model without infil/Wall and Top/bottom layer. The result if these settings is normaly a text engraved in the bottom of the part.
