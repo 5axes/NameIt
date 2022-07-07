@@ -700,7 +700,7 @@ class NameIt(QObject, Extension):
         self._op.push()        
         # Informations at the end of the creation Routine
         if nbNum == 0 :                                
-            Message(text = "No Identifier created for %s elements" % (nbMod), title = catalog.i18nc("@info:title", "Warning ! Name It"), message_type = Message.MessageType.ERROR).show()
+            Message(text = "No Identifier created for %s element(s)" % (nbMod), title = catalog.i18nc("@info:title", "Warning ! Name It"), message_type = Message.MessageType.ERROR).show()
         elif nbNum < nbMod :
             Message(text = "Identifier creation : %d / %d" % (nbNum,nbMod), title = catalog.i18nc("@info:title", "Info ! Name It"), message_type = Message.MessageType.WARNING).show()    
         elif nbNum == nbMod :
