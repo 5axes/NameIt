@@ -11,8 +11,7 @@ The identifier is linked to the model, if you move the part manually, the identi
 This plugin is using the [Trimesh](https://github.com/mikedh/trimesh) library to load STL files and for mesh manipulations.
 
 The font used to create the texts is based on the [Gill Sans MT:style=Bold](https://docs.microsoft.com/en-us/typography/font-list/gill-sans-mt) font style.
-And [Arial Rounded MT](https://docs.microsoft.com/en-us/typography/font-list/arial-rounded-mt)
-
+And [Arial Rounded MT](https://docs.microsoft.com/en-us/typography/font-list/arial-rounded-mt). A special font called [NameIt Rounded](https://github.com/5axes/NameIt/wiki/New-Font-:-NameIt-Rounded-Bold) have been created for this plugin. The objective of this TrueType font is to be more easily printable with a 3D FDM printing process.
 
 ## Add Number
 
