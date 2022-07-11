@@ -23,7 +23,7 @@ OS2Version: 3
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 0
 CreationTime: 1656082097
-ModificationTime: 1657206822
+ModificationTime: 1657287969
 PfmFamily: 81
 TTFWeight: 700
 TTFWidth: 5
@@ -534,38 +534,10 @@ Grid
  1270 708 l 1049
 EndSplineSet
 TeXData: 1 0 0 235929 117964 78643 740295 1048576 78643 783286 444596 497025 792723 393216 433062 380633 303038 157286 324010 404750 52429 2506097 1059062 262144
-BeginChars: 313 238
-
-StartChar: NULL
-Encoding: 0 -1 0
-AltUni2: 000000.ffffffff.0
-Width: 0
-Flags: W
-LayerCount: 2
-Fore
-Validated: 1
-EndChar
-
-StartChar: nonmarkingreturn
-Encoding: 13 13 1
-Width: 70
-Flags: W
-LayerCount: 2
-Fore
-Validated: 1
-EndChar
-
-StartChar: space
-Encoding: 32 32 2
-Width: 225
-Flags: W
-LayerCount: 2
-Fore
-Validated: 1
-EndChar
+BeginChars: 297 231
 
 StartChar: Eth
-Encoding: 208 208 3
+Encoding: 208 208 0
 Width: 599
 Flags: W
 LayerCount: 2
@@ -612,7 +584,7 @@ Validated: 9
 EndChar
 
 StartChar: eth
-Encoding: 240 240 4
+Encoding: 240 240 1
 Width: 599
 Flags: W
 LayerCount: 2
@@ -660,7 +632,7 @@ Validated: 9
 EndChar
 
 StartChar: Lslash
-Encoding: 258 321 5
+Encoding: 256 321 2
 Width: 529
 Flags: W
 LayerCount: 2
@@ -708,11 +680,11 @@ SplineSet
  83 234 l 1,0,1
 EndSplineSet
 Validated: 1
-Kerns2: 87 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 77 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: lslash
-Encoding: 259 322 6
+Encoding: 257 322 3
 Width: 529
 Flags: W
 LayerCount: 2
@@ -759,75 +731,57 @@ SplineSet
  238 140 l 2,0,1
 EndSplineSet
 Validated: 33
-Kerns2: 119 -90 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 87 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 109 -90 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: Scaron
-Encoding: 260 352 7
+Encoding: 258 352 4
 Width: 523
 Flags: W
 LayerCount: 2
 Fore
-Refer: 113 115 N 1 0 0 1 0 0 3
-Refer: 235 711 N 1 0 0 1 80 0 2
+Refer: 103 115 N 1 0 0 1 0 0 3
+Refer: 225 711 N 1 0 0 1 80 0 2
 Validated: 9
 EndChar
 
 StartChar: scaron
-Encoding: 261 353 8
+Encoding: 259 353 5
 Width: 523
 Flags: W
 LayerCount: 2
 Fore
-Refer: 113 115 N 1 0 0 1 0 0 3
-Refer: 235 711 N 1 0 0 1 80 0 2
+Refer: 103 115 N 1 0 0 1 0 0 3
+Refer: 225 711 N 1 0 0 1 80 0 2
 Validated: 9
 EndChar
 
 StartChar: Yacute
-Encoding: 221 221 9
+Encoding: 221 221 6
 Width: 542
 Flags: W
 LayerCount: 2
 Fore
-Refer: 87 89 N 1 0 0 1 0 0 2
-Refer: 167 180 N 1 0 0 1 170 0 2
+Refer: 77 89 N 1 0 0 1 0 0 2
+Refer: 157 180 N 1 0 0 1 170 0 2
 Validated: 1
-Kerns2: 217 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 215 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 193 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 192 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 170 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 126 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 125 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 63 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 50 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 207 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 205 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 183 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 182 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 160 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 115 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 53 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 40 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: yacute
-Encoding: 253 253 10
+Encoding: 253 253 7
 Width: 551
 Flags: W
 LayerCount: 2
 Fore
-Refer: 119 121 N 1 0 0 1 0 0 2
-Refer: 167 180 N 1 0 0 1 180 0 2
+Refer: 109 121 N 1 0 0 1 0 0 2
+Refer: 157 180 N 1 0 0 1 180 0 2
 Validated: 1
-Kerns2: 217 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 215 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 193 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 192 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 170 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 126 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 125 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 63 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 50 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
-EndChar
-
-StartChar: HT
-Encoding: 9 9 11
-Width: 70
-Flags: W
-LayerCount: 2
-Fore
-Validated: 1
-EndChar
-
-StartChar: LF
-Encoding: 10 10 12
-Width: 70
-Flags: W
-LayerCount: 2
-Fore
-Validated: 1
+Kerns2: 207 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 205 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 183 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 182 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 160 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 115 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 53 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 40 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: Thorn
-Encoding: 222 222 13
+Encoding: 222 222 8
 Width: 514
 Flags: W
 LayerCount: 2
@@ -874,7 +828,7 @@ Validated: 1
 EndChar
 
 StartChar: thorn
-Encoding: 254 254 14
+Encoding: 254 254 9
 Width: 514
 Flags: W
 LayerCount: 2
@@ -921,74 +875,29 @@ Validated: 1
 EndChar
 
 StartChar: Zcaron
-Encoding: 262 381 15
+Encoding: 260 381 10
 Width: 536
 Flags: W
 LayerCount: 2
 Fore
-Refer: 120 122 N 1 0 0 1 0 0 3
-Refer: 235 711 N 1 0 0 1 100 0 2
+Refer: 110 122 N 1 0 0 1 0 0 3
+Refer: 225 711 N 1 0 0 1 100 0 2
 Validated: 9
 EndChar
 
 StartChar: zcaron
-Encoding: 263 382 16
+Encoding: 261 382 11
 Width: 536
 Flags: W
 LayerCount: 2
 Fore
-Refer: 120 122 N 1 0 0 1 0 0 3
-Refer: 235 711 N 1 0 0 1 100 0 2
+Refer: 110 122 N 1 0 0 1 0 0 3
+Refer: 225 711 N 1 0 0 1 100 0 2
 Validated: 9
 EndChar
 
-StartChar: DLE
-Encoding: 16 16 17
-Width: 70
-Flags: W
-LayerCount: 2
-Fore
-Validated: 1
-EndChar
-
-StartChar: DC1
-Encoding: 17 17 18
-Width: 70
-Flags: W
-LayerCount: 2
-Fore
-Validated: 1
-EndChar
-
-StartChar: DC2
-Encoding: 18 18 19
-Width: 70
-Flags: W
-LayerCount: 2
-Fore
-Validated: 1
-EndChar
-
-StartChar: DC3
-Encoding: 19 19 20
-Width: 70
-Flags: W
-LayerCount: 2
-Fore
-Validated: 1
-EndChar
-
-StartChar: DC4
-Encoding: 20 20 21
-Width: 70
-Flags: W
-LayerCount: 2
-Fore
-Validated: 1
-EndChar
-
 StartChar: onehalf
-Encoding: 189 189 22
+Encoding: 189 189 12
 Width: 800
 Flags: W
 LayerCount: 2
@@ -1047,12 +956,12 @@ SplineSet
  69 736 69 736 67 738 c 256
  64 740 64 740 61 740 c 2
 EndSplineSet
-Refer: 45 47 N 0.999939 0 0 1 126 76 2
+Refer: 35 47 N 0.999939 0 0 1 126 76 2
 Validated: 37
 EndChar
 
 StartChar: onequarter
-Encoding: 188 188 23
+Encoding: 188 188 13
 Width: 700
 Flags: W
 LayerCount: 2
@@ -1122,12 +1031,12 @@ SplineSet
  690 125 690 125 677 111 c 0
  664 97 664 97 644 97 c 2
 EndSplineSet
-Refer: 45 47 N 0.999939 0 0 1 126 76 2
+Refer: 35 47 N 0.999939 0 0 1 126 76 2
 Validated: 1
 EndChar
 
-StartChar: onesuperior
-Encoding: 185 185 24
+StartChar: uni00B9
+Encoding: 185 185 14
 Width: 269
 VWidth: 838
 Flags: W
@@ -1157,7 +1066,7 @@ Validated: 1
 EndChar
 
 StartChar: threequarters
-Encoding: 190 190 25
+Encoding: 190 190 15
 Width: 830
 Flags: W
 LayerCount: 2
@@ -1257,12 +1166,12 @@ SplineSet
  810 118 810 118 796.375 102.875 c 0
  784 89 784 89 763 89 c 2
 EndSplineSet
-Refer: 45 47 N 0.999939 0 0 1 246 60 2
+Refer: 35 47 N 0.999939 0 0 1 246 60 2
 Validated: 33
 EndChar
 
-StartChar: threesuperior
-Encoding: 179 179 26
+StartChar: uni00B3
+Encoding: 179 179 16
 Width: 460
 VWidth: 836
 Flags: W
@@ -1326,8 +1235,8 @@ EndSplineSet
 Validated: 1
 EndChar
 
-StartChar: twosuperior
-Encoding: 178 178 27
+StartChar: uni00B2
+Encoding: 178 178 17
 Width: 439
 Flags: W
 LayerCount: 2
@@ -1373,7 +1282,7 @@ Validated: 1
 EndChar
 
 StartChar: brokenbar
-Encoding: 166 166 28
+Encoding: 166 166 18
 Width: 188
 Flags: W
 LayerCount: 2
@@ -1406,7 +1315,7 @@ Validated: 1
 EndChar
 
 StartChar: minus
-Encoding: 264 8722 29
+Encoding: 262 8722 19
 Width: 650
 Flags: W
 TtInstrs:
@@ -1453,7 +1362,7 @@ Validated: 1
 EndChar
 
 StartChar: multiply
-Encoding: 215 215 30
+Encoding: 215 215 20
 Width: 511
 Flags: W
 LayerCount: 2
@@ -1490,7 +1399,7 @@ Validated: 1
 EndChar
 
 StartChar: exclam
-Encoding: 33 33 31
+Encoding: 33 33 21
 Width: 250
 Flags: W
 LayerCount: 2
@@ -1517,11 +1426,11 @@ SplineSet
  37 133.05859375 37 133.05859375 90 158 c 0,30,31
  105 164 105 164 124 164 c 256,17,18
 EndSplineSet
-Validated: 524325
+Validated: 37
 EndChar
 
 StartChar: quotedbl
-Encoding: 34 34 32
+Encoding: 34 34 22
 Width: 319
 Flags: W
 LayerCount: 2
@@ -1562,7 +1471,7 @@ Validated: 1
 EndChar
 
 StartChar: numbersign
-Encoding: 35 35 33
+Encoding: 35 35 23
 Width: 587
 Flags: W
 LayerCount: 2
@@ -1667,7 +1576,7 @@ Validated: 33
 EndChar
 
 StartChar: dollar
-Encoding: 36 36 34
+Encoding: 36 36 24
 Width: 523
 Flags: W
 LayerCount: 2
@@ -1727,7 +1636,7 @@ Validated: 41
 EndChar
 
 StartChar: percent
-Encoding: 37 37 35
+Encoding: 37 37 25
 Width: 726
 Flags: W
 LayerCount: 2
@@ -1789,7 +1698,7 @@ Validated: 1
 EndChar
 
 StartChar: ampersand
-Encoding: 38 38 36
+Encoding: 38 38 26
 Width: 609
 Flags: W
 LayerCount: 2
@@ -1858,11 +1767,11 @@ SplineSet
  197 318 l 2,86,-1
 EndSplineSet
 Validated: 1
-Kerns2: 205 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 204 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 119 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 114 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 87 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 10 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 9 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 195 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: quotesingle
-Encoding: 39 39 37
+Encoding: 39 39 27
 Width: 169
 Flags: W
 LayerCount: 2
@@ -1887,7 +1796,7 @@ Validated: 33
 EndChar
 
 StartChar: parenleft
-Encoding: 40 40 38
+Encoding: 40 40 28
 Width: 291
 Flags: W
 LayerCount: 2
@@ -1910,17 +1819,17 @@ Validated: 33
 EndChar
 
 StartChar: parenright
-Encoding: 41 41 39
+Encoding: 41 41 29
 Width: 291
 Flags: W
 LayerCount: 2
 Fore
-Refer: 38 40 N -0.999939 0 0 1 221 0 2
+Refer: 28 40 N -0.999939 0 0 1 221 0 2
 Validated: 25
 EndChar
 
 StartChar: asterisk
-Encoding: 42 42 40
+Encoding: 42 42 30
 Width: 493
 Flags: W
 LayerCount: 2
@@ -1961,11 +1870,11 @@ SplineSet
  310 734 310 734 310 712.5 c 2,43,-1
  310 617 l 1,0,-1
 EndSplineSet
-Validated: 524321
+Validated: 33
 EndChar
 
 StartChar: plus
-Encoding: 43 43 41
+Encoding: 43 43 31
 Width: 550
 Flags: W
 LayerCount: 2
@@ -2003,7 +1912,7 @@ Validated: 1
 EndChar
 
 StartChar: comma
-Encoding: 44 44 42
+Encoding: 44 44 32
 Width: 248
 Flags: W
 LayerCount: 2
@@ -2028,7 +1937,7 @@ Validated: 41
 EndChar
 
 StartChar: hyphen
-Encoding: 45 45 43
+Encoding: 45 45 33
 Width: 399
 Flags: W
 LayerCount: 2
@@ -2050,7 +1959,7 @@ Validated: 1
 EndChar
 
 StartChar: period
-Encoding: 46 46 44
+Encoding: 46 46 34
 Width: 245
 Flags: W
 LayerCount: 2
@@ -2070,7 +1979,7 @@ Validated: 1
 EndChar
 
 StartChar: slash
-Encoding: 47 47 45
+Encoding: 47 47 35
 Width: 449
 Flags: W
 LayerCount: 2
@@ -2092,7 +2001,7 @@ Validated: 33
 EndChar
 
 StartChar: zero
-Encoding: 48 48 46
+Encoding: 48 48 36
 Width: 503
 Flags: W
 LayerCount: 2
@@ -2127,11 +2036,11 @@ SplineSet
  139 533 139 533 139 493 c 2,28,-1
 EndSplineSet
 Validated: 1
-Kerns2: 87 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 77 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: one
-Encoding: 49 49 47
+Encoding: 49 49 37
 Width: 320
 Flags: W
 LayerCount: 2
@@ -2158,7 +2067,7 @@ Validated: 1
 EndChar
 
 StartChar: two
-Encoding: 50 50 48
+Encoding: 50 50 38
 Width: 511
 Flags: W
 LayerCount: 2
@@ -2194,11 +2103,11 @@ SplineSet
  342 326 342 326 340 324.5 c 0,48,49
  252 224 252 224 164 123 c 1,0,-1
 EndSplineSet
-Validated: 524321
+Validated: 33
 EndChar
 
 StartChar: three
-Encoding: 51 51 49
+Encoding: 51 51 39
 Width: 536
 Flags: W
 LayerCount: 2
@@ -2251,7 +2160,7 @@ Validated: 41
 EndChar
 
 StartChar: four
-Encoding: 52 52 50
+Encoding: 52 52 40
 Width: 577
 Flags: W
 LayerCount: 2
@@ -2291,7 +2200,7 @@ Validated: 41
 EndChar
 
 StartChar: five
-Encoding: 53 53 51
+Encoding: 53 53 41
 Width: 518
 Flags: W
 LayerCount: 2
@@ -2338,7 +2247,7 @@ Validated: 33
 EndChar
 
 StartChar: six
-Encoding: 54 54 52
+Encoding: 54 54 42
 Width: 517
 Flags: W
 LayerCount: 2
@@ -2385,11 +2294,11 @@ SplineSet
  304 266 l 2,43,44
 EndSplineSet
 Validated: 33
-Kerns2: 87 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 77 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: seven
-Encoding: 55 55 53
+Encoding: 55 55 43
 Width: 497
 Flags: W
 LayerCount: 2
@@ -2415,7 +2324,7 @@ Validated: 41
 EndChar
 
 StartChar: eight
-Encoding: 56 56 54
+Encoding: 56 56 44
 Width: 515
 Flags: W
 LayerCount: 2
@@ -2470,11 +2379,11 @@ SplineSet
  137.5 245 l 2,61,62
 EndSplineSet
 Validated: 41
-Kerns2: 87 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 77 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: nine
-Encoding: 57 57 55
+Encoding: 57 57 45
 Width: 517
 Flags: W
 LayerCount: 2
@@ -2521,33 +2430,33 @@ SplineSet
  141 440 l 2,43,44
 EndSplineSet
 Validated: 33
-Kerns2: 87 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 77 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: colon
-Encoding: 58 58 56
+Encoding: 58 58 46
 Width: 246
 Flags: W
 LayerCount: 2
 Fore
-Refer: 44 46 N 1 0 0 1 0 362 2
-Refer: 44 46 N 1 0 0 1 2 10 2
+Refer: 34 46 N 1 0 0 1 0 362 2
+Refer: 34 46 N 1 0 0 1 2 10 2
 Validated: 1
 EndChar
 
 StartChar: semicolon
-Encoding: 59 59 57
+Encoding: 59 59 47
 Width: 248
 Flags: W
 LayerCount: 2
 Fore
-Refer: 44 46 N 1 0 0 1 2 344 2
-Refer: 42 44 N 1 0 0 1 0 0 2
+Refer: 34 46 N 1 0 0 1 2 344 2
+Refer: 32 44 N 1 0 0 1 0 0 2
 Validated: 9
 EndChar
 
 StartChar: less
-Encoding: 60 60 58
+Encoding: 60 60 48
 Width: 514
 Flags: W
 LayerCount: 2
@@ -2576,7 +2485,7 @@ Validated: 33
 EndChar
 
 StartChar: equal
-Encoding: 61 61 59
+Encoding: 61 61 49
 Width: 550
 Flags: W
 LayerCount: 2
@@ -2609,17 +2518,17 @@ Validated: 1
 EndChar
 
 StartChar: greater
-Encoding: 62 62 60
+Encoding: 62 62 50
 Width: 514
 Flags: W
 LayerCount: 2
 Fore
-Refer: 58 60 S -1 0 0 1 507 0 2
+Refer: 48 60 S -1 0 0 1 507 0 2
 Validated: 25
 EndChar
 
 StartChar: question
-Encoding: 63 63 61
+Encoding: 63 63 51
 Width: 519
 Flags: W
 LayerCount: 2
@@ -2662,11 +2571,11 @@ SplineSet
  183 135.05859375 183 135.05859375 236 160 c 0,62,63
  245.190429688 163.67578125 245.190429688 163.67578125 255.881835938 165.099609375 c 1,0,1
 EndSplineSet
-Validated: 524321
+Validated: 33
 EndChar
 
 StartChar: at
-Encoding: 64 64 62
+Encoding: 64 64 52
 Width: 940
 Flags: W
 LayerCount: 2
@@ -2742,11 +2651,11 @@ SplineSet
  403.748046875 388.901367188 403.748046875 388.901367188 371.23046875 336.874023438 c 0,111,112
  360.78515625 319.900390625 360.78515625 319.900390625 347.165039062 279.111328125 c 0,95,96
 EndSplineSet
-Validated: 524289
+Validated: 1
 EndChar
 
 StartChar: A
-Encoding: 65 65 63
+Encoding: 65 65 53
 Width: 546
 Flags: W
 LayerCount: 2
@@ -2780,11 +2689,11 @@ SplineSet
  316 353 l 5,26,-1
 EndSplineSet
 Validated: 33
-Kerns2: 205 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 204 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 119 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 114 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 87 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 85 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 10 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 9 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 195 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 75 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: B
-Encoding: 66 66 64
+Encoding: 66 66 54
 Width: 522
 Flags: W
 LayerCount: 2
@@ -2827,7 +2736,7 @@ Validated: 33
 EndChar
 
 StartChar: C
-Encoding: 67 67 65
+Encoding: 67 67 55
 Width: 531
 Flags: W
 LayerCount: 2
@@ -2872,7 +2781,7 @@ Validated: 33
 EndChar
 
 StartChar: D
-Encoding: 68 68 66
+Encoding: 68 68 56
 Width: 512
 Flags: W
 LayerCount: 2
@@ -2906,7 +2815,7 @@ Validated: 1
 EndChar
 
 StartChar: E
-Encoding: 69 69 67
+Encoding: 69 69 57
 Width: 451
 Flags: W
 LayerCount: 2
@@ -2943,7 +2852,7 @@ Validated: 1
 EndChar
 
 StartChar: F
-Encoding: 70 70 68
+Encoding: 70 70 58
 Width: 448
 Flags: W
 LayerCount: 2
@@ -2973,11 +2882,11 @@ SplineSet
  145 303 l 6,0,-1
 EndSplineSet
 Validated: 1
-Kerns2: 182 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 170 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -127 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 172 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 160 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 94 -127 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: G
-Encoding: 71 71 69
+Encoding: 71 71 59
 Width: 531
 Flags: W
 LayerCount: 2
@@ -3026,7 +2935,7 @@ Validated: 33
 EndChar
 
 StartChar: H
-Encoding: 72 72 70
+Encoding: 72 72 60
 Width: 539
 Flags: W
 LayerCount: 2
@@ -3062,7 +2971,7 @@ Validated: 1
 EndChar
 
 StartChar: I
-Encoding: 73 73 71
+Encoding: 73 73 61
 Width: 230
 Flags: W
 LayerCount: 2
@@ -3084,7 +2993,7 @@ Validated: 1
 EndChar
 
 StartChar: J
-Encoding: 74 74 72
+Encoding: 74 74 62
 Width: 533
 Flags: W
 LayerCount: 2
@@ -3116,7 +3025,7 @@ Validated: 33
 EndChar
 
 StartChar: K
-Encoding: 75 75 73
+Encoding: 75 75 63
 Width: 510
 Flags: W
 LayerCount: 2
@@ -3151,7 +3060,7 @@ Validated: 33
 EndChar
 
 StartChar: L
-Encoding: 76 76 74
+Encoding: 76 76 64
 Width: 436
 Flags: W
 LayerCount: 2
@@ -3175,11 +3084,11 @@ SplineSet
  145 130 l 1,0,-1
 EndSplineSet
 Validated: 1
-Kerns2: 205 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 204 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 119 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 114 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 87 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 10 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 9 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 195 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: M
-Encoding: 77 77 75
+Encoding: 77 77 65
 Width: 737
 Flags: W
 LayerCount: 2
@@ -3227,7 +3136,7 @@ Validated: 33
 EndChar
 
 StartChar: N
-Encoding: 78 78 76
+Encoding: 78 78 66
 Width: 546
 Flags: W
 LayerCount: 2
@@ -3261,7 +3170,7 @@ Validated: 33
 EndChar
 
 StartChar: O
-Encoding: 79 79 77
+Encoding: 79 79 67
 Width: 531
 Flags: W
 LayerCount: 2
@@ -3296,11 +3205,11 @@ SplineSet
  143.823747428 518.76815341 143.823747428 518.76815341 144 474 c 6,22,-1
 EndSplineSet
 Validated: 33
-Kerns2: 114 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 87 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 104 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: P
-Encoding: 80 80 78
+Encoding: 80 80 68
 Width: 514
 Flags: W
 LayerCount: 2
@@ -3337,7 +3246,7 @@ Validated: 1
 EndChar
 
 StartChar: Q
-Encoding: 81 81 79
+Encoding: 81 81 69
 Width: 531
 Flags: W
 LayerCount: 2
@@ -3382,7 +3291,7 @@ Validated: 33
 EndChar
 
 StartChar: R
-Encoding: 82 82 80
+Encoding: 82 82 70
 Width: 514
 Flags: W
 LayerCount: 2
@@ -3422,7 +3331,7 @@ Validated: 41
 EndChar
 
 StartChar: S
-Encoding: 83 83 81
+Encoding: 83 83 71
 Width: 523
 Flags: W
 LayerCount: 2
@@ -3465,11 +3374,11 @@ SplineSet
  331 388 331 388 376.146484375 353.756835938 c 0,0,1
 EndSplineSet
 Validated: 33
-Kerns2: 87 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 77 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -20 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: T
-Encoding: 84 84 82
+Encoding: 84 84 72
 Width: 514
 Flags: W
 LayerCount: 2
@@ -3496,11 +3405,11 @@ SplineSet
  154 577 l 1,0,-1
 EndSplineSet
 Validated: 9
-Kerns2: 217 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 215 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 193 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 192 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 182 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 170 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 126 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 125 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -27 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 63 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 50 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 207 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 205 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 183 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 182 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 172 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 160 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 115 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -27 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 53 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 40 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: U
-Encoding: 85 85 83
+Encoding: 85 85 73
 Width: 546
 Flags: W
 LayerCount: 2
@@ -3533,7 +3442,7 @@ Validated: 1
 EndChar
 
 StartChar: V
-Encoding: 86 86 84
+Encoding: 86 86 74
 Width: 520
 Flags: W
 LayerCount: 2
@@ -3562,11 +3471,11 @@ SplineSet
  1.0024924081 636.38107329 1.0024924081 636.38107329 1.0458984375 643.017578125 c 0,0,1
 EndSplineSet
 Validated: 37
-Kerns2: 217 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 215 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 193 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 192 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 170 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 126 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 125 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 63 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 50 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 207 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 205 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 183 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 182 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 160 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 115 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 53 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 40 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: W
-Encoding: 87 87 85
+Encoding: 87 87 75
 Width: 767
 Flags: W
 LayerCount: 2
@@ -3608,11 +3517,11 @@ SplineSet
  405 0 405 0 339 39 c 1,0,1
 EndSplineSet
 Validated: 33
-Kerns2: 217 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 215 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 193 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 192 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 170 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 126 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 125 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 63 -33 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 50 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 207 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 205 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 183 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 182 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 160 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 115 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 53 -33 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 40 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: X
-Encoding: 88 88 86
+Encoding: 88 88 76
 Width: 528
 Flags: W
 LayerCount: 2
@@ -3670,7 +3579,7 @@ Validated: 1
 EndChar
 
 StartChar: Y
-Encoding: 89 89 87
+Encoding: 89 89 77
 Width: 522
 Flags: W
 LayerCount: 2
@@ -3697,11 +3606,11 @@ SplineSet
  225 478 l 2,0,-1
 EndSplineSet
 Validated: 33
-Kerns2: 217 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 215 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 193 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 192 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 170 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 126 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 125 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 63 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 50 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 207 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 205 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 183 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 182 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 160 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 115 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 53 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 40 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: Z
-Encoding: 90 90 88
+Encoding: 90 90 78
 Width: 536
 Flags: W
 LayerCount: 2
@@ -3736,7 +3645,7 @@ Validated: 41
 EndChar
 
 StartChar: bracketleft
-Encoding: 91 91 89
+Encoding: 91 91 79
 Width: 278
 Flags: W
 LayerCount: 2
@@ -3766,27 +3675,27 @@ Validated: 1
 EndChar
 
 StartChar: backslash
-Encoding: 92 92 90
+Encoding: 92 92 80
 Width: 449
 Flags: W
 LayerCount: 2
 Fore
-Refer: 45 47 N -0.999939 0 0 1 379 0 2
+Refer: 35 47 N -0.999939 0 0 1 379 0 2
 Validated: 25
 EndChar
 
 StartChar: bracketright
-Encoding: 93 93 91
+Encoding: 93 93 81
 Width: 278
 Flags: W
 LayerCount: 2
 Fore
-Refer: 89 91 N -0.999939 0 0 1 208 0 2
+Refer: 79 91 N -0.999939 0 0 1 208 0 2
 Validated: 25
 EndChar
 
 StartChar: asciicircum
-Encoding: 94 94 92
+Encoding: 94 94 82
 Width: 514
 Flags: W
 LayerCount: 2
@@ -3815,7 +3724,7 @@ Validated: 33
 EndChar
 
 StartChar: underscore
-Encoding: 95 95 93
+Encoding: 95 95 83
 Width: 631
 Flags: W
 LayerCount: 2
@@ -3839,280 +3748,280 @@ Validated: 1
 EndChar
 
 StartChar: grave
-Encoding: 96 96 94
+Encoding: 96 96 84
 Width: 239
 Flags: W
 LayerCount: 2
 Fore
-Refer: 167 180 N -0.999939 0 0 1 169 0 2
+Refer: 157 180 N -0.999939 0 0 1 169 0 2
 Validated: 25
 EndChar
 
 StartChar: a
-Encoding: 97 97 95
+Encoding: 97 97 85
 Width: 546
 Flags: W
 LayerCount: 2
 Fore
-Refer: 63 65 N 1 0 0 1 0 0 2
+Refer: 53 65 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: b
-Encoding: 98 98 96
+Encoding: 98 98 86
 Width: 522
 Flags: W
 LayerCount: 2
 Fore
-Refer: 64 66 N 1 0 0 1 0 0 2
+Refer: 54 66 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: c
-Encoding: 99 99 97
+Encoding: 99 99 87
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 65 67 N 1 0 0 1 0 0 2
+Refer: 55 67 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: d
-Encoding: 100 100 98
+Encoding: 100 100 88
 Width: 512
 Flags: W
 LayerCount: 2
 Fore
-Refer: 66 68 N 1 0 0 1 0 0 2
+Refer: 56 68 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: e
-Encoding: 101 101 99
+Encoding: 101 101 89
 Width: 451
 Flags: W
 LayerCount: 2
 Fore
-Refer: 67 69 N 1 0 0 1 0 0 2
+Refer: 57 69 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: f
-Encoding: 102 102 100
+Encoding: 102 102 90
 Width: 448
 Flags: W
 LayerCount: 2
 Fore
-Refer: 68 70 N 1 0 0 1 0 0 2
+Refer: 58 70 N 1 0 0 1 0 0 2
 Validated: 1
-Kerns2: 182 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 170 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 172 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 160 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: g
-Encoding: 103 103 101
+Encoding: 103 103 91
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 69 71 N 1 0 0 1 0 0 2
+Refer: 59 71 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: h
-Encoding: 104 104 102
+Encoding: 104 104 92
 Width: 539
 Flags: W
 LayerCount: 2
 Fore
-Refer: 70 72 N 1 0 0 1 0 0 2
+Refer: 60 72 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: i
-Encoding: 105 105 103
+Encoding: 105 105 93
 Width: 230
 Flags: W
 LayerCount: 2
 Fore
-Refer: 71 73 N 1 0 0 1 0 0 2
+Refer: 61 73 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: j
-Encoding: 106 106 104
+Encoding: 106 106 94
 Width: 533
 Flags: W
 LayerCount: 2
 Fore
-Refer: 72 74 N 1 0 0 1 0 0 2
+Refer: 62 74 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: k
-Encoding: 107 107 105
+Encoding: 107 107 95
 Width: 510
 Flags: W
 LayerCount: 2
 Fore
-Refer: 73 75 N 1 0 0 1 0 0 2
+Refer: 63 75 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: l
-Encoding: 108 108 106
+Encoding: 108 108 96
 Width: 436
 Flags: W
 LayerCount: 2
 Fore
-Refer: 74 76 N 1 0 0 1 0 0 2
+Refer: 64 76 N 1 0 0 1 0 0 2
 Validated: 1
-Kerns2: 205 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 204 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 119 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 114 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 87 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 10 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 9 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 195 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -113 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: m
-Encoding: 109 109 107
+Encoding: 109 109 97
 Width: 737
 Flags: W
 LayerCount: 2
 Fore
-Refer: 75 77 N 1 0 0 1 0 0 2
+Refer: 65 77 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: n
-Encoding: 110 110 108
+Encoding: 110 110 98
 Width: 546
 Flags: W
 LayerCount: 2
 Fore
-Refer: 76 78 N 1 0 0 1 0 0 2
+Refer: 66 78 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: o
-Encoding: 111 111 109
+Encoding: 111 111 99
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 77 79 N 1 0 0 1 0 0 2
+Refer: 67 79 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: p
-Encoding: 112 112 110
+Encoding: 112 112 100
 Width: 514
 Flags: W
 LayerCount: 2
 Fore
-Refer: 78 80 N 1 0 0 1 0 0 2
+Refer: 68 80 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: q
-Encoding: 113 113 111
+Encoding: 113 113 101
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 79 81 N 1 0 0 1 0 0 2
+Refer: 69 81 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: r
-Encoding: 114 114 112
+Encoding: 114 114 102
 Width: 514
 Flags: W
 LayerCount: 2
 Fore
-Refer: 80 82 N 1 0 0 1 0 0 2
+Refer: 70 82 N 1 0 0 1 0 0 2
 Validated: 9
 EndChar
 
 StartChar: s
-Encoding: 115 115 113
+Encoding: 115 115 103
 Width: 523
 Flags: W
 LayerCount: 2
 Fore
-Refer: 81 83 N 1 0 0 1 0 0 2
+Refer: 71 83 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: t
-Encoding: 116 116 114
+Encoding: 116 116 104
 Width: 514
 Flags: W
 LayerCount: 2
 Fore
-Refer: 82 84 N 1 0 0 1 0 0 2
+Refer: 72 84 N 1 0 0 1 0 0 2
 Validated: 9
-Kerns2: 182 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 172 -100 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: u
-Encoding: 117 117 115
+Encoding: 117 117 105
 Width: 546
 Flags: W
 LayerCount: 2
 Fore
-Refer: 83 85 N 1 0 0 1 0 0 2
+Refer: 73 85 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: v
-Encoding: 118 118 116
+Encoding: 118 118 106
 Width: 520
 Flags: W
 LayerCount: 2
 Fore
-Refer: 84 86 N 1 0 0 1 0 0 2
+Refer: 74 86 N 1 0 0 1 0 0 2
 Validated: 5
 EndChar
 
 StartChar: w
-Encoding: 119 119 117
+Encoding: 119 119 107
 Width: 767
 Flags: W
 LayerCount: 2
 Fore
-Refer: 85 87 N 1 0 0 1 0 0 2
+Refer: 75 87 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: x
-Encoding: 120 120 118
+Encoding: 120 120 108
 Width: 528
 Flags: W
 LayerCount: 2
 Fore
-Refer: 86 88 N 1 0 0 1 0 0 2
+Refer: 76 88 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: y
-Encoding: 121 121 119
+Encoding: 121 121 109
 Width: 522
 Flags: W
 LayerCount: 2
 Fore
-Refer: 87 89 N 1 0 0 1 0 0 2
+Refer: 77 89 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: z
-Encoding: 122 122 120
+Encoding: 122 122 110
 Width: 536
 Flags: W
 LayerCount: 2
 Fore
-Refer: 88 90 N 1 0 0 1 0 0 2
+Refer: 78 90 N 1 0 0 1 0 0 2
 Validated: 9
 EndChar
 
 StartChar: braceleft
-Encoding: 123 123 121
+Encoding: 123 123 111
 Width: 442
 Flags: W
 LayerCount: 2
@@ -4161,11 +4070,11 @@ SplineSet
  57 357 57 357 41 341 c 256,63,64
  26 326 26 326 26 309.4375 c 1,0,1
 EndSplineSet
-Validated: 524329
+Validated: 41
 EndChar
 
 StartChar: bar
-Encoding: 124 124 122
+Encoding: 124 124 112
 Width: 188
 Flags: W
 LayerCount: 2
@@ -4187,38 +4096,39 @@ Validated: 1
 EndChar
 
 StartChar: braceright
-Encoding: 125 125 123
+Encoding: 125 125 113
 Width: 442
 Flags: W
 LayerCount: 2
 Fore
-Refer: 121 123 N -0.999939 0 0 1 372 0 2
+Refer: 111 123 N -0.999939 0 0 1 372 0 2
 Validated: 17
 EndChar
 
 StartChar: asciitilde
-Encoding: 126 126 124
+Encoding: 126 126 114
 Width: 556
 Flags: W
 LayerCount: 2
 Fore
-Refer: 232 732 N 1 0 0 1 88 -366 2
+Refer: 222 732 N 1 0 0 1 88 -366 2
 Validated: 1
 EndChar
 
 StartChar: Adieresis
-Encoding: 196 196 125
+Encoding: 196 196 115
 Width: 580
-Flags: WO
+Flags: W
 LayerCount: 2
 Fore
-Refer: 63 65 N 1 0 0 1 0 0 2
-Refer: 168 168 N 1 0 0 1 59 0 2
-Kerns2: 205 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 204 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 119 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 114 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 87 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 85 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 10 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 9 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Refer: 53 65 N 1 0 0 1 0 0 2
+Refer: 158 168 N 1 0 0 1 59 0 2
+Validated: 1
+Kerns2: 195 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 75 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: Aring
-Encoding: 197 197 126
+Encoding: 197 197 116
 Width: 531
 Flags: W
 LayerCount: 2
@@ -4278,398 +4188,405 @@ SplineSet
  314 358 314 358 315 359.5 c 128,-1,83
  316 361 316 361 316 363 c 2,65,-1
 EndSplineSet
-Validated: 524289
-Kerns2: 205 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 204 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 119 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 114 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 87 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 85 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 10 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 9 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Validated: 1
+Kerns2: 195 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 75 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: Ccedilla
-Encoding: 199 199 127
+Encoding: 199 199 117
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
 SplineSet
-184 -10 m 1,0,1
- 113 2 113 2 61 49 c 1,2,3
- 27 86 27 86 15.5 122 c 0,4,5
- 0 170 0 170 0 213 c 2,6,-1
- 0 491 l 2,7,8
- 0 562 0 562 28 608 c 1,9,10
- 67 688 67 688 164 711 c 0,11,12
- 193 718 193 718 230.5 718 c 0,13,14
- 295 718 295 718 353 689 c 0,15,16
- 381.444444444 674.777777778 381.444444444 674.777777778 396.769230769 657.263736264 c 2,17,-1
- 418 633 l 1,18,19
- 437 608 437 608 435 580 c 256,20,21
- 433 552 433 552 410.5 534.5 c 128,-1,22
- 388 517 388 517 364.5 519.5 c 0,23,24
- 324 524 324 524 303 548 c 0,25,26
- 285 569 285 569 268.324324324 578.486486486 c 0,27,28
- 252 588 252 588 224 588 c 128,-1,29
- 196 588 196 588 172 564 c 0,30,31
- 145 537 145 537 145 507 c 2,32,-1
- 145 219 l 2,33,34
- 145 145 145 145 193 123 c 0,35,36
- 206 117 206 117 230 117 c 256,37,38
- 273 117 273 117 294 144 c 0,39,40
- 316 172 316 172 316 218 c 2,41,-1
- 316 219 l 2,42,43
- 316 249 316 249 337 270 c 0,44,45
- 356 289 356 289 388 291 c 0,46,47
- 414 293 414 293 439 270 c 0,48,49
- 461 250 461 250 461 219 c 2,50,-1
- 461 213 l 2,51,52
- 461 111 461 111 399 49 c 0,53,54
- 355 5 355 5 270 -12 c 0,55,56
- 260 -14 260 -14 254 -26 c 0,57,58
- 247 -40 247 -40 260 -42 c 0,59,60
- 318 -51 318 -51 338 -94 c 0,61,62
- 345 -109 345 -109 345 -130 c 128,-1,63
- 345 -151 345 -151 339 -165 c 0,64,65
- 321 -207 321 -207 275 -222 c 0,66,67
- 257 -228 257 -228 236.5 -228 c 0,68,69
- 185 -228 185 -228 163 -217 c 0,70,71
- 161 -216 161 -216 159 -215.5 c 128,-1,72
- 157 -215 157 -215 155 -213.5 c 128,-1,73
- 153 -212 153 -212 150.5 -211 c 0,74,75
- 132 -203 132 -203 128.324324324 -186.22972973 c 0,76,77
- 125 -167 125 -167 134 -155 c 0,78,79
- 148 -137 148 -137 170 -140 c 0,80,81
+184 -10 m 5,0,1
+ 113 2 113 2 61 49 c 5,2,3
+ 27 86 27 86 15.5 122 c 4,4,5
+ 0 170 0 170 0 213 c 6,6,-1
+ 0 491 l 6,7,8
+ 0 562 0 562 28 608 c 5,9,10
+ 67 688 67 688 164 711 c 4,11,12
+ 193 718 193 718 230.5 718 c 4,13,14
+ 295 718 295 718 353 689 c 4,15,16
+ 381.444444444 674.777777778 381.444444444 674.777777778 396.769230769 657.263736264 c 6,17,-1
+ 418 633 l 5,18,19
+ 437 608 437 608 435 580 c 260,20,21
+ 433 552 433 552 410.5 534.5 c 132,-1,22
+ 388 517 388 517 364.5 519.5 c 4,23,24
+ 324 524 324 524 303 548 c 4,25,26
+ 285 569 285 569 268.324324324 578.486486486 c 4,27,28
+ 252 588 252 588 224 588 c 132,-1,29
+ 196 588 196 588 172 564 c 4,30,31
+ 145 537 145 537 145 507 c 6,32,-1
+ 145 219 l 6,33,34
+ 145 145 145 145 193 123 c 4,35,36
+ 206 117 206 117 230 117 c 260,37,38
+ 273 117 273 117 294 144 c 4,39,40
+ 316 172 316 172 316 218 c 6,41,-1
+ 316 219 l 6,42,43
+ 316 249 316 249 337 270 c 4,44,45
+ 356 289 356 289 388 291 c 4,46,47
+ 414 293 414 293 439 270 c 4,48,49
+ 461 250 461 250 461 219 c 6,50,-1
+ 461 213 l 6,51,52
+ 461 111 461 111 399 49 c 4,53,54
+ 355 5 355 5 270 -12 c 4,55,56
+ 260 -14 260 -14 254 -26 c 4,57,58
+ 247 -40 247 -40 260 -42 c 4,59,60
+ 318 -51 318 -51 338 -94 c 4,61,62
+ 345 -109 345 -109 345 -130 c 132,-1,63
+ 345 -151 345 -151 339 -165 c 4,64,65
+ 321 -207 321 -207 275 -222 c 4,66,67
+ 257 -228 257 -228 236.5 -228 c 4,68,69
+ 185 -228 185 -228 163 -217 c 4,70,71
+ 161 -216 161 -216 159 -215.5 c 132,-1,72
+ 157 -215 157 -215 155 -213.5 c 132,-1,73
+ 153 -212 153 -212 150.5 -211 c 4,74,75
+ 132 -203 132 -203 128.324324324 -186.22972973 c 4,76,77
+ 125 -167 125 -167 134 -155 c 4,78,79
+ 148 -137 148 -137 170 -140 c 4,80,81
  182 -142 182 -142 185.833333333 -145.333333333 c 4,82,83
- 190 -149 190 -149 191 -149 c 128,-1,84
- 192 -149 192 -149 194.5 -150.5 c 0,85,86
+ 190 -149 190 -149 191 -149 c 132,-1,84
+ 192 -149 192 -149 194.5 -150.5 c 4,85,86
  195.5 -151.1 195.5 -151.1 210 -154 c 260,87,88
- 220 -156 220 -156 227 -156 c 0,89,90
- 247 -156 247 -156 253.7 -151 c 0,91,92
- 267 -140 267 -140 267 -132.722222222 c 0,93,94
- 267 -125 267 -125 264.5 -121.5 c 0,95,96
- 256 -109 256 -109 246.761363636 -107.465909091 c 0,97,98
- 232 -105 232 -105 226 -105 c 256,99,100
- 221 -105 221 -105 218 -106 c 0,101,102
- 201.846153846 -107.615384615 201.846153846 -107.615384615 191 -104 c 0,103,104
- 188.461538462 -103.153846154 188.461538462 -103.153846154 186 -101 c 2,105,-1
- 178 -94 l 1,106,-1
- 170 -86 l 2,107,108
- 164 -80 164 -80 162 -72 c 256,109,110
- 160 -63 160 -63 164 -57 c 1,111,-1
- 173 -37 l 1,112,-1
- 184 -10 l 1,0,1
+ 220 -156 220 -156 227 -156 c 4,89,90
+ 247 -156 247 -156 253.7 -151 c 4,91,92
+ 267 -140 267 -140 267 -132.722222222 c 4,93,94
+ 267 -125 267 -125 264.5 -121.5 c 4,95,96
+ 256 -109 256 -109 246.761363636 -107.465909091 c 4,97,98
+ 232 -105 232 -105 226 -105 c 260,99,100
+ 221 -105 221 -105 218 -106 c 4,101,102
+ 201.846153846 -107.615384615 201.846153846 -107.615384615 191 -104 c 4,103,104
+ 188.461538462 -103.153846154 188.461538462 -103.153846154 186 -101 c 6,105,-1
+ 178 -94 l 5,106,-1
+ 170 -86 l 6,107,108
+ 164 -80 164 -80 162 -72 c 260,109,110
+ 160 -63 160 -63 164 -57 c 5,111,-1
+ 173 -37 l 5,112,-1
+ 184 -10 l 5,0,1
 EndSplineSet
 Validated: 33
 EndChar
 
 StartChar: Eacute
-Encoding: 201 201 128
+Encoding: 201 201 118
 Width: 451
 Flags: W
 LayerCount: 2
 Fore
-Refer: 67 69 N 1 0 0 1 0 0 3
-Refer: 167 180 N 1 0 0 1 140 0 2
+Refer: 57 69 N 1 0 0 1 0 0 3
+Refer: 157 180 N 1 0 0 1 140 0 2
 Validated: 1
 EndChar
 
 StartChar: Ntilde
-Encoding: 209 209 129
+Encoding: 209 209 119
 Width: 556
 Flags: W
 LayerCount: 2
 Fore
-Refer: 76 78 N 1 0 0 1 0 0 2
-Refer: 232 732 N 1 0 0 1 70 0 2
+Refer: 66 78 N 1 0 0 1 0 0 2
+Refer: 222 732 N 1 0 0 1 70 0 2
 Validated: 1
 EndChar
 
 StartChar: Odieresis
-Encoding: 214 214 130
+Encoding: 214 214 120
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 77 79 N 1 0 0 1 0 0 3
-Refer: 168 168 N 1 0 0 1 57 0 2
+Refer: 67 79 N 1 0 0 1 0 0 3
+Refer: 158 168 N 1 0 0 1 57 0 2
+Validated: 1
 EndChar
 
 StartChar: Udieresis
-Encoding: 220 220 131
+Encoding: 220 220 121
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 83 85 N 1 0 0 1 0 0 2
-Refer: 168 168 N 1 0 0 1 60 0 2
+Refer: 73 85 N 1 0 0 1 0 0 2
+Refer: 158 168 N 1 0 0 1 60 0 2
+Validated: 1
 EndChar
 
 StartChar: aacute
-Encoding: 225 225 132
+Encoding: 225 225 122
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 95 97 N 1 0 0 1 0 0 2
-Refer: 167 180 N 1 0 0 1 170 0 2
+Refer: 85 97 N 1 0 0 1 0 0 2
+Refer: 157 180 N 1 0 0 1 170 0 2
 Validated: 1
 EndChar
 
 StartChar: agrave
-Encoding: 224 224 133
+Encoding: 224 224 123
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 95 97 N 1 0 0 1 0 0 2
-Refer: 94 96 N 1 0 0 1 120 0 2
+Refer: 85 97 N 1 0 0 1 0 0 2
+Refer: 84 96 N 1 0 0 1 120 0 2
 Validated: 9
 EndChar
 
 StartChar: acircumflex
-Encoding: 226 226 134
+Encoding: 226 226 124
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 95 97 N 1 0 0 1 0 0 2
-Refer: 231 710 N 1 0 0 1 90 0 2
+Refer: 85 97 N 1 0 0 1 0 0 2
+Refer: 221 710 N 1 0 0 1 90 0 2
 Validated: 1
 EndChar
 
 StartChar: adieresis
-Encoding: 228 228 135
+Encoding: 228 228 125
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 95 97 N 1 0 0 1 0 0 2
-Refer: 168 168 N 1 0 0 1 50 0 2
+Refer: 85 97 N 1 0 0 1 0 0 2
+Refer: 158 168 N 1 0 0 1 50 0 2
+Validated: 1
 EndChar
 
 StartChar: atilde
-Encoding: 227 227 136
+Encoding: 227 227 126
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 95 97 N 1 0 0 1 0 0 2
-Refer: 232 732 N 1 0 0 1 70 0 2
+Refer: 85 97 N 1 0 0 1 0 0 2
+Refer: 222 732 N 1 0 0 1 70 0 2
 Validated: 1
 EndChar
 
 StartChar: aring
-Encoding: 229 229 137
+Encoding: 229 229 127
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 126 197 N 1 0 0 1 0 0 2
+Refer: 116 197 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: ccedilla
-Encoding: 231 231 138
+Encoding: 231 231 128
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 127 199 N 1 0 0 1 0 0 3
+Refer: 117 199 N 1 0 0 1 0 0 3
 Validated: 1
 EndChar
 
 StartChar: eacute
-Encoding: 233 233 139
+Encoding: 233 233 129
 Width: 451
 Flags: W
 LayerCount: 2
 Fore
-Refer: 99 101 N 1 0 0 1 0 0 3
-Refer: 167 180 N 1 0 0 1 140 0 2
+Refer: 89 101 N 1 0 0 1 0 0 3
+Refer: 157 180 N 1 0 0 1 140 0 2
 Validated: 1
 EndChar
 
 StartChar: egrave
-Encoding: 232 232 140
+Encoding: 232 232 130
 Width: 451
 Flags: W
 LayerCount: 2
 Fore
-Refer: 99 101 N 1 0 0 1 0 0 3
-Refer: 94 96 N 1 0 0 1 60 0 2
+Refer: 89 101 N 1 0 0 1 0 0 3
+Refer: 84 96 N 1 0 0 1 60 0 2
 Validated: 9
 EndChar
 
 StartChar: ecircumflex
-Encoding: 234 234 141
+Encoding: 234 234 131
 Width: 451
 Flags: W
 LayerCount: 2
 Fore
-Refer: 99 101 N 1 0 0 1 0 0 3
-Refer: 231 710 N 1 0 0 1 40 0 2
+Refer: 89 101 N 1 0 0 1 0 0 3
+Refer: 221 710 N 1 0 0 1 40 0 2
 Validated: 1
 EndChar
 
 StartChar: edieresis
-Encoding: 235 235 142
+Encoding: 235 235 132
 Width: 451
 Flags: W
 LayerCount: 2
 Fore
-Refer: 99 101 N 1 0 0 1 0 0 3
-Refer: 168 168 N 1 0 0 1 0 0 2
+Refer: 89 101 N 1 0 0 1 0 0 3
+Refer: 158 168 N 1 0 0 1 0 0 2
+Validated: 5
 EndChar
 
 StartChar: iacute
-Encoding: 237 237 143
+Encoding: 237 237 133
 Width: 271
 Flags: W
 LayerCount: 2
 Fore
-Refer: 103 105 N 1 0 0 1 0 0 2
-Refer: 167 180 N 1 0 0 1 17 -2 2
+Refer: 93 105 N 1 0 0 1 0 0 2
+Refer: 157 180 N 1 0 0 1 17 -2 2
 Validated: 1
 EndChar
 
 StartChar: igrave
-Encoding: 236 236 144
+Encoding: 236 236 134
 Width: 280
 Flags: W
 LayerCount: 2
 Fore
-Refer: 103 105 N 1 0 0 1 50 0 2
-Refer: 94 96 N 1 0 0 1 0 0 2
+Refer: 93 105 N 1 0 0 1 50 0 2
+Refer: 84 96 N 1 0 0 1 0 0 2
 Validated: 9
 EndChar
 
 StartChar: icircumflex
-Encoding: 238 238 145
+Encoding: 238 238 135
 Width: 376
 Flags: W
 LayerCount: 2
 Fore
-Refer: 103 105 N 1 0 0 1 70 0 2
-Refer: 231 710 N 1 0 0 1 0 0 2
+Refer: 93 105 N 1 0 0 1 70 0 2
+Refer: 221 710 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: idieresis
-Encoding: 239 239 146
+Encoding: 239 239 136
 Width: 434
 Flags: W
 LayerCount: 2
 Fore
-Refer: 103 105 N 1 0 0 1 100 0 2
-Refer: 168 168 N 1 0 0 1 0 0 2
+Refer: 93 105 N 1 0 0 1 100 0 2
+Refer: 158 168 N 1 0 0 1 0 0 2
+Validated: 1
 EndChar
 
 StartChar: ntilde
-Encoding: 241 241 147
+Encoding: 241 241 137
 Width: 546
 Flags: W
 LayerCount: 2
 Fore
-Refer: 108 110 N 1 0 0 1 0 0 3
-Refer: 232 732 N 1 0 0 1 60 0 2
+Refer: 98 110 N 1 0 0 1 0 0 3
+Refer: 222 732 N 1 0 0 1 60 0 2
 Validated: 1
 EndChar
 
 StartChar: oacute
-Encoding: 243 243 148
+Encoding: 243 243 138
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 109 111 N 1 0 0 1 0 0 3
-Refer: 167 180 N 1 0 0 1 180 0 2
+Refer: 99 111 N 1 0 0 1 0 0 3
+Refer: 157 180 N 1 0 0 1 180 0 2
 Validated: 1
 EndChar
 
 StartChar: ograve
-Encoding: 242 242 149
+Encoding: 242 242 139
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 109 111 N 1 0 0 1 0 0 3
-Refer: 94 96 N 1 0 0 1 110 0 2
+Refer: 99 111 N 1 0 0 1 0 0 3
+Refer: 84 96 N 1 0 0 1 110 0 2
 Validated: 9
 EndChar
 
 StartChar: ocircumflex
-Encoding: 244 244 150
+Encoding: 244 244 140
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 109 111 N 1 0 0 1 0 0 3
-Refer: 231 710 N 1 0 0 1 90 0 2
+Refer: 99 111 N 1 0 0 1 0 0 3
+Refer: 221 710 N 1 0 0 1 90 0 2
 Validated: 1
 EndChar
 
 StartChar: odieresis
-Encoding: 246 246 151
+Encoding: 246 246 141
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 109 111 N 1 0 0 1 0 0 3
-Refer: 168 168 N 1 0 0 1 50 0 2
+Refer: 99 111 N 1 0 0 1 0 0 3
+Refer: 158 168 N 1 0 0 1 50 0 2
+Validated: 1
 EndChar
 
 StartChar: otilde
-Encoding: 245 245 152
+Encoding: 245 245 142
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 109 111 N 1 0 0 1 0 0 3
-Refer: 232 732 N 1 0 0 1 60 0 2
+Refer: 99 111 N 1 0 0 1 0 0 3
+Refer: 222 732 N 1 0 0 1 60 0 2
 Validated: 1
 EndChar
 
 StartChar: uacute
-Encoding: 250 250 153
+Encoding: 250 250 143
 Width: 546
 Flags: W
 LayerCount: 2
 Fore
-Refer: 115 117 N 1 0 0 1 0 0 3
-Refer: 167 180 N 1 0 0 1 180 0 2
+Refer: 105 117 N 1 0 0 1 0 0 3
+Refer: 157 180 N 1 0 0 1 180 0 2
 Validated: 1
 EndChar
 
 StartChar: ugrave
-Encoding: 249 249 154
+Encoding: 249 249 144
 Width: 546
 Flags: W
 LayerCount: 2
 Fore
-Refer: 115 117 N 1 0 0 1 0 0 3
-Refer: 94 96 N 1 0 0 1 110 0 2
+Refer: 105 117 N 1 0 0 1 0 0 3
+Refer: 84 96 N 1 0 0 1 110 0 2
 Validated: 9
 EndChar
 
 StartChar: ucircumflex
-Encoding: 251 251 155
+Encoding: 251 251 145
 Width: 546
 Flags: W
 LayerCount: 2
 Fore
-Refer: 115 117 N 1 0 0 1 0 0 3
-Refer: 231 710 N 1 0 0 1 90 0 2
+Refer: 105 117 N 1 0 0 1 0 0 3
+Refer: 221 710 N 1 0 0 1 90 0 2
 Validated: 1
 EndChar
 
 StartChar: udieresis
-Encoding: 252 252 156
+Encoding: 252 252 146
 Width: 546
 Flags: W
 LayerCount: 2
 Fore
-Refer: 115 117 N 1 0 0 1 0 0 3
-Refer: 168 168 N 1 0 0 1 60 0 2
+Refer: 105 117 N 1 0 0 1 0 0 3
+Refer: 158 168 N 1 0 0 1 60 0 2
+Validated: 1
 EndChar
 
 StartChar: dagger
-Encoding: 265 8224 157
+Encoding: 263 8224 147
 Width: 580
 Flags: W
 LayerCount: 2
@@ -4705,36 +4622,35 @@ Validated: 1
 EndChar
 
 StartChar: degree
-Encoding: 176 176 158
-Width: 326
+Encoding: 176 176 148
+Width: 422
 Flags: W
 LayerCount: 2
 Fore
 SplineSet
-161.200195312 800.200195312 m 128,-1,1
- 220.600585938 800.200195312 220.600585938 800.200195312 260.200195312 760.600585938 c 0,2,3
- 302 721.123046875 302 721.123046875 302 666 c 0,4,5
- 302 608.677734375 302 608.677734375 260.200195312 569.200195312 c 0,6,7
- 220.600585938 529.600585938 220.600585938 529.600585938 161.200195312 529.600585938 c 128,-1,8
- 101.799804688 529.600585938 101.799804688 529.600585938 62.2001953125 569.200195312 c 0,9,10
- 20.400390625 608.80078125 20.400390625 608.80078125 20.400390625 666 c 0,11,12
- 20.400390625 721 20.400390625 721 62.2001953125 760.600585938 c 0,13,0
- 101.799804688 800.200195312 101.799804688 800.200195312 161.200195312 800.200195312 c 128,-1,1
-212.900390625 666 m 0,14,15
- 212.900390625 702.046875 212.900390625 702.046875 179.350585938 714.950195312 c 0,16,17
- 172.200195312 717.700195312 172.200195312 717.700195312 158.009765625 717.700195312 c 0,18,19
- 128.200195312 717.700195312 128.200195312 717.700195312 112.799804688 686.900390625 c 0,20,21
- 109.5 677 109.5 677 109.5 665.450195312 c 0,22,23
- 109.5 627.133789062 109.5 627.133789062 141.400390625 616.5 c 0,24,25
- 149.100585938 612.100585938 149.100585938 612.100585938 161.200195312 612.100585938 c 256,26,27
- 183.200195312 612.100585938 183.200195312 612.100585938 198.600585938 627.5 c 256,28,29
- 212.900390625 641.80078125 212.900390625 641.80078125 212.900390625 666 c 0,14,15
+262.490234375 655 m 0,0,1
+ 262.490234375 691.046875 262.490234375 691.046875 228.940429688 703.950195312 c 0,2,3
+ 221.790039062 706.700195312 221.790039062 706.700195312 207.599609375 706.700195312 c 0,4,5
+ 177.790039062 706.700195312 177.790039062 706.700195312 162.389648438 675.900390625 c 0,6,7
+ 159.08984375 666 159.08984375 666 159.08984375 654.450195312 c 0,8,9
+ 159.08984375 616.133789062 159.08984375 616.133789062 190.990234375 605.5 c 0,10,11
+ 198.690429688 601.100585938 198.690429688 601.100585938 210.790039062 601.100585938 c 256,12,13
+ 232.790039062 601.100585938 232.790039062 601.100585938 248.190429688 616.5 c 256,14,15
+ 262.490234375 630.80078125 262.490234375 630.80078125 262.490234375 655 c 0,0,1
+344.627929688 785.471679688 m 0,16,17
+ 401.580078125 731.32421875 401.580078125 731.32421875 401.580078125 655.255859375 c 0,18,19
+ 401.580078125 576.467773438 401.580078125 576.467773438 344.612304688 522.314453125 c 0,20,21
+ 290.541015625 468.806640625 290.541015625 468.806640625 210.688476562 468.806640625 c 128,-1,22
+ 130.8359375 468.806640625 130.8359375 468.806640625 76.9228515625 522.358398438 c 0,23,24
+ 20 576.635742188 20 576.635742188 20 655 c 0,25,26
+ 20 731.159179688 20 731.159179688 76.923828125 785.444335938 c 0,27,28
+ 131.034179688 839.190429688 131.034179688 839.190429688 210.790039062 839.190429688 c 128,-1,29
+ 290.525390625 839.190429688 290.525390625 839.190429688 344.627929688 785.471679688 c 0,16,17
 EndSplineSet
-Validated: 524289
 EndChar
 
 StartChar: cent
-Encoding: 162 162 159
+Encoding: 162 162 149
 Width: 505
 Flags: W
 LayerCount: 2
@@ -4790,7 +4706,7 @@ Validated: 41
 EndChar
 
 StartChar: sterling
-Encoding: 163 163 160
+Encoding: 163 163 150
 Width: 557
 Flags: W
 LayerCount: 2
@@ -4852,7 +4768,7 @@ Validated: 41
 EndChar
 
 StartChar: section
-Encoding: 167 167 161
+Encoding: 167 167 151
 Width: 615
 Flags: W
 LayerCount: 2
@@ -4916,7 +4832,7 @@ Validated: 33
 EndChar
 
 StartChar: bullet
-Encoding: 266 8226 162
+Encoding: 264 8226 152
 Width: 460
 Flags: W
 LayerCount: 2
@@ -4936,7 +4852,7 @@ Validated: 1
 EndChar
 
 StartChar: germandbls
-Encoding: 223 223 163
+Encoding: 223 223 153
 Width: 522
 Flags: W
 LayerCount: 2
@@ -4986,7 +4902,7 @@ Validated: 33
 EndChar
 
 StartChar: registered
-Encoding: 174 174 164
+Encoding: 174 174 154
 Width: 845
 Flags: W
 LayerCount: 2
@@ -5053,11 +4969,11 @@ SplineSet
  431.40625 295.65625 l 1,94,-1
  397.854492188 295.65625 l 2,54,55
 EndSplineSet
-Validated: 524321
+Validated: 33
 EndChar
 
 StartChar: copyright
-Encoding: 169 169 165
+Encoding: 169 169 155
 Width: 870
 Flags: W
 LayerCount: 2
@@ -5120,7 +5036,7 @@ Validated: 1
 EndChar
 
 StartChar: trademark
-Encoding: 267 8482 166
+Encoding: 265 8482 156
 Width: 911
 Flags: W
 LayerCount: 2
@@ -5175,13 +5091,13 @@ SplineSet
  547.8828125 528.124023438 l 1,67,-1
  547.8828125 383.916015625 l 2,23,24
 EndSplineSet
-Validated: 524321
+Validated: 33
 EndChar
 
 StartChar: acute
-Encoding: 180 180 167
+Encoding: 180 180 157
 Width: 239
-Flags: WO
+Flags: W
 LayerCount: 2
 Fore
 SplineSet
@@ -5196,13 +5112,13 @@ SplineSet
  -9 765 -9 765 6 792 c 1,14,-1
  46 868 l 2,0,1
 EndSplineSet
-Validated: 524321
+Validated: 33
 EndChar
 
 StartChar: dieresis
-Encoding: 168 168 168
+Encoding: 168 168 158
 Width: 419
-Flags: WO
+Flags: W
 LayerCount: 2
 Fore
 SplineSet
@@ -5225,10 +5141,11 @@ SplineSet
  40 708 40 708 20 730 c 128,-1,10
  0 752 0 752 0 783 c 128,-1,11
 EndSplineSet
+Validated: 524289
 EndChar
 
 StartChar: notequal
-Encoding: 268 8800 169
+Encoding: 266 8800 159
 Width: 550
 Flags: W
 LayerCount: 2
@@ -5248,12 +5165,12 @@ SplineSet
  42.3642578125 76.8369140625 42.3642578125 76.8369140625 55.3544921875 106.352539062 c 2
  259.354492188 569.852539062 l 2
 EndSplineSet
-Refer: 59 61 N 1 0 0 1 0 0 2
+Refer: 49 61 N 1 0 0 1 0 0 2
 Validated: 37
 EndChar
 
 StartChar: AE
-Encoding: 198 198 170
+Encoding: 198 198 160
 Width: 757
 Flags: W
 LayerCount: 2
@@ -5301,7 +5218,7 @@ Validated: 41
 EndChar
 
 StartChar: Oslash
-Encoding: 216 216 171
+Encoding: 216 216 161
 Width: 531
 Flags: W
 LayerCount: 2
@@ -5357,7 +5274,7 @@ Validated: 33
 EndChar
 
 StartChar: infinity
-Encoding: 269 8734 172
+Encoding: 267 8734 162
 Width: 922
 Flags: W
 LayerCount: 2
@@ -5410,7 +5327,7 @@ Validated: 9
 EndChar
 
 StartChar: plusminus
-Encoding: 177 177 173
+Encoding: 177 177 163
 Width: 550
 Flags: W
 LayerCount: 2
@@ -5459,28 +5376,28 @@ Validated: 41
 EndChar
 
 StartChar: lessequal
-Encoding: 270 8804 174
+Encoding: 268 8804 164
 Width: 514
 Flags: W
 LayerCount: 2
 Fore
-Refer: 197 8211 N 1 0 0 1 16 -301 2
-Refer: 58 60 N 1 0 0 1 2 31 2
+Refer: 187 8211 N 1 0 0 1 16 -301 2
+Refer: 48 60 N 1 0 0 1 2 31 2
 Validated: 1
 EndChar
 
 StartChar: greaterequal
-Encoding: 271 8805 175
+Encoding: 269 8805 165
 Width: 514
 Flags: W
 LayerCount: 2
 Fore
-Refer: 174 8804 N -1 0 0 1 511 0 2
+Refer: 164 8804 N -1 0 0 1 511 0 2
 Validated: 25
 EndChar
 
 StartChar: yen
-Encoding: 165 165 176
+Encoding: 165 165 166
 Width: 522
 Flags: W
 LayerCount: 2
@@ -5536,7 +5453,7 @@ Validated: 33
 EndChar
 
 StartChar: mu
-Encoding: 181 181 177
+Encoding: 181 181 167
 Width: 546
 Flags: W
 LayerCount: 2
@@ -5574,7 +5491,7 @@ Validated: 33
 EndChar
 
 StartChar: product
-Encoding: 274 8719 178
+Encoding: 270 8719 168
 Width: 758
 Flags: W
 LayerCount: 2
@@ -5614,139 +5531,136 @@ SplineSet
  285.5 73 l 2,52,53
  285.695809369 42.6887096924 285.695809369 42.6887096924 264.577148438 21.0771484375 c 0,0,1
 EndSplineSet
-Validated: 524321
+Validated: 33
 EndChar
 
 StartChar: pi
-Encoding: 275 960 179
+Encoding: 271 960 169
 Width: 758
 Flags: W
 LayerCount: 2
 Fore
-Refer: 178 8719 N 1 0 0 1 0 0 2
+Refer: 168 8719 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: integral
-Encoding: 276 8747 180
+Encoding: 272 8747 170
 Width: 640
 Flags: W
 LayerCount: 2
 Fore
 SplineSet
-44.995023203 -52.981200414 m 1,0,-1
- 112.902817948 -62.4733075661 l 2,1,2
- 112.979727482 -62.4733075661 112.979727482 -62.4733075661 113.154467561 -62.4731798048 c 0,3,4
- 152.572101136 -62.4731798048 152.572101136 -62.4731798048 165.097506691 -40.7945932667 c 128,-1,5
- 177.622912246 -19.1160067286 177.622912246 -19.1160067286 186.278783212 26.7829389116 c 2,6,-1
- 274.552127942 515.575393665 l 2,7,8
- 283.584125148 565.647518527 283.584125148 565.647518527 293.113739733 597.747038033 c 0,9,10
- 315.452887459 672.994142917 315.452887459 672.994142917 376.410362649 696.64379956 c 0,11,12
- 410.509265492 710.499509776 410.509265492 710.499509776 466 710.499509776 c 128,-1,13
- 521.5383121 710.499509776 521.5383121 710.499509776 555.518910938 695.051497199 c 128,-1,14
- 589.499509776 679.603484622 589.499509776 679.603484622 589.499509776 647.5 c 128,-1,15
- 589.499509776 615.225851657 589.499509776 615.225851657 567.82849468 607.640996374 c 0,16,17
- 556.670070439 603.735547889 556.670070439 603.735547889 541.892311465 603.735547889 c 128,-1,18
- 527.114552492 603.735547889 527.114552492 603.735547889 501.167883398 608.000753768 c 128,-1,19
- 475.221214304 612.265959646 475.221214304 612.265959646 473.716734549 612.265959646 c 128,-1,20
- 472.212254794 612.265959646 472.212254794 612.265959646 472.148849694 612.25829152 c 0,21,22
- 443.161920289 608.626386383 443.161920289 608.626386383 432.267766953 597.732233047 c 128,-1,23
- 421.213644187 586.678110282 421.213644187 586.678110282 416.978587199 572.561253653 c 128,-1,24
- 412.74353021 558.444397024 412.74353021 558.444397024 316.197044078 28.8145715592 c 0,25,26
- 307.293859486 -20.0260677064 307.293859486 -20.0260677064 297.313956175 -51.4683562026 c 0,27,28
- 262.786367503 -160.249610927 262.786367503 -160.249610927 129.339652239 -160.249610927 c 0,29,30
- 128.528751922 -160.249610927 128.528751922 -160.249610927 127.7142076 -160.245579144 c 128,-1,31
- 126.749790195 -160.249822789 126.749790195 -160.249822789 125.792158014 -160.249822789 c 0,32,33
- 42.7256786228 -160.249822789 42.7256786228 -160.249822789 11.7054152478 -128.830325058 c 0,34,35
- 2 -119 2 -119 1.75024511182 -98.9256098878 c 128,-1,36
- 1.50049022365 -78.8512197756 1.50049022365 -78.8512197756 16.5066534094 -65.9162100948 c 128,-1,37
- 31.5128165951 -52.981200414 31.5128165951 -52.981200414 44.995023203 -52.981200414 c 1,0,-1
+18.80859375 -48.3037109375 m 0,0,1
+ 36 -34 36 -34 55.74609375 -32.0908203125 c 0,2,3
+ 57 -32 57 -32 124.518554688 -41.58203125 c 1,4,5
+ 157 -41 157 -41 165.021484375 -26.150390625 c 0,6,7
+ 178 -3 178 -3 184.732421875 37.41015625 c 2,8,-1
+ 278.09765625 628.810546875 l 2,9,10
+ 285.468348879 675.498487299 285.468348879 675.498487299 296.977539062 712.322265625 c 0,11,12
+ 321 793 321 793 387.721679688 819.297851562 c 0,13,14
+ 424 834 424 834 482 834 c 128,-1,15
+ 540 834 540 834 576.541992188 817.432617188 c 0,16,17
+ 618 799 618 799 617.840820312 758.502929688 c 0,18,19
+ 618 731 618 731 603.678710938 716.693359375 c 0,20,21
+ 589 702 589 702 557.735351562 702.241210938 c 0,22,23
+ 542 702 542 702 517.431640625 706.267578125 c 0,24,25
+ 490 711 490 711 488.836914062 710.76953125 c 0,26,27
+ 465 708 465 708 456.412109375 699.358398438 c 0,28,29
+ 447 690 447 690 444.791015625 679.95703125 c 0,30,31
+ 349 89 349 89 339.2421875 34.9521484375 c 0,32,33
+ 330 -15 330 -15 319.9765625 -46.8720703125 c 0,34,35
+ 307 -89 307 -89 279.57421875 -115.791015625 c 0,36,37
+ 230.642822157 -164.354492188 230.642822157 -164.354492188 140.059570312 -164.354492188 c 2,38,-1
+ 136.543945312 -164.354492188 l 2,39,40
+ 47 -164 47 -164 13.916015625 -129.576171875 c 0,41,42
+ 0 -115 0 -115 0 -90 c 128,-1,43
+ 0 -65 0 -65 18.80859375 -48.3037109375 c 0,0,1
 EndSplineSet
-Validated: 33
+Validated: 524321
 EndChar
 
 StartChar: ordmasculine
-Encoding: 186 186 181
-Width: 431
+Encoding: 186 186 171
+Width: 451
 VWidth: 838
 Flags: W
 LayerCount: 2
 Fore
 SplineSet
-284.25390625 656.75390625 m 2,0,1
- 284.25390625 702.0078125 284.25390625 702.0078125 248 702.0078125 c 0,2,3
- 229.506835938 702.0078125 229.506835938 702.0078125 222.0234375 692.030273438 c 0,4,5
- 221.426757812 691.234375 221.426757812 691.234375 220.751953125 690.499023438 c 0,6,7
- 210.99609375 679.856445312 210.99609375 679.856445312 210.99609375 656.75390625 c 2,8,-1
- 210.99609375 428.75390625 l 2,9,10
- 210.99609375 404.793945312 210.99609375 404.793945312 220.12890625 395.662109375 c 0,11,12
- 221.151367188 394.638671875 221.151367188 394.638671875 222.013671875 393.489257812 c 0,13,14
- 229.505859375 383.5 229.505859375 383.5 246.90625 383.5 c 128,-1,15
- 264.307617188 383.5 264.307617188 383.5 272.52734375 391.720703125 c 0,16,17
- 278.091796875 397.28515625 278.091796875 397.28515625 281.172851562 407.716796875 c 128,-1,18
- 284.25390625 418.1484375 284.25390625 418.1484375 284.25390625 428.75390625 c 2,19,-1
- 284.25390625 656.75390625 l 2,0,1
-429.99609375 661.25390625 m 2,20,-1
- 429.99609375 424.25390625 l 2,21,22
- 429.99609375 344.950195312 429.99609375 344.950195312 380.833984375 297.788085938 c 0,23,24
- 359.643554688 274.58984375 359.643554688 274.58984375 324.4375 261.048828125 c 128,-1,25
- 289.231445312 247.5078125 289.231445312 247.5078125 248 247.5078125 c 0,26,27
- 192.952148438 247.5078125 192.952148438 247.5078125 152.3828125 270.073242188 c 0,28,29
- 112.577148438 290.13671875 112.577148438 290.13671875 87.4677734375 333.1796875 c 0,30,31
- 65.25390625 371.260742188 65.25390625 371.260742188 65.25390625 424.25390625 c 2,32,-1
- 65.25390625 661.25390625 l 2,33,34
- 65.25390625 743.514004672 65.25390625 743.514004672 115.381835938 788.629882812 c 4,35,36
- 150.513139006 820.249427802 150.513139006 820.249427802 196.625 831.775390625 c 0,37,38
- 221.522460938 838 221.522460938 838 248 838 c 0,39,40
- 301.798828125 838 301.798828125 838 349.064453125 811.978515625 c 0,41,42
- 398.45703125 784.787109375 398.45703125 784.787109375 417.9375 730.673828125 c 0,43,44
- 429.99609375 697.178710938 429.99609375 697.178710938 429.99609375 661.25390625 c 2,20,-1
+430.99609375 590.74609375 m 1,0,1
+ 433 515 433 515 381.833984375 464.280273438 c 0,2,3
+ 357 440 357 440 325.4375 427.541015625 c 0,4,5
+ 290 414 290 414 249 414 c 0,6,7
+ 195 414 195 414 153.3828125 436.565429688 c 0,8,9
+ 108 461 108 461 88.4677734375 499.671875 c 0,10,11
+ 68 541 68 541 66.25390625 590.74609375 c 1,12,-1
+ 64.25390625 659.25390625 l 1,13,14
+ 66 709 66 709 86.4677734375 750.328125 c 0,15,16
+ 106 789 106 789 151.3828125 813.434570312 c 0,17,18
+ 193 836 193 836 247 836 c 0,19,20
+ 288 836 288 836 323.4375 822.458984375 c 0,21,22
+ 355 810 355 810 379.833984375 785.719726562 c 0,23,24
+ 431 735 431 735 428.99609375 659.25390625 c 1,25,-1
+ 430.99609375 590.74609375 l 1,0,1
+284.25390625 656.75390625 m 2,26,27
+ 283.518289156 702.000104538 283.518289156 702.000104538 248 702.0078125 c 0,28,29
+ 232 702 232 702 222.0234375 692.030273438 c 0,30,31
+ 221 691 221 691 220.751953125 690.499023438 c 0,32,33
+ 211 681 211 681 210.99609375 656.75390625 c 2,34,-1
+ 211.99609375 595.24609375 l 2,35,36
+ 212.169575244 584.575626523 212.169575244 584.575626523 221.12890625 562.154296875 c 0,37,38
+ 222 560 222 560 223.013671875 559.981445312 c 0,39,40
+ 231 550 231 550 247.90625 549.9921875 c 0,41,42
+ 272 550 272 550 273.52734375 558.212890625 c 0,43,44
+ 276 568 276 568 282.172851562 574.208984375 c 0,45,46
+ 285.541676045 577.546003166 285.541676045 577.546003166 285.25390625 595.24609375 c 2,47,-1
+ 284.25390625 656.75390625 l 2,26,27
 EndSplineSet
-Validated: 1
 EndChar
 
 StartChar: ae
-Encoding: 230 230 182
+Encoding: 230 230 172
 Width: 757
 Flags: W
 LayerCount: 2
 Fore
-Refer: 170 198 N 1 0 0 1 0 0 2
+Refer: 160 198 N 1 0 0 1 0 0 2
 Validated: 9
 EndChar
 
 StartChar: oslash
-Encoding: 248 248 183
+Encoding: 248 248 173
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 171 216 N 1 0 0 1 0 0 3
+Refer: 161 216 N 1 0 0 1 0 0 3
 Validated: 1
 EndChar
 
 StartChar: questiondown
-Encoding: 191 191 184
+Encoding: 191 191 174
 Width: 519
 Flags: W
 LayerCount: 2
 Fore
-Refer: 61 63 N -0.999939 0 0 -0.999939 523 710 2
+Refer: 51 63 N -0.999939 0 0 -0.999939 523 710 2
 Validated: 1
 EndChar
 
 StartChar: exclamdown
-Encoding: 161 161 185
+Encoding: 161 161 175
 Width: 250
 Flags: W
 LayerCount: 2
 Fore
-Refer: 31 33 N 1 0 0 -0.999939 32 696 2
+Refer: 21 33 N 1 0 0 -0.999939 32 696 2
 Validated: 21
 EndChar
 
 StartChar: florin
-Encoding: 279 402 186
+Encoding: 273 402 176
 Width: 640
 Flags: W
 LayerCount: 2
@@ -5801,7 +5715,7 @@ Validated: 33
 EndChar
 
 StartChar: approxequal
-Encoding: 280 8776 187
+Encoding: 274 8776 177
 Width: 529
 Flags: W
 LayerCount: 2
@@ -5889,7 +5803,7 @@ Validated: 33
 EndChar
 
 StartChar: guillemotleft
-Encoding: 171 171 188
+Encoding: 171 171 178
 Width: 523
 Flags: W
 LayerCount: 2
@@ -5935,17 +5849,17 @@ Validated: 1
 EndChar
 
 StartChar: guillemotright
-Encoding: 187 187 189
+Encoding: 187 187 179
 Width: 523
 Flags: W
 LayerCount: 2
 Fore
-Refer: 188 171 N -0.999939 0 0 1 453 0 2
+Refer: 178 171 N -0.999939 0 0 1 453 0 2
 Validated: 25
 EndChar
 
 StartChar: ellipsis
-Encoding: 282 8230 190
+Encoding: 275 8230 180
 Width: 705
 Flags: W
 TtInstrs:
@@ -6247,7 +6161,7 @@ Validated: 5
 EndChar
 
 StartChar: uni00A0
-Encoding: 160 160 191
+Encoding: 160 160 181
 Width: 70
 Flags: W
 LayerCount: 2
@@ -6256,42 +6170,42 @@ Validated: 1
 EndChar
 
 StartChar: Agrave
-Encoding: 192 192 192
+Encoding: 192 192 182
 Width: 580
 Flags: W
 LayerCount: 2
 Fore
-Refer: 63 65 N 1 0 0 1 0 0 2
-Refer: 94 96 N 1 0 0 1 130 0 2
+Refer: 53 65 N 1 0 0 1 0 0 2
+Refer: 84 96 N 1 0 0 1 130 0 2
 Validated: 9
-Kerns2: 205 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 204 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 119 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 114 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 87 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 85 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 10 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 9 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 195 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 75 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: Atilde
-Encoding: 195 195 193
+Encoding: 195 195 183
 Width: 580
 Flags: W
 LayerCount: 2
 Fore
-Refer: 63 65 N 1 0 0 1 0 0 2
-Refer: 232 732 N 1 0 0 1 90 0 2
+Refer: 53 65 N 1 0 0 1 0 0 2
+Refer: 222 732 N 1 0 0 1 90 0 2
 Validated: 1
-Kerns2: 205 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 204 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 119 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 114 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 87 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 85 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 10 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 9 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 195 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 75 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: Otilde
-Encoding: 213 213 194
+Encoding: 213 213 184
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 77 79 N 1 0 0 1 0 0 3
-Refer: 232 732 N 1 0 0 1 70 0 2
+Refer: 67 79 N 1 0 0 1 0 0 3
+Refer: 222 732 N 1 0 0 1 70 0 2
 Validated: 1
 EndChar
 
 StartChar: OE
-Encoding: 283 338 195
+Encoding: 276 338 185
 Width: 723
 Flags: W
 LayerCount: 2
@@ -6338,17 +6252,17 @@ Validated: 33
 EndChar
 
 StartChar: oe
-Encoding: 284 339 196
+Encoding: 277 339 186
 Width: 723
 Flags: W
 LayerCount: 2
 Fore
-Refer: 195 338 N 1 0 0 1 0 0 2
+Refer: 185 338 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: endash
-Encoding: 285 8211 197
+Encoding: 278 8211 187
 Width: 533
 Flags: W
 TtInstrs:
@@ -6395,7 +6309,7 @@ Validated: 1
 EndChar
 
 StartChar: emdash
-Encoding: 286 8212 198
+Encoding: 279 8212 188
 Width: 624
 Flags: W
 TtInstrs:
@@ -6442,29 +6356,29 @@ Validated: 1
 EndChar
 
 StartChar: quotedblleft
-Encoding: 287 8220 199
+Encoding: 280 8220 189
 Width: 436
 Flags: W
 LayerCount: 2
 Fore
-Refer: 201 8216 N 1 0 0 1 204 0 2
-Refer: 201 8216 N 1 0 0 1 0 0 2
+Refer: 191 8216 N 1 0 0 1 204 0 2
+Refer: 191 8216 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: quotedblright
-Encoding: 288 8221 200
+Encoding: 281 8221 190
 Width: 452
 Flags: W
 LayerCount: 2
 Fore
-Refer: 202 8217 N 1 0 0 1 208 0 2
-Refer: 202 8217 N 1 0 0 1 0 0 2
+Refer: 192 8217 N 1 0 0 1 208 0 2
+Refer: 192 8217 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: quoteleft
-Encoding: 289 8216 201
+Encoding: 282 8216 191
 Width: 248
 Flags: W
 LayerCount: 2
@@ -6489,21 +6403,21 @@ SplineSet
  204 456 204 456 150 429 c 0,25,26
  135 423 135 423 116 423 c 0,0,1
 EndSplineSet
-Validated: 524321
+Validated: 33
 EndChar
 
 StartChar: quoteright
-Encoding: 290 8217 202
+Encoding: 283 8217 192
 Width: 248
 Flags: W
 LayerCount: 2
 Fore
-Refer: 201 8216 N -1 0 0 -1 230 1132 2
+Refer: 191 8216 N -1 0 0 -1 230 1132 2
 Validated: 1
 EndChar
 
 StartChar: divide
-Encoding: 247 247 203
+Encoding: 247 247 193
 Width: 566
 Flags: W
 LayerCount: 2
@@ -6545,38 +6459,40 @@ Validated: 1
 EndChar
 
 StartChar: ydieresis
-Encoding: 255 255 204
+Encoding: 255 255 194
 Width: 541
 Flags: W
 LayerCount: 2
 Fore
-Refer: 119 121 N 1 0 0 1 0 0 2
-Refer: 168 168 N 1 0 0 1 60 0 2
+Refer: 109 121 N 1 0 0 1 0 0 2
+Refer: 158 168 N 1 0 0 1 60 0 2
+Validated: 1
 EndChar
 
 StartChar: Ydieresis
-Encoding: 292 376 205
+Encoding: 284 376 195
 Width: 522
 Flags: W
 LayerCount: 2
 Fore
-Refer: 87 89 N 1 0 0 1 0 0 3
-Refer: 168 168 N 1 0 0 1 50 0 2
-Kerns2: 217 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 215 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 193 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 192 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 170 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 126 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 125 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 63 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 50 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Refer: 77 89 N 1 0 0 1 0 0 3
+Refer: 158 168 N 1 0 0 1 50 0 2
+Validated: 1
+Kerns2: 207 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 205 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 183 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 182 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 160 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 115 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 53 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 40 -63 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: fraction
-Encoding: 293 8260 206
+Encoding: 285 8260 196
 Width: 449
 Flags: W
 LayerCount: 2
 Fore
-Refer: 45 47 N 1 0 0 1 0 0 3
+Refer: 35 47 N 1 0 0 1 0 0 3
 Validated: 1
 EndChar
 
 StartChar: Euro
-Encoding: 294 8364 207
+Encoding: 286 8364 197
 Width: 601
 Flags: W
 LayerCount: 2
@@ -6645,11 +6561,11 @@ SplineSet
  24 253 24 253 41 253 c 1,95,-1
  70 253 l 1,0,-1
 EndSplineSet
-Validated: 524329
+Validated: 41
 EndChar
 
 StartChar: guilsinglleft
-Encoding: 295 8249 208
+Encoding: 287 8249 198
 Width: 298
 Flags: W
 TtInstrs:
@@ -6701,17 +6617,17 @@ Validated: 1
 EndChar
 
 StartChar: guilsinglright
-Encoding: 296 8250 209
+Encoding: 288 8250 199
 Width: 298
 Flags: W
 LayerCount: 2
 Fore
-Refer: 208 8249 N -0.999939 0 0 1 228 0 2
+Refer: 198 8249 N -0.999939 0 0 1 228 0 2
 Validated: 25
 EndChar
 
 StartChar: daggerdbl
-Encoding: 299 8225 210
+Encoding: 289 8225 200
 Width: 580
 Flags: W
 LayerCount: 2
@@ -6761,7 +6677,7 @@ Validated: 41
 EndChar
 
 StartChar: periodcentered
-Encoding: 183 183 211
+Encoding: 183 183 201
 Width: 245
 Flags: W
 LayerCount: 2
@@ -6781,17 +6697,17 @@ Validated: 33
 EndChar
 
 StartChar: quotesinglbase
-Encoding: 300 8218 212
+Encoding: 290 8218 202
 Width: 248
 Flags: W
 LayerCount: 2
 Fore
-Refer: 42 44 N 1 0 0 1 0 0 3
+Refer: 32 44 N 1 0 0 1 0 0 3
 Validated: 9
 EndChar
 
 StartChar: quotedblbase
-Encoding: 301 8222 213
+Encoding: 291 8222 203
 Width: 452
 Flags: W
 TtInstrs:
@@ -6904,7 +6820,7 @@ Validated: 1
 EndChar
 
 StartChar: perthousand
-Encoding: 302 8240 214
+Encoding: 292 8240 204
 Width: 1084
 Flags: W
 LayerCount: 2
@@ -6983,182 +6899,184 @@ Validated: 2081
 EndChar
 
 StartChar: Acircumflex
-Encoding: 194 194 215
+Encoding: 194 194 205
 Width: 580
 Flags: W
 LayerCount: 2
 Fore
-Refer: 63 65 N 1 0 0 1 0 0 2
-Refer: 231 710 N 1 0 0 1 110 0 2
+Refer: 53 65 N 1 0 0 1 0 0 2
+Refer: 221 710 N 1 0 0 1 110 0 2
 Validated: 1
-Kerns2: 205 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 204 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 119 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 114 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 87 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 85 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 10 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 9 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 195 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 75 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: Ecircumflex
-Encoding: 202 202 216
+Encoding: 202 202 206
 Width: 451
 Flags: W
 LayerCount: 2
 Fore
-Refer: 67 69 N 1 0 0 1 0 0 3
-Refer: 231 710 N 1 0 0 1 40 0 2
+Refer: 57 69 N 1 0 0 1 0 0 3
+Refer: 221 710 N 1 0 0 1 40 0 2
 Validated: 1
 EndChar
 
 StartChar: Aacute
-Encoding: 193 193 217
+Encoding: 193 193 207
 Width: 580
 Flags: W
 LayerCount: 2
 Fore
-Refer: 63 65 N 1 0 0 1 0 0 2
-Refer: 167 180 N 1 0 0 1 210 0 2
+Refer: 53 65 N 1 0 0 1 0 0 2
+Refer: 157 180 N 1 0 0 1 210 0 2
 Validated: 1
-Kerns2: 205 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 204 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 119 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 116 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 114 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 87 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 85 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 84 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 82 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 10 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 9 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
+Kerns2: 195 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 75 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
 StartChar: Edieresis
-Encoding: 203 203 218
+Encoding: 203 203 208
 Width: 451
 Flags: W
 LayerCount: 2
 Fore
-Refer: 67 69 N 1 0 0 1 0 0 3
-Refer: 168 168 N 1 0 0 1 0 0 2
+Refer: 57 69 N 1 0 0 1 0 0 3
+Refer: 158 168 N 1 0 0 1 0 0 2
+Validated: 5
 EndChar
 
 StartChar: Egrave
-Encoding: 200 200 219
+Encoding: 200 200 209
 Width: 451
 Flags: W
 LayerCount: 2
 Fore
-Refer: 67 69 N 1 0 0 1 0 0 3
-Refer: 94 96 N 1 0 0 1 60 0 2
+Refer: 57 69 N 1 0 0 1 0 0 3
+Refer: 84 96 N 1 0 0 1 60 0 2
 Validated: 9
 EndChar
 
 StartChar: Iacute
-Encoding: 205 205 220
+Encoding: 205 205 210
 Width: 254
 Flags: W
 LayerCount: 2
 Fore
-Refer: 71 73 N 1 0 0 1 0 0 2
-Refer: 167 180 N 1 0 0 1 0 0 2
+Refer: 61 73 N 1 0 0 1 0 0 2
+Refer: 157 180 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: Icircumflex
-Encoding: 206 206 221
+Encoding: 206 206 211
 Width: 376
 Flags: W
 LayerCount: 2
 Fore
-Refer: 71 73 N 1 0 0 1 70 0 2
-Refer: 231 710 N 1 0 0 1 0 0 2
+Refer: 61 73 N 1 0 0 1 70 0 2
+Refer: 221 710 N 1 0 0 1 0 0 2
 Validated: 1
 EndChar
 
 StartChar: Idieresis
-Encoding: 207 207 222
+Encoding: 207 207 212
 Width: 434
 Flags: W
 LayerCount: 2
 Fore
-Refer: 71 73 N 1 0 0 1 100 0 2
-Refer: 168 168 N 1 0 0 1 0 0 2
+Refer: 61 73 N 1 0 0 1 100 0 2
+Refer: 158 168 N 1 0 0 1 0 0 2
+Validated: 1
 EndChar
 
 StartChar: Igrave
-Encoding: 204 204 223
+Encoding: 204 204 213
 Width: 270
 Flags: W
 LayerCount: 2
 Fore
-Refer: 71 73 N 1 0 0 1 40 0 2
-Refer: 94 96 N 1 0 0 1 0 0 2
+Refer: 61 73 N 1 0 0 1 40 0 2
+Refer: 84 96 N 1 0 0 1 0 0 2
 Validated: 9
 EndChar
 
 StartChar: Oacute
-Encoding: 211 211 224
+Encoding: 211 211 214
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 77 79 N 1 0 0 1 0 0 3
-Refer: 167 180 N 1 0 0 1 180 0 2
+Refer: 67 79 N 1 0 0 1 0 0 3
+Refer: 157 180 N 1 0 0 1 180 0 2
 Validated: 1
 EndChar
 
 StartChar: Ocircumflex
-Encoding: 212 212 225
+Encoding: 212 212 215
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 77 79 N 1 0 0 1 0 0 3
-Refer: 231 710 N 1 0 0 1 90 0 2
+Refer: 67 79 N 1 0 0 1 0 0 3
+Refer: 221 710 N 1 0 0 1 90 0 2
 Validated: 1
 EndChar
 
 StartChar: Ograve
-Encoding: 210 210 226
+Encoding: 210 210 216
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 77 79 N 1 0 0 1 0 0 3
-Refer: 94 96 N 1 0 0 1 120 0 2
+Refer: 67 79 N 1 0 0 1 0 0 3
+Refer: 84 96 N 1 0 0 1 120 0 2
 Validated: 9
 EndChar
 
 StartChar: Uacute
-Encoding: 218 218 227
+Encoding: 218 218 217
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 83 85 N 1 0 0 1 0 0 2
-Refer: 167 180 N 1 0 0 1 180 0 2
+Refer: 73 85 N 1 0 0 1 0 0 2
+Refer: 157 180 N 1 0 0 1 180 0 2
 Validated: 1
 EndChar
 
 StartChar: Ucircumflex
-Encoding: 219 219 228
+Encoding: 219 219 218
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 83 85 N 1 0 0 1 0 0 2
-Refer: 231 710 N 1 0 0 1 80 0 2
+Refer: 73 85 N 1 0 0 1 0 0 2
+Refer: 221 710 N 1 0 0 1 80 0 2
 Validated: 1
 EndChar
 
 StartChar: Ugrave
-Encoding: 217 217 229
+Encoding: 217 217 219
 Width: 531
 Flags: W
 LayerCount: 2
 Fore
-Refer: 83 85 N 1 0 0 1 0 0 2
-Refer: 94 96 N 1 0 0 1 110 0 2
+Refer: 73 85 N 1 0 0 1 0 0 2
+Refer: 84 96 N 1 0 0 1 110 0 2
 Validated: 9
 EndChar
 
 StartChar: dotlessi
-Encoding: 304 305 230
+Encoding: 293 305 220
 Width: 230
 Flags: W
 LayerCount: 2
 Fore
-Refer: 71 73 N 1 0 0 1 0 0 3
+Refer: 61 73 N 1 0 0 1 0 0 3
 Validated: 1
 EndChar
 
 StartChar: circumflex
-Encoding: 305 710 231
+Encoding: 294 710 221
 Width: 361
 Flags: W
 LayerCount: 2
@@ -7183,11 +7101,11 @@ SplineSet
  61.3 893 61.3 893 114 893 c 6,22,-1
  177 893 l 6,0,1
 EndSplineSet
-Validated: 524321
+Validated: 33
 EndChar
 
 StartChar: tilde
-Encoding: 306 732 232
+Encoding: 295 732 222
 Width: 421
 Flags: W
 LayerCount: 2
@@ -7231,11 +7149,11 @@ SplineSet
  272 862 272 862 285 875 c 4,49,50
  297 884 297 884 313 884 c 260,0,1
 EndSplineSet
-Validated: 524321
+Validated: 33
 EndChar
 
 StartChar: macron
-Encoding: 175 175 233
+Encoding: -1 175 223
 Width: 650
 Flags: W
 LayerCount: 2
@@ -7255,31 +7173,31 @@ SplineSet
  65 646 65 646 45 664 c 4,18,19
  27 682 27 682 27 708 c 260,0,1
 EndSplineSet
-Validated: 6291457
+Validated: 1
 EndChar
 
 StartChar: macron
-Encoding: 307 175 234
+Encoding: 175 175 224
 Width: 622
 Flags: W
 LayerCount: 2
 Fore
-Refer: 93 95 S 1 0 0 1 9 847 2
+Refer: 83 95 S 1 0 0 1 9 847 2
 Validated: 1
 EndChar
 
 StartChar: caron
-Encoding: 312 711 235
+Encoding: 296 711 225
 Width: 361
 Flags: W
 LayerCount: 2
 Fore
-Refer: 231 710 N 1 0 0 -0.999939 0 1631 2
+Refer: 221 710 N 1 0 0 -0.999939 0 1631 2
 Validated: 25
 EndChar
 
 StartChar: uni00AD
-Encoding: 173 173 236
+Encoding: 173 173 226
 Width: 399
 Flags: W
 LayerCount: 2
@@ -7301,7 +7219,7 @@ Validated: 1
 EndChar
 
 StartChar: currency
-Encoding: 164 164 237
+Encoding: 164 164 227
 Width: 740
 Flags: W
 LayerCount: 2
@@ -7366,6 +7284,114 @@ SplineSet
  289 192 289 192 319 192 c 0,67,68
 EndSplineSet
 Validated: 33
+EndChar
+
+StartChar: cedilla
+Encoding: 184 184 228
+Width: 531
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+254 -26 m 1,0,1
+ 247 -40 247 -40 260 -42 c 0,2,3
+ 318 -51 318 -51 338 -94 c 0,4,5
+ 345 -109 345 -109 345 -130 c 128,-1,6
+ 345 -151 345 -151 339 -165 c 0,7,8
+ 321 -207 321 -207 275 -222 c 0,9,10
+ 257 -228 257 -228 236.5 -228 c 0,11,12
+ 185 -228 185 -228 163 -217 c 0,13,14
+ 161 -216 161 -216 159 -215.5 c 128,-1,15
+ 157 -215 157 -215 155 -213.5 c 128,-1,16
+ 153 -212 153 -212 150.5 -211 c 0,17,18
+ 132 -203 132 -203 128.324324324 -186.22972973 c 0,19,20
+ 125 -167 125 -167 134 -155 c 0,21,22
+ 148 -137 148 -137 170 -140 c 0,23,24
+ 182 -142 182 -142 185.833333333 -145.333333333 c 0,25,26
+ 190 -149 190 -149 191 -149 c 128,-1,27
+ 192 -149 192 -149 194.5 -150.5 c 0,28,29
+ 196 -151 196 -151 210 -154 c 256,30,31
+ 220 -156 220 -156 227 -156 c 0,32,33
+ 247 -156 247 -156 253.7 -151 c 0,34,35
+ 267 -140 267 -140 267 -132.722222222 c 0,36,37
+ 267 -125 267 -125 264.5 -121.5 c 0,38,39
+ 256 -109 256 -109 246.761363636 -107.465909091 c 0,40,41
+ 232 -105 232 -105 226 -105 c 256,42,43
+ 221 -105 221 -105 218 -106 c 0,44,45
+ 207 -110 207 -110 191 -104 c 0,46,47
+ 188.461538462 -103.153846154 188.461538462 -103.153846154 186 -101 c 2,48,-1
+ 178 -94 l 1,49,-1
+ 170 -86 l 2,50,51
+ 164 -80 164 -80 162 -72 c 256,52,53
+ 160 -63 160 -63 164 -57 c 1,54,-1
+ 189 0 l 1,55,-1
+ 268 0 l 1,56,-1
+ 254 -26 l 1,0,1
+EndSplineSet
+Validated: 524321
+EndChar
+
+StartChar: logicalnot
+Encoding: 172 172 229
+Width: 658
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+487 369 m 1,0,-1
+ 487 203 l 2,1,2
+ 487 162 487 162 526.5 143.5 c 0,3,4
+ 538 138 538 138 552 138 c 256,5,6
+ 579 138 579 138 598 157 c 128,-1,7
+ 617 176 617 176 617 203 c 2,8,-1
+ 617 449 l 2,9,10
+ 617 476 617 476 598 495 c 256,11,12
+ 579 514 579 514 552 514 c 2,13,-1
+ 82 514 l 2,14,15
+ 55 514 55 514 36 495 c 256,16,17
+ 17 476 17 476 17 449 c 2,18,-1
+ 17 434 l 2,19,20
+ 17 407 17 407 36 388 c 128,-1,21
+ 55 369 55 369 82 369 c 2,22,-1
+ 487 369 l 1,0,-1
+EndSplineSet
+EndChar
+
+StartChar: ordfeminine
+Encoding: 170 170 230
+Width: 451
+VWidth: 838
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+267.306640625 632.506835938 m 1,0,-1
+ 267.306640625 699.006835938 l 2,1,2
+ 267 719 267 719 257.306640625 731.256835938 c 0,3,4
+ 247 744 247 744 224.806640625 743.756835938 c 0,5,6
+ 202 744 202 744 192.056640625 730.006835938 c 0,7,8
+ 181.806640625 716.75 181.806640625 716.75 181.806640625 699.006835938 c 2,9,-1
+ 181.806640625 632.506835938 l 1,10,-1
+ 267.306640625 632.506835938 l 1,0,-1
+242.311523438 543.51171875 m 1,11,-1
+ 206.801757812 543.51171875 l 1,12,-1
+ 206.801757812 492.506835938 l 2,13,14
+ 207 467 207 467 188.984375 448.829101562 c 0,15,16
+ 171 431 171 431 145.556640625 431.01171875 c 128,-1,17
+ 120 431 120 431 102.12890625 448.829101562 c 128,-1,18
+ 84.3115234375 466.6875 84.3115234375 466.6875 84.3115234375 492.506835938 c 2,19,-1
+ 84.3115234375 702.006835938 l 2,20,21
+ 84 768 84 768 137.432617188 807.353515625 c 0,22,23
+ 174 834 174 834 222 835 c 0,24,25
+ 285 835 285 835 319.0546875 803.873046875 c 0,26,27
+ 364.80078125 762.181640625 364.80078125 762.181640625 364.80078125 702.26171875 c 2,28,-1
+ 364.80078125 492.506835938 l 2,29,30
+ 365 467 365 467 346.984375 448.829101562 c 0,31,32
+ 329 431 329 431 303.556640625 431.01171875 c 128,-1,33
+ 278 431 278 431 260.12890625 448.829101562 c 128,-1,34
+ 242.311523438 466.6875 242.311523438 466.6875 242.311523438 492.506835938 c 2,35,-1
+ 242.311523438 543.51171875 l 1,11,-1
+EndSplineSet
 EndChar
 EndChars
 EndSplineFont
