@@ -19,6 +19,7 @@
 # V1.6.0    : Add Function Rename Models
 # V1.6.1    : Option Middle as ComboBox
 # V1.6.2    : Use "grouped" operation for adding text : https://github.com/5axes/NameIt/issues/14
+# V1.7.0    : Add Option Front+Base
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -753,7 +754,7 @@ class NameIt(QObject, Extension):
         # Logger.log("d", "depth= %s", str(node_bounds.depth))
         # Logger.log("d", "Center X= %s", str(node_bounds.center.x))
         # Logger.log("d", "Center Y= %s", str(node_bounds.center.z))
-        if self._location == "Front" :
+        if self._location == "Front" or self._location == "Front+Base" :
             PosX = node_bounds.center.x
             PosY = node_bounds.center.z+0.5*node_bounds.depth + self._distance + self._size         
         else :
@@ -768,8 +769,12 @@ class NameIt(QObject, Extension):
         node.setSelectable(True)
         node.setName("Id-"+name)   
         
+        if self._location == "Front+Base" :
+            base = True
+        else :
+            base = False
         # Create texte
-        createMesh = self._createText(parent,name)
+        createMesh = self._createText(parent,name,base)
         
         mesh =  self._toMeshData(createMesh)
         node.setMeshData(mesh)
@@ -796,7 +801,7 @@ class NameIt(QObject, Extension):
             new_instance.resetState()  # Ensure that the state is not seen as a user state.
             settings.addInstance(new_instance)
         
-        if self._location != "Front" :
+        if self._location != "Front" and self._location != "Front+Base" :
             # meshfix_union_all false
             definition = stack.getSettingDefinition("meshfix_union_all")
             new_instance = SettingInstance(definition, settings)
@@ -881,7 +886,7 @@ class NameIt(QObject, Extension):
     #  If the 'character' cannot be use as a file name then use the unicode number (ord())
     #  And if this character doesn't exists then replace it by ?
     #--------------------------------------------------------------------------------------
-    def _createText(self, node: CuraSceneNode, name):
+    def _createText(self, node: CuraSceneNode, name, base):
         meshes = []
         offsetX=0
         
@@ -930,27 +935,42 @@ class NameIt(QObject, Extension):
                 Ind += 1
                 # Logger.log("d", "Ident= %s",str(Ind))
         
+ 
+
+        origin = [0, 0, 0]
+        DirX = [1, 0, 0]
+        DirY = [0, 1, 0]
+        DirZ = [0, 0, 1]
+        
+        if base :
+            Ind += 1
+            Filename = "base.stl"
+            model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), Folder, Filename)
+            mesh = trimesh.load(model_definition_path) 
+            mesh.apply_transform(trimesh.transformations.scale_matrix(offsetX, origin, DirX))
+            meshes.append(mesh)
+            
         if Ind == 1 :
             combined = mesh           
         else :
             # Logger.log("d", "model_definition_path= %s",str(meshes))
-            combined = trimesh.util.concatenate(meshes)  
-
+            combined = trimesh.util.concatenate(meshes) 
+        
+        if base :
+            combined.apply_transform(trimesh.transformations.translation_matrix([0, 0, 1]))
+        
         # Logger.log("d", "Combined bounds = %s",str(combined.bounds))
         median = -(0.5*(combined.bounds[1, 0]-combined.bounds[0, 0])+combined.bounds[0, 0])
         #Logger.log("d", "combined= %s",str(median))
         combined.apply_transform(trimesh.transformations.translation_matrix([median, 0, 0]))            
         
-        origin = [0, 0, 0]
-        DirX = [1, 0, 0]
-        DirY = [0, 1, 0]
-        DirZ = [0, 0, 1]
+
         combined.apply_transform(trimesh.transformations.scale_matrix(self._size, origin, DirX))
         combined.apply_transform(trimesh.transformations.scale_matrix(self._size, origin, DirY))
         combined.apply_transform(trimesh.transformations.scale_matrix(self._height, origin, DirZ))
         
         # Mirror the text for option Middle
-        if self._location != "Front" :
+        if self._location != "Front" and self._location != "Front+Base" :
             combined.apply_transform(trimesh.transformations.reflection_matrix(origin, DirX))
             
         return combined

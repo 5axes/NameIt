@@ -496,6 +496,7 @@ Window
 		model: ListModel {
 		   id: locItems
 		   ListElement { text: "Front"}
+		   ListElement { text: "Front+Base"}
 		   ListElement { text: "Center"}
 		   ListElement { text: "Center (not filled)"}
 		}
