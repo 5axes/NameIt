@@ -71,6 +71,18 @@ You can also specify a specific ***Initial Layer Speed*** used to print these ma
 
 ### Text location option
 
+#### Front 
+
+Basic text creation in the **Front** of the part.
+
+![Front](./images/Front.png)
+
+#### Front + Base
+
+Basic text creation in the **Front** of the part. A base is added to the text . This base can be customized by modyfing the ***base.stl*** model.
+
+![Front + Base](./images/Front.png)
+
 #### Center & Center (not filled)
 
 By using this option the text will be add not on the border of the part but mirrored in the center of the print. In this way only the line pattern of the first layer is modified, without adding to much print time.
