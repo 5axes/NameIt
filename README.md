@@ -81,7 +81,7 @@ Basic text creation in the **Front** of the part.
 
 Basic text creation in the **Front** of the part. A base is added to the text . This base can be customized by modyfing the ***base.stl*** model.
 
-![Front + Base](./images/Front.png)
+![Front + Base](./images/Front+Base.png)
 
 #### Center & Center (not filled)
 
