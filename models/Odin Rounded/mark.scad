@@ -14,8 +14,8 @@ font = "Odin Rounded - Bold:style=Bold";
 letter_height = 1;
 letter_size =1;
 
-// render() translate([0,0,0]) letter("ß");
-render() translate([0,0,0]) letter(chr(153));
+render() translate([0,0,0]) letter("÷");
+// render() translate([0,0,0]) letter(chr(928));
 
 
 module letter(Txt) {
