@@ -6,7 +6,7 @@
 //------------------------------------------------------
 use <Odin Rounded - Bold.otf>
 
-$fn=20;
+$fn=40;
 
 font = "Odin Rounded - Bold:style=Bold";
 
@@ -14,8 +14,8 @@ font = "Odin Rounded - Bold:style=Bold";
 letter_height = 1;
 letter_size =1;
 
-//render() translate([0.5,0,0]) mirror([1,0,0]) letter("/");
-render() translate([0,0,0]) letter("A");
+render() translate([0,0,0]) letter("!");
+// render() translate([0,0,0]) letter(chr(34));
 
 
 module letter(Txt) {

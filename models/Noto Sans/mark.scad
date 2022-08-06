@@ -14,8 +14,8 @@ font = "NotoSans-ExtraBold:style=Bold";
 letter_height = 1;
 letter_size =1;
 
-//render() translate([0.5,0,0]) mirror([1,0,0]) letter("/");
-render() translate([0,0,0]) letter("W");
+// render() translate([0,0,0]) letter("Π");
+render() translate([0,0,0]) letter(chr(223));
 
 
 module letter(Txt) {
