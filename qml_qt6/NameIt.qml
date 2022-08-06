@@ -453,8 +453,8 @@ Window
 		
 		model: ListModel {
 		   id: cbItems
-		   ListElement { text: "Arial Rounded MT"}
-		   ListElement { text: "Gill Sans MT"}
+		   // ListElement { text: "Arial Rounded MT"}
+		   // ListElement { text: "Gill Sans MT"}
 		   ListElement { text: "NameIt Rounded"}
 		   ListElement { text: "Noto Sans"}
 		   ListElement { text: "Odin Rounded"}
