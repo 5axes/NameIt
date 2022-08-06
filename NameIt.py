@@ -20,6 +20,10 @@
 # V1.6.1    : Option Middle as ComboBox
 # V1.6.2    : Use "grouped" operation for adding text : https://github.com/5axes/NameIt/issues/14
 # V1.7.0    : Add Option Front+Base
+# V1.8.0    : Two New Font to replace Windows Font with Licence Issue
+#             Noto Sans : https://fonts.google.com/noto/specimen/Noto+Sans
+#             Odin Rounded : https://www.dafont.com/odin-rounded.font
+#             Remove in the final package the Fonts "Gill Sans MT" / "Arial Rounded MT"
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
