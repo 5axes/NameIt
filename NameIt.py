@@ -704,13 +704,22 @@ class NameIt(QObject, Extension):
         
         self._op.push()        
         # Informations at the end of the creation Routine
-        if nbNum == 0 :                                
-            Message(text = "No Identifier created for %s element(s)" % (nbMod), title = catalog.i18nc("@info:title", "Warning ! Name It"), message_type = Message.MessageType.ERROR).show()
-        elif nbNum < nbMod :
-            Message(text = "Identifier creation : %d / %d" % (nbNum,nbMod), title = catalog.i18nc("@info:title", "Info ! Name It"), message_type = Message.MessageType.WARNING).show()    
-        elif nbNum == nbMod :
-            Message(text = "Identifier creation : %d / %d" % (nbNum,nbMod), title = catalog.i18nc("@info:title", "Info ! Name It"), message_type = Message.MessageType.POSITIVE).show()    
-  
+        # message_type only available from Cura 4.11
+        if self.Major == 4 and self.Minor < 11 :
+            if nbNum == 0 :                                
+                Message(text = "No Identifier created for %s element(s)" % (nbMod), title = catalog.i18nc("@info:title", "Warning ! Name It")).show()
+            elif nbNum < nbMod :
+                Message(text = "Identifier creation : %d / %d" % (nbNum,nbMod), title = catalog.i18nc("@info:title", "Info ! Name It")).show()    
+            elif nbNum == nbMod :
+                Message(text = "Identifier creation : %d / %d" % (nbNum,nbMod), title = catalog.i18nc("@info:title", "Info ! Name It")).show()    
+        else :
+            if nbNum == 0 :                                
+                Message(text = "No Identifier created for %s element(s)" % (nbMod), title = catalog.i18nc("@info:title", "Warning ! Name It"), message_type = Message.MessageType.ERROR).show()
+            elif nbNum < nbMod :
+                Message(text = "Identifier creation : %d / %d" % (nbNum,nbMod), title = catalog.i18nc("@info:title", "Info ! Name It"), message_type = Message.MessageType.WARNING).show()    
+            elif nbNum == nbMod :
+                Message(text = "Identifier creation : %d / %d" % (nbNum,nbMod), title = catalog.i18nc("@info:title", "Info ! Name It"), message_type = Message.MessageType.POSITIVE).show()    
+ 
     #----------------------------------------
     # Initial Source code from  fieldOfView
     #----------------------------------------  
