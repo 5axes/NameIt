@@ -24,6 +24,7 @@
 #             Noto Sans : https://fonts.google.com/noto/specimen/Noto+Sans
 #             Odin Rounded : https://www.dafont.com/odin-rounded.font
 #             Remove in the final package the Fonts "Gill Sans MT" / "Arial Rounded MT"
+# V1.8.1    : Correction On Message for Cura 4.4 to Cura 4.11
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
