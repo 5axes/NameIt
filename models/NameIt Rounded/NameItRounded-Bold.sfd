@@ -23,7 +23,7 @@ OS2Version: 3
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 0
 CreationTime: 1656082097
-ModificationTime: 1657885136
+ModificationTime: 1663140262
 PfmFamily: 81
 TTFWeight: 700
 TTFWidth: 5
@@ -534,7 +534,7 @@ Grid
  1270 708 l 1049
 EndSplineSet
 TeXData: 1 0 0 235929 117964 78643 740295 1048576 78643 783286 444596 497025 792723 393216 433062 380633 303038 157286 324010 404750 52429 2506097 1059062 262144
-BeginChars: 297 231
+BeginChars: 297 232
 
 StartChar: Eth
 Encoding: 208 208 0
@@ -2649,7 +2649,7 @@ EndChar
 
 StartChar: A
 Encoding: 65 65 53
-Width: 546
+Width: 531
 Flags: W
 LayerCount: 2
 Fore
@@ -2681,7 +2681,6 @@ SplineSet
  145 353 l 5,33,-1
  316 353 l 5,26,-1
 EndSplineSet
-Validated: 33
 Kerns2: 195 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 75 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
@@ -2725,7 +2724,6 @@ SplineSet
  270 578 270 578 220 578 c 2,47,-1
  145 578 l 1,39,-1
 EndSplineSet
-Validated: 33
 EndChar
 
 StartChar: C
@@ -2804,7 +2802,6 @@ SplineSet
  145 574 l 1,33,-1
  145 132 l 1,22,-1
 EndSplineSet
-Validated: 1
 EndChar
 
 StartChar: E
@@ -2841,7 +2838,6 @@ SplineSet
  342 576 342 576 314 576 c 2,38,-1
  145 576 l 1,0,-1
 EndSplineSet
-Validated: 1
 EndChar
 
 StartChar: F
@@ -3752,12 +3748,11 @@ EndChar
 
 StartChar: a
 Encoding: 97 97 85
-Width: 546
+Width: 531
 Flags: W
 LayerCount: 2
 Fore
 Refer: 53 65 N 1 0 0 1 0 0 2
-Validated: 1
 EndChar
 
 StartChar: b
@@ -3767,7 +3762,6 @@ Flags: W
 LayerCount: 2
 Fore
 Refer: 54 66 N 1 0 0 1 0 0 2
-Validated: 1
 EndChar
 
 StartChar: c
@@ -3787,7 +3781,6 @@ Flags: W
 LayerCount: 2
 Fore
 Refer: 56 68 N 1 0 0 1 0 0 2
-Validated: 1
 EndChar
 
 StartChar: e
@@ -3797,7 +3790,6 @@ Flags: W
 LayerCount: 2
 Fore
 Refer: 57 69 N 1 0 0 1 0 0 2
-Validated: 1
 EndChar
 
 StartChar: f
@@ -4113,7 +4105,6 @@ LayerCount: 2
 Fore
 Refer: 53 65 N 1 0 0 1 0 0 2
 Refer: 158 168 N 1 0 0 1 59 0 2
-Validated: 1
 Kerns2: 195 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 75 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
@@ -4266,7 +4257,6 @@ LayerCount: 2
 Fore
 Refer: 57 69 N 1 0 0 1 0 0 3
 Refer: 157 180 N 1 0 0 1 140 0 2
-Validated: 1
 EndChar
 
 StartChar: Ntilde
@@ -4310,7 +4300,6 @@ LayerCount: 2
 Fore
 Refer: 85 97 N 1 0 0 1 0 0 2
 Refer: 157 180 N 1 0 0 1 170 0 2
-Validated: 1
 EndChar
 
 StartChar: agrave
@@ -4321,7 +4310,6 @@ LayerCount: 2
 Fore
 Refer: 85 97 N 1 0 0 1 0 0 2
 Refer: 84 96 N 1 0 0 1 120 0 2
-Validated: 9
 EndChar
 
 StartChar: acircumflex
@@ -4332,7 +4320,6 @@ LayerCount: 2
 Fore
 Refer: 85 97 N 1 0 0 1 0 0 2
 Refer: 221 710 N 1 0 0 1 90 0 2
-Validated: 1
 EndChar
 
 StartChar: adieresis
@@ -4343,7 +4330,6 @@ LayerCount: 2
 Fore
 Refer: 85 97 N 1 0 0 1 0 0 2
 Refer: 158 168 N 1 0 0 1 50 0 2
-Validated: 1
 EndChar
 
 StartChar: atilde
@@ -4354,7 +4340,6 @@ LayerCount: 2
 Fore
 Refer: 85 97 N 1 0 0 1 0 0 2
 Refer: 222 732 N 1 0 0 1 70 0 2
-Validated: 1
 EndChar
 
 StartChar: aring
@@ -4385,7 +4370,6 @@ LayerCount: 2
 Fore
 Refer: 89 101 N 1 0 0 1 0 0 3
 Refer: 157 180 N 1 0 0 1 140 0 2
-Validated: 1
 EndChar
 
 StartChar: egrave
@@ -4396,7 +4380,6 @@ LayerCount: 2
 Fore
 Refer: 89 101 N 1 0 0 1 0 0 3
 Refer: 84 96 N 1 0 0 1 60 0 2
-Validated: 9
 EndChar
 
 StartChar: ecircumflex
@@ -4407,7 +4390,6 @@ LayerCount: 2
 Fore
 Refer: 89 101 N 1 0 0 1 0 0 3
 Refer: 221 710 N 1 0 0 1 40 0 2
-Validated: 1
 EndChar
 
 StartChar: edieresis
@@ -4418,7 +4400,6 @@ LayerCount: 2
 Fore
 Refer: 89 101 N 1 0 0 1 0 0 3
 Refer: 158 168 N 1 0 0 1 0 0 2
-Validated: 5
 EndChar
 
 StartChar: iacute
@@ -6167,7 +6148,6 @@ LayerCount: 2
 Fore
 Refer: 53 65 N 1 0 0 1 0 0 2
 Refer: 84 96 N 1 0 0 1 130 0 2
-Validated: 9
 Kerns2: 195 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 75 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
@@ -6179,7 +6159,6 @@ LayerCount: 2
 Fore
 Refer: 53 65 N 1 0 0 1 0 0 2
 Refer: 222 732 N 1 0 0 1 90 0 2
-Validated: 1
 Kerns2: 195 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 75 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
@@ -6896,7 +6875,6 @@ LayerCount: 2
 Fore
 Refer: 53 65 N 1 0 0 1 0 0 2
 Refer: 221 710 N 1 0 0 1 110 0 2
-Validated: 1
 Kerns2: 195 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 75 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
@@ -6908,7 +6886,6 @@ LayerCount: 2
 Fore
 Refer: 57 69 N 1 0 0 1 0 0 3
 Refer: 221 710 N 1 0 0 1 40 0 2
-Validated: 1
 EndChar
 
 StartChar: Aacute
@@ -6919,7 +6896,6 @@ LayerCount: 2
 Fore
 Refer: 53 65 N 1 0 0 1 0 0 2
 Refer: 157 180 N 1 0 0 1 210 0 2
-Validated: 1
 Kerns2: 195 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 194 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 109 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 106 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 104 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 77 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 75 -77 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 74 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 72 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 7 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0" 6 -87 "sous-table 'kern' Cr+AOkA-nage horizontal dans Latin lookup 0"
 EndChar
 
@@ -6931,7 +6907,6 @@ LayerCount: 2
 Fore
 Refer: 57 69 N 1 0 0 1 0 0 3
 Refer: 158 168 N 1 0 0 1 0 0 2
-Validated: 5
 EndChar
 
 StartChar: Egrave
@@ -6942,7 +6917,6 @@ LayerCount: 2
 Fore
 Refer: 57 69 N 1 0 0 1 0 0 3
 Refer: 84 96 N 1 0 0 1 60 0 2
-Validated: 9
 EndChar
 
 StartChar: Iacute
@@ -7382,6 +7356,13 @@ SplineSet
  242.311523438 466.6875 242.311523438 466.6875 242.311523438 492.506835938 c 2,35,-1
  242.311523438 543.51171875 l 1,11,-1
 EndSplineSet
+EndChar
+
+StartChar: space
+Encoding: 32 32 231
+Width: 331
+Flags: WO
+LayerCount: 2
 EndChar
 EndChars
 EndSplineFont
