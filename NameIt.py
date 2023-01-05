@@ -25,6 +25,7 @@
 #             Odin Rounded : https://www.dafont.com/odin-rounded.font
 #             Remove in the final package the Fonts "Gill Sans MT" / "Arial Rounded MT"
 # V1.8.1    : Correction On Message for Cura 4.4 to Cura 4.11
+# V1.8.2    : Bug correction https://github.com/5axes/NameIt/discussions/18
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -184,12 +185,14 @@ class NameIt(QObject, Extension):
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Help"), self.gotoHelp)
 
         # Define a new settings "identification_mesh""
+        # V1.8.2 set to enabled = False Issue if the user check this option in a profile
         self._settings_dict = OrderedDict()
         self._settings_dict["identification_mesh"] = {
             "label": "Identification mesh",
-            "description": "Mesh used as identification (Added for the plugin NameIt!)",
+            "description": "Mesh used as identification element (Special parameter added for the plugin NameIt!)",
             "type": "bool",
             "default_value": False,
+            "enabled": False,
             "settable_per_mesh": True,
             "settable_per_extruder": False,
             "settable_per_meshgroup": False,
@@ -640,6 +643,16 @@ class NameIt(QObject, Extension):
 
         return []
     
+    def _checkSettings(self) -> None:
+        # V1.8.2 set to enabled = False Issue if the user check this option in a profile
+        global_container_stack = CuraApplication.getInstance().getGlobalContainerStack()
+        extruder_stack = CuraApplication.getInstance().getExtruderManager().getActiveExtruderStacks()[0] 
+        extruder = global_container_stack.extruderList[0]        
+        type_identification_mesh = bool(extruder.getProperty("identification_mesh", "value"))
+        if type_identification_mesh :
+            Logger.log('d', "type_identification_mesh : {}".format(type_identification_mesh))              
+            extruder.setProperty("identification_mesh", "value", False)
+        
     #===== Identifier Creation ==============================================================================
     # Add Part Name  as text
     #  Option :
@@ -652,27 +665,32 @@ class NameIt(QObject, Extension):
         nbNum=0
         Logger.log('d', "Type : {}".format(option))
         
+        # V1.8.2 set to enabled = False
+        self._checkSettings()
+        
         nodes_list = self._getAllSelectedNodes()
         if not nodes_list:
             nodes_list = DepthFirstIterator(self._application.getController().getScene().getRoot())
         
         self._op = GroupedOperation()
+        # Logger.log('d', "nodes_list : {}".format(nodes_list))
         for node in nodes_list:
             if node.callDecoration("isSliceable"):           
                 # Logger.log('d', "isSliceable : {}".format(node.getName()))
                 node_stack=node.callDecoration("getStack")           
                 if node_stack: 
-                    type_infill_mesh = node_stack.getProperty("infill_mesh", "value")
-                    type_cutting_mesh = node_stack.getProperty("cutting_mesh", "value")
-                    type_support_mesh = node_stack.getProperty("support_mesh", "value")
-                    type_anti_overhang_mesh = node_stack.getProperty("anti_overhang_mesh", "value") 
-                    type_identification_mesh = node_stack.getProperty("identification_mesh", "value")
+                    type_infill_mesh = bool(node_stack.getProperty("infill_mesh", "value"))
+                    type_cutting_mesh = bool(node_stack.getProperty("cutting_mesh", "value"))
+                    type_support_mesh = bool(node_stack.getProperty("support_mesh", "value"))
+                    type_anti_overhang_mesh = bool(node_stack.getProperty("anti_overhang_mesh", "value")) 
+                    type_identification_mesh = bool(node_stack.getProperty("identification_mesh", "value"))
+                    # Logger.log('d', "type_identification_mesh : {}".format(type_identification_mesh))
                     
                     if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh and not type_cutting_mesh and not type_identification_mesh :
                         nbMod+=1
                         name = node.getName()
                         Logger.log('d', "Mesh : {}".format(name))
-                        # Add Part Name  as text 
+                        # Add Part Name as text 
                         if option == "Name" :
                             nbNum+=1
                             self._createNameMesh(node, name)
@@ -692,7 +710,7 @@ class NameIt(QObject, Extension):
                             # Logger.log("d", "SearchId= %s", SearchId)                         
                             if SearchId is not None: 
                                 indice=len(SearchId) 
-                                Logger.log("d", "SearchId = %s", indice) 
+                                # Logger.log("d", "SearchId = %s", indice) 
                                 if indice > 0 :
                                     nbNum+=1                               
                                     Ident=SearchId[len(SearchId)-1] 
@@ -856,7 +874,7 @@ class NameIt(QObject, Extension):
         CuraApplication.getInstance().getController().getScene().sceneChanged.emit(node)
         self._all_picked_node.append(node)
         
-        # Logger.log('d', '_createNameMesh')
+        Logger.log('d', '_createNameMesh')
 
     #----------------------------------------
     # Remove All Id Mesh
