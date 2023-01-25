@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Name It\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-25 12:32+0000\n"
+"POT-Creation-Date: 2023-01-25 12:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: NameIt.py:125 NameIt.py:141 NameIt.py:799 NameIt.py:846 NameIt.py:1015
+#: qml_qt6/NameIt.qml:501 qml_qt5/NameIt.qml:574
+msgctxt "@option"
+msgid "Front"
+msgstr ""
 
 #: NameIt.py:184
 msgctxt "@item:inmenu"
@@ -80,6 +86,17 @@ msgstr ""
 #: NameIt.py:741 NameIt.py:743 NameIt.py:748 NameIt.py:750
 msgctxt "@info:title"
 msgid "Info ! Name It"
+msgstr ""
+
+#: NameIt.py:799 NameIt.py:814 NameIt.py:846 NameIt.py:1015
+#: qml_qt6/NameIt.qml:502 qml_qt5/NameIt.qml:575
+msgctxt "@option"
+msgid "Front+Base"
+msgstr ""
+
+#: NameIt.py:854 qml_qt6/NameIt.qml:504 qml_qt5/NameIt.qml:577
+msgctxt "@option"
+msgid "Center (not filled)"
 msgstr ""
 
 #: qml_qt6/RenameDialog.qml:26 qml_qt5/RenameDialog.qml:25
@@ -147,7 +164,12 @@ msgctxt "@label"
 msgid "Font :"
 msgstr ""
 
-#: qml_qt6/NameIt.qml:477
+#: qml_qt6/NameIt.qml:477 qml_qt5/NameIt.qml:550
 msgctxt "@label"
 msgid "Location :"
+msgstr ""
+
+#: qml_qt6/NameIt.qml:503 qml_qt5/NameIt.qml:576
+msgctxt "@option"
+msgid "Center"
 msgstr ""
