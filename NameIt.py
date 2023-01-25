@@ -78,11 +78,20 @@ from UM.Version import Version
 
 from UM.Logger import Logger
 from UM.Message import Message
+from UM.Resources import Resources
 
 from UM.i18n import i18nCatalog
 
-catalog = i18nCatalog("cura")
+Resources.addSearchPath(
+    os.path.join(os.path.abspath(os.path.dirname(__file__)))
+)  # Plugin translation file import
 
+catalog = i18nCatalog("nameit")
+
+if catalog.hasTranslationLoaded():
+    Logger.log("i", "Name It Plugin translation loaded!")
+    
+    
 #This class is the extension and doubles as QObject to manage the qml    
 class NameIt(QObject, Extension):
     #Create an api

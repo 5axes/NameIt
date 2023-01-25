@@ -14,6 +14,7 @@ import Cura 1.0 as Cura
 Window
 {
     id: base
+	UM.I18nCatalog { id: catalog; name: "nameit"}
 
     title: "Name It ! Parameters"
 

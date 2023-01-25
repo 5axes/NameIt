@@ -12,6 +12,7 @@ import UM 1.1 as UM
 UM.Dialog
 {
     id: base
+	UM.I18nCatalog { id: catalog; name: "nameit"}
 
     function setName(new_name) {
         nameField.text = new_name;
