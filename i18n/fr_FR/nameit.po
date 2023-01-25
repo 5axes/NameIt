@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Name It\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-25 12:07+0000\n"
-"PO-Revision-Date: 2023-01-25 13:11+0200\n"
+"POT-Creation-Date: 2023-01-25 12:20+0000\n"
+"PO-Revision-Date: 2023-01-25 13:23+0200\n"
 "Last-Translator: 5axes <5axes@free.fr>\n"
 "Language-Team: 5axes\n"
 "Language: fr\n"
@@ -101,3 +101,53 @@ msgstr "Annuler"
 msgctxt "@action:button"
 msgid "OK"
 msgstr "OK"
+
+#: qml_qt6/NameIt.qml:79 qml_qt5/NameIt.qml:77
+msgctxt "@tooltip"
+msgid "Close this dialog box"
+msgstr "Fermer cette boîte de dialogue"
+
+#: qml_qt6/NameIt.qml:115 qml_qt5/NameIt.qml:120
+msgctxt "@label"
+msgid "Size :"
+msgstr "Taille :"
+
+#: qml_qt6/NameIt.qml:162 qml_qt5/NameIt.qml:180
+msgctxt "@label"
+msgid "Height :"
+msgstr "Hauteur : "
+
+#: qml_qt6/NameIt.qml:209 qml_qt5/NameIt.qml:240
+msgctxt "@label"
+msgid "Distance :"
+msgstr "Distance :"
+
+#: qml_qt6/NameIt.qml:255 qml_qt5/NameIt.qml:300
+msgctxt "@label"
+msgid "Kerning :"
+msgstr "Kerning :"
+
+#: qml_qt6/NameIt.qml:301 qml_qt5/NameIt.qml:360
+msgctxt "@label"
+msgid "Number Prefix :"
+msgstr "Préfix Nombre :"
+
+#: qml_qt6/NameIt.qml:345 qml_qt5/NameIt.qml:403
+msgctxt "@label"
+msgid "Number Suffix :"
+msgstr "Suffix Nombre :"
+
+#: qml_qt6/NameIt.qml:389 qml_qt5/NameIt.qml:446
+msgctxt "@label"
+msgid "Initial Layer Speed :"
+msgstr "Vitesse Couche Initiale :"
+
+#: qml_qt6/NameIt.qml:433 qml_qt5/NameIt.qml:506
+msgctxt "@label"
+msgid "Font :"
+msgstr "Police :"
+
+#: qml_qt6/NameIt.qml:477
+msgctxt "@label"
+msgid "Location :"
+msgstr "Localisation :"
