@@ -74,7 +74,7 @@ Window
         anchors.right: parent.right
         anchors.rightMargin: 10
 
-        tooltip: "Close this dialog box"
+        tooltip: catalog.i18nc("@tooltip", "Close this dialog box")
 
         style: ButtonStyle{
             background: Rectangle {
@@ -117,7 +117,7 @@ Window
     {
         id: label_size
 		width: 150
-        text: "Size :"
+        text: catalog.i18nc("@label", "Size :")
         font.family: "Arial"
         font.pointSize: 12
         color: "#131151"
@@ -177,7 +177,7 @@ Window
     {
         id: label_height
 		width: 150
-        text: "Height :"
+        text: catalog.i18nc("@label", "Height :")
         font.family: "Arial"
         font.pointSize: 12
         color: "#131151"
@@ -237,7 +237,7 @@ Window
     {
         id: label_distance
 		width: 150
-        text: "Distance :"
+        text: catalog.i18nc("@label", "Distance :")
         font.family: "Arial"
         font.pointSize: 12
         color: "#131151"
@@ -297,7 +297,7 @@ Window
     {
         id: label_kerning
 		width: 150
-        text: "Kerning :"
+        text: catalog.i18nc("@label", "Kerning :")
         font.family: "Arial"
         font.pointSize: 12
         color: "#131151"
@@ -357,7 +357,7 @@ Window
     {
         id: label_prefix
 		width: 150
-        text: "Number Prefix :"
+        text: catalog.i18nc("@label", "Number Prefix :")
         font.family: "Arial"
         font.pointSize: 12
         color: "#131151"
@@ -400,7 +400,7 @@ Window
     {
         id: label_suffix
 		width: 150
-        text: "Number Suffix :"
+        text: catalog.i18nc("@label", "Number Suffix :")
         font.family: "Arial"
         font.pointSize: 12
         color: "#131151"
@@ -443,7 +443,7 @@ Window
     {
         id: label_speed
 		width: 150
-        text: "Initial Layer Speed :"
+        text: catalog.i18nc("@label", "Initial Layer Speed :")
         font.family: "Arial"
         font.pointSize: 12
         color: "#131151"
@@ -503,7 +503,7 @@ Window
     {
         id: label_font
 		width: 150
-        text: "Font :"
+        text: catalog.i18nc("@label", "Font :")
         font.family: "Arial"
         font.pointSize: 12
         color: "#131151"
