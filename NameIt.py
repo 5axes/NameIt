@@ -1,5 +1,5 @@
 #----------------------------------------------------------------------------------------------------------------------------------------
-# Copyright (c) 2022 5@xes
+# Copyright (c) 2022-2023 5@xes
 #
 # The NameIt plugin is released under the terms of the AGPLv3 or higher.
 # Modifications 5@xes 2022
@@ -26,6 +26,7 @@
 #             Remove in the final package the Fonts "Gill Sans MT" / "Arial Rounded MT"
 # V1.8.1    : Correction On Message for Cura 4.4 to Cura 4.11
 # V1.8.2    : Bug correction https://github.com/5axes/NameIt/discussions/18
+# V1.8.2    : Add French Translation
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
