@@ -4,9 +4,6 @@ __pycache__/
 *$py.class
 *.qmlc
 
-# Translations
-*.mo
-*.pot
 
 # Models
 models/mark.stl
