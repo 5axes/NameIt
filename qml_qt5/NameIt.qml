@@ -14,9 +14,9 @@ import Cura 1.0 as Cura
 Window
 {
     id: base
-	UM.I18nCatalog { id: catalog; name: "nameit"}
+	property variant catalog: UM.I18nCatalog { name: "nameit" }
 
-    title: "Name It ! Parameters"
+    title: catalog.i18nc("@title", "Name It ! Parameters")
 
     color: "#fafafa" //Background color of cura: #fafafa
 
