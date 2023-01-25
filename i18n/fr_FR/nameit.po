@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Name It\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-25 12:24+0000\n"
-"PO-Revision-Date: 2023-01-25 13:27+0200\n"
+"POT-Creation-Date: 2023-01-25 12:36+0000\n"
+"PO-Revision-Date: 2023-01-25 13:38+0200\n"
 "Last-Translator: 5axes <5axes@free.fr>\n"
 "Language-Team: 5axes\n"
 "Language: fr\n"
@@ -17,70 +17,87 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Virtaal 0.7.1\n"
 
-#: NameIt.py:183
+#: NameIt.py:125 NameIt.py:141 NameIt.py:799 NameIt.py:846 NameIt.py:1015
+#: qml_qt6/NameIt.qml:501 qml_qt5/NameIt.qml:574
+msgctxt "@option"
+msgid "Front"
+msgstr "Devant"
+
+#: NameIt.py:184
 msgctxt "@item:inmenu"
 msgid "Name It !"
 msgstr "Name It !"
 
-#: NameIt.py:184
+#: NameIt.py:185
 msgctxt "@item:inmenu"
 msgid "Add Number"
 msgstr "Ajouter Nombre"
 
-#: NameIt.py:185
+#: NameIt.py:186
 msgctxt "@item:inmenu"
 msgid "Add Number From Part"
 msgstr "Ajouter Nombre Selon Pièce"
 
-#: NameIt.py:186
+#: NameIt.py:187
 msgctxt "@item:inmenu"
 msgid "Add Name"
 msgstr "Ajouter Nom"
 
-#: NameIt.py:188
+#: NameIt.py:189
 msgctxt "@item:inmenu"
 msgid "Remove Identifier"
 msgstr "Supprimer Identificateur"
 
-#: NameIt.py:190
+#: NameIt.py:191
 msgctxt "@item:inmenu"
 msgid "Rename models"
 msgstr "Renommer modèles"
 
-#: NameIt.py:192
+#: NameIt.py:193
 msgctxt "@item:inmenu"
 msgid "Define Text Parameters"
 msgstr "Définir Paramètres de Texte"
 
-#: NameIt.py:194
+#: NameIt.py:195
 msgctxt "@item:inmenu"
 msgid "Help"
 msgstr "Aide"
 
-#: NameIt.py:212
+#: NameIt.py:213
 msgctxt "@info:title"
 msgid "Name It!"
 msgstr "Name It!"
 
-#: NameIt.py:226
+#: NameIt.py:227
 msgctxt "@info:status"
 msgid "Please select a single model first"
 msgstr "Sélectionnez tout d'abord une pièce"
 
-#: NameIt.py:231 NameIt.py:651
+#: NameIt.py:232 NameIt.py:652
 msgctxt "@info:status"
 msgid "Please select one or more models first"
 msgstr "Sélectionnez tout d'abord des pièces"
 
-#: NameIt.py:738 NameIt.py:745
+#: NameIt.py:739 NameIt.py:746
 msgctxt "@info:title"
 msgid "Warning ! Name It"
 msgstr "Attention ! Name It"
 
-#: NameIt.py:740 NameIt.py:742 NameIt.py:747 NameIt.py:749
+#: NameIt.py:741 NameIt.py:743 NameIt.py:748 NameIt.py:750
 msgctxt "@info:title"
 msgid "Info ! Name It"
 msgstr "Info ! Name It"
+
+#: NameIt.py:799 NameIt.py:814 NameIt.py:846 NameIt.py:1015
+#: qml_qt6/NameIt.qml:502 qml_qt5/NameIt.qml:575
+msgctxt "@option"
+msgid "Front+Base"
+msgstr "Devant+Base"
+
+#: NameIt.py:854 qml_qt6/NameIt.qml:504 qml_qt5/NameIt.qml:577
+msgctxt "@option"
+msgid "Center (not filled)"
+msgstr "Centre (non rempli)"
 
 #: qml_qt6/RenameDialog.qml:26 qml_qt5/RenameDialog.qml:25
 msgctxt "@title:window"
@@ -147,7 +164,12 @@ msgctxt "@label"
 msgid "Font :"
 msgstr "Police :"
 
-#: qml_qt6/NameIt.qml:477
+#: qml_qt6/NameIt.qml:477 qml_qt5/NameIt.qml:550
 msgctxt "@label"
 msgid "Location :"
 msgstr "Localisation :"
+
+#: qml_qt6/NameIt.qml:503 qml_qt5/NameIt.qml:576
+msgctxt "@option"
+msgid "Center"
+msgstr "Centre"
