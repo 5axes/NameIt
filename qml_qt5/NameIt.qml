@@ -542,12 +542,12 @@ Window
 		}
 	}
 
-    //Text "Initial Layer Speed : "
+    //Text "Location :"
     Text
     {
         id: label_location
 		width: 150
-        text: "Location :"
+        text: catalog.i18nc("@label", "Location :")
         font.family: "Arial"
         font.pointSize: 12
         color: "#131151"
@@ -571,10 +571,10 @@ Window
 		
 		model: ListModel {
 		   id: locItems
-		   ListElement { text: "Front"}
-		   ListElement { text: "Front+Base"}
-		   ListElement { text: "Center"}
-		   ListElement { text: "Center (not filled)"}
+		   ListElement { text: catalog.i18nc("@option", "Front")}
+		   ListElement { text: catalog.i18nc("@option", "Front+Base")}
+		   ListElement { text: catalog.i18nc("@option", "Center")}
+		   ListElement { text: catalog.i18nc("@option", "Center (not filled)")}
 		}
 
 		Component.onCompleted: currentIndex = find(locationInput)

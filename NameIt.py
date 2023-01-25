@@ -122,7 +122,7 @@ class NameIt(QObject, Extension):
         self._prefix = ""
         self._suffix = ""
         self._font = "NameIt Rounded"
-        self._location = "Front"
+        self._location = catalog.i18nc("@option", "Front")
         
         # set the preferences to store the default value
         #self._application = CuraApplication.getInstance()
@@ -138,7 +138,7 @@ class NameIt(QObject, Extension):
         self._preferences.addPreference("NameIt/suffix", "")
         self._preferences.addPreference("NameIt/speed_layer_0", 0)
         self._preferences.addPreference("NameIt/font", "NameIt Rounded")
-        self._preferences.addPreference("NameIt/location", "Front")
+        self._preferences.addPreference("NameIt/location", catalog.i18nc("@option", "Front"))
         
         # convert as float to avoid further issue
         self._size = float(self._preferences.getValue("NameIt/size"))
@@ -796,7 +796,7 @@ class NameIt(QObject, Extension):
         # Logger.log("d", "depth= %s", str(node_bounds.depth))
         # Logger.log("d", "Center X= %s", str(node_bounds.center.x))
         # Logger.log("d", "Center Y= %s", str(node_bounds.center.z))
-        if self._location == "Front" or self._location == "Front+Base" :
+        if self._location == catalog.i18nc("@option", "Front") or self._location == catalog.i18nc("@option", "Front+Base") :
             PosX = node_bounds.center.x
             PosY = node_bounds.center.z+0.5*node_bounds.depth + self._distance + self._size         
         else :
@@ -811,7 +811,7 @@ class NameIt(QObject, Extension):
         node.setSelectable(True)
         node.setName("Id-"+name)   
         
-        if self._location == "Front+Base" :
+        if self._location == catalog.i18nc("@option", "Front+Base") :
             base = True
         else :
             base = False
@@ -843,7 +843,7 @@ class NameIt(QObject, Extension):
             new_instance.resetState()  # Ensure that the state is not seen as a user state.
             settings.addInstance(new_instance)
         
-        if self._location != "Front" and self._location != "Front+Base" :
+        if self._location != catalog.i18nc("@option", "Front") and self._location != catalog.i18nc("@option", "Front+Base") :
             # meshfix_union_all false
             definition = stack.getSettingDefinition("meshfix_union_all")
             new_instance = SettingInstance(definition, settings)
@@ -851,7 +851,7 @@ class NameIt(QObject, Extension):
             new_instance.resetState()  # Ensure that the state is not seen as a user state.
             settings.addInstance(new_instance)
             
-        if self._location == "Center (not filled)"  :
+        if self._location == catalog.i18nc("@option", "Center (not filled)")  :
             # infill_sparse_density 0
             definition = stack.getSettingDefinition("infill_sparse_density")
             new_instance = SettingInstance(definition, settings)
@@ -1012,7 +1012,7 @@ class NameIt(QObject, Extension):
         combined.apply_transform(trimesh.transformations.scale_matrix(self._height, origin, DirZ))
         
         # Mirror the text for option Middle
-        if self._location != "Front" and self._location != "Front+Base" :
+        if self._location != catalog.i18nc("@option", "Front") and self._location != catalog.i18nc("@option", "Front+Base") :
             combined.apply_transform(trimesh.transformations.reflection_matrix(origin, DirX))
             
         return combined
