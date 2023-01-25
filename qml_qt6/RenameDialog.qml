@@ -11,7 +11,6 @@ import Cura 1.0 as Cura
 UM.Dialog
 {
     id: base
-	UM.I18nCatalog { id: catalog; name: "nameit"}
 
     function setName(new_name) {
         nameField.text = new_name;
@@ -19,6 +18,8 @@ UM.Dialog
         nameField.forceActiveFocus();
     }
 
+    property variant catalog: UM.I18nCatalog { name: "nameit" }
+	
     buttonSpacing: UM.Theme.getSize("default_margin").width
 
     property bool validName: true
@@ -31,9 +32,7 @@ UM.Dialog
     minimumWidth: UM.Theme.getSize("small_popup_dialog").width
     minimumHeight: UM.Theme.getSize("small_popup_dialog").height
     width: minimumWidth
-    height: minimumHeight
-
-    property variant catalog: UM.I18nCatalog { name: "uranium" }
+    height: minimumHeight  
 
     onAccepted:
     {

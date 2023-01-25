@@ -12,7 +12,8 @@ import UM 1.1 as UM
 UM.Dialog
 {
     id: base
-	UM.I18nCatalog { id: catalog; name: "nameit"}
+
+	property variant catalog: UM.I18nCatalog { name: "nameit" }
 
     function setName(new_name) {
         nameField.text = new_name;
@@ -31,8 +32,7 @@ UM.Dialog
     minimumHeight: UM.Theme.getSize("small_popup_dialog").height
     width: minimumWidth
     height: minimumHeight
-
-    property variant catalog: UM.I18nCatalog { name: "uranium" }
+    
 
     onAccepted:
     {
