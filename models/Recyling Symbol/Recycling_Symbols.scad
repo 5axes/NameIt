@@ -2,6 +2,11 @@ use <NameItRounded-Bold.ttf>
 // https://en.wikipedia.org/wiki/Recycling_codes
 // Original OpenSCAD file from: https://www.appropedia.org/Polymer_recycling_codes_for_distributed_manufacturing_with_3-D_printers
 
+// module Recycling_Symbol(Symbol, Numerical_Code, Plastic_Symbol, Font_Size, Length, Width, Thickness, Arrow_Width, Arrow_Head_Width, Arrow_Head_Length, x_mirror, font_quality){
+$fn = 55;
+scale([0.03,0.03,1]) translate([20,16,0.5]) Recycling_Symbol(1, "92", "PLA", 8, 35, 35, 1, 4, 5, 4, 0, 40);
+
+
 module Recycling_Symbol(Symbol, Numerical_Code, Plastic_Symbol, Font_Size, Length, Width, Thickness, Arrow_Width, Arrow_Head_Width, Arrow_Head_Length, x_mirror, font_quality){
 
 ncwidth = 1;
@@ -266,9 +271,7 @@ hull(){
 
 }
 
-// module Recycling_Symbol(Symbol, Numerical_Code, Plastic_Symbol, Font_Size, Length, Width, Thickness, Arrow_Width, Arrow_Head_Width, Arrow_Head_Length, x_mirror, font_quality){
-$fn = 55;
-Recycling_Symbol(1, "92", "PLA", 8, 35, 35, 2, 4, 5, 4, 0, 40);
+
 
 
 

@@ -27,6 +27,7 @@
 # V1.8.1    : Correction On Message for Cura 4.4 to Cura 4.11
 # V1.8.2    : Bug correction https://github.com/5axes/NameIt/discussions/18
 # V1.8.2    : Add French Translation
+# V1.9.0    : Add Recycle Symbol
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -185,6 +186,7 @@ class NameIt(QObject, Extension):
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number"), lambda: self.addPartName("Number"))
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Number From Part"), lambda: self.addPartName("NameNumber"))
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Name"), lambda: self.addPartName("Name"))
+        self.addMenuItem(catalog.i18nc("@item:inmenu", "Add Recycling Symbol"), lambda: self.addRecyclingSymbol())
         self.addMenuItem("", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Remove Identifier"), self.removeAllIdMesh)
         self.addMenuItem(" ", lambda: None)
@@ -662,7 +664,83 @@ class NameIt(QObject, Extension):
         if type_identification_mesh :
             Logger.log('d', "type_identification_mesh : {}".format(type_identification_mesh))              
             extruder.setProperty("identification_mesh", "value", False)
+
+    def get_mat_number(self, word):
+        # https://en.wikipedia.org/wiki/Recycling_codes
+        word_number_mapping = {"PLA": 92, "TPU": 113, "TPU 95A": 113, "ABS": 121, "PLA+": 92, "PETG": 1, "PA": 43, "PC": 58, "HIPS" :108 , "PEEK": 68 , "PVA" : 114 , "ASA" : 13 , "PA" : 43, "Nylon" : 43}
+        return word_number_mapping.get(word, -1)
+      
+    def getMaterial(self, IdM) -> str:
+        # Logger.log('d', "Material : {}".format(IdM))
+        extruder_stack = CuraApplication.getInstance().getExtruderManager().getActiveExtruderStacks()       
+        M_Name = "PLA"
+        for Extrud in extruder_stack:
+            M_GUID = Extrud.material.getMetaData().get("GUID", "")
+            if M_GUID ==  IdM :
+                M_Name = Extrud.material.getMetaData().get("material", "")
+                number = self.get_mat_number(M_Name)
+                # Logger.log('d', "M_Name : {} - {}".format(number ,M_Name))
+            # Logger.log('d', "M_GUID : {}".format(M_GUID))
         
+        return str(number)+"-"+M_Name
+            
+
+    #===== Recycling Symbol Creation ==============================================================================
+    # Add Recycling Symbol
+    #========================================================================================================
+    def addRecyclingSymbol(self) -> None:
+        nbMod=0
+        nbNum=0
+        
+        # V1.8.2 set to enabled = False
+        self._checkSettings()
+        
+        nodes_list = self._getAllSelectedNodes()
+        if not nodes_list:
+            nodes_list = DepthFirstIterator(self._application.getController().getScene().getRoot())
+        
+        self._op = GroupedOperation()
+        # Logger.log('d', "nodes_list : {}".format(nodes_list))
+        for node in nodes_list:
+            if node.callDecoration("isSliceable"):           
+                # Logger.log('d', "isSliceable : {}".format(node.getName()))
+                node_stack=node.callDecoration("getStack")           
+                if node_stack: 
+                    type_infill_mesh = bool(node_stack.getProperty("infill_mesh", "value"))
+                    type_cutting_mesh = bool(node_stack.getProperty("cutting_mesh", "value"))
+                    type_support_mesh = bool(node_stack.getProperty("support_mesh", "value"))
+                    type_anti_overhang_mesh = bool(node_stack.getProperty("anti_overhang_mesh", "value")) 
+                    type_identification_mesh = bool(node_stack.getProperty("identification_mesh", "value"))
+                    # Logger.log('d', "type_identification_mesh : {}".format(type_identification_mesh))
+                    
+                    if not type_infill_mesh and not type_support_mesh and not type_anti_overhang_mesh and not type_cutting_mesh and not type_identification_mesh :
+                        nbMod+=1
+                        name = self.getMaterial(node_stack.getProperty("material_guid", "value"))
+                        Logger.log('d', "Material : {}".format(self.getMaterial(node_stack.getProperty("material_guid", "value"))))
+                        # Logger.log('d', "Mesh : {}".format(name))
+                        
+                        # Add RecyclingSymbol 
+                        nbNum+=1
+                        self._createRecyclingSymbol(node, name)
+        
+        self._op.push()        
+        # Informations at the end of the creation Routine
+        # message_type only available from Cura 4.11
+        if self.Major == 4 and self.Minor < 11 :
+            if nbNum == 0 :                                
+                Message(text = "No Recycling Symbol created for %s element(s)" % (nbMod), title = catalog.i18nc("@info:title", "Warning ! Name It")).show()
+            elif nbNum < nbMod :
+                Message(text = "Recycling Symbol creation : %d / %d" % (nbNum,nbMod), title = catalog.i18nc("@info:title", "Info ! Name It")).show()    
+            elif nbNum == nbMod :
+                Message(text = "Recycling Symbol creation : %d / %d" % (nbNum,nbMod), title = catalog.i18nc("@info:title", "Info ! Name It")).show()    
+        else :
+            if nbNum == 0 :                                
+                Message(text = "No Recycling Symbol created for %s element(s)" % (nbMod), title = catalog.i18nc("@info:title", "Warning ! Name It"), message_type = Message.MessageType.ERROR).show()
+            elif nbNum < nbMod :
+                Message(text = "Recycling Symbol creation : %d / %d" % (nbNum,nbMod), title = catalog.i18nc("@info:title", "Info ! Name It"), message_type = Message.MessageType.WARNING).show()    
+            elif nbNum == nbMod :
+                Message(text = "Recycling Symbol creation : %d / %d" % (nbNum,nbMod), title = catalog.i18nc("@info:title", "Info ! Name It"), message_type = Message.MessageType.POSITIVE).show()    
+  
     #===== Identifier Creation ==============================================================================
     # Add Part Name  as text
     #  Option :
@@ -673,7 +751,7 @@ class NameIt(QObject, Extension):
     def addPartName(self, option) -> None:
         nbMod=0
         nbNum=0
-        Logger.log('d', "Type : {}".format(option))
+        # Logger.log('d', "Type : {}".format(option))
         
         # V1.8.2 set to enabled = False
         self._checkSettings()
@@ -783,6 +861,110 @@ class NameIt(QObject, Extension):
 
         return mesh_data              
 
+    #----------------------------------------
+    # Create RecyclingSymbol
+    #----------------------------------------
+    def _createRecyclingSymbol(self, parent: CuraSceneNode, name):
+        node = CuraSceneNode()
+
+        # Logger.log("d", "_createNameMesh= %s", "Id-"+name)
+
+        node_bounds = parent.getBoundingBox()
+        # Logger.log("d", "width= %s", str(node_bounds.width))
+        # Logger.log("d", "depth= %s", str(node_bounds.depth))
+        # Logger.log("d", "Center X= %s", str(node_bounds.center.x))
+        # Logger.log("d", "Center Y= %s", str(node_bounds.center.z))
+        if self._location == "Front" or self._location == "Front+Base" :
+            PosX = node_bounds.center.x
+            PosY = node_bounds.center.z+0.5*node_bounds.depth + self._distance + self._size         
+        else :
+            PosX = node_bounds.center.x
+            PosY = node_bounds.center.z + (self._size * 0.5)
+
+        # Logger.log("d", "Pos X= %s", str(PosX))
+        # Logger.log("d", "Pos Y= %s", str(PosY))
+        
+        position = Vector(PosX, 0, PosY)
+                        
+        node.setSelectable(True)
+        node.setName("Id-"+name)   
+        
+        if self._location == "Front+Base" :
+            base = True
+        else :
+            base = False
+        # Create texte
+        createMesh = self._createSymbol(parent,name,base)
+        
+        mesh =  self._toMeshData(createMesh)
+        node.setMeshData(mesh)
+
+        active_build_plate = CuraApplication.getInstance().getMultiBuildPlateModel().activeBuildPlate
+        node.addDecorator(BuildPlateDecorator(active_build_plate))
+        node.addDecorator(SliceableObjectDecorator())
+
+        stack = node.callDecoration("getStack") # created by SettingOverrideDecorator that is automatically added to CuraSceneNode
+        settings = stack.getTop()
+
+        # identification_mesh type
+        definition = stack.getSettingDefinition("identification_mesh")
+        new_instance = SettingInstance(definition, settings)
+        new_instance.setProperty("value", True)
+        new_instance.resetState()  # Ensure that the state is not seen as a user state.
+        settings.addInstance(new_instance)
+
+        if self._speed > 0 :
+            # identification_mesh type
+            definition = stack.getSettingDefinition("speed_layer_0")
+            new_instance = SettingInstance(definition, settings)
+            new_instance.setProperty("value", self._speed)
+            new_instance.resetState()  # Ensure that the state is not seen as a user state.
+            settings.addInstance(new_instance)
+        
+        if self._location != "Front" and self._location != "Front+Base" :
+            # meshfix_union_all false
+            definition = stack.getSettingDefinition("meshfix_union_all")
+            new_instance = SettingInstance(definition, settings)
+            new_instance.setProperty("value", False)
+            new_instance.resetState()  # Ensure that the state is not seen as a user state.
+            settings.addInstance(new_instance)
+            
+        if self._location == "Center (not filled)"  :
+            # infill_sparse_density 0
+            definition = stack.getSettingDefinition("infill_sparse_density")
+            new_instance = SettingInstance(definition, settings)
+            new_instance.setProperty("value", 0)
+            new_instance.resetState()  
+            settings.addInstance(new_instance)
+
+            # wall_line_count 0
+            definition = stack.getSettingDefinition("wall_line_count")
+            new_instance = SettingInstance(definition, settings)
+            new_instance.setProperty("value", 0)
+            new_instance.resetState()  
+            settings.addInstance(new_instance)
+
+            # top_bottom_thickness 0
+            definition = stack.getSettingDefinition("top_bottom_thickness")
+            new_instance = SettingInstance(definition, settings)
+            new_instance.setProperty("value", 0)
+            new_instance.resetState()  
+            settings.addInstance(new_instance)
+
+            
+        #op = GroupedOperation()
+        # First add node to the scene at the correct position/scale, before parenting, so the support mesh does not get scaled with the parent
+        self._op.addOperation(AddSceneNodeOperation(node, self._controller.getScene().getRoot()))
+        self._op.addOperation(SetParentOperation(node, parent))
+        #op.push()
+        node.setPosition(position, CuraSceneNode.TransformSpace.World)
+ 
+        CuraApplication.getInstance().getController().getScene().sceneChanged.emit(node)
+        self._all_picked_node.append(node)
+        
+        Logger.log('d', '_createRecyclingSymbol')
+        
+        
     #----------------------------------------
     # Create Name Mesh
     #----------------------------------------
@@ -962,7 +1144,7 @@ class NameIt(QObject, Extension):
                 if not exists(model_definition_path) :  
                     Filename = "63.stl"
                     model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), Folder, Filename)
-                    Logger.log("d", "Unknow Code= %s -> %s",cch,ord(cch))
+                    Logger.log("d", "Unknow Recycling Code= %s",Ident)
                     
                 # Logger.log("d", "Filename= %s",Filename)
                 # Logger.log("d", "model_definition_path= %s",model_definition_path)
@@ -976,8 +1158,85 @@ class NameIt(QObject, Extension):
                 
                 Ind += 1
                 # Logger.log("d", "Ident= %s",str(Ind))
+
+        origin = [0, 0, 0]
+        DirX = [1, 0, 0]
+        DirY = [0, 1, 0]
+        DirZ = [0, 0, 1]
         
- 
+        if base :
+            Ind += 1
+            Filename = "base.stl"
+            model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), Folder, Filename)
+            mesh = trimesh.load(model_definition_path) 
+            mesh.apply_transform(trimesh.transformations.scale_matrix(offsetX, origin, DirX))
+            meshes.append(mesh)
+            
+        if Ind == 1 :
+            combined = mesh           
+        else :
+            # Logger.log("d", "model_definition_path= %s",str(meshes))
+            combined = trimesh.util.concatenate(meshes) 
+        
+        if base :
+            combined.apply_transform(trimesh.transformations.translation_matrix([0, 0, 1]))
+        
+        # Logger.log("d", "Combined bounds = %s",str(combined.bounds))
+        median = -(0.5*(combined.bounds[1, 0]-combined.bounds[0, 0])+combined.bounds[0, 0])
+        #Logger.log("d", "combined= %s",str(median))
+        combined.apply_transform(trimesh.transformations.translation_matrix([median, 0, 0]))            
+        
+
+        combined.apply_transform(trimesh.transformations.scale_matrix(self._size, origin, DirX))
+        combined.apply_transform(trimesh.transformations.scale_matrix(self._size, origin, DirY))
+        combined.apply_transform(trimesh.transformations.scale_matrix(self._height, origin, DirZ))
+        
+        # Mirror the text for option Middle
+        if self._location != "Front" and self._location != "Front+Base" :
+            combined.apply_transform(trimesh.transformations.reflection_matrix(origin, DirX))
+            
+        return combined
+        
+    #--------------------------------------------------------------------------------------
+    # Symbol Creation
+    #  Use the 'character'.stl file present in the models directory
+    #  If the 'character' cannot be use as a file name then use the unicode number (ord())
+    #  And if this character doesn't exists then replace it by ?
+    #--------------------------------------------------------------------------------------
+    def _createSymbol(self, node: CuraSceneNode, name, base):
+        meshes = []
+        offsetX=0
+        
+        Logger.log("d", "Symbol name= %s", name)
+
+        Ident = name.upper()
+
+        Ind = 0
+
+        #Logger.log("d", "Char= %s",cch)        
+        Filename = Ident + ".stl"
+        Folder = os.path.join("models","Recyling Symbol")
+
+        model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), Folder, Filename)
+        Logger.log("d", "Folder= %s",model_definition_path) 
+        
+        # Use ? (Unicode 63) if the character is not defined. Must have a look to the log file to list the missing letter
+        if not exists(model_definition_path) :  
+            Filename = "63.stl"
+            model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), Folder, Filename)
+            
+        # Logger.log("d", "Filename= %s",Filename)
+        # Logger.log("d", "model_definition_path= %s",model_definition_path)
+        mesh = trimesh.load(model_definition_path) 
+        # Logger.log("d", "offsetX = {}",format(offsetX))            
+        mesh.apply_transform(trimesh.transformations.translation_matrix([offsetX, 0, 0]))
+        # Logger.log("d", "Mesh bounds = %s",str(mesh.bounds[1, 0]))            
+        offsetX = mesh.bounds[1, 0]+self._kerning
+    
+        meshes.append(mesh)
+            
+        Ind += 1
+        # Logger.log("d", "Ident= %s",str(Ind))
 
         origin = [0, 0, 0]
         DirX = [1, 0, 0]
