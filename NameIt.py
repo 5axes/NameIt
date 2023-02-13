@@ -27,7 +27,8 @@
 # V1.8.1    : Correction On Message for Cura 4.4 to Cura 4.11
 # V1.8.2    : Bug correction https://github.com/5axes/NameIt/discussions/18
 # V1.8.2    : Add French Translation
-# V1.9.0    : Add Recycle Symbol
+# V1.9.0    : Update on Line
+# V2.0.0    : Add Recycle Symbol
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
