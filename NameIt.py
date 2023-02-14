@@ -29,6 +29,7 @@
 # V1.8.2    : Add French Translation
 # V1.9.0    : Update on Line
 # V2.0.0    : Add Recycle Symbol
+# V2.0.1    : Update Some Symbol STL files
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
