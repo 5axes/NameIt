@@ -4,7 +4,7 @@ use <NameItRounded-Bold.ttf>
 
 // module Recycling_Symbol(Symbol, Numerical_Code, Plastic_Symbol, Font_Size, Length, Width, Thickness, Arrow_Width, Arrow_Head_Width, Arrow_Head_Length, x_mirror, font_quality){
 $fn = 55;
-scale([0.03,0.03,1]) translate([19,16,0.5]) Recycling_Symbol(1, "92", "PLA", 8, 35, 35, 1, 4, 6, 4, 0, 40);
+scale([0.03,0.03,1]) translate([19,16,0.5]) Recycling_Symbol(1, "92", "PLA", 8, 35, 35, 1, 4, 7, 6, 0, 40);
 
 
 module Recycling_Symbol(Symbol, Numerical_Code, Plastic_Symbol, Font_Size, Length, Width, Thickness, Arrow_Width, Arrow_Head_Width, Arrow_Head_Length, x_mirror, font_quality){
@@ -29,7 +29,7 @@ if (Symbol == 1){
 		
 		translate([0, Width/-2,-Thickness*.5])
 			linear_extrude(Thickness) {
-				text(Plastic_Symbol, size=8, font=font, halign="center", valign="center", $fn=font_quality);
+				text(Plastic_Symbol, size=Font_Size, font=font, halign="center", valign="center", $fn=font_quality);
 			}
 	}
 
