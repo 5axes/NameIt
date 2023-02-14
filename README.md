@@ -128,3 +128,8 @@ This menu opens the following folder:
 ## Help
 
 This function will redirect you on the [Wiki](https://github.com/5axes/NameIt/wiki) of this repositery.
+
+# Youtube Video
+
+[![Version 2.0.0](http://img.youtube.com/vi/L9t379SVrOA/0.jpg)](https://www.youtube.com/watch?v=L9t379SVrOA)
+
