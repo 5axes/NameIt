@@ -29,6 +29,7 @@
 # V1.8.2    : Add French Translation
 # V1.9.0    : Update on Line
 # V2.0.0    : Add Recycle Symbol
+# V2.0.2    : Add Checking test
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -664,7 +665,7 @@ class NameIt(QObject, Extension):
         if self._location != "Front" and self._location != "Front+Base" :
             #  ! Set  by  extruder
             key="meshfix_union_all"
-            _union_all = bool(global_container_stack.getProperty(key, "value"))
+            _union_all = bool(extruder.getProperty(key, "value"))
             if _union_all != False :
                 global_container_stack.setProperty("meshfix_union_all", "value", False)            
                 definition_key=key + " label"
