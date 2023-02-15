@@ -655,6 +655,10 @@ class NameIt(QObject, Extension):
     def _checkSettings(self) -> None:
         # V1.8.2 set to enabled = False Issue if the user check this option in a profile
         global_container_stack = self._application.getGlobalContainerStack()
+        
+        #   machine_extruder_count
+        extruder_count = self._application.getGlobalContainerStack().getProperty("machine_extruder_count", "value")
+        
         extruder_stack = self._application.getExtruderManager().getActiveExtruderStacks()[0] 
         extruder = global_container_stack.extruderList[0]        
         type_identification_mesh = bool(extruder.getProperty("identification_mesh", "value"))
@@ -665,9 +669,16 @@ class NameIt(QObject, Extension):
         if self._location != "Front" and self._location != "Front+Base" :
             #  ! Set  by  extruder
             key="meshfix_union_all"
-            _union_all = bool(extruder.getProperty(key, "value"))
+            _union_all = False  
+            for i in range(0, extruder_count):     
+                if bool(self._application.getExtruderManager().getActiveExtruderStacks()[i].getProperty(key, "value")) == True :
+                    _union_all = True
+                
             if _union_all != False :
-                global_container_stack.setProperty("meshfix_union_all", "value", False)            
+                extruder.setProperty("meshfix_union_all", "value", False)
+                for i in range(0, extruder_count): 
+                    self._application.getExtruderManager().getActiveExtruderStacks()[i].setProperty("meshfix_union_all", "value", False)
+                    Logger.log('d', 'Set meshfix_union_all to False for {}'.format(i))
                 definition_key=key + " label"
                 untranslated_label=extruder.getProperty(key,"label")
                 translated_label=i18n_catalog.i18nc(definition_key, untranslated_label) 
