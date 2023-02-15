@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Name It\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 10:09+0000\n"
+"POT-Creation-Date: 2023-02-15 11:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,86 +17,86 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: NameIt.py:188
+#: NameIt.py:182
 msgctxt "@item:inmenu"
 msgid "Name It !"
 msgstr ""
 
-#: NameIt.py:189
+#: NameIt.py:183
 msgctxt "@item:inmenu"
 msgid "Add Number"
 msgstr ""
 
-#: NameIt.py:190
+#: NameIt.py:184
 msgctxt "@item:inmenu"
 msgid "Add Number From Part"
 msgstr ""
 
-#: NameIt.py:191
+#: NameIt.py:185
 msgctxt "@item:inmenu"
 msgid "Add Name"
 msgstr ""
 
-#: NameIt.py:192
+#: NameIt.py:186
 msgctxt "@item:inmenu"
 msgid "Add Recycling Symbol"
 msgstr ""
 
-#: NameIt.py:194
+#: NameIt.py:188
 msgctxt "@item:inmenu"
 msgid "Remove Identifier"
 msgstr ""
 
-#: NameIt.py:196
+#: NameIt.py:190
 msgctxt "@item:inmenu"
 msgid "Rename models"
 msgstr ""
 
-#: NameIt.py:198
+#: NameIt.py:192
 msgctxt "@item:inmenu"
 msgid "Define Text Parameters"
 msgstr ""
 
-#: NameIt.py:200
+#: NameIt.py:194
 msgctxt "@item:inmenu"
 msgid "Help"
 msgstr ""
 
-#: NameIt.py:218
+#: NameIt.py:212
 msgctxt "@info:title"
 msgid "Name It!"
 msgstr ""
 
-#: NameIt.py:232
+#: NameIt.py:226
 msgctxt "@info:status"
 msgid "Please select a single model first"
 msgstr ""
 
-#: NameIt.py:237 NameIt.py:657
+#: NameIt.py:231 NameIt.py:650
 msgctxt "@info:status"
 msgid "Please select one or more models first"
 msgstr ""
 
-#: NameIt.py:679 NameIt.py:690
+#: NameIt.py:673 NameIt.py:684 NameIt.py:695
 msgctxt "@info:label"
 msgid "Info modification current profile '"
 msgstr ""
 
-#: NameIt.py:679 NameIt.py:690
+#: NameIt.py:673 NameIt.py:684 NameIt.py:695
 msgctxt "@info:label"
 msgid ""
 "' parameter\n"
-"New value : True"
+"New value : False"
 msgstr ""
 
-#: NameIt.py:680 NameIt.py:691 NameIt.py:757 NameIt.py:764 NameIt.py:843
-#: NameIt.py:850
+#: NameIt.py:674 NameIt.py:685 NameIt.py:696 NameIt.py:764 NameIt.py:771
+#: NameIt.py:850 NameIt.py:857
 msgctxt "@info:title"
 msgid "Warning ! Name It"
 msgstr ""
 
-#: NameIt.py:759 NameIt.py:761 NameIt.py:766 NameIt.py:768 NameIt.py:845
-#: NameIt.py:847 NameIt.py:852 NameIt.py:854
+#: NameIt.py:766 NameIt.py:768 NameIt.py:773 NameIt.py:775 NameIt.py:852
+#: NameIt.py:854 NameIt.py:859 NameIt.py:861
 msgctxt "@info:title"
 msgid "Info ! Name It"
 msgstr ""
