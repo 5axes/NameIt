@@ -87,6 +87,10 @@ from UM.Resources import Resources
 
 from UM.i18n import i18nCatalog
 
+i18n_cura_catalog = i18nCatalog("cura")
+i18n_catalog = i18nCatalog("fdmprinter.def.json")
+i18n_extrud_catalog = i18nCatalog("fdmextruder.def.json")
+
 Resources.addSearchPath(
     os.path.join(os.path.abspath(os.path.dirname(__file__)))
 )  # Plugin translation file import
@@ -131,7 +135,6 @@ class NameIt(QObject, Extension):
         # set the preferences to store the default value
         #self._application = CuraApplication.getInstance()
         self._application = Application.getInstance()
-        self._i18n_catalog = None
     
         self._preferences = self._application.getPreferences()
         self._preferences.addPreference("NameIt/size", 5)
@@ -669,27 +672,38 @@ class NameIt(QObject, Extension):
             extruder.setProperty("identification_mesh", "value", False)
 
         if self._location != "Front" and self._location != "Front+Base" :
-            key="carve_multiple_volumes"
-            _multiple_volume = bool(extruder_stack.getProperty(key, "value"))
-            if _multiple_volume != True :
-                global_container_stack.setProperty("carve_multiple_volumes", "value", True)            
+            key="meshfix_union_all"
+            _union_all = bool(extruder_stack.getProperty(key, "value"))
+            if _union_all != False :
+                global_container_stack.setProperty("carve_multiple_volumes", "value", False)            
                 definition_key=key + " label"
                 untranslated_label=extruder_stack.getProperty(key,"label")
                 translated_label=i18n_catalog.i18nc(definition_key, untranslated_label) 
                 Format_String = catalog.i18nc("@info:label", "Info modification current profile '") + "%s" + catalog.i18nc("@info:label", "' parameter\nNew value : True")
                 Message(text = Format_String % (translated_label), title = catalog.i18nc("@info:title", "Warning ! Name It")).show()
-                Logger.log('d', 'Set carve_multiple_volumes different to True')
+                Logger.log('d', 'Set meshfix_union_all different to False')
+                
+            key="carve_multiple_volumes"
+            _multiple_volume = bool(extruder_stack.getProperty(key, "value"))
+            if _multiple_volume != False :
+                global_container_stack.setProperty("carve_multiple_volumes", "value", False)            
+                definition_key=key + " label"
+                untranslated_label=extruder_stack.getProperty(key,"label")
+                translated_label=i18n_catalog.i18nc(definition_key, untranslated_label) 
+                Format_String = catalog.i18nc("@info:label", "Info modification current profile '") + "%s" + catalog.i18nc("@info:label", "' parameter\nNew value : True")
+                Message(text = Format_String % (translated_label), title = catalog.i18nc("@info:title", "Warning ! Name It")).show()
+                Logger.log('d', 'Set carve_multiple_volumes different to False')
 
             key="alternate_carve_order"
             _carve_order = bool(extruder_stack.getProperty(key, "value"))
-            if _carve_order != True :
+            if _carve_order != False :
                 global_container_stack.setProperty("alternate_carve_order", "value", True)             
                 definition_key=key + " label"
                 untranslated_label=extruder_stack.getProperty(key,"label")
                 translated_label=i18n_catalog.i18nc(definition_key, untranslated_label) 
                 Format_String = catalog.i18nc("@info:label", "Info modification current profile '") + "%s" + catalog.i18nc("@info:label", "' parameter\nNew value : True") 
                 Message(text = Format_String % (translated_label), title = catalog.i18nc("@info:title", "Warning ! Name It")).show()
-                Logger.log('d', 'Set alternate_carve_order different to True')  
+                Logger.log('d', 'Set alternate_carve_order different to False')  
             
     def get_mat_number(self, word):
         # https://en.wikipedia.org/wiki/Recycling_codes
