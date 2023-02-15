@@ -708,7 +708,7 @@ class NameIt(QObject, Extension):
                 Message(text = Format_String % (translated_label), title = catalog.i18nc("@info:title", "Warning ! Name It")).show()
                 Logger.log('d', 'Set alternate_carve_order to False')
         
-        Logger.log('d', 'checkSettings End')
+        # Logger.log('d', 'checkSettings End')
 
     def get_mat_number(self, word):
         # https://en.wikipedia.org/wiki/Recycling_codes
