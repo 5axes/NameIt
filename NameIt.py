@@ -29,8 +29,6 @@
 # V1.8.2    : Add French Translation
 # V1.9.0    : Update on Line
 # V2.0.0    : Add Recycle Symbol
-# V2.0.1    : Update Some Symbol STL files
-# V2.0.2    : Fix carve_multiple_volumes & alternate_carve_order 
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -51,39 +49,35 @@ import numpy
 import trimesh
 
 from typing import Optional, List
+from collections import OrderedDict
+
+from cura.CuraApplication import CuraApplication
+from cura.Scene.CuraSceneNode import CuraSceneNode
+from cura.Scene.SliceableObjectDecorator import SliceableObjectDecorator
+from cura.Scene.BuildPlateDecorator import BuildPlateDecorator
+from cura.Operations.SetParentOperation import SetParentOperation
+from cura.CuraVersion import CuraVersion  # type: ignore
 
 from UM.Math.Vector import Vector
 from UM.Extension import Extension
 # from UM.PluginRegistry import PluginRegistry
 from UM.Application import Application
-from cura.CuraApplication import CuraApplication
 
 from UM.Mesh.MeshData import MeshData, calculateNormalsFromIndexedVertices
-from UM.Settings.SettingInstance import SettingInstance
-from cura.Scene.CuraSceneNode import CuraSceneNode
 from UM.Scene.SceneNode import SceneNode
 from UM.Scene.Selection import Selection
-from cura.Scene.SliceableObjectDecorator import SliceableObjectDecorator
-from cura.Scene.BuildPlateDecorator import BuildPlateDecorator
-from cura.Operations.SetParentOperation import SetParentOperation
 from UM.Scene.Iterator.DepthFirstIterator import DepthFirstIterator
-
 from UM.Operations.AddSceneNodeOperation import AddSceneNodeOperation
 from UM.Operations.GroupedOperation import GroupedOperation
 from UM.Operations.RemoveSceneNodeOperation import RemoveSceneNodeOperation
-
 from UM.Settings.SettingDefinition import SettingDefinition
 from UM.Settings.DefinitionContainer import DefinitionContainer
 from UM.Settings.ContainerRegistry import ContainerRegistry
-
-from collections import OrderedDict
-
-from cura.CuraVersion import CuraVersion  # type: ignore
-from UM.Version import Version
-
+from UM.Settings.SettingInstance import SettingInstance
 from UM.Logger import Logger
 from UM.Message import Message
 from UM.Resources import Resources
+from UM.Version import Version
 
 from UM.i18n import i18nCatalog
 
@@ -103,10 +97,6 @@ if catalog.hasTranslationLoaded():
     
 #This class is the extension and doubles as QObject to manage the qml    
 class NameIt(QObject, Extension):
-    #Create an api
-    from cura.CuraApplication import CuraApplication
-    api = CuraApplication.getInstance().getCuraAPI()
- 
         
     # The QT signal, which signals an update for user information text
     userSizeChanged = pyqtSignal()
@@ -135,6 +125,7 @@ class NameIt(QObject, Extension):
         # set the preferences to store the default value
         #self._application = CuraApplication.getInstance()
         self._application = Application.getInstance()
+        self._i18n_catalog = None
     
         self._preferences = self._application.getPreferences()
         self._preferences.addPreference("NameIt/size", 5)
@@ -185,7 +176,7 @@ class NameIt(QObject, Extension):
 
         self._qml_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), self._qml_folder, "NameIt.qml")
         
-        self._controller = CuraApplication.getInstance().getController()
+        self._controller = self._application.getController()
         self._message = None
         
         self.setMenuName(catalog.i18nc("@item:inmenu", "Name It !"))
@@ -317,7 +308,6 @@ class NameIt(QObject, Extension):
         
         self._continueDialog.show()
         #self.userSizeChanged.emit()
-        
 
     #====User Input=====================================================================================================
     @pyqtProperty(str, notify= userHeightChanged)
@@ -663,8 +653,8 @@ class NameIt(QObject, Extension):
     
     def _checkSettings(self) -> None:
         # V1.8.2 set to enabled = False Issue if the user check this option in a profile
-        global_container_stack = CuraApplication.getInstance().getGlobalContainerStack()
-        extruder_stack = CuraApplication.getInstance().getExtruderManager().getActiveExtruderStacks()[0] 
+        global_container_stack = self._application.getGlobalContainerStack()
+        extruder_stack = self._application.getExtruderManager().getActiveExtruderStacks()[0] 
         extruder = global_container_stack.extruderList[0]        
         type_identification_mesh = bool(extruder.getProperty("identification_mesh", "value"))
         if type_identification_mesh :
@@ -672,39 +662,42 @@ class NameIt(QObject, Extension):
             extruder.setProperty("identification_mesh", "value", False)
 
         if self._location != "Front" and self._location != "Front+Base" :
+            #  ! Set  by  extruder
             key="meshfix_union_all"
-            _union_all = bool(extruder_stack.getProperty(key, "value"))
+            _union_all = bool(global_container_stack.getProperty(key, "value"))
             if _union_all != False :
-                global_container_stack.setProperty("carve_multiple_volumes", "value", False)            
+                global_container_stack.setProperty("meshfix_union_all", "value", False)            
                 definition_key=key + " label"
-                untranslated_label=extruder_stack.getProperty(key,"label")
+                untranslated_label=extruder.getProperty(key,"label")
                 translated_label=i18n_catalog.i18nc(definition_key, untranslated_label) 
-                Format_String = catalog.i18nc("@info:label", "Info modification current profile '") + "%s" + catalog.i18nc("@info:label", "' parameter\nNew value : True")
+                Format_String = catalog.i18nc("@info:label", "Info modification current profile '") + "%s" + catalog.i18nc("@info:label", "' parameter\nNew value : False")
                 Message(text = Format_String % (translated_label), title = catalog.i18nc("@info:title", "Warning ! Name It")).show()
-                Logger.log('d', 'Set meshfix_union_all different to False')
+                Logger.log('d', 'Set meshfix_union_all to False')
                 
             key="carve_multiple_volumes"
-            _multiple_volume = bool(extruder_stack.getProperty(key, "value"))
+            _multiple_volume = bool(extruder.getProperty(key, "value"))
             if _multiple_volume != False :
                 global_container_stack.setProperty("carve_multiple_volumes", "value", False)            
                 definition_key=key + " label"
-                untranslated_label=extruder_stack.getProperty(key,"label")
+                untranslated_label=global_container_stack.getProperty(key,"label")
                 translated_label=i18n_catalog.i18nc(definition_key, untranslated_label) 
-                Format_String = catalog.i18nc("@info:label", "Info modification current profile '") + "%s" + catalog.i18nc("@info:label", "' parameter\nNew value : True")
+                Format_String = catalog.i18nc("@info:label", "Info modification current profile '") + "%s" + catalog.i18nc("@info:label", "' parameter\nNew value : False")
                 Message(text = Format_String % (translated_label), title = catalog.i18nc("@info:title", "Warning ! Name It")).show()
-                Logger.log('d', 'Set carve_multiple_volumes different to False')
+                Logger.log('d', 'Set carve_multiple_volumes to False')
 
             key="alternate_carve_order"
-            _carve_order = bool(extruder_stack.getProperty(key, "value"))
+            _carve_order = bool(extruder.getProperty(key, "value"))
             if _carve_order != False :
-                global_container_stack.setProperty("alternate_carve_order", "value", True)             
+                global_container_stack.setProperty("alternate_carve_order", "value", False)             
                 definition_key=key + " label"
-                untranslated_label=extruder_stack.getProperty(key,"label")
+                untranslated_label=global_container_stack.getProperty(key,"label")
                 translated_label=i18n_catalog.i18nc(definition_key, untranslated_label) 
-                Format_String = catalog.i18nc("@info:label", "Info modification current profile '") + "%s" + catalog.i18nc("@info:label", "' parameter\nNew value : True") 
+                Format_String = catalog.i18nc("@info:label", "Info modification current profile '") + "%s" + catalog.i18nc("@info:label", "' parameter\nNew value : False") 
                 Message(text = Format_String % (translated_label), title = catalog.i18nc("@info:title", "Warning ! Name It")).show()
-                Logger.log('d', 'Set alternate_carve_order different to False')  
-            
+                Logger.log('d', 'Set alternate_carve_order to False')
+        
+        Logger.log('d', 'checkSettings End')
+
     def get_mat_number(self, word):
         # https://en.wikipedia.org/wiki/Recycling_codes
         word_number_mapping = {"PLA": 92, "TPU": 113, "TPU 95A": 113, "ABS": 121, "PLA+": 92, "PETG": 1, "PA": 43, "PC": 58, "HIPS" :108 , "PEEK": 68 , "PVA" : 114 , "ASA" : 13 , "PA" : 43, "Nylon" : 43}
@@ -712,7 +705,7 @@ class NameIt(QObject, Extension):
       
     def getMaterial(self, IdM) -> str:
         # Logger.log('d', "Material : {}".format(IdM))
-        extruder_stack = CuraApplication.getInstance().getExtruderManager().getActiveExtruderStacks()       
+        extruder_stack = self._application.getExtruderManager().getActiveExtruderStacks()       
         M_Name = "PLA"
         for Extrud in extruder_stack:
             M_GUID = Extrud.material.getMetaData().get("GUID", "")
@@ -939,7 +932,7 @@ class NameIt(QObject, Extension):
         mesh =  self._toMeshData(createMesh)
         node.setMeshData(mesh)
 
-        active_build_plate = CuraApplication.getInstance().getMultiBuildPlateModel().activeBuildPlate
+        active_build_plate = self._application.getMultiBuildPlateModel().activeBuildPlate
         node.addDecorator(BuildPlateDecorator(active_build_plate))
         node.addDecorator(SliceableObjectDecorator())
 
@@ -999,7 +992,7 @@ class NameIt(QObject, Extension):
         #op.push()
         node.setPosition(position, CuraSceneNode.TransformSpace.World)
  
-        CuraApplication.getInstance().getController().getScene().sceneChanged.emit(node)
+        self._application.getController().getScene().sceneChanged.emit(node)
         self._all_picked_node.append(node)
         
         Logger.log('d', '_createRecyclingSymbol')
@@ -1043,7 +1036,7 @@ class NameIt(QObject, Extension):
         mesh =  self._toMeshData(createMesh)
         node.setMeshData(mesh)
 
-        active_build_plate = CuraApplication.getInstance().getMultiBuildPlateModel().activeBuildPlate
+        active_build_plate = self._application.getMultiBuildPlateModel().activeBuildPlate
         node.addDecorator(BuildPlateDecorator(active_build_plate))
         node.addDecorator(SliceableObjectDecorator())
 
@@ -1103,7 +1096,7 @@ class NameIt(QObject, Extension):
         #op.push()
         node.setPosition(position, CuraSceneNode.TransformSpace.World)
  
-        CuraApplication.getInstance().getController().getScene().sceneChanged.emit(node)
+        self._application.getController().getScene().sceneChanged.emit(node)
         self._all_picked_node.append(node)
         
         Logger.log('d', '_createNameMesh')
@@ -1142,7 +1135,7 @@ class NameIt(QObject, Extension):
         if parent and not Selection.isSelected(parent):
             Selection.add(parent)
 
-        CuraApplication.getInstance().getController().getScene().sceneChanged.emit(node)
+        self._application.getController().getScene().sceneChanged.emit(node)
 
     #--------------------------------------------------------------------------------------
     # Text Creation
