@@ -712,7 +712,7 @@ class NameIt(QObject, Extension):
 
     def get_mat_number(self, word):
         # https://en.wikipedia.org/wiki/Recycling_codes
-        word_number_mapping = {"PLA": 92, "TPU": 113, "TPU 95A": 113, "ABS": 121, "PLA+": 92, "PETG": 1, "PA": 43, "PC": 58, "HIPS" :108 , "PEEK": 68 , "PVA" : 114 , "ASA" : 13 , "PA" : 43, "Nylon" : 43}
+        word_number_mapping = {"PLA": 92, "TPU": 113, "TPU 95A": 113, "PVA": 114, "PVOH": 115, "ABS": 121, "PLA+": 92, "PETG": 1, "PA": 43, "PC": 58, "HIPS" :108 , "PEEK": 68 , "PVA" : 114 , "ASA" : 13 , "PA" : 43, "Nylon" : 43}
         return word_number_mapping.get(word, -1)
       
     def getMaterial(self, IdM) -> str:
@@ -726,8 +726,8 @@ class NameIt(QObject, Extension):
                 number = self.get_mat_number(M_Name)
                 # Logger.log('d', "M_Name : {} - {}".format(number ,M_Name))
             # Logger.log('d', "M_GUID : {}".format(M_GUID))
-        
-        return str(number)+"-"+M_Name
+        # return str(number)+"-"+M_Name
+        return M_Name
             
 
     #===== Recycling Symbol Creation ==============================================================================
