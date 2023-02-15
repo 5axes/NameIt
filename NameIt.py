@@ -30,6 +30,7 @@
 # V1.9.0    : Update on Line
 # V2.0.0    : Add Recycle Symbol
 # V2.0.1    : Update Some Symbol STL files
+# V2.0.2    : Fix carve_multiple_volumes & alternate_carve_order 
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -667,6 +668,29 @@ class NameIt(QObject, Extension):
             Logger.log('d', "type_identification_mesh : {}".format(type_identification_mesh))              
             extruder.setProperty("identification_mesh", "value", False)
 
+        if self._location != "Front" and self._location != "Front+Base" :
+            key="carve_multiple_volumes"
+            _multiple_volume = bool(extruder_stack.getProperty(key, "value"))
+            if _multiple_volume != True :
+                global_container_stack.setProperty("carve_multiple_volumes", "value", True)            
+                definition_key=key + " label"
+                untranslated_label=extruder_stack.getProperty(key,"label")
+                translated_label=i18n_catalog.i18nc(definition_key, untranslated_label) 
+                Format_String = catalog.i18nc("@info:label", "Info modification current profile '") + "%s" + catalog.i18nc("@info:label", "' parameter\nNew value : True")
+                Message(text = Format_String % (translated_label), title = catalog.i18nc("@info:title", "Warning ! Name It")).show()
+                Logger.log('d', 'Set carve_multiple_volumes different to True')
+
+            key="alternate_carve_order"
+            _carve_order = bool(extruder_stack.getProperty(key, "value"))
+            if _carve_order != True :
+                global_container_stack.setProperty("alternate_carve_order", "value", True)             
+                definition_key=key + " label"
+                untranslated_label=extruder_stack.getProperty(key,"label")
+                translated_label=i18n_catalog.i18nc(definition_key, untranslated_label) 
+                Format_String = catalog.i18nc("@info:label", "Info modification current profile '") + "%s" + catalog.i18nc("@info:label", "' parameter\nNew value : True") 
+                Message(text = Format_String % (translated_label), title = catalog.i18nc("@info:title", "Warning ! Name It")).show()
+                Logger.log('d', 'Set alternate_carve_order different to True')  
+            
     def get_mat_number(self, word):
         # https://en.wikipedia.org/wiki/Recycling_codes
         word_number_mapping = {"PLA": 92, "TPU": 113, "TPU 95A": 113, "ABS": 121, "PLA+": 92, "PETG": 1, "PA": 43, "PC": 58, "HIPS" :108 , "PEEK": 68 , "PVA" : 114 , "ASA" : 13 , "PA" : 43, "Nylon" : 43}
