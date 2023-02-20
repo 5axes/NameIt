@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Name It\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 12:27+0000\n"
+"POT-Creation-Date: 2023-02-20 10:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,26 +101,6 @@ msgctxt "@info:title"
 msgid "Info ! Name It"
 msgstr ""
 
-#: qml_qt6/RenameDialog.qml:27 qml_qt5/RenameDialog.qml:26
-msgctxt "@title:window"
-msgid "Rename"
-msgstr ""
-
-#: qml_qt6/RenameDialog.qml:28 qml_qt5/RenameDialog.qml:27
-msgctxt "@info"
-msgid "Please provide a new name."
-msgstr ""
-
-#: qml_qt6/RenameDialog.qml:66 qml_qt5/RenameDialog.qml:75
-msgctxt "@action:button"
-msgid "Cancel"
-msgstr ""
-
-#: qml_qt6/RenameDialog.qml:72 qml_qt5/RenameDialog.qml:80
-msgctxt "@action:button"
-msgid "OK"
-msgstr ""
-
 #: qml_qt6/NameIt.qml:20 qml_qt5/NameIt.qml:19
 msgctxt "@title"
 msgid "Name It ! Parameters"
@@ -174,4 +154,24 @@ msgstr ""
 #: qml_qt6/NameIt.qml:478
 msgctxt "@label"
 msgid "Location :"
+msgstr ""
+
+#: qml_qt6/RenameDialog.qml:27 qml_qt5/RenameDialog.qml:26
+msgctxt "@title:window"
+msgid "Rename"
+msgstr ""
+
+#: qml_qt6/RenameDialog.qml:28 qml_qt5/RenameDialog.qml:27
+msgctxt "@info"
+msgid "Please provide a new name."
+msgstr ""
+
+#: qml_qt6/RenameDialog.qml:66 qml_qt5/RenameDialog.qml:75
+msgctxt "@action:button"
+msgid "Cancel"
+msgstr ""
+
+#: qml_qt6/RenameDialog.qml:72 qml_qt5/RenameDialog.qml:80
+msgctxt "@action:button"
+msgid "OK"
 msgstr ""
