@@ -9,4 +9,4 @@ $fn=20;
 
 
 //render() translate([0.5,0,0]) mirror([1,0,0]) letter("/");
-render() translate([-0.05,-0.35,-1]) cube(size = [1.05,1.7,1], center = false);
+render() translate([0,-0.3,-1]) cube(size = [1.0,1.4,1], center = false);

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Name It\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-21 13:39+0000\n"
+"POT-Creation-Date: 2023-02-21 16:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,57 +101,52 @@ msgctxt "@info:title"
 msgid "Info ! Name It"
 msgstr ""
 
-#: qml_qt6/NameIt.qml:20 qml_qt5/NameIt.qml:19
+#: qml_qt6/NameIt.qml:19 qml_qt5/NameIt.qml:19
 msgctxt "@title"
 msgid "Name It ! Parameters"
 msgstr ""
 
-#: qml_qt6/NameIt.qml:80 qml_qt5/NameIt.qml:77
-msgctxt "@tooltip"
-msgid "Close this dialog box"
-msgstr ""
-
-#: qml_qt6/NameIt.qml:116 qml_qt5/NameIt.qml:120
+#: qml_qt6/NameIt.qml:66 qml_qt5/NameIt.qml:120
 msgctxt "@label"
 msgid "Size :"
 msgstr ""
 
-#: qml_qt6/NameIt.qml:163 qml_qt5/NameIt.qml:180
+#: qml_qt6/NameIt.qml:111 qml_qt5/NameIt.qml:180
 msgctxt "@label"
 msgid "Height :"
 msgstr ""
 
-#: qml_qt6/NameIt.qml:210 qml_qt5/NameIt.qml:240
+#: qml_qt6/NameIt.qml:156 qml_qt5/NameIt.qml:240
 msgctxt "@label"
 msgid "Distance :"
 msgstr ""
 
-#: qml_qt6/NameIt.qml:256 qml_qt5/NameIt.qml:300
+#: qml_qt6/NameIt.qml:200 qml_qt5/NameIt.qml:300
 msgctxt "@label"
 msgid "Kerning :"
 msgstr ""
 
-#: qml_qt6/NameIt.qml:302 qml_qt5/NameIt.qml:360
+#: qml_qt6/NameIt.qml:244 qml_qt5/NameIt.qml:360
 msgctxt "@label"
 msgid "Number Prefix :"
 msgstr ""
 
-#: qml_qt6/NameIt.qml:346 qml_qt5/NameIt.qml:403
+#: qml_qt6/NameIt.qml:286 qml_qt5/NameIt.qml:403
 msgctxt "@label"
 msgid "Number Suffix :"
 msgstr ""
 
-#: qml_qt6/NameIt.qml:390 qml_qt5/NameIt.qml:446
+#: qml_qt6/NameIt.qml:328 qml_qt5/NameIt.qml:446
 msgctxt "@label"
 msgid "Initial Layer Speed :"
 msgstr ""
 
-#: qml_qt6/NameIt.qml:434 qml_qt5/NameIt.qml:506
+#: qml_qt6/NameIt.qml:370 qml_qt5/NameIt.qml:506
 msgctxt "@label"
 msgid "Font :"
 msgstr ""
 
-#: qml_qt6/NameIt.qml:478
+#: qml_qt6/NameIt.qml:413
 msgctxt "@label"
 msgid "Location :"
 msgstr ""
@@ -174,4 +169,9 @@ msgstr ""
 #: qml_qt6/RenameDialog.qml:72 qml_qt5/RenameDialog.qml:80
 msgctxt "@action:button"
 msgid "OK"
+msgstr ""
+
+#: qml_qt5/NameIt.qml:77
+msgctxt "@tooltip"
+msgid "Close this dialog box"
 msgstr ""
