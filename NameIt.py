@@ -1223,6 +1223,7 @@ class NameIt(QObject, Extension):
             model_definition_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), Folder, Filename)
             mesh = trimesh.load(model_definition_path) 
             mesh.apply_transform(trimesh.transformations.scale_matrix(offsetX, origin, DirX))
+            mesh.apply_transform(trimesh.transformations.translation_matrix([-self._kerning*0.5, 0, 0]))
             meshes.append(mesh)
             
         if Ind == 1 :
