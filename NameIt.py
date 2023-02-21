@@ -30,6 +30,7 @@
 # V1.9.0    : Update on Line
 # V2.0.0    : Add Recycle Symbol
 # V2.0.2    : Add Checking test
+# V2.0.3    : Add Digit for sorting list in the rename function
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -257,7 +258,14 @@ class NameIt(QObject, Extension):
             # node = self._node_queue[0]
             if len(self._node_queue) > 1 :
                 _name = new_name
-                _name += "({})".format(str(iD))
+                _format = "({})"
+                if len(self._node_queue) > 9 :
+                    _format = "({:02d})"
+                if len(self._node_queue) > 99 :
+                    _format = "({:03d})"
+                if len(self._node_queue) > 999 :
+                    _format = "({:04d})"                    
+                _name += _format.format(iD)
                 iD += 1
             else:
                 _name = new_name
