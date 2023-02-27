@@ -12,7 +12,7 @@ Cura.Menu
     {
         id: nameITMenu
 
-        title: catalog.i18nc("@item:inmenu", "Name It!")
+        title: catalog.i18nc("@title", "Name It !")
 
         Cura.MenuItem
 		{
