@@ -13,7 +13,7 @@ Menu
 {
     id: base
     
-	title: catalog.i18nc("@item:inmenu", "Name It !")
+	title: catalog.i18nc("@item:inmenu", "Name It!")
 	
 	MenuItem
 	{
