@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Name It\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-27 12:48+0000\n"
+"POT-Creation-Date: 2023-02-27 12:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: NameIt.py:189 qml_qt6/NameItMenu.qml:15 qml_qt5/NameItMenu.qml:16
+#: NameIt.py:189
 msgctxt "@item:inmenu"
 msgid "Name It !"
 msgstr ""
@@ -174,6 +174,11 @@ msgstr ""
 #: qml_qt6/RenameDialog.qml:72 qml_qt5/RenameDialog.qml:80
 msgctxt "@action:button"
 msgid "OK"
+msgstr ""
+
+#: qml_qt6/NameItMenu.qml:15 qml_qt5/NameItMenu.qml:16
+msgctxt "@item:inmenu"
+msgid "Name It!"
 msgstr ""
 
 #: qml_qt5/NameIt.qml:77
