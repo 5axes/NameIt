@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Name It\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-21 16:29+0000\n"
+"POT-Creation-Date: 2023-02-27 12:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,86 +17,91 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: NameIt.py:184
+#: NameIt.py:189 qml_qt6/NameItMenu.qml:15 qml_qt5/NameItMenu.qml:16
 msgctxt "@item:inmenu"
 msgid "Name It !"
 msgstr ""
 
-#: NameIt.py:185
+#: NameIt.py:190 qml_qt6/NameItMenu.qml:19 qml_qt5/NameItMenu.qml:20
 msgctxt "@item:inmenu"
 msgid "Add Number"
 msgstr ""
 
-#: NameIt.py:186
+#: NameIt.py:191 qml_qt6/NameItMenu.qml:24 qml_qt5/NameItMenu.qml:25
 msgctxt "@item:inmenu"
 msgid "Add Number From Part"
 msgstr ""
 
-#: NameIt.py:187
+#: NameIt.py:192 qml_qt6/NameItMenu.qml:29 qml_qt5/NameItMenu.qml:30
 msgctxt "@item:inmenu"
 msgid "Add Name"
 msgstr ""
 
-#: NameIt.py:188
+#: NameIt.py:193 qml_qt6/NameItMenu.qml:34 qml_qt5/NameItMenu.qml:35
 msgctxt "@item:inmenu"
 msgid "Add Recycling Symbol"
 msgstr ""
 
-#: NameIt.py:190
+#: NameIt.py:195 qml_qt6/NameItMenu.qml:39 qml_qt5/NameItMenu.qml:40
 msgctxt "@item:inmenu"
 msgid "Remove Identifier"
 msgstr ""
 
-#: NameIt.py:192
+#: NameIt.py:197 qml_qt6/NameItMenu.qml:45 qml_qt5/NameItMenu.qml:46
 msgctxt "@item:inmenu"
 msgid "Rename models"
 msgstr ""
 
-#: NameIt.py:194
+#: NameIt.py:199 qml_qt6/NameItMenu.qml:51 qml_qt5/NameItMenu.qml:52
 msgctxt "@item:inmenu"
 msgid "Define Text Parameters"
 msgstr ""
 
-#: NameIt.py:196
+#: NameIt.py:201
 msgctxt "@item:inmenu"
 msgid "Help"
 msgstr ""
 
-#: NameIt.py:214
+#: NameIt.py:219
 msgctxt "@info:title"
 msgid "Name It!"
 msgstr ""
 
-#: NameIt.py:228
+#: NameIt.py:257
+msgctxt "@info:title"
+msgid "Name It !"
+msgstr ""
+
+#: NameIt.py:270
 msgctxt "@info:status"
 msgid "Please select a single model first"
 msgstr ""
 
-#: NameIt.py:233 NameIt.py:659
+#: NameIt.py:275 NameIt.py:703
 msgctxt "@info:status"
 msgid "Please select one or more models first"
 msgstr ""
 
-#: NameIt.py:693 NameIt.py:704 NameIt.py:715
+#: NameIt.py:737 NameIt.py:748 NameIt.py:759
 msgctxt "@info:label"
 msgid "Info modification current profile '"
 msgstr ""
 
-#: NameIt.py:693 NameIt.py:704 NameIt.py:715
+#: NameIt.py:737 NameIt.py:748 NameIt.py:759
 msgctxt "@info:label"
 msgid ""
 "' parameter\n"
 "New value : False"
 msgstr ""
 
-#: NameIt.py:694 NameIt.py:705 NameIt.py:716 NameIt.py:784 NameIt.py:791
-#: NameIt.py:870 NameIt.py:877
+#: NameIt.py:738 NameIt.py:749 NameIt.py:760 NameIt.py:829 NameIt.py:836
+#: NameIt.py:916 NameIt.py:923
 msgctxt "@info:title"
 msgid "Warning ! Name It"
 msgstr ""
 
-#: NameIt.py:786 NameIt.py:788 NameIt.py:793 NameIt.py:795 NameIt.py:872
-#: NameIt.py:874 NameIt.py:879 NameIt.py:881
+#: NameIt.py:831 NameIt.py:833 NameIt.py:838 NameIt.py:840 NameIt.py:918
+#: NameIt.py:920 NameIt.py:925 NameIt.py:927
 msgctxt "@info:title"
 msgid "Info ! Name It"
 msgstr ""
