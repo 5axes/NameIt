@@ -31,6 +31,7 @@
 # V2.0.0    : Add Recycle Symbol
 # V2.0.2    : Add Checking test
 # V2.0.3    : Add Digit for sorting list in the rename function
+# V2.1.0    : Add Context Menu
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -176,8 +177,12 @@ class NameIt(QObject, Extension):
         else:
             self._qml_folder = "qml_qt6" 
 
+      
         self._qml_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), self._qml_folder, "NameIt.qml")
-        
+      
+        self._application.engineCreatedSignal.connect(self._onEngineCreated)
+
+      
         self._controller = self._application.getController()
         self._message = None
         
@@ -217,6 +222,43 @@ class NameIt(QObject, Extension):
         self._all_picked_node = [] 
         self._idcount = 0
 
+    # Origine Source Code from [FieldOfView ](https://github.com/fieldOfView)   
+    def _onEngineCreated(self) -> None:
+        # To add items to the ContextMenu, we need access to the QML engine
+        # There is no way to access the context menu directly, so we have to search for it
+        main_window = self._application.getMainWindow()
+        if not main_window:
+            return
+
+        context_menu = None
+        for child in main_window.contentItem().children():
+            try:
+                if not VERSION_QT5:
+                    test = child.handleVisibility # With QtQuick Controls 2, ContextMenu is the only item that has a findItemIndex function in the main window root contentitem
+                else:
+                    test = child.findItemIndex  # With QtQuick Controls 1, ContextMenu is the only item that has a findItemIndex function
+                context_menu = child
+                break
+            except:
+                pass
+
+        if not context_menu:
+            Logger.log("w", "Could not find the viewport context menu")
+            return
+
+        Logger.log("d", "Inserting item in context menu")
+        qml_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), self._qml_folder, "NameItMenu.qml")
+        self._additional_menu = self._application.createQmlComponent(qml_path, {"manager": self})
+        if not self._additional_menu:
+            return
+
+        if VERSION_QT5:
+            context_menu.insertSeparator(0)
+            context_menu.insertMenu(0, catalog.i18nc("@info:title", "Name It !"))
+
+        # Move additional menu items into context menu
+        self._additional_menu.moveToContextMenu(context_menu)
+
     # Source code Origine FieldOfView
     def _getSelectedNodes(self, force_single = False) -> List[SceneNode]:
         self._message.hide()
@@ -236,7 +278,8 @@ class NameIt(QObject, Extension):
         return []
         
     # Source code Origine FieldOfView
-    # Modified For Multi Selection    
+    # Modified For Multi Selection 
+    @pyqtSlot()    
     def renameMesh(self) -> None:
         self._node_queue = self._getSelectedNodes(force_single=False)
         if not self._node_queue:
@@ -310,6 +353,7 @@ class NameIt(QObject, Extension):
                 container._updateRelations(definition)
                 
     # Define the default value for the text element
+    @pyqtSlot()
     def defaultSize(self) -> None:
  
         if self._continueDialog is None:
@@ -740,7 +784,8 @@ class NameIt(QObject, Extension):
 
     #===== Recycling Symbol Creation ==============================================================================
     # Add Recycling Symbol
-    #========================================================================================================
+    #==============================================================================================================
+    @pyqtSlot()
     def addRecyclingSymbol(self) -> None:
         nbMod=0
         nbNum=0
@@ -793,7 +838,7 @@ class NameIt(QObject, Extension):
                 Message(text = "Recycling Symbol creation : %d / %d" % (nbNum,nbMod), title = catalog.i18nc("@info:title", "Info ! Name It"), message_type = Message.MessageType.WARNING).show()    
             elif nbNum == nbMod :
                 Message(text = "Recycling Symbol creation : %d / %d" % (nbNum,nbMod), title = catalog.i18nc("@info:title", "Info ! Name It"), message_type = Message.MessageType.POSITIVE).show()    
-  
+         
     #===== Identifier Creation ==============================================================================
     # Add Part Name  as text
     #  Option :
@@ -801,7 +846,8 @@ class NameIt(QObject, Extension):
     #           -   "NameNumber"    : Number present in the object number + Prefix & Suffix
     #           -   "Name"          : Name of the Object
     #========================================================================================================
-    def addPartName(self, option) -> None:
+    @pyqtSlot(str)
+    def addPartName(self, option:str) -> None:
         nbMod=0
         nbNum=0
         # Logger.log('d', "Type : {}".format(option))
@@ -1124,7 +1170,7 @@ class NameIt(QObject, Extension):
     #----------------------------------------
     # Remove All Id Mesh
     #----------------------------------------
-    def removeAllIdMesh(self):
+    def removeAllIdMesh(self) -> None:
         self._idcount = 0
         if self._all_picked_node:
             for node in self._all_picked_node:
@@ -1142,8 +1188,33 @@ class NameIt(QObject, Extension):
                             # N_Name=node.getName()
                             # Logger.log('d', 'cutting_mesh : ' + str(N_Name)) 
                             self._removeIdMesh(node)
-
-
+    @pyqtSlot()
+    def removeSelectIdMesh(self) -> None:
+    
+        self._node_queue = self._getSelectedNodes(force_single=False)
+        if not self._node_queue:
+            return
+      
+        for node in self._node_queue :
+            if node.callDecoration("isSliceable"):
+                # N_Name=node.getName()
+                # Logger.log('d', 'isSliceable : ' + str(N_Name))
+                node_stack=node.callDecoration("getStack")           
+                if node_stack:        
+                    if node_stack.getProperty("identification_mesh", "value"):
+                        # N_Name=node.getName()
+                        # Logger.log('d', 'cutting_mesh : ' + str(N_Name)) 
+                        self._removeIdMesh(node)
+                    if node.hasChildren():
+                        for childnode in node.getAllChildren() :
+                            if childnode.callDecoration("isSliceable"):
+                                node_stack=childnode.callDecoration("getStack")           
+                                if node_stack:        
+                                    if node_stack.getProperty("identification_mesh", "value"):
+                                        # N_Name=node.getName()
+                                        # Logger.log('d', 'cutting_mesh : ' + str(N_Name)) 
+                                        self._removeIdMesh(childnode)
+                                    
     def _removeIdMesh(self, node: CuraSceneNode):
         parent = node.getParent()
         if parent == self._controller.getScene().getRoot():
