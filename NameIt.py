@@ -28,7 +28,7 @@
 # V1.8.2    : Bug correction https://github.com/5axes/NameIt/discussions/18
 # V1.8.2    : Add French Translation
 # V1.9.0    : Update on Line
-# V2.0.0    : Add Recycle Symbol
+# V2.0.0    : Add Recycling Symbol
 # V2.0.2    : Add Checking test
 # V2.0.3    : Add Digit for sorting list in the rename function
 # V2.1.0    : Add Context Menu
@@ -216,7 +216,7 @@ class NameIt(QObject, Extension):
         }
         ContainerRegistry.getInstance().containerLoadComplete.connect(self._onContainerLoadComplete)
         
-        self._message = Message(title=catalog.i18nc("@info:title", "Name It!"))
+        self._message = Message(title=catalog.i18nc("@info:title", "Name It !"))
         
         # Stock Data  
         self._all_picked_node = [] 
