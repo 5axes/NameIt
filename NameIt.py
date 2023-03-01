@@ -31,7 +31,7 @@
 # V2.0.0    : Add Recycling Symbol
 # V2.0.2    : Add Checking test
 # V2.0.3    : Add Digit for sorting list in the rename function
-# V2.1.0    : Add Context Menu
+# V2.1.0    : Add Context Menu & Option to Activate this Context menu
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
