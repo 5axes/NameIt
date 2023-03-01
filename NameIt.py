@@ -119,11 +119,13 @@ class NameIt(QObject, Extension):
        
         #Initialize variables
         self.userText = ""
-        self._continueDialog = None
+        self._textDialog = None
+        self._pluginDialog = None
         self._prefix = ""
         self._suffix = ""
         self._font = "NameIt Rounded"
         self._location = "Front"
+        self._ContextMenu = True
         
         # set the preferences to store the default value
         #self._application = CuraApplication.getInstance()
@@ -140,6 +142,7 @@ class NameIt(QObject, Extension):
         self._preferences.addPreference("NameIt/speed_layer_0", 0)
         self._preferences.addPreference("NameIt/font", "NameIt Rounded")
         self._preferences.addPreference("NameIt/location", "Front")
+        self._preferences.addPreference("NameIt/context_menu", True)
         
         # convert as float to avoid further issue
         self._size = float(self._preferences.getValue("NameIt/size"))
@@ -151,6 +154,7 @@ class NameIt(QObject, Extension):
         self._speed = float(self._preferences.getValue("NameIt/speed_layer_0")) 
         self._font = self._preferences.getValue("NameIt/font") 
         self._location = self._preferences.getValue("NameIt/location")
+        self._ContextMenu = bool(self._preferences.getValue("NameIt/context_menu"))
  
         self.Major=1
         self.Minor=0
@@ -179,10 +183,11 @@ class NameIt(QObject, Extension):
 
       
         self._qml_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), self._qml_folder, "NameIt.qml")
-      
-        self._application.engineCreatedSignal.connect(self._onEngineCreated)
+        self._qml_path_settings = os.path.join(os.path.dirname(os.path.abspath(__file__)), self._qml_folder, "SettingsPopup.qml")
+        
+        if self._ContextMenu:
+            self._application.engineCreatedSignal.connect(self._onEngineCreated)
 
-      
         self._controller = self._application.getController()
         self._message = None
         
@@ -197,6 +202,7 @@ class NameIt(QObject, Extension):
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Rename models"), self.renameMesh)       
         self.addMenuItem("  ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Define Text Parameters"), self.defaultSize)
+        self.addMenuItem(catalog.i18nc("@item:inmenu", "Plugin Parameters"), self.pluginSettings)
         self.addMenuItem("   ", lambda: None)
         self.addMenuItem(catalog.i18nc("@item:inmenu", "Help"), self.gotoHelp)
 
@@ -356,11 +362,19 @@ class NameIt(QObject, Extension):
     @pyqtSlot()
     def defaultSize(self) -> None:
  
-        if self._continueDialog is None:
-            self._continueDialog = self._createDialogue()
+        if self._textDialog is None:
+            self._textDialog = self._createDialogue()
         
-        self._continueDialog.show()
+        self._textDialog.show()
         #self.userSizeChanged.emit()
+    @pyqtSlot()
+    def pluginSettings(self) -> None:
+ 
+        if self._pluginDialog is None:
+            self._pluginDialog = self._createDialogueSettings()
+        
+        self._pluginDialog.show()
+
 
     #====User Input=====================================================================================================
     @pyqtProperty(str, notify= userHeightChanged)
@@ -410,6 +424,12 @@ class NameIt(QObject, Extension):
         #qml_file_path = os.path.join(PluginRegistry.getInstance().getPluginPath(self.getPluginId()), "NameIt.qml")
         #Logger.log('d', 'Qml_path : ' + str(self._qml_path)) 
         component_with_context = Application.getInstance().createQmlComponent(self._qml_path, {"manager": self})
+        return component_with_context
+
+    def _createDialogueSettings(self):
+        #qml_file_path = os.path.join(PluginRegistry.getInstance().getPluginPath(self.getPluginId()), "NameIt.qml")
+        #Logger.log('d', 'Qml_path : ' + str(self._qml_path_settings)) 
+        component_with_context = Application.getInstance().createQmlComponent(self._qml_path_settings, {"manager": self})
         return component_with_context
 
     def getSize(self) -> float:
