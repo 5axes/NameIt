@@ -35,6 +35,13 @@ Function to add the name of the element in front of each part to identify every 
 
 ![Add Name](./images/AddName.jpg)
 
+## Add Recycling Symbol
+
+Function to add the Recycling Symbol associated to the Filament material used to print the part. 
+
+![Add Name](./images/recycling-symbol.png)
+
+
 ### Rename Models
 
 You can use the integrated function **Rename Models** to change the name of the element present on the builtplate before to use the function **Add Name**.
