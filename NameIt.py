@@ -253,7 +253,7 @@ class NameIt(QObject, Extension):
             return
 
         Logger.log("d", "Inserting item in context menu")
-        qml_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), self._qml_folder, "NameItMenu.qml")
+        qml_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'qml', self._qml_folder, "NameItMenu.qml")
         self._additional_menu = self._application.createQmlComponent(qml_path, {"manager": self})
         if not self._additional_menu:
             return
@@ -291,7 +291,7 @@ class NameIt(QObject, Extension):
         if not self._node_queue:
             return
 
-        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), self._qml_folder, "RenameDialog.qml")
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'qml', self._qml_folder, "RenameDialog.qml")
         self._rename_dialog = self._application.createQmlComponent(path, {"manager": self})
         if not self._rename_dialog:
             return
