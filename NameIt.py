@@ -32,6 +32,7 @@
 # V2.0.2    : Add Checking test
 # V2.0.3    : Add Digit for sorting list in the rename function
 # V2.1.0    : Add Context Menu & Option to Activate this Context menu
+# V2.1.1    : Change location qml & i18n
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 VERSION_QT5 = False
@@ -89,7 +90,7 @@ i18n_catalog = i18nCatalog("fdmprinter.def.json")
 i18n_extrud_catalog = i18nCatalog("fdmextruder.def.json")
 
 Resources.addSearchPath(
-    os.path.join(os.path.abspath(os.path.dirname(__file__)))
+    os.path.join(os.path.abspath(os.path.dirname(__file__)),'resources')
 )  # Plugin translation file import
 
 catalog = i18nCatalog("nameit")
@@ -181,9 +182,8 @@ class NameIt(QObject, Extension):
         else:
             self._qml_folder = "qml_qt6" 
 
-      
-        self._qml_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), self._qml_folder, "NameIt.qml")
-        self._qml_path_settings = os.path.join(os.path.dirname(os.path.abspath(__file__)), self._qml_folder, "SettingsPopup.qml")
+        self._qml_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'qml', self._qml_folder, "NameIt.qml")
+        self._qml_path_settings = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'qml', self._qml_folder, "SettingsPopup.qml")
         
         if self._ContextMenu:
             self._application.engineCreatedSignal.connect(self._onEngineCreated)
